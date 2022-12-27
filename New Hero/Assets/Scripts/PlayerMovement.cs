@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
         vertical *= Time.deltaTime;
         horizontal *= Time.deltaTime;
 
-        transform.Translate(horizontal * speed, vertical * speed, 0);
+        //transform.Translate(horizontal * speed, vertical * speed, 0);
+        gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(horizontal * speed, vertical * speed);
     }
 }
