@@ -26,18 +26,21 @@ public class PauseMenu : MonoBehaviour
     {
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
+        DiscordManager.Instance.SetPlaying(DiscordManager.State.PLAYING);
         GameIsPaused = false;
     }
     void Pause()
     {
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
+        DiscordManager.Instance.SetPlaying(DiscordManager.State.PAUSE);
         GameIsPaused = true;
     }
 
     public void LoadMenu()
     {
         Resume();
+        DiscordManager.Instance.SetPlaying(DiscordManager.State.MENU);
         SceneManager.LoadScene("MainMenu");
     }
     public void QuitGame()

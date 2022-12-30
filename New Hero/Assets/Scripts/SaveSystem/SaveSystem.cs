@@ -16,6 +16,7 @@ public static class SaveSystem
         SaveData save = new SaveData(level, position);
         formatter.Serialize(fs, save);
         fs.Close();
+        Debug.Log("Successfully saved game");
     }
 
     public static SaveData LoadData()
