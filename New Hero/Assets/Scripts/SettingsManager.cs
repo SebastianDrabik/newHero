@@ -8,15 +8,15 @@ public class SettingsManager : MonoBehaviour
 
     void Start()
     {
-        loadOptions();
+        LoadOptions();
     }
 
     void OnApplicationQuit()
     {
-        saveOptions();
+        SaveOptions();
     }
 
-    public void saveOptions()
+    public void SaveOptions()
     {
         float volume;
         mixer.GetFloat("volume", out volume);
@@ -26,7 +26,7 @@ public class SettingsManager : MonoBehaviour
         PlayerPrefs.SetInt("resolution_height", Screen.currentResolution.height);
     }
 
-    public void loadOptions()
+    public void LoadOptions()
     {
         Screen.fullScreen = PlayerPrefs.GetInt("fullscreen") == 1;
 
