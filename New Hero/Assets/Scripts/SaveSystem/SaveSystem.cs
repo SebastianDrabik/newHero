@@ -4,7 +4,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 public static class SaveSystem
 {
-    private static string fileName = "data.dat";
+    private static string fileName = "saveData.dat";
 
     public static void SaveData(int level)
     {

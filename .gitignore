@@ -18,6 +18,10 @@ sysinfo.txt
 ###
 [Ll]ogs/
 
+###
+# Data files
+###
+saveData.dat
 
 ###
 # VS/MD solution and project files

@@ -19,4 +19,9 @@ public class SaveGame : MonoBehaviour
     {
         SaveSystem.SaveData(1);
     }
+
+    public void SaveData()
+    {
+        SaveSystem.SaveData(1);
+    }
 }
