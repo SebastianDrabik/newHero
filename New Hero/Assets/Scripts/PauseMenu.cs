@@ -1,8 +1,10 @@
 using UnityEngine.SceneManagement;
 using UnityEngine;
+using System.Collections;
 
 public class PauseMenu : MonoBehaviour
 {
+    public GameObject savingInfo;
 
     public static bool GameIsPaused = false;
     public GameObject pauseMenuUI;
@@ -47,5 +49,18 @@ public class PauseMenu : MonoBehaviour
     {
         Debug.Log("Quitting game...");
         Application.Quit();
+    }
+
+    public void SaveGame()
+    {
+        StartCoroutine(ShowSavingInfo());
+    }
+
+    IEnumerator ShowSavingInfo()
+    {
+        savingInfo.SetActive(true);
+        SaveSystem.SaveData(1);
+        yield return new WaitForSecondsRealtime(1);
+        savingInfo.SetActive(false);
     }
 }

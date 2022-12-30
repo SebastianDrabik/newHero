@@ -14,14 +14,4 @@ public class SaveGame : MonoBehaviour
 
         Debug.Log("Save data successfully loaded.");
     }
-
-    void OnApplicationQuit()
-    {
-        SaveSystem.SaveData(1);
-    }
-
-    public void SaveData()
-    {
-        SaveSystem.SaveData(1);
-    }
 }
