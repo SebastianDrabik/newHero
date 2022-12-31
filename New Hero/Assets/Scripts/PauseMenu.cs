@@ -60,7 +60,7 @@ public class PauseMenu : MonoBehaviour
     {
         savingInfo.SetActive(true);
         SaveSystem.SaveData(1);
-        yield return new WaitForSecondsRealtime(1);
+        yield return new WaitForSecondsRealtime(2);
         savingInfo.SetActive(false);
     }
 }

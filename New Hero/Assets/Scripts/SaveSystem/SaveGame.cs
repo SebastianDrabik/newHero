@@ -14,4 +14,9 @@ public class SaveGame : MonoBehaviour
 
         Debug.Log("Save data successfully loaded.");
     }
+
+    public void Save()
+    {
+        SaveSystem.SaveData(1);
+    }
 }
