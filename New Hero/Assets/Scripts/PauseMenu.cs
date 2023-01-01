@@ -56,6 +56,10 @@ public class PauseMenu : MonoBehaviour
         StartCoroutine(ShowSavingInfo());
     }
 
+    public void ShowTrophies()
+    {
+        Debug.Log("Showing acheviements...");
+    }
     IEnumerator ShowSavingInfo()
     {
         savingInfo.SetActive(true);
