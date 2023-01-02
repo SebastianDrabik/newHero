@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Fence
   - House
+  - Elektryk
+  - Elektryk_Exit
   layers:
   - Default
   - TransparentFX
