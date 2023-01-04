@@ -8,7 +8,7 @@ public class PlayerInteraction : MonoBehaviour
 {
     public GameObject image;
 
-    public string[] tags = {"Elektryk", "Elektryk_Exit" };
+    string[] tags = {"Elektryk", "Elektryk_Exit","Cube","Cube_Exit" };
 
     private string currentTag="";
 
@@ -64,6 +64,22 @@ public class PlayerInteraction : MonoBehaviour
             PlayerPrefs.SetFloat("Interaction_y", -18f);
 
             SceneManager.LoadScene("Demo");
+        }
+        if (currentTag == "Cube" && Input.GetKeyDown(KeyCode.E))
+        {
+            Debug.Log("Entering Cube Office");
+            PlayerPrefs.SetFloat("Interaction_x", -0.5f);
+            PlayerPrefs.SetFloat("Interaction_y", 0f);
+
+            SceneManager.LoadScene("MarkCube_Boss");
+        }
+        if (currentTag == "Cube_Exit" && Input.GetKeyDown(KeyCode.E))
+        {
+            Debug.Log("Exiting Cube Office");
+            PlayerPrefs.SetFloat("Interaction_x", -45.5f);
+            PlayerPrefs.SetFloat("Interaction_y", 23.5f);
+
+            SceneManager.LoadScene("Elektryk");
         }
     }
 }

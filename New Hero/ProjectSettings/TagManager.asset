@@ -8,6 +8,8 @@ TagManager:
   - House
   - Elektryk
   - Elektryk_Exit
+  - Cube_Exit
+  - Cube
   layers:
   - Default
   - TransparentFX

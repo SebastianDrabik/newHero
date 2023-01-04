@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Elektryk.unity
     guid: c35a1185fc0116442a581410f95e305b
+  - enabled: 1
+    path: Assets/Scenes/MarkCube_Boss.unity
+    guid: 65e5c0ee59a579c49998c699dda32dbd
   m_configObjects: {}

@@ -49,6 +49,20 @@ public class PlayerMovement : MonoBehaviour
             spriteRenderer.flipX = false;
         }
 
+
+        if (Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.RightShift))
+        {
+            speed = 12;
+        }
+        else if (Input.GetKey(KeyCode.LeftShift)|| Input.GetKey(KeyCode.RightShift))
+        {
+            speed = 4;
+        }
+        else
+        {
+            speed = 2;
+        }
+
         //vertical *= Time.deltaTime;
         //horizontal *= Time.deltaTime;
 
