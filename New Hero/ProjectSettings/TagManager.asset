@@ -10,6 +10,8 @@ TagManager:
   - Elektryk_Exit
   - Cube_Exit
   - Cube
+  - Wall
+  - Wall_Side
   layers:
   - Default
   - TransparentFX
