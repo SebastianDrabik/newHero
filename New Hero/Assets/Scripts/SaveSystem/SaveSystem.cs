@@ -1,7 +1,7 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
-
 public static class SaveSystem
 {
     private static string fileName = "saveData.dat";
@@ -13,7 +13,7 @@ public static class SaveSystem
         BinaryFormatter formatter = new BinaryFormatter();
         string path = Application.persistentDataPath + "/" + fileName;
         FileStream fs = new FileStream(path, FileMode.Create);
-        SaveData save = new SaveData(level, position);
+        SaveData save = new SaveData(level, position, SceneManager.GetActiveScene().name);
         formatter.Serialize(fs, save);
         fs.Close();
         Debug.Log("Successfully saved game");

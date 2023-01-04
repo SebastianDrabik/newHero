@@ -1,16 +1,22 @@
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class SaveGame : MonoBehaviour
 {
-    void Start()
+    public void StartGame()
     {
-        GameObject player = GameObject.FindWithTag("Player");
         SaveData save = SaveSystem.LoadData();
-        if(save == null)
+        GameObject player = GameObject.FindWithTag("Player");
+        if (save == null || save.currentScene == null)
         {
+            SceneManager.LoadScene("Demo");
+            PlayerPrefs.SetFloat("Position_x", 0f);
+            PlayerPrefs.SetFloat("Position_y", 0f);
+
             return;
         }
-        player.transform.position = new Vector3(save.position[0], save.position[1], save.position[2]);
+        SceneManager.LoadScene(save.currentScene);
+        PlayerPrefs.SetFloat("Position_x", save.position[0]);
+        PlayerPrefs.SetFloat("Position_y", save.position[1]);
 
         Debug.Log("Save data successfully loaded.");
     }

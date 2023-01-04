@@ -12,6 +12,21 @@ public class PlayerInteraction : MonoBehaviour
 
     private string currentTag="";
 
+    private void Start()
+    {
+        if(PlayerPrefs.HasKey("Interaction_x") && PlayerPrefs.HasKey("Interaction_y"))
+        {
+            Vector2 position = new Vector2(PlayerPrefs.GetFloat("Interaction_x"), PlayerPrefs.GetFloat("Interaction_y"));
+            gameObject.transform.SetPositionAndRotation(position, Quaternion.identity);
+
+            PlayerPrefs.DeleteKey("Interaction_x");
+            PlayerPrefs.DeleteKey("Interaction_y");
+            return;
+        }
+        gameObject.transform.SetPositionAndRotation(new Vector2(PlayerPrefs.GetFloat("Position_x"), PlayerPrefs.GetFloat("Position_y")), Quaternion.identity);
+        PlayerPrefs.DeleteKey("Position_x");
+        PlayerPrefs.DeleteKey("Position_y");
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         bool exists = Array.Exists(tags, element => element == collision.gameObject.tag);
@@ -37,11 +52,17 @@ public class PlayerInteraction : MonoBehaviour
         if(currentTag == "Elektryk" && Input.GetKeyDown(KeyCode.E))
         {
             Debug.Log("Entering Elektryk");
+            PlayerPrefs.SetFloat("Interaction_x", 0f);
+            PlayerPrefs.SetFloat("Interaction_y", 0f);
+
             SceneManager.LoadScene("Elektryk");
         }
         if (currentTag == "Elektryk_Exit" && Input.GetKeyDown(KeyCode.E))
         {
             Debug.Log("Exiting Elektryk");
+            PlayerPrefs.SetFloat("Interaction_x", 16f);
+            PlayerPrefs.SetFloat("Interaction_y", -18f);
+
             SceneManager.LoadScene("Demo");
         }
     }
