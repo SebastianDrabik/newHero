@@ -11,7 +11,7 @@ public class BoxProjectile : MonoBehaviour
     bool boxHit = false;
     void Start()
     {
-        box.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, -7f);
+        box.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, -9f);
     }
 
     void Update()

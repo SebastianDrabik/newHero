@@ -1511,8 +1511,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a82d3bb8f5ff0a45b89de8d13a08b4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boxAttack: {fileID: 0}
-  player: {fileID: 0}
+  boxAttackPrefab: {fileID: 5521444304335356760, guid: 6d2954cbc8e7e7440985af782df897da, type: 3}
+  player: {fileID: 1446180381}
+  bulletPrefab: {fileID: 8130018061961323461, guid: 4af38a16ee7bab644945b9b04c8674fb, type: 3}
 --- !u!212 &787291898
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6752,6 +6753,11 @@ PrefabInstance:
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8525522430798816155, guid: 6b8ac79c3bfbcca49a60682af3545b6d, type: 3}
   m_PrefabInstance: {fileID: 1352815270}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1446180381 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3570113478644092319, guid: fd5466377e4414c488bd1136836c35d6, type: 3}
+  m_PrefabInstance: {fileID: 875542239}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1488158498
 GameObject:
