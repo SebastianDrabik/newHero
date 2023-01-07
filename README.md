@@ -8,3 +8,5 @@
 - Added options menu
 - Added basic save system
 - Added loading screen
+- Added elektryk interaction
+- Added Marco Cube office and attacks
