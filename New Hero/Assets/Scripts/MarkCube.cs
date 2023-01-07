@@ -8,7 +8,7 @@ public class MarkCube : MonoBehaviour
     public GameObject boxAttackPrefab;
     public GameObject player;
     public GameObject bulletPrefab;
-
+    public GameObject Intro;
 
     private float timerMult = 1f;
     private float timer = 2f;
@@ -27,6 +27,16 @@ public class MarkCube : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        timer = 3f;
+        Invoke("HideIntro", 3);
+    }
+
+    void HideIntro()
+    {
+        Intro.SetActive(false);
+    }
     private void Update()
     {
         timer -= Time.deltaTime;
