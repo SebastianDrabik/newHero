@@ -36,7 +36,7 @@ public class BoxProjectile : MonoBehaviour
         explotion.GetComponent<Animator>().enabled = true;
         if ((GameObject.FindGameObjectWithTag("Player").transform.position - this.transform.position).sqrMagnitude < 1.5f*1.5f)
         {
-            Debug.Log("Za blisko");
+            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInteraction>().DamagePlayer(4);
         }
         Destroy(gameObject, 2);
     }

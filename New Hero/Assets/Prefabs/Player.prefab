@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3570113478644092309}
   - component: {fileID: 3570113478644092304}
   - component: {fileID: 3570113478644092310}
+  - component: {fileID: 7432983445989388263}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -184,5 +185,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 0}
-  tags:
-  - Elektryk
+  healthUI: {fileID: 0}
+  saveGame: {fileID: 7432983445989388263}
+--- !u!114 &7432983445989388263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3570113478644092319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5386f81abc51537499b7551f23bcdea0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

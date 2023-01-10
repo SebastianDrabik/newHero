@@ -64294,6 +64294,10 @@ PrefabInstance:
       propertyPath: image
       value: 
       objectReference: {fileID: 1434773479}
+    - target: {fileID: 3570113478644092310, guid: fd5466377e4414c488bd1136836c35d6, type: 3}
+      propertyPath: healthUI
+      value: 
+      objectReference: {fileID: 8525522432099320957}
     - target: {fileID: 3570113478644092319, guid: fd5466377e4414c488bd1136836c35d6, type: 3}
       propertyPath: m_Name
       value: Player
@@ -64576,3 +64580,14 @@ PrefabInstance:
       objectReference: {fileID: 1066251598}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b8ac79c3bfbcca49a60682af3545b6d, type: 3}
+--- !u!114 &8525522432099320957 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7658421176732030941, guid: 6b8ac79c3bfbcca49a60682af3545b6d, type: 3}
+  m_PrefabInstance: {fileID: 8525522432099320956}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

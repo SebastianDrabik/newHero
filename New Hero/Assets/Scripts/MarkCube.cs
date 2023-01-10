@@ -10,6 +10,7 @@ public class MarkCube : MonoBehaviour
     public GameObject bulletPrefab;
     public GameObject Intro;
 
+
     private float timerMult = 1f;
     private float timer = 2f;
     private int stage = 0;

@@ -28,7 +28,7 @@ public class Bullet : MonoBehaviour
         }
         if (collision.gameObject.tag == "Player")
         {
-            Debug.Log("Player Hit!!!");
+            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInteraction>().DamagePlayer(2);
             Destroy(gameObject);
         }
     }
