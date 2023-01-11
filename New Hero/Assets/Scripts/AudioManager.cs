@@ -1,10 +1,12 @@
 using UnityEngine.Audio;
 using UnityEngine;
 using System;
+using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
-
+    string currentScene;
     public Sound[] sounds;
 
     public static AudioManager instance;
@@ -36,7 +38,38 @@ public class AudioManager : MonoBehaviour
 
     void Start()
     {
-        Play("MainTheme");
+        currentScene = SceneManager.GetActiveScene().name;
+        if (currentScene != "MarkCube_Boss")
+        {
+            Play("MainTheme");
+        }
+        else
+        {
+            PlayMarcoMusic();
+        }
+    }
+
+    private void Update()
+    {
+        if(SceneManager.GetActiveScene().name != currentScene)
+        {
+            if(SceneManager.GetActiveScene().name == "MarkCube_Boss")
+            {
+                StopAll();
+                PlayMarcoMusic();
+            }
+            else if(currentScene == "MarkCube_Boss")
+            {
+                StopAll();
+                Play("MainTheme");
+            }
+            currentScene = SceneManager.GetActiveScene().name;
+        }
+    }
+
+    public void PlayMarcoMusic()
+    {
+        StartCoroutine(playMarcoSound());
     }
 
     public void Play(string name)
@@ -47,6 +80,45 @@ public class AudioManager : MonoBehaviour
             Debug.LogWarning("Audio: " + name + " not found");
             return;
         }
+        s.source.Play();
+    }
+
+    public void Stop(string name)
+    {
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+        if (s == null)
+        {
+            Debug.LogWarning("Audio: " + name + " not found");
+            return;
+        }
+        s.source.Stop();
+    }
+
+    public void StopAll()
+    {
+        foreach (AudioSource s in gameObject.GetComponents<AudioSource>())
+        {
+            s.Stop();   
+        }
+    }
+
+    IEnumerator playMarcoSound()
+    {
+        Sound s = Array.Find(sounds, sound => sound.name == "Marco_Music_Start");
+        if (s == null)
+        {
+            Debug.LogWarning("Audio: " + "Marco_Music_Start" + " not found");
+            yield break;
+        }
+        s.source.Play();
+        Debug.Log(s.source.clip.length);
+        yield return new WaitForSeconds(Mathf.Floor(s.source.clip.length));
+        if (SceneManager.GetActiveScene().name != "MarkCube_Boss")
+        {
+            yield break;
+        }
+        s = Array.Find(sounds, sound => sound.name == "Marco_Music_Loop");
+        Debug.Log(s.source.clip.length);
         s.source.Play();
     }
 }

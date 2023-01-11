@@ -52,3 +52,17 @@ MonoBehaviour:
     loop: 1
     source: {fileID: 0}
     group: {fileID: 24300002, guid: 316b89ba037133043947831ba5eed12b, type: 2}
+  - name: Marco_Music_Start
+    clip: {fileID: 8300000, guid: d7953649ae9a9b2488a7ec271bd8b72e, type: 3}
+    volume: 0.15
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    group: {fileID: 24300002, guid: 316b89ba037133043947831ba5eed12b, type: 2}
+  - name: Marco_Music_Loop
+    clip: {fileID: 8300000, guid: 14f879afc277e0f419f5d657dcee7b1d, type: 3}
+    volume: 0.15
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+    group: {fileID: 24300002, guid: 316b89ba037133043947831ba5eed12b, type: 2}
