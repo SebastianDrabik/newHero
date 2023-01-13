@@ -12,6 +12,7 @@ TagManager:
   - Cube
   - Wall
   - Wall_Side
+  - Attack_Menu
   layers:
   - Default
   - TransparentFX
