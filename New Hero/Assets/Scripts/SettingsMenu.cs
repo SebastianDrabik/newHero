@@ -22,16 +22,17 @@ public class SettingsMenu : MonoBehaviour
 
         resolutionDropdown.ClearOptions();
 
-        List<string> options = new List<string>();
+        List<string> options = new();
+        var uniqueResolutions = RemoveDuplicates(resolutions);
 
         int currentResolutionIndex = 0;
 
-        for(int i = 0; i < resolutions.Length; i++)
+        for(int i = 0; i < uniqueResolutions.Length; i++)
         {
-            string option = resolutions[i].width + " x " + resolutions[i].height;
+            string option = uniqueResolutions[i].width + " x " + uniqueResolutions[i].height;
             options.Add(option);
 
-            if (resolutions[i].width == Screen.currentResolution.width && resolutions[i].height == Screen.currentResolution.height)
+            if (uniqueResolutions[i].width == Screen.currentResolution.width && uniqueResolutions[i].height == Screen.currentResolution.height)
             {
                 currentResolutionIndex = i;
             }
@@ -66,5 +67,21 @@ public class SettingsMenu : MonoBehaviour
     public void SetFullscreen(bool isFullScreen)
     {
         Screen.fullScreen = isFullScreen;
+    }
+
+    private Resolution[] RemoveDuplicates(Resolution[] res)
+    {
+        List<Resolution> unique = new();
+        List<Resolution> resolutions = new();
+        for(int i = 0; i < res.Length; i++)
+        {
+            resolutions.Add(res[i]);
+        }
+        foreach(Resolution resolution in res)
+        {
+            if(!unique.Contains(resolution))
+                unique.Add(resolution);
+        }
+        return unique.ToArray();
     }
 }

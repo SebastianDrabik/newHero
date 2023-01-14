@@ -145,11 +145,14 @@ public class MarkCube : MonoBehaviour
     void JumpAttack()
     {
         Time.timeScale = 0f;
-        codeEditor.GetComponent<FightManager>().OpenCodeEditor(code[0],code[2],code[1]); 
+        codeEditor.GetComponent<FightManager>().OpenCodeEditor(code[0],code[2],code[1]);
+        isAttacking = false;
+        stage = -1;
     }
 
     private void ResetAfterAttack()
     {
+        Debug.Log("reset");
         Time.timeScale = 1f;
         isAttacking = false;
         shadow.SetActive(false);
