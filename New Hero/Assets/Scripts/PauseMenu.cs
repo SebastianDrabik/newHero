@@ -60,6 +60,11 @@ public class PauseMenu : MonoBehaviour
     {
         Debug.Log("Showing acheviements...");
     }
+
+    public void ResetBoss()
+    {
+        PlayerPrefs.SetInt("Marco_Defeated", 0);
+    }
     IEnumerator ShowSavingInfo()
     {
         savingInfo.SetActive(true);

@@ -33,7 +33,10 @@ public class FightManager : MonoBehaviour
         Debug.Log(this.codeInput.text.Trim() == this.correctCode);
 //        return this.codeInput.text.Trim() == this.correctCode;
     }
-
+    public bool CheckCode()
+    {
+        return this.codeInput.text.Trim() == this.correctCode;
+    }
     public void CloseCodeEditor()
     {
         gameObject.SetActive(false);

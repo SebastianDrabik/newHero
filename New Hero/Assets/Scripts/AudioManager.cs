@@ -39,13 +39,25 @@ public class AudioManager : MonoBehaviour
     void Start()
     {
         currentScene = SceneManager.GetActiveScene().name;
-        if (currentScene != "MarkCube_Boss")
+        if (PlayerPrefs.HasKey("Marco_Defeated") && SceneManager.GetActiveScene().name == "MarkCube_Boss")
+        {
+            if (PlayerPrefs.GetInt("Marco_Defeated") == 1)
+            {
+                StopAll();
+                Play("MainTheme");
+            }else if(PlayerPrefs.GetInt("Marco_Defeated") == 0)
+            {
+                StopAll();
+                Play("Marco_Music_Loop");
+            }
+        }
+        else if (currentScene != "MarkCube_Boss")
         {
             Play("MainTheme");
         }
         else
         {
-            PlayMarcoMusic();
+            Play("Marco_Music_Loop");
         }
     }
 
@@ -56,7 +68,7 @@ public class AudioManager : MonoBehaviour
             if(SceneManager.GetActiveScene().name == "MarkCube_Boss")
             {
                 StopAll();
-                PlayMarcoMusic();
+                Play("Marco_Music_Loop");
             }
             else if(currentScene == "MarkCube_Boss")
             {
@@ -67,10 +79,6 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    public void PlayMarcoMusic()
-    {
-        StartCoroutine(playMarcoSound());
-    }
 
     public void Play(string name)
     {
@@ -102,23 +110,5 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    IEnumerator playMarcoSound()
-    {
-        Sound s = Array.Find(sounds, sound => sound.name == "Marco_Music_Start");
-        if (s == null)
-        {
-            Debug.LogWarning("Audio: " + "Marco_Music_Start" + " not found");
-            yield break;
-        }
-        s.source.Play();
-        Debug.Log(s.source.clip.length);
-        yield return new WaitForSeconds(Mathf.Floor(s.source.clip.length));
-        if (SceneManager.GetActiveScene().name != "MarkCube_Boss")
-        {
-            yield break;
-        }
-        s = Array.Find(sounds, sound => sound.name == "Marco_Music_Loop");
-        Debug.Log(s.source.clip.length);
-        s.source.Play();
-    }
+
 }
