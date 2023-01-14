@@ -9439,7 +9439,7 @@ MonoBehaviour:
   top: {fileID: 1172992692}
   bottom: {fileID: 342753543}
   codeInput: {fileID: 1772216951}
-  codeInput_text: {fileID: 0}
+  codeInput_text: {fileID: 892549770}
 --- !u!1 &1772216948
 GameObject:
   m_ObjectHideFlags: 0
