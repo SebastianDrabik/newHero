@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Collections;
+using System.Text.RegularExpressions;
 using UnityEngine;
 using TMPro;
 
@@ -7,7 +8,7 @@ public class FightManager : MonoBehaviour
 {
     public FightManager instance { get; set; }
 
-    private readonly Dictionary<List<string>, Color32> highlightingDictionary = new()
+    private readonly Dictionary<List<string>, Color32> highlightingKeyWordDictionary = new()
     {
         {
             new List<string> { "int", "char", "void", "using" },
@@ -24,12 +25,25 @@ public class FightManager : MonoBehaviour
         {
             new List<string> { "std", "string" },
             new Color32(0x50, 0xa5, 0x79, 255)
-        },
-        { //TODO - multicharacter numbers
-            new List<string> { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" },
-            new Color32(0xe7, 0xf7, 0x00, 255)
         }
     };
+
+    private readonly Dictionary<Regex, Color32> highlightingRegexDictionary = new()
+    {
+        { //string
+            new Regex("\".*\"", RegexOptions.IgnoreCase | RegexOptions.Multiline),
+            new Color32(0xe7, 0xf7, 0x00, 255)
+        },
+        { //comment
+            new Regex("//.*", RegexOptions.IgnoreCase | RegexOptions.Multiline),
+            new Color32(0x23, 0x55, 0x30, 255)
+        },
+        { //number
+            new Regex("[0-9]+", RegexOptions.IgnoreCase | RegexOptions.Multiline),
+            new Color32(0xe2, 0xf0, 0x00, 255)
+        }
+    };
+
     public void Awake()
     {
         if (instance == null)
@@ -64,7 +78,6 @@ public class FightManager : MonoBehaviour
     public void RunCode()
     {
         Debug.Log(RemoveAllSpaces(this.codeInput.text) == RemoveAllSpaces(this.correctCode));
-        //        return this.codeInput.text.Trim() == this.correctCode;
     }
     private void Update()
     {
@@ -107,48 +120,33 @@ public class FightManager : MonoBehaviour
                 vertexColors[vertexIndex + 3] = color;
             }
         }
+        foreach(var item in highlightingRegexDictionary)
+        {
+            Color32 color = item.Value;
+            foreach(Match match in item.Key.Matches(text.text))
+            {
+                //Debug.Log("<color=yellow>" + match.Value + "</color> <color=red>" + match.Index + "</color>");
+                for (int i = match.Index; i < match.Index + match.Value.Length; i++)
+                {
+                    TMP_CharacterInfo characterInfo = text.textInfo.characterInfo[i];
+                    int meshIndex = text.textInfo.characterInfo[characterInfo.index].materialReferenceIndex;
+                    int vertexIndex = text.textInfo.characterInfo[characterInfo.index].vertexIndex;
 
+                    Color32[] vertexColors = text.textInfo.meshInfo[meshIndex].colors32;
+                    vertexColors[vertexIndex + 0] = color;
+                    vertexColors[vertexIndex + 1] = color;
+                    vertexColors[vertexIndex + 2] = color;
+                    vertexColors[vertexIndex + 3] = color;
+                }
+            }
+        }
         text.UpdateVertexData(TMP_VertexDataUpdateFlags.All);
     }
-    //todo
-    //void FixCodeIndent(string value)
-    //{
-    //    if(value == null || value.Length == 0)
-    //        return;
-    //    List<string> lines = new();
-    //    string current = "";
-    //    for(int i = 0; i < value.Length; i++)
-    //    {
-    //        if (value[i] != '\n')
-    //        {
-    //            current += value[i];
-    //            lines.Add(current);
-    //        }
-    //        else
-    //            continue;
-    //    }
-    //    if (lines.Count <= 1)
-    //        return;
-    //    string prevLine = lines[^2];
-    //    string indent = "";
-    //    for(int i = 0; i < prevLine.Length; i++)
-    //    {
-    //        if (prevLine[i] == '\t')
-    //            indent += "\t";
-    //        //else
-    //          //  break;
-    //    }
-    //    Debug.Log(indent);
-    //    //Debug.Log(codeInput.caretPosition);
-    //    //codeInput.caretPosition += indent*4;
-    //    string newText = value.Insert(codeInput.caretPosition-1, indent);
-    //    codeInput.text = newText;
-    //}
 
     private Color32 FindColor(string word)
     {
         Color32 color = new(0xff, 0xff, 0xff, 0xff);
-        foreach (var item in highlightingDictionary)
+        foreach (var item in highlightingKeyWordDictionary)
         {
             if (item.Key.Contains(word))
                 color = item.Value;
