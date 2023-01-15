@@ -34,8 +34,8 @@ public class FightManager : MonoBehaviour
             new Regex("\".*\"", RegexOptions.IgnoreCase | RegexOptions.Multiline),
             new Color32(0xe7, 0xf7, 0x00, 255)
         },
-        { //comment
-            new Regex("//.*", RegexOptions.IgnoreCase | RegexOptions.Multiline),
+        { //comment (todo oneline comments)
+            new Regex(@"/\*.*\*/", RegexOptions.IgnoreCase | RegexOptions.Multiline),
             new Color32(0x23, 0x55, 0x30, 255)
         },
         { //number
@@ -68,17 +68,18 @@ public class FightManager : MonoBehaviour
         this.top.text = top;
         this.bottom.text = bottom;
         codeInput_text.text = defaultCode;
-        gameObject.SetActive(true);
         HighlightSyntax(this.top);
         HighlightSyntax(this.bottom);
         HighlightSyntax(codeInput_text);
+        gameObject.SetActive(true);
         codeInput.Select();
     }
-
+    
     public void RunCode()
     {
         Debug.Log(RemoveAllSpaces(this.codeInput.text) == RemoveAllSpaces(this.correctCode));
     }
+
     private void Update()
     {
         HighlightSyntax(top);
@@ -125,9 +126,10 @@ public class FightManager : MonoBehaviour
             Color32 color = item.Value;
             foreach(Match match in item.Key.Matches(text.text))
             {
-                //Debug.Log("<color=yellow>" + match.Value + "</color> <color=red>" + match.Index + "</color>");
-                for (int i = match.Index; i < match.Index + match.Value.Length; i++)
+                //Debug.Log("<color=yellow>" + match.Value + "</color> <color=red>" + match.Index + "</color> <color=cyan>" + text.textInfo.characterInfo.Length + "</color>");
+                for (int i = match.Index; i < match.Index + match.Length; i++)
                 {
+                    if (i > text.textInfo.characterInfo.Length) break;
                     TMP_CharacterInfo characterInfo = text.textInfo.characterInfo[i];
                     int meshIndex = text.textInfo.characterInfo[characterInfo.index].materialReferenceIndex;
                     int vertexIndex = text.textInfo.characterInfo[characterInfo.index].vertexIndex;

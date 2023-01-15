@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class MarkCube : MonoBehaviour
 {
+    public static MarkCube Instance;
+
     Vector2 velocity = new(0f, 0f);
     public GameObject boxAttackPrefab;
     public GameObject player;
@@ -22,15 +24,20 @@ public class MarkCube : MonoBehaviour
     private int stage = 0;
     int counter = 0;
 
+    [HideInInspector]
+    public bool isFighting = false;
+
     public string[] code =
     {
-        "#include<iostream>\n\nusing namespace std;\n\nint main(){\n\tint health = 4;\n\t//check if health equals 4 and if it does, return 0",
+        "#include<iostream>\n\nusing namespace std;\n\nint main(){\n\tint health = 4;\n\t/*check if health equals 4 and if it does, return 0*/",
         "if(health==4){return 0;}",
         "\treturn 0;\n}"
     };
 
     private void Awake()
     {
+        if(Instance == null)
+            Instance = this;
         runCode.onClick.AddListener(check);
         if (PlayerPrefs.HasKey("Marco_Defeated"))
         {
@@ -48,6 +55,7 @@ public class MarkCube : MonoBehaviour
         {
             Debug.Log("Boss Pokonany");
             PlayerPrefs.SetInt("Marco_Defeated", 1);
+            isFighting = false;
             gameObject.SetActive(false);
         }
         else
@@ -74,6 +82,12 @@ public class MarkCube : MonoBehaviour
     {
         timer = 3f;
         Invoke("HideIntro", 3);
+        if (PlayerPrefs.HasKey("Marco_Defeated"))
+            if (PlayerPrefs.GetInt("Marco_Defeated") == 0)
+                isFighting = true;
+        else
+            isFighting = true;
+        
     }
 
     void HideIntro()

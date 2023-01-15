@@ -57,9 +57,8 @@ public class PlayerInteraction : MonoBehaviour
     {
         bool exists = Array.Exists(tags, element => element == collision.gameObject.tag);
         if (exists)
-        {
-            image.SetActive(true);
-        }
+            if((collision.gameObject.tag == "Cube_Exit" && !MarkCube.Instance.isFighting) || collision.gameObject.tag != "Cube_Exit")
+                image.SetActive(true);
         currentTag = collision.gameObject.tag;
 
     }
@@ -67,9 +66,7 @@ public class PlayerInteraction : MonoBehaviour
     {
         bool exists = Array.Exists(tags, element => element == collision.gameObject.tag);
         if (exists)
-        {
             image.SetActive(false);
-        }
         currentTag = "";
     }
 
@@ -99,7 +96,7 @@ public class PlayerInteraction : MonoBehaviour
 
             SceneManager.LoadScene("MarkCube_Boss");
         }
-        if (currentTag == "Cube_Exit" && Input.GetKeyDown(KeyCode.E))
+        if (currentTag == "Cube_Exit" && Input.GetKeyDown(KeyCode.E) && !MarkCube.Instance.isFighting)
         {
             Debug.Log("Exiting Cube Office");
             PlayerPrefs.SetFloat("Interaction_x", -45.5f);
