@@ -13,6 +13,7 @@ TagManager:
   - Wall
   - Wall_Side
   - Attack_Menu
+  - Canvas_Achievements
   layers:
   - Default
   - TransparentFX

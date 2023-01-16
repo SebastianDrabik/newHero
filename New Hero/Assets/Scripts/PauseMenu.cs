@@ -8,11 +8,14 @@ public class PauseMenu : MonoBehaviour
 
     public static bool GameIsPaused = false;
     public GameObject pauseMenuUI;
-    // Update is called once per frame
+    public GameObject trophies;
+    private bool isDisabled = false;
+    
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            if (isDisabled) return;
             if (GameIsPaused)
             {
                 Resume();
@@ -26,10 +29,15 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume()
     {
-        pauseMenuUI.SetActive(false);
-        Time.timeScale = 1f;
-        DiscordManager.Instance.SetPlaying(DiscordManager.State.PLAYING);
-        GameIsPaused = false;
+        if (trophies.activeSelf)
+            trophies.GetComponent<TrophiesManager>().Hide();
+        else
+        {
+            pauseMenuUI.SetActive(false);
+            Time.timeScale = 1f;
+            DiscordManager.Instance.SetPlaying(DiscordManager.State.PLAYING);
+            GameIsPaused = false;
+        }
     }
     void Pause()
     {
@@ -56,14 +64,15 @@ public class PauseMenu : MonoBehaviour
         StartCoroutine(ShowSavingInfo());
     }
 
-    public void ShowTrophies()
+    public void SetDisabled(bool disabled)
     {
-        Debug.Log("Showing acheviements...");
+        isDisabled = disabled;
     }
 
     public void ResetBoss()
     {
         PlayerPrefs.SetInt("Marco_Defeated", 0);
+        GameManager.Instance.ChangeTrophyState("marco", Trophy.TrophyState.LOCKED);
     }
     IEnumerator ShowSavingInfo()
     {

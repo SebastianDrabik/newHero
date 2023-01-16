@@ -16,6 +16,8 @@ public class MarkCube : MonoBehaviour
     public GameObject codeEditor;
     public GameObject shadow;
     public Button runCode;
+    public new Transform camera;
+    public GameObject canvas;
 
 
     private float abovePlayer = 10f;
@@ -24,6 +26,7 @@ public class MarkCube : MonoBehaviour
     private float timer = 2f;
     private int stage = 0;
     int counter = 0;
+    private bool isDead = false;
 
     [HideInInspector]
     public bool isFighting = false;
@@ -42,7 +45,7 @@ public class MarkCube : MonoBehaviour
         runCode.onClick.AddListener(check);
         if (PlayerPrefs.HasKey("Marco_Defeated"))
         {
-            if (PlayerPrefs.GetInt("Marco_Defeated")==1)
+            if (PlayerPrefs.GetInt("Marco_Defeated") == 1)
             {
                 Intro.SetActive(false);
                 gameObject.SetActive(false);
@@ -52,11 +55,11 @@ public class MarkCube : MonoBehaviour
 
     private void check()
     {
+        canvas.GetComponent<PauseMenu>().SetDisabled(false);
         if (codeEditor.GetComponent<FightManager>().CheckCode())
         {
             Debug.Log("Boss Pokonany");
             PlayerPrefs.SetInt("Marco_Defeated", 1);
-            isFighting = false;
             gameObject.GetComponent<Animator>().SetTrigger("Death");
             timer = 1000f;
             StartCoroutine("DeathAni");
@@ -88,9 +91,11 @@ public class MarkCube : MonoBehaviour
     }
     private void Update()
     {
+        if (isDead) return;
         timer -= Time.deltaTime;
         if(timer<=0f)
         {
+            GameManager.Instance.ChangeTrophyState("marco", Trophy.TrophyState.IN_PROGRESS);
             if (isAttacking)
             {
                 if (abovePlayer <= 2f)
@@ -152,6 +157,7 @@ public class MarkCube : MonoBehaviour
     {
         Time.timeScale = 0f;
         codeEditor.GetComponent<FightManager>().OpenCodeEditor(code[0],code[2],code[1]);
+        canvas.GetComponent<PauseMenu>().SetDisabled(true);
         isAttacking = false;
         stage = -1;
     }
@@ -184,10 +190,16 @@ public class MarkCube : MonoBehaviour
         //I hate sand
 
         float time = Array.Find(gameObject.GetComponent<Animator>().runtimeAnimatorController.animationClips, clip => clip.name == "Marco_Death").length;
-
-        yield return new WaitForSeconds(time);
-
+        isDead = true;
+        GameManager.Instance.ChangeTrophyState("marco", Trophy.TrophyState.UNLOCKED);
+        Cinemachine.CinemachineVirtualCamera _camera = camera.GetComponent<Cinemachine.CinemachineVirtualCamera>();
+        float initialOrtoSize = _camera.m_Lens.OrthographicSize;
+        _camera.m_Follow = gameObject.transform;
+        _camera.m_Lens.OrthographicSize = 3f;
+        yield return new WaitForSeconds(time + 0.9f);
+        isFighting = false;
+        _camera.m_Follow = player.transform;
+        _camera.m_Lens.OrthographicSize = initialOrtoSize;
         gameObject.SetActive(false);
-
     }
 }

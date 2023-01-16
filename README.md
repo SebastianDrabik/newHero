@@ -11,3 +11,5 @@
 - Added elektryk interaction
 - Added Marco Cube office and attacks
 - Added Marco Cube Battle System
+- Marco Cube Death Animation
+- Added achevement system basics

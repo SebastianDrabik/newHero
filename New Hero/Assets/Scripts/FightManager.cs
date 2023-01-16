@@ -6,7 +6,7 @@ using TMPro;
 
 public class FightManager : MonoBehaviour
 {
-    public FightManager instance { get; set; }
+    public FightManager Instance { get; set; }
 
     private readonly Dictionary<List<string>, Color32> highlightingKeyWordDictionary = new()
     {
@@ -15,7 +15,7 @@ public class FightManager : MonoBehaviour
             new Color32(0x00, 0x5b, 0xd1, 255)
         },
         {
-            new List<string> { "include", "namespace", "main" },
+            new List<string> { "namespace", "main" },
             new Color32(0xd1, 0x73, 0x00, 255)
         },
         {
@@ -41,14 +41,15 @@ public class FightManager : MonoBehaviour
         { //number
             new Regex("[0-9]+", RegexOptions.IgnoreCase | RegexOptions.Multiline),
             new Color32(0xe2, 0xf0, 0x00, 255)
+        },
+        {
+            new Regex("#include\\s*<.*>", RegexOptions.IgnoreCase | RegexOptions.Multiline),
+            new Color32(0xd1, 0x73, 0x00, 255)
         }
     };
 
-    public void Awake()
-    {
-        if (instance == null)
-            instance = this;
-    }
+
+
 
     [Space]
     [Header("Top text gameobject")]
@@ -62,19 +63,22 @@ public class FightManager : MonoBehaviour
     public TextMeshProUGUI codeInput_text;
     private string correctCode;
 
+    void Awake()
+    {
+        if (Instance == null)
+            Instance = this;
+    }
+
     public void OpenCodeEditor(string top, string bottom, string correctCode, string defaultCode = "")
     {
+        gameObject.SetActive(true);
         this.correctCode = correctCode;
         this.top.text = top;
         this.bottom.text = bottom;
         codeInput_text.text = defaultCode;
-        HighlightSyntax(this.top);
-        HighlightSyntax(this.bottom);
-        HighlightSyntax(codeInput_text);
-        gameObject.SetActive(true);
         codeInput.Select();
     }
-    
+
     public void RunCode()
     {
         Debug.Log(RemoveAllSpaces(this.codeInput.text) == RemoveAllSpaces(this.correctCode));
@@ -104,6 +108,7 @@ public class FightManager : MonoBehaviour
     }
     private void HighlightSyntax(TextMeshProUGUI text)
     {
+        if (text == null) return;
         for (int j = 0; j < text.textInfo.wordCount; j++)
         {
             TMP_WordInfo info = text.textInfo.wordInfo[j];
@@ -121,10 +126,10 @@ public class FightManager : MonoBehaviour
                 vertexColors[vertexIndex + 3] = color;
             }
         }
-        foreach(var item in highlightingRegexDictionary)
+        foreach (var item in highlightingRegexDictionary)
         {
             Color32 color = item.Value;
-            foreach(Match match in item.Key.Matches(text.text))
+            foreach (Match match in item.Key.Matches(text.text))
             {
                 //Debug.Log("<color=yellow>" + match.Value + "</color> <color=red>" + match.Index + "</color> <color=cyan>" + text.textInfo.characterInfo.Length + "</color>");
                 for (int i = match.Index; i < match.Index + match.Length; i++)
