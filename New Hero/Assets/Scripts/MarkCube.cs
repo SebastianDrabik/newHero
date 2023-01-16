@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -56,7 +57,9 @@ public class MarkCube : MonoBehaviour
             Debug.Log("Boss Pokonany");
             PlayerPrefs.SetInt("Marco_Defeated", 1);
             isFighting = false;
-            gameObject.SetActive(false);
+            gameObject.GetComponent<Animator>().SetTrigger("Death");
+            timer = 1000f;
+            StartCoroutine("DeathAni");
         }
         else
         {
@@ -66,17 +69,6 @@ public class MarkCube : MonoBehaviour
         ResetAfterAttack();
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(collision.gameObject.tag == "Wall")
-        {
-            velocity.y *= -1f;
-        }
-        if (collision.gameObject.tag == "Wall_Side")
-        {
-            velocity.x *= -1f;
-        }
-    }
 
     private void Start()
     {
@@ -185,5 +177,17 @@ public class MarkCube : MonoBehaviour
         yield return new WaitForSeconds(1f);
 
         gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, 0f);
+    }
+
+    IEnumerator DeathAni()
+    {
+        //I hate sand
+
+        float time = Array.Find(gameObject.GetComponent<Animator>().runtimeAnimatorController.animationClips, clip => clip.name == "Marco_Death").length;
+
+        yield return new WaitForSeconds(time);
+
+        gameObject.SetActive(false);
+
     }
 }
