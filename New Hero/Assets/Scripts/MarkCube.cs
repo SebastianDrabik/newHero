@@ -42,27 +42,23 @@ public class MarkCube : MonoBehaviour
     {
         if(Instance == null)
             Instance = this;
-        runCode.onClick.AddListener(check);
-        if (PlayerPrefs.HasKey("Marco_Defeated"))
+        runCode.onClick.AddListener(Check);
+        if (SaveSystem.level>=SaveData.Level.MARK_CUBE)
         {
-            if (PlayerPrefs.GetInt("Marco_Defeated") == 1)
-            {
-                Intro.SetActive(false);
-                gameObject.SetActive(false);
-            }
+            Intro.SetActive(false);
+            gameObject.SetActive(false);
         }
     }
 
-    private void check()
+    private void Check()
     {
         canvas.GetComponent<PauseMenu>().SetDisabled(false);
         if (codeEditor.GetComponent<FightManager>().CheckCode())
         {
             Debug.Log("Boss Pokonany");
-            PlayerPrefs.SetInt("Marco_Defeated", 1);
             gameObject.GetComponent<Animator>().SetTrigger("Death");
             timer = 1000f;
-            StartCoroutine("DeathAni");
+            StartCoroutine(nameof(DeathAni));
         }
         else
         {
@@ -76,18 +72,16 @@ public class MarkCube : MonoBehaviour
     private void Start()
     {
         timer = 3f;
+        canvas.GetComponent<PauseMenu>().SetDisabled(true);
         Invoke("HideIntro", 3);
-        if (PlayerPrefs.HasKey("Marco_Defeated"))
-            if (PlayerPrefs.GetInt("Marco_Defeated") == 0)
-                isFighting = true;
-        else
+        if (SaveSystem.level < SaveData.Level.MARK_CUBE)
             isFighting = true;
-        
     }
 
     void HideIntro()
     {
         Intro.SetActive(false);
+        canvas.GetComponent<PauseMenu>().SetDisabled(false);
     }
     private void Update()
     {
@@ -191,7 +185,6 @@ public class MarkCube : MonoBehaviour
 
         float time = Array.Find(gameObject.GetComponent<Animator>().runtimeAnimatorController.animationClips, clip => clip.name == "Marco_Death").length;
         isDead = true;
-        GameManager.Instance.ChangeTrophyState("marco", Trophy.TrophyState.UNLOCKED);
         Cinemachine.CinemachineVirtualCamera _camera = camera.GetComponent<Cinemachine.CinemachineVirtualCamera>();
         float initialOrtoSize = _camera.m_Lens.OrthographicSize;
         _camera.m_Follow = gameObject.transform;
@@ -201,5 +194,7 @@ public class MarkCube : MonoBehaviour
         _camera.m_Follow = player.transform;
         _camera.m_Lens.OrthographicSize = initialOrtoSize;
         gameObject.SetActive(false);
+        GameManager.Instance.ChangeTrophyState("marco", Trophy.TrophyState.UNLOCKED, true);
+        SaveSystem.level = SaveData.Level.MARK_CUBE;
     }
 }

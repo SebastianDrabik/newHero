@@ -5,6 +5,8 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
+    public GameObject achievementNotification;
+    public List<Trophy> trophies;
 
     private void Awake()
     {
@@ -12,18 +14,23 @@ public class GameManager : MonoBehaviour
         {
             DontDestroyOnLoad(this);
             Instance = this;
-            if(PlayerPrefs.HasKey("Marco_Defeated"))
-                if(PlayerPrefs.GetInt("Marco_Defeated") == 1)
-                    ChangeTrophyState("marco", Trophy.TrophyState.UNLOCKED);
+            //if(PlayerPrefs.HasKey("Marco_Defeated"))
+            //    if(PlayerPrefs.GetInt("Marco_Defeated") == 1)
+            //        ChangeTrophyState("marco", Trophy.TrophyState.UNLOCKED);
         }
         else
             Destroy(this);
     }
 
-    public List<Trophy> trophies;
-
-    public void ChangeTrophyState(string key, Trophy.TrophyState trophyState)
+    public void ChangeTrophyState(string key, Trophy.TrophyState trophyState, bool notification = false)
     {
         trophies.Find(t => t.key == key).state = trophyState;
+        if(trophyState == Trophy.TrophyState.UNLOCKED && notification)
+        {
+            Trophy t = trophies.Find(t => t.key == key);
+            Transform canvasTransform = GameObject.FindGameObjectWithTag("Canvas").transform;
+            GameObject popup = Instantiate(achievementNotification, canvasTransform);
+            popup.GetComponent<TrophyUnlockedNotification>().Show(t);
+        }
     }
 }

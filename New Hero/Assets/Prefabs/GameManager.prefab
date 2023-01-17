@@ -44,6 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00a93d8da4698bf4bbac5b1d1320cd52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  achievementNotification: {fileID: 3730285337951218019, guid: 28fd06c8dd7960749afd6043ffd38359, type: 3}
+  canvas: {fileID: 0}
   trophies:
   - key: marco
     state: 0

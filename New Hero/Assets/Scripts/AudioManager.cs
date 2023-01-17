@@ -66,7 +66,7 @@ public class AudioManager : MonoBehaviour
         {
             StopAll();
             Play("MainTheme");
-        }else if(!PlayerPrefs.HasKey("Marco_Defeated")|| PlayerPrefs.GetInt("Marco_Defeated") == 0)
+        }else if(SaveSystem.level < SaveData.Level.MARK_CUBE)
         {
             StopAll();
             Play("Marco_Music_Loop");
@@ -87,13 +87,15 @@ public class AudioManager : MonoBehaviour
         {
             StopAll();
             Play("MainTheme");
-        }else if(!IsPlaying("Marco_Music_Loop") && SceneManager.GetActiveScene().name == "MarkCube_Boss" && (!PlayerPrefs.HasKey("Marco_Defeated") || PlayerPrefs.GetInt("Marco_Defeated") == 0))
+        }else if(!IsPlaying("Marco_Music_Loop") && SceneManager.GetActiveScene().name == "MarkCube_Boss" && SaveSystem.level < SaveData.Level.MARK_CUBE)
         {
             StopAll();
             Play("Marco_Music_Loop");
         }
-
-
+        if(currentScene == "MarkCube_Boss" && SaveSystem.level >= SaveData.Level.MARK_CUBE && !IsPlaying("MainTheme")){
+            StopAll();
+            Play("MainTheme");
+        }
         /*if (SceneManager.GetActiveScene().name != currentScene)
         {
             if(SceneManager.GetActiveScene().name == "MarkCube_Boss")

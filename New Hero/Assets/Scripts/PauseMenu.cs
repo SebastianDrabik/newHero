@@ -71,13 +71,13 @@ public class PauseMenu : MonoBehaviour
 
     public void ResetBoss()
     {
-        PlayerPrefs.SetInt("Marco_Defeated", 0);
+        SaveSystem.level = SaveData.Level.NEW_GAME;
         GameManager.Instance.ChangeTrophyState("marco", Trophy.TrophyState.LOCKED);
     }
     IEnumerator ShowSavingInfo()
     {
         savingInfo.SetActive(true);
-        SaveSystem.SaveData(1);
+        SaveSystem.SaveData();
         yield return new WaitForSecondsRealtime(2);
         savingInfo.SetActive(false);
     }

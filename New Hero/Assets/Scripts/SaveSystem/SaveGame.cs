@@ -14,15 +14,16 @@ public class SaveGame : MonoBehaviour
 
             return;
         }
+        GameManager gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
         SceneManager.LoadScene(save.currentScene);
         PlayerPrefs.SetFloat("Position_x", save.position[0]);
         PlayerPrefs.SetFloat("Position_y", save.position[1]);
+        
+        foreach(var t in save.GetTrophies())
+        {
+            gameManager.ChangeTrophyState(t.Key, t.Value);
+        }
 
         Debug.Log("Save data successfully loaded.");
-    }
-
-    public void Save()
-    {
-        SaveSystem.SaveData(1);
     }
 }
