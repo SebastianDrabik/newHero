@@ -30,4 +30,9 @@ public class GameManager : MonoBehaviour
             popup.GetComponent<TrophyUnlockedNotification>().Show(t);
         }
     }
+
+    public Trophy.TrophyState GetTrophyState(string key)
+    {
+        return trophies.Find(t => t.key == key).state;
+    }
 }

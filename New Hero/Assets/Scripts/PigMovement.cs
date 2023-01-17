@@ -21,11 +21,14 @@ public class PigMovement : MonoBehaviour
 
     private void OnMouseDown()
     {
+        GameManager gm = GameManager.Instance;
+        if (gm.GetTrophyState("tuman") == Trophy.TrophyState.UNLOCKED)
+            return;
         pigClicks++;
         if(pigClicks == minPigClicks)
-            GameManager.Instance.ChangeTrophyState("tuman", Trophy.TrophyState.UNLOCKED, true);
+            gm.ChangeTrophyState("tuman", Trophy.TrophyState.UNLOCKED, true);
         if (pigClicks < minPigClicks)
-            GameManager.Instance.ChangeTrophyState("tuman", Trophy.TrophyState.IN_PROGRESS);
+            gm.ChangeTrophyState("tuman", Trophy.TrophyState.IN_PROGRESS);
     }
 
 

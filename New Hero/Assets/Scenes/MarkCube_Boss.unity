@@ -2453,9 +2453,9 @@ MonoBehaviour:
   isFighting: 0
   code:
   - "#include<iostream>\n\nusing namespace std;\n\nint main(){\n\tint health = 4;\n\t/*check
-    if health equals 4 and if it does, return 0*/"
+    if health equals 4 and if it does, return 0 (use if(condition) {...})*/"
   - if(health==4){return 0;}
-  - "\treturn 0;\n}"
+  - "\treturn 1;\n}"
 --- !u!212 &787291898
 SpriteRenderer:
   m_ObjectHideFlags: 0
