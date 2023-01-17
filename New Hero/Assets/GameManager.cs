@@ -14,9 +14,6 @@ public class GameManager : MonoBehaviour
         {
             DontDestroyOnLoad(this);
             Instance = this;
-            //if(PlayerPrefs.HasKey("Marco_Defeated"))
-            //    if(PlayerPrefs.GetInt("Marco_Defeated") == 1)
-            //        ChangeTrophyState("marco", Trophy.TrophyState.UNLOCKED);
         }
         else
             Destroy(this);

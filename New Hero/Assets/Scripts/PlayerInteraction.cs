@@ -7,7 +7,7 @@ public class PlayerInteraction : MonoBehaviour
 {
     public GameObject image;
     public TextMeshProUGUI healthUI;
-    public SaveGame saveGame;
+    //public SaveGame saveGame;
     int maxHealth = 31;
 
     string[] tags = {"Elektryk", "Elektryk_Exit","Cube","Cube_Exit" };
@@ -21,7 +21,7 @@ public class PlayerInteraction : MonoBehaviour
         PlayerPrefs.SetInt("Player_Health", health);
         if (health <= 0)
         {
-            saveGame.StartGame();
+            SaveGame.StartGame();
             return;
         }
         healthUI.text = Convert.ToString(health, 2).PadLeft(8, '0');

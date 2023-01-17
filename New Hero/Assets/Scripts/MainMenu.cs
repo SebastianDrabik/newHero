@@ -3,11 +3,11 @@ using UnityEngine;
 
 public class MainMenu : MonoBehaviour
 {
-    public SaveGame savegame;
+    //public SaveGame savegame;
     public void PlayGame()
     {
         DiscordManager.Instance.SetPlaying(DiscordManager.State.PLAYING);
-        savegame.StartGame();
+        SaveGame.StartGame();
     }
 
     public void QuitGame()

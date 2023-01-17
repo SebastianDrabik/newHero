@@ -7,6 +7,7 @@ public static class SaveSystem
 {
     public static SaveData.Level level;
     private static string fileName = "saveData.dat";
+    public static string path = Application.persistentDataPath + "/" + fileName;
 
     public static void SaveData()
     {
@@ -16,7 +17,6 @@ public static class SaveSystem
         GameManager gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
 
         BinaryFormatter formatter = new BinaryFormatter();
-        string path = Application.persistentDataPath + "/" + fileName;
         FileStream fs = new FileStream(path, FileMode.Create);
         SaveData save = new SaveData(level, position, SceneManager.GetActiveScene().name, ConvertTrophies(gameManager.trophies));
         formatter.Serialize(fs, save);

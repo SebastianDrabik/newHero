@@ -30,6 +30,14 @@ public class FightManager : MonoBehaviour
 
     private readonly Dictionary<Regex, Color32> highlightingRegexDictionary = new()
     {
+        { //number
+            new Regex("[0-9]+", RegexOptions.IgnoreCase | RegexOptions.Multiline),
+            new Color32(0xe2, 0xf0, 0x00, 255)
+        },
+        {
+            new Regex("#include\\s*<.*>", RegexOptions.IgnoreCase | RegexOptions.Multiline),
+            new Color32(0xd1, 0x73, 0x00, 255)
+        },
         { //string
             new Regex("\".*\"", RegexOptions.IgnoreCase | RegexOptions.Multiline),
             new Color32(0xe7, 0xf7, 0x00, 255)
@@ -38,14 +46,6 @@ public class FightManager : MonoBehaviour
             new Regex(@"/\*.*\*/", RegexOptions.IgnoreCase | RegexOptions.Multiline),
             new Color32(0x23, 0x55, 0x30, 255)
         },
-        { //number
-            new Regex("[0-9]+", RegexOptions.IgnoreCase | RegexOptions.Multiline),
-            new Color32(0xe2, 0xf0, 0x00, 255)
-        },
-        {
-            new Regex("#include\\s*<.*>", RegexOptions.IgnoreCase | RegexOptions.Multiline),
-            new Color32(0xd1, 0x73, 0x00, 255)
-        }
     };
 
 

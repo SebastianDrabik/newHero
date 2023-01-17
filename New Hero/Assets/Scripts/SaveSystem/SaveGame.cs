@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class SaveGame : MonoBehaviour
 {
-    public void StartGame()
+    public static void StartGame()
     {
         SaveData save = SaveSystem.LoadData();
         GameObject player = GameObject.FindWithTag("Player");

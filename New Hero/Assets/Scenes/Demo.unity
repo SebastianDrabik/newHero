@@ -63294,6 +63294,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 120171e5b2a07e148aa5c91b33040fd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minPigClicks: 3
 --- !u!61 &1750824652
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -63360,7 +63361,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: f28d8ef6b72234e43b425562f95dc2e6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

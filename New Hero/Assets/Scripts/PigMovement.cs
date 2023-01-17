@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PigMovement : MonoBehaviour
 {
+    private int pigClicks = 0;
+    public int minPigClicks;
     Vector2 speed = new Vector2();
     private void Start()
     {
@@ -12,10 +14,18 @@ public class PigMovement : MonoBehaviour
 
     }
 
-    // Update is called once per frame
     void Update()
     {
         gameObject.GetComponent<Rigidbody2D>().velocity = speed;
+    }
+
+    private void OnMouseDown()
+    {
+        pigClicks++;
+        if(pigClicks == minPigClicks)
+            GameManager.Instance.ChangeTrophyState("tuman", Trophy.TrophyState.UNLOCKED, true);
+        if (pigClicks < minPigClicks)
+            GameManager.Instance.ChangeTrophyState("tuman", Trophy.TrophyState.IN_PROGRESS);
     }
 
 
