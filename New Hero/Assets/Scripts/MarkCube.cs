@@ -144,7 +144,7 @@ public class MarkCube : MonoBehaviour
     void BulletAttack()
     {
         GameObject bullet = Instantiate(bulletPrefab, gameObject.transform.position, Quaternion.identity);
-        Destroy(bullet, 6f);
+        StartCoroutine("DestroyBullet", bullet);
     }
 
     void JumpAttack()
@@ -196,5 +196,16 @@ public class MarkCube : MonoBehaviour
         gameObject.SetActive(false);
         GameManager.Instance.ChangeTrophyState("marco", Trophy.TrophyState.UNLOCKED, true);
         SaveSystem.level = SaveData.Level.MARK_CUBE;
+    }
+
+    IEnumerator DestroyBullet(GameObject bullet)
+    {
+        yield return new WaitForSeconds(6);
+        if(bullet == null)
+        {
+            yield break;
+        }
+        bullet.GetComponent<Animator>().SetTrigger("Break");
+        Destroy(bullet, 1);
     }
 }
