@@ -10114,7 +10114,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8525522431320082270, guid: 6b8ac79c3bfbcca49a60682af3545b6d, type: 3}
       propertyPath: m_UiScaleMode
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8525522431320082271, guid: 6b8ac79c3bfbcca49a60682af3545b6d, type: 3}
       propertyPath: m_SortingOrder
