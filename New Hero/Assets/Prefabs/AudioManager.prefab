@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 757871960395066911}
   m_Layer: 0
   m_Name: AudioManager
-  m_TagString: Untagged
+  m_TagString: Audio_Manager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -64,5 +64,26 @@ MonoBehaviour:
     volume: 0.15
     pitch: 1
     loop: 1
+    source: {fileID: 0}
+    group: {fileID: 24300002, guid: 316b89ba037133043947831ba5eed12b, type: 2}
+  - name: Trophy_Collected
+    clip: {fileID: 8300000, guid: cd2c83214ebaafa438cad4b271cf29b7, type: 3}
+    volume: 0.041
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    group: {fileID: 24300002, guid: 316b89ba037133043947831ba5eed12b, type: 2}
+  - name: Hit
+    clip: {fileID: 8300000, guid: c46f00463f6206a4bbc8b16cdf7ab88b, type: 3}
+    volume: 0.041
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    group: {fileID: 24300002, guid: 316b89ba037133043947831ba5eed12b, type: 2}
+  - name: Lose
+    clip: {fileID: 8300000, guid: 09563860e8b248e4bbea7f8f27cd3080, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
     source: {fileID: 0}
     group: {fileID: 24300002, guid: 316b89ba037133043947831ba5eed12b, type: 2}

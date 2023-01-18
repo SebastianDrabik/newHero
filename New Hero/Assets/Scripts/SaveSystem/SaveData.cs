@@ -13,9 +13,10 @@ public class SaveData
     public Level level;
     public float[] position;
     public string currentScene;
+    public int health;
     readonly Dictionary<string, Trophy.TrophyState> trophies;
 
-    public SaveData(Level level, Vector3 position, string currentScene, Dictionary<string, Trophy.TrophyState> trophies)
+    public SaveData(Level level, Vector3 position, string currentScene, Dictionary<string, Trophy.TrophyState> trophies, int health)
     {
         this.level = level;
 
@@ -27,6 +28,8 @@ public class SaveData
         this.currentScene = currentScene;
 
         this.trophies = trophies;
+
+        this.health = health;
     }
 
     public Dictionary<string, Trophy.TrophyState> GetTrophies()

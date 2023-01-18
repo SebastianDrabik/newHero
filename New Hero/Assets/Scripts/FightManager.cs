@@ -42,8 +42,12 @@ public class FightManager : MonoBehaviour
             new Regex("\".*\"", RegexOptions.IgnoreCase | RegexOptions.Multiline),
             new Color32(0xe7, 0xf7, 0x00, 255)
         },
-        { //comment (todo oneline comments)
+        { //block comment 
             new Regex(@"/\*.*\*/", RegexOptions.IgnoreCase | RegexOptions.Multiline),
+            new Color32(0x23, 0x55, 0x30, 255)
+        },
+        { //comment 
+            new Regex(@"//.*$", RegexOptions.IgnoreCase | RegexOptions.Multiline),
             new Color32(0x23, 0x55, 0x30, 255)
         },
     };

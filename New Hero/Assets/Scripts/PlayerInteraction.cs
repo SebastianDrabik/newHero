@@ -1,48 +1,47 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System;
+using System.Collections;
 using TMPro;
 
 public class PlayerInteraction : MonoBehaviour
 {
     public GameObject image;
     public TextMeshProUGUI healthUI;
-    //public SaveGame saveGame;
-    int maxHealth = 31;
-
-    string[] tags = {"Elektryk", "Elektryk_Exit","Cube","Cube_Exit" };
-
-    private string currentTag="";
+    readonly int maxHealth = 31;
+    readonly string[] tags = {"Elektryk", "Elektryk_Exit","Cube","Cube_Exit" };
+    private string currentTag = "";
 
     public void DamagePlayer(int amount)
     {
-        int health = PlayerPrefs.GetInt("Player_Health");
+        int health = SaveSystem.health;
         health -= amount;
-        PlayerPrefs.SetInt("Player_Health", health);
+        SaveSystem.health = health;
         if (health <= 0)
         {
-            SaveGame.StartGame();
+            KillPlayer();
             return;
         }
         healthUI.text = Convert.ToString(health, 2).PadLeft(8, '0');
     }
 
+    private void KillPlayer()
+    {
+        //TODO: Death screen
+        SaveGame.StartGame();
+        SaveSystem.health = maxHealth;
+    }
+
     private void Start()
     {
-        if (!PlayerPrefs.HasKey("Player_Health"))
-        {
-            PlayerPrefs.SetInt("Player_Health", maxHealth);
-        }
-        if (PlayerPrefs.GetInt("Player_Health") <= 0)
-        {
-            PlayerPrefs.SetInt("Player_Health", maxHealth);
-        }
+        if (SaveSystem.health == 0) // dev purposes
+            SaveSystem.health = maxHealth;
 
-        healthUI.text = Convert.ToString(PlayerPrefs.GetInt("Player_Health"), 2).PadLeft(8, '0');
+        healthUI.text = Convert.ToString(SaveSystem.health, 2).PadLeft(8, '0');
 
         if (PlayerPrefs.HasKey("Interaction_x") && PlayerPrefs.HasKey("Interaction_y"))
         {
-            Vector2 position = new Vector2(PlayerPrefs.GetFloat("Interaction_x"), PlayerPrefs.GetFloat("Interaction_y"));
+            Vector2 position = new(PlayerPrefs.GetFloat("Interaction_x"), PlayerPrefs.GetFloat("Interaction_y"));
             gameObject.transform.SetPositionAndRotation(position, Quaternion.identity);
 
             PlayerPrefs.DeleteKey("Interaction_x");

@@ -28,6 +28,7 @@ public class GameManager : MonoBehaviour
             Transform canvasTransform = GameObject.FindGameObjectWithTag("Canvas").transform;
             GameObject popup = Instantiate(achievementNotification, canvasTransform);
             popup.GetComponent<TrophyUnlockedNotification>().Show(t);
+            GameObject.FindGameObjectWithTag("Audio_Manager").GetComponent<AudioManager>().PlayEffect("Trophy_Collected");
         }
     }
 

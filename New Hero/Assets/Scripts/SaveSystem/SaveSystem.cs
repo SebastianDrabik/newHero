@@ -6,7 +6,8 @@ using System.Runtime.Serialization.Formatters.Binary;
 public static class SaveSystem
 {
     public static SaveData.Level level;
-    private static string fileName = "saveData.dat";
+    public static int health;
+    private static readonly string fileName = "saveData.dat";
     public static string path = Application.persistentDataPath + "/" + fileName;
 
     public static void SaveData()
@@ -16,9 +17,9 @@ public static class SaveSystem
         // trophies
         GameManager gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
 
-        BinaryFormatter formatter = new BinaryFormatter();
-        FileStream fs = new FileStream(path, FileMode.Create);
-        SaveData save = new SaveData(level, position, SceneManager.GetActiveScene().name, ConvertTrophies(gameManager.trophies));
+        BinaryFormatter formatter = new();
+        FileStream fs = new(path, FileMode.Create);
+        SaveData save = new(level, position, SceneManager.GetActiveScene().name, ConvertTrophies(gameManager.trophies), health);
         formatter.Serialize(fs, save);
         fs.Close();
         Debug.Log("Successfully saved game");
@@ -27,24 +28,32 @@ public static class SaveSystem
     public static SaveData LoadData()
     {
         string path = Application.persistentDataPath + "/" + fileName;
-        if(!File.Exists(path))
+        if (!File.Exists(path))
         {
             Debug.LogWarning("Save file not found in " + path);
             return null;
         }
-
-        FileStream fs = new FileStream(path, FileMode.Open);
-        BinaryFormatter formatter = new BinaryFormatter();
+        FileStream fs = new(path, FileMode.Open);
+        BinaryFormatter formatter = new();
         SaveData save = formatter.Deserialize(fs) as SaveData;
+        if(save == null)
+        {
+            Debug.LogWarning("Save data is empty");
+            level = global::SaveData.Level.NEW_GAME;
+            health = 31;
+            return null;
+        }
         level = save.level;
+        health = save.health;
         fs.Close();
+
         return save;
     }
 
     private static Dictionary<string, Trophy.TrophyState> ConvertTrophies(List<Trophy> toConvert)
     {
         Dictionary<string, Trophy.TrophyState> finalDict = new();
-        foreach(var toConvertItem in toConvert)
+        foreach (var toConvertItem in toConvert)
         {
             finalDict.Add(toConvertItem.key, toConvertItem.state);
         }
