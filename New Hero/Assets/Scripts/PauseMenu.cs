@@ -5,10 +5,11 @@ using System.Collections;
 public class PauseMenu : MonoBehaviour
 {
     public GameObject savingInfo;
-
-    public static bool GameIsPaused = false;
+    public GameObject OSMenu;
     public GameObject pauseMenuUI;
     public GameObject trophies;
+    
+    public static bool GameIsPaused = false;
     private bool isDisabled = false;
     
     void Update()
@@ -33,6 +34,8 @@ public class PauseMenu : MonoBehaviour
             trophies.GetComponent<TrophiesManager>().Hide();
         else
         {
+            if(OSMenu.activeSelf)
+                HideOSMenu();
             pauseMenuUI.SetActive(false);
             Time.timeScale = 1f;
             DiscordManager.Instance.SetPlaying(DiscordManager.State.PLAYING);
@@ -80,5 +83,20 @@ public class PauseMenu : MonoBehaviour
         SaveSystem.SaveData();
         yield return new WaitForSecondsRealtime(2);
         savingInfo.SetActive(false);
+    }
+
+    public void ShowOSMenu()
+    {
+        OSMenu.SetActive(true);
+    }
+
+    public void HideOSMenu()
+    {
+        OSMenu.SetActive(false);
+    }
+
+    public void SwitchOSMenu()
+    {
+        OSMenu.SetActive(!OSMenu.activeSelf);
     }
 }
