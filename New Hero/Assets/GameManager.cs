@@ -6,11 +6,12 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
     public GameObject achievementNotification;
+    public TrophyList trophyList;
+    [HideInInspector]
     public List<Trophy> trophies;
 
     private void Awake()
     {
-        //Test
         EditorTheme.ReadFiles();
         if(Instance == null)
         {
@@ -19,6 +20,20 @@ public class GameManager : MonoBehaviour
         }
         else
             Destroy(this);
+    }
+
+    private void Start()
+    {
+        foreach (var item in trophyList.trophies)
+        {
+            Trophy nt = new();
+            nt.state = item.state;
+            nt.key = item.key;
+            nt.icon = item.icon;
+            nt.title = item.title;
+            nt.objective = item.objective;
+            trophies.Add(nt);
+        }
     }
 
     public void ChangeTrophyState(string key, Trophy.TrophyState trophyState, bool notification = false)

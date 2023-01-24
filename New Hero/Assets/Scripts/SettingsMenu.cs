@@ -3,20 +3,27 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
+using TMPro;
 
 public class SettingsMenu : MonoBehaviour
 {
     public AudioMixer audioMixer;
 
     public Slider slider;
-    public TMPro.TMP_Dropdown resolutionDropdown;
-    public TMPro.TMP_Dropdown editorThemeDropdown;
+    public TMP_Dropdown resolutionDropdown;
+    public TMP_Dropdown editorThemeDropdown;
 
     public Toggle toggle;
+
+    public TMP_Text gameVersion;
+    public CurrentGameVersion gameVersionSO;
 
     Resolution[] resolutions;
     private void Start()
     {
+        //game version
+        gameVersion.text = gameVersionSO.version;
+
         //resolutions
 
         resolutions = Screen.resolutions;
@@ -51,11 +58,8 @@ public class SettingsMenu : MonoBehaviour
             editorTheme = PlayerPrefs.GetString("editorTheme");
         int currentThemeIndex = 0;
         for (int i = 0; i < EditorTheme.themeNames.Count; i++)
-        {
-            Debug.Log(EditorTheme.themeNames[i]);
             if (editorTheme == EditorTheme.themeNames[i])
                 currentThemeIndex = i;
-        }
         editorThemeDropdown.AddOptions(EditorTheme.themeNames);
         editorThemeDropdown.value = currentThemeIndex;
         editorThemeDropdown.RefreshShownValue();

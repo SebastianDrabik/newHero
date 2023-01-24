@@ -45,14 +45,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   achievementNotification: {fileID: 3730285337951218019, guid: 28fd06c8dd7960749afd6043ffd38359, type: 3}
-  trophies:
-  - key: marco
-    state: 0
-    title: The Adventure Begins
-    objective: Defeat Marco Cube
-    icon: {fileID: 21300000, guid: 4c794218c983aa74686f5c3cfdde25f9, type: 3}
-  - key: tuman
-    state: 0
-    title: Tuman
-    objective: Which finger is this? How about this one?
-    icon: {fileID: 21300000, guid: f28d8ef6b72234e43b425562f95dc2e6, type: 3}
+  trophyList: {fileID: 11400000, guid: 1b2eeef3a88b04449b75f555a92b8942, type: 2}
+  trophies: []
