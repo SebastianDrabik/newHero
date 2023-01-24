@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        //Test
+        EditorTheme.ReadFiles();
         if(Instance == null)
         {
             DontDestroyOnLoad(this);

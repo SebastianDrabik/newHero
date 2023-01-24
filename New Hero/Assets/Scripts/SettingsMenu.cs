@@ -10,6 +10,7 @@ public class SettingsMenu : MonoBehaviour
 
     public Slider slider;
     public TMPro.TMP_Dropdown resolutionDropdown;
+    public TMPro.TMP_Dropdown editorThemeDropdown;
 
     public Toggle toggle;
 
@@ -42,6 +43,23 @@ public class SettingsMenu : MonoBehaviour
         resolutionDropdown.value = currentResolutionIndex;
         resolutionDropdown.RefreshShownValue();
 
+        //editor themes
+        editorThemeDropdown.ClearOptions();
+
+        string editorTheme = "Default";
+        if (PlayerPrefs.HasKey("editorTheme"))
+            editorTheme = PlayerPrefs.GetString("editorTheme");
+        int currentThemeIndex = 0;
+        for (int i = 0; i < EditorTheme.themeNames.Count; i++)
+        {
+            Debug.Log(EditorTheme.themeNames[i]);
+            if (editorTheme == EditorTheme.themeNames[i])
+                currentThemeIndex = i;
+        }
+        editorThemeDropdown.AddOptions(EditorTheme.themeNames);
+        editorThemeDropdown.value = currentThemeIndex;
+        editorThemeDropdown.RefreshShownValue();
+
         //slider
 
         float volume; 
@@ -57,6 +75,13 @@ public class SettingsMenu : MonoBehaviour
     {
         Resolution resolution = resolutions[index];
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
+    }
+
+    public void SetTheme(int index)
+    {
+        string newTheme = EditorTheme.themeNames[index];
+        PlayerPrefs.SetString("editorTheme", newTheme);
+        EditorTheme.currentTheme = EditorTheme.GetThemeByName(newTheme);
     }
 
     public void SetVolume(float volume)
