@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<theme-data>
+	<name>Default</name>
+	<background-color>#202020ff</background-color>
+	<highlights>
+		<rule>
+			<regex>[0-9]+</regex>
+			<color>#e2f000ff</color>
+		</rule>
+		<rule>
+			<regex>\".*\"</regex>
+			<color>#e7f700ff</color>
+		</rule>
+		<rule>
+			<regex>(int|void|char|using)</regex>
+			<color>#005bd1ff</color>
+		</rule>
+		<rule>
+			<regex>(namespace|main)</regex>
+			<color>#d17300</color>
+		</rule>
+		<rule>
+			<regex>(return|if|while|for|do)</regex>
+			<color>#ac7700ff</color>
+		</rule>
+		<rule>
+			<regex>(std|string)</regex>
+			<color>#50a579ff</color>
+		</rule>
+		<rule>
+			<regex>(\/\/.*)|(\/\*[\s\S]*?\*\/)</regex>
+			<color>#235530ff</color>
+		</rule>
+		<rule>
+			<regex>#include\s*&lt;.*&gt;</regex>
+			<color>#d17300ff</color>
+		</rule>
+	</highlights>
+</theme-data>

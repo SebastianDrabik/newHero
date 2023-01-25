@@ -1,6 +1,4 @@
-using System.Collections;
 using System.Collections.Generic;
-using System.IO;
 using System.Xml;
 using UnityEngine;
 using System.Text.RegularExpressions;
@@ -9,18 +7,18 @@ public class EditorTheme
     static readonly List<Theme> themes = new();
     public static List<string> themeNames = new();
     public static Theme currentTheme;
-    private static bool dataRead = false;
-    private static readonly string themePath = Application.dataPath + "/data/";
+    private static bool dataRead = false; 
+    private static readonly string themePath = "EditorThemes";
 
     public static void ReadFiles()
     {
         if (dataRead) return;
-        DirectoryInfo dir = new(themePath);
-        FileInfo[] info = dir.GetFiles("*.xml");
-        foreach (FileInfo f in info)
+        TextAsset[] themeList = Resources.LoadAll<TextAsset>(themePath);
+        foreach (TextAsset t in themeList)
         {
+            Debug.Log(t.name);
             XmlDocument doc = new();
-            doc.Load(f.FullName);
+            doc.LoadXml(t.text);
 
             XmlElement root = doc.DocumentElement;
             string name = root.SelectSingleNode("/theme-data/name").InnerText;
