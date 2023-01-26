@@ -17,3 +17,4 @@
 - Marco Cube Death Animation
 - Added achevement system basics
 - Added Code Editor themes
+- Added basic dialogue system
