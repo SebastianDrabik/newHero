@@ -9,7 +9,7 @@ public class PlayerInteraction : MonoBehaviour
     public GameObject image;
     public TextMeshProUGUI healthUI;
     readonly int maxHealth = 31;
-    readonly string[] tags = {"Elektryk", "Elektryk_Exit","Cube","Cube_Exit" };
+    readonly string[] tags = { "Elektryk", "Elektryk_Exit", "Cube", "Cube_Exit", "NPC" };
     private string currentTag = "";
 
     public void DamagePlayer(int amount)
@@ -56,7 +56,7 @@ public class PlayerInteraction : MonoBehaviour
     {
         bool exists = Array.Exists(tags, element => element == collision.gameObject.tag);
         if (exists)
-            if((collision.gameObject.tag == "Cube_Exit" && !MarkCube.Instance.isFighting) || collision.gameObject.tag != "Cube_Exit")
+            if ((collision.gameObject.tag == "Cube_Exit" && !MarkCube.Instance.isFighting) || collision.gameObject.tag != "Cube_Exit")
                 image.SetActive(true);
         currentTag = collision.gameObject.tag;
 
@@ -71,7 +71,7 @@ public class PlayerInteraction : MonoBehaviour
 
     void Update()
     {
-        if(currentTag == "Elektryk" && Input.GetKeyDown(KeyCode.E))
+        if (currentTag == "Elektryk" && Input.GetKeyDown(KeyCode.E))
         {
             Debug.Log("Entering Elektryk");
             PlayerPrefs.SetFloat("Interaction_x", 0f);
@@ -102,6 +102,10 @@ public class PlayerInteraction : MonoBehaviour
             PlayerPrefs.SetFloat("Interaction_y", 23.5f);
 
             SceneManager.LoadScene("Elektryk");
+        }
+        if (currentTag == "NPC" && Input.GetKeyDown(KeyCode.E))
+        {
+            Debug.Log("Talking with NPC");
         }
     }
 }
