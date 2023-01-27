@@ -17,7 +17,7 @@ public class MarkCube : MonoBehaviour
     public GameObject shadow;
     public Button runCode;
     public new Transform camera;
-    public GameObject canvas;
+    public PauseMenu canvas;
 
 
     private float abovePlayer = 10f;
@@ -52,7 +52,7 @@ public class MarkCube : MonoBehaviour
 
     private void Check()
     {
-        canvas.GetComponent<PauseMenu>().SetDisabled(false);
+        canvas.SetDisabled(false);
         if (codeEditor.GetComponent<FightManager>().CheckCode())
         {
             Debug.Log("Boss Pokonany");
@@ -72,8 +72,8 @@ public class MarkCube : MonoBehaviour
     private void Start()
     {
         timer = 3f;
-        canvas.GetComponent<PauseMenu>().SetDisabled(true);
-        Invoke("HideIntro", 3);
+        canvas.SetDisabled(true);
+        Invoke(nameof(HideIntro), 3);
         if (SaveSystem.level < SaveData.Level.MARK_CUBE)
             isFighting = true;
     }
@@ -81,7 +81,7 @@ public class MarkCube : MonoBehaviour
     void HideIntro()
     {
         Intro.SetActive(false);
-        canvas.GetComponent<PauseMenu>().SetDisabled(false);
+        canvas.SetDisabled(false);
     }
     private void Update()
     {

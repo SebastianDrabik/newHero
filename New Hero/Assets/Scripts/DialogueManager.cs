@@ -13,10 +13,14 @@ public class DialogueManager : MonoBehaviour
 
     public Animator animator;
     public PauseMenu pauseMenu;
+    public GameObject infoKey;
 
     private Queue<DialogueSentence> sentences;
 
     private PlayerMovement playerMovement;
+
+    private bool isTalking = false;
+    private bool isTyping = false;
 
     void Awake()
     {
@@ -37,10 +41,19 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(string key)
     {
+        if (isTalking) return;
+        isTalking = true;
+        infoKey.SetActive(false);
+
         playerMovement.SetMovementDisabled(true);
         pauseMenu.SetDisabled(true);
 
         Dialogue dialogue = DialogueList.Find(d => d.key == key);
+        if(dialogue == null)
+        {
+            Debug.LogWarning("Cannot find dialog with key: " + key);
+            return;
+        }
 
         animator.SetBool("IsOpen", true);
 
@@ -62,6 +75,7 @@ public class DialogueManager : MonoBehaviour
             EndDialogue();
             return;
         }
+        if(isTyping) return;
 
         var sentence = sentences.Dequeue();
         StopAllCoroutines();
@@ -70,6 +84,7 @@ public class DialogueManager : MonoBehaviour
 
     IEnumerator TypeSentence(string name, string sentence)
     {
+        isTyping = true;
         dialogueText.text = "";
         nameText.text = name;
         foreach (char letter in sentence.ToCharArray())
@@ -77,10 +92,12 @@ public class DialogueManager : MonoBehaviour
             dialogueText.text += letter;
             yield return null;
         }
+        isTyping = false;
     }
 
     void EndDialogue()
     {
+        isTalking = false;
         playerMovement.SetMovementDisabled(false);
         pauseMenu.SetDisabled(false);
         animator.SetBool("IsOpen", false);
