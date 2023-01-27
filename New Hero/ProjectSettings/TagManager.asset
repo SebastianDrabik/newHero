@@ -15,8 +15,8 @@ TagManager:
   - Attack_Menu
   - Canvas
   - Audio_Manager
-  - Canvas_Achievements
   - NPC
+  - Camera
   layers:
   - Default
   - TransparentFX

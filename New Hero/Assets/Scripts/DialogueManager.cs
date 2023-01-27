@@ -39,6 +39,12 @@ public class DialogueManager : MonoBehaviour
         sentences = new Queue<DialogueSentence>();
     }
 
+    void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Return))
+            DisplayNextSentence();
+    }
+
     public void StartDialogue(string key)
     {
         if (isTalking) return;
