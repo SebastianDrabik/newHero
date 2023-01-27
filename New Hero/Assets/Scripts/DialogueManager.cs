@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -15,10 +14,13 @@ public class DialogueManager : MonoBehaviour
 
     public Animator animator;
 
-    private Queue<string> sentences;
+    private Queue<DialogueSentence> sentences;
+
+    private PlayerMovement playerMovement;
 
     void Awake()
     {
+        playerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
         if(Instance == null)
         {
             Instance = this;
@@ -30,20 +32,23 @@ public class DialogueManager : MonoBehaviour
 
     void Start()
     {
-        sentences = new Queue<string>();
+        sentences = new Queue<DialogueSentence>();
     }
 
-    public void StartDialogue(int index)
+    public void StartDialogue(string key)
     {
-        animator.SetBool("IsOpen", true);
+        playerMovement.SetMovementDisabled(true);
 
-        nameText.text = DialogueList[index].name;
+        Dialogue dialogue = DialogueList.Find(d => d.key == key);
+
+        animator.SetBool("IsOpen", true);
 
         sentences.Clear();
 
-        foreach (var sentence in DialogueList[index].sentences)
+        foreach (var sentence in dialogue.sentences)
         {
-            sentences.Enqueue(sentence.sentence);
+            nameText.text = sentence.name;
+            sentences.Enqueue(sentence);
         }
 
         DisplayNextSentence();
@@ -57,14 +62,15 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
-        string sentence = sentences.Dequeue();
+        var sentence = sentences.Dequeue();
         StopAllCoroutines();
-        StartCoroutine(TypeSentence(sentence));
+        StartCoroutine(TypeSentence(sentence.name, sentence.sentence));
     }
 
-    IEnumerator TypeSentence(string sentence)
+    IEnumerator TypeSentence(string name, string sentence)
     {
         dialogueText.text = "";
+        nameText.text = name;
         foreach (char letter in sentence.ToCharArray())
         {
             dialogueText.text += letter;
@@ -74,6 +80,7 @@ public class DialogueManager : MonoBehaviour
 
     void EndDialogue()
     {
+        playerMovement.SetMovementDisabled(false);
         animator.SetBool("IsOpen", false);
     }
 }

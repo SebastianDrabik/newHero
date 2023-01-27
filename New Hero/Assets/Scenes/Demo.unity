@@ -245,7 +245,6 @@ GameObject:
   - component: {fileID: 57714297}
   - component: {fileID: 57714296}
   - component: {fileID: 57714298}
-  - component: {fileID: 57714299}
   - component: {fileID: 57714301}
   m_Layer: 0
   m_Name: NPC
@@ -347,20 +346,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5.12, y: 10.24}
   m_EdgeRadius: 0
---- !u!114 &57714299
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 57714295}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a63eec731775fc24f8c0f3f03e631db8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue:
-    name: 
 --- !u!61 &57714301
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -141447,7 +141432,7 @@ GameObject:
   - component: {fileID: 1364304642}
   - component: {fileID: 1364304641}
   m_Layer: 5
-  m_Name: Name
+  m_Name: NPCName
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -141599,6 +141584,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1db883248478314c9bdf0fc2450eb4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DialogueList:
+  - {fileID: 11400000, guid: 428473a5797bd7c43810ee4698843cee, type: 2}
   nameText: {fileID: 1364304641}
   dialogueText: {fileID: 668221471}
   animator: {fileID: 943343654}

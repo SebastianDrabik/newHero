@@ -9,10 +9,11 @@ public class PlayerMovement : MonoBehaviour
     public Animator animator;
     public SpriteRenderer spriteRenderer;
 
-    // Update is called once per frame
+    private bool movementDisabled = false;
+
     void Update()
     {
-        if (PauseMenu.GameIsPaused)
+        if (PauseMenu.GameIsPaused || movementDisabled)
         {
             return;
         }
@@ -68,5 +69,10 @@ public class PlayerMovement : MonoBehaviour
 
         //transform.Translate(horizontal * speed, vertical * speed, 0);
         gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(horizontal * speed, vertical * speed);
+    }
+
+    public void SetMovementDisabled(bool newState)
+    {
+        movementDisabled = newState;
     }
 }

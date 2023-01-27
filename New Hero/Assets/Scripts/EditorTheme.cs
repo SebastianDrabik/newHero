@@ -16,7 +16,6 @@ public class EditorTheme
         TextAsset[] themeList = Resources.LoadAll<TextAsset>(themePath);
         foreach (TextAsset t in themeList)
         {
-            Debug.Log(t.name);
             XmlDocument doc = new();
             doc.LoadXml(t.text);
 
