@@ -105,7 +105,7 @@ public class PlayerInteraction : MonoBehaviour
         }
         if (currentTag == "NPC" && Input.GetKeyDown(KeyCode.E))
         {
-            Debug.Log("Talking with NPC");
+            DialogueManager.Instance.StartDialogue(0);
         }
     }
 }

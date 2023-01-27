@@ -6,6 +6,10 @@ using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
+    public static DialogueManager Instance;
+
+    public List<Dialogue> DialogueList;
+
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI dialogueText;
 
@@ -13,22 +17,33 @@ public class DialogueManager : MonoBehaviour
 
     private Queue<string> sentences;
 
+    void Awake()
+    {
+        if(Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+            Destroy(gameObject);
+    }
+
     void Start()
     {
         sentences = new Queue<string>();
     }
 
-    public void StartDialogue(Dialogue dialogue)
+    public void StartDialogue(int index)
     {
         animator.SetBool("IsOpen", true);
 
-        nameText.text = dialogue.name;
+        nameText.text = DialogueList[index].name;
 
         sentences.Clear();
 
-        foreach (string sentence in dialogue.sentences)
+        foreach (var sentence in DialogueList[index].sentences)
         {
-            sentences.Enqueue(sentence);
+            sentences.Enqueue(sentence.sentence);
         }
 
         DisplayNextSentence();
