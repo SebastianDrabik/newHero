@@ -6,13 +6,13 @@ using UnityEngine;
 public class DialogueManager : MonoBehaviour
 {
     public static DialogueManager Instance;
-
     public List<Dialogue> DialogueList;
 
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI dialogueText;
 
     public Animator animator;
+    public PauseMenu pauseMenu;
 
     private Queue<DialogueSentence> sentences;
 
@@ -38,6 +38,7 @@ public class DialogueManager : MonoBehaviour
     public void StartDialogue(string key)
     {
         playerMovement.SetMovementDisabled(true);
+        pauseMenu.SetDisabled(true);
 
         Dialogue dialogue = DialogueList.Find(d => d.key == key);
 
@@ -81,6 +82,7 @@ public class DialogueManager : MonoBehaviour
     void EndDialogue()
     {
         playerMovement.SetMovementDisabled(false);
+        pauseMenu.SetDisabled(false);
         animator.SetBool("IsOpen", false);
     }
 }

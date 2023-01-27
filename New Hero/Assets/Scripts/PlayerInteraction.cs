@@ -34,7 +34,7 @@ public class PlayerInteraction : MonoBehaviour
 
     private void Start()
     {
-        if (SaveSystem.health == 0) // dev purposes
+        if (SaveSystem.health == 0)
             SaveSystem.health = maxHealth;
 
         healthUI.text = Convert.ToString(SaveSystem.health, 2).PadLeft(8, '0');

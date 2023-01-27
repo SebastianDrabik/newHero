@@ -63,16 +63,14 @@ public class PlayerMovement : MonoBehaviour
         {
             speed = 2;
         }
-
-        //vertical *= Time.deltaTime;
-        //horizontal *= Time.deltaTime;
-
-        //transform.Translate(horizontal * speed, vertical * speed, 0);
         gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(horizontal * speed, vertical * speed);
     }
 
     public void SetMovementDisabled(bool newState)
     {
         movementDisabled = newState;
+        animator.SetFloat("Vertical", 0);
+        animator.SetFloat("Horizontal", 0);
+        animator.SetBool("Moving", false);
     }
 }
