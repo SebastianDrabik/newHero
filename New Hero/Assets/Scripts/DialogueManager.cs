@@ -14,9 +14,9 @@ public class DialogueManager : MonoBehaviour
     public Animator animator;
     public PauseMenu pauseMenu;
     public GameObject infoKey;
+    public float dialogueSpeed;
 
     private Queue<DialogueSentence> sentences;
-
     private PlayerMovement playerMovement;
 
     private bool isTalking = false;
@@ -24,7 +24,6 @@ public class DialogueManager : MonoBehaviour
 
     void Awake()
     {
-        playerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
         if(Instance == null)
         {
             Instance = this;
@@ -36,6 +35,7 @@ public class DialogueManager : MonoBehaviour
 
     void Start()
     {
+        playerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
         sentences = new Queue<DialogueSentence>();
     }
 
@@ -47,7 +47,7 @@ public class DialogueManager : MonoBehaviour
 
         playerMovement.SetMovementDisabled(true);
         pauseMenu.SetDisabled(true);
-
+        
         Dialogue dialogue = DialogueList.Find(d => d.key == key);
         if(dialogue == null)
         {
@@ -70,12 +70,12 @@ public class DialogueManager : MonoBehaviour
 
     public void DisplayNextSentence()
     {
+        if(isTyping) return;
         if (sentences.Count == 0)
         {
             EndDialogue();
             return;
         }
-        if(isTyping) return;
 
         var sentence = sentences.Dequeue();
         StopAllCoroutines();
@@ -90,7 +90,7 @@ public class DialogueManager : MonoBehaviour
         foreach (char letter in sentence.ToCharArray())
         {
             dialogueText.text += letter;
-            yield return null;
+            yield return new WaitForSeconds(dialogueSpeed);
         }
         isTyping = false;
     }

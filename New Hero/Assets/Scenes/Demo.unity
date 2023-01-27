@@ -130895,7 +130895,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 249.8, y: -43.8}
+  m_AnchoredPosition: {x: 262, y: -61}
   m_SizeDelta: {x: 152.5499, y: 44.1572}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &373646943
@@ -132696,7 +132696,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000019908, y: -253}
+  m_AnchoredPosition: {x: 1.9908, y: -253}
   m_SizeDelta: {x: 768, y: 256}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &943343652
@@ -141602,6 +141602,7 @@ MonoBehaviour:
   animator: {fileID: 943343654}
   pauseMenu: {fileID: 541376124}
   infoKey: {fileID: 1434773479}
+  dialogueSpeed: 0.03
 --- !u!4 &1381126951
 Transform:
   m_ObjectHideFlags: 0
