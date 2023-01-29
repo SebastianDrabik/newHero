@@ -9,7 +9,7 @@ public class PlayerInteraction : MonoBehaviour
     public GameObject image;
     public TextMeshProUGUI healthUI;
     readonly int maxHealth = 31;
-    readonly string[] tags = { "Elektryk", "Elektryk_Exit", "Cube", "Cube_Exit", "NPC" };
+    readonly string[] tags = { "Elektryk", "Elektryk_Exit", "Cube", "Cube_Exit","Cave","Cave_Exit", "NPC" };
     private string currentTag = "";
 
     public void DamagePlayer(int amount)
@@ -103,6 +103,24 @@ public class PlayerInteraction : MonoBehaviour
 
             SceneManager.LoadScene("Elektryk");
         }
+
+        if (currentTag == "Cave" && Input.GetKeyDown(KeyCode.E))
+        {
+            Debug.Log("Entering Cave");
+            PlayerPrefs.SetFloat("Interaction_x", -0.5f);
+            PlayerPrefs.SetFloat("Interaction_y", 0f);
+
+            SceneManager.LoadScene("Boss_Cave");
+        }
+        if (currentTag == "Cave_Exit" && Input.GetKeyDown(KeyCode.E))
+        {
+            Debug.Log("Exiting Cave");
+            PlayerPrefs.SetFloat("Interaction_x", 139f);
+            PlayerPrefs.SetFloat("Interaction_y", 25f);
+
+            SceneManager.LoadScene("Demo");
+        }
+
         if (currentTag == "NPC" && Input.GetKeyDown(KeyCode.E))
         {
             DialogueManager.Instance.StartDialogue("nft_trader");
