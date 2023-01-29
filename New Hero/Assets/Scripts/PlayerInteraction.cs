@@ -123,7 +123,7 @@ public class PlayerInteraction : MonoBehaviour
 
         if (currentTag == "NPC" && Input.GetKeyDown(KeyCode.E))
         {
-            DialogueManager.Instance.StartDialogue("nft_trader");
+            DialogueManager.Instance.StartDialogue();
         }
     }
 }

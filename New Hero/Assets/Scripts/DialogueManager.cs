@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class DialogueManager : MonoBehaviour
 {
+    public static string currentNPC;
+
     public static DialogueManager Instance;
     public List<Dialogue> DialogueList;
 
@@ -45,7 +47,7 @@ public class DialogueManager : MonoBehaviour
             DisplayNextSentence();
     }
 
-    public void StartDialogue(string key)
+    public void StartDialogue(string key = "")
     {
         if (isTalking) return;
         isTalking = true;
@@ -53,9 +55,13 @@ public class DialogueManager : MonoBehaviour
 
         playerMovement.SetMovementDisabled(true);
         pauseMenu.SetDisabled(true);
-        
-        Dialogue dialogue = DialogueList.Find(d => d.key == key);
-        if(dialogue == null)
+
+        Dialogue dialogue;
+        if(key.Length > 0)
+            dialogue = DialogueList.Find(d => d.key.ToLower() == key.ToLower());
+        else
+            dialogue = DialogueList.Find(d => d.key.ToLower() == currentNPC);
+        if (dialogue == null)
         {
             Debug.LogWarning("Cannot find dialog with key: " + key);
             return;
