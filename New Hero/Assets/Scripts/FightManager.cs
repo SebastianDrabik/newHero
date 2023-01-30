@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Collections;
 using System.Text.RegularExpressions;
 using UnityEngine;
 using UnityEngine.UI;
@@ -20,7 +19,6 @@ public class FightManager : MonoBehaviour
     public TextMeshProUGUI codeInput_text;
     [Header("Workspace gameobject")]
     public Image Workspace;
-    private string correctCode;
 
     void Awake()
     {
@@ -28,20 +26,14 @@ public class FightManager : MonoBehaviour
             Instance = this;
     }
 
-    public void OpenCodeEditor(string top, string bottom, string correctCode, string defaultCode = "")
+    public void OpenCodeEditor(string top, string bottom, string defaultCode = "")
     {
         gameObject.SetActive(true);
-        this.correctCode = correctCode;
         this.top.text = top;
         this.bottom.text = bottom;
         codeInput_text.text = defaultCode;
         Workspace.color = EditorTheme.currentTheme.background;
         codeInput.Select();
-    }
-
-    public void RunCode()
-    {
-        Debug.Log(RemoveAllSpaces(this.codeInput.text) == RemoveAllSpaces(this.correctCode));
     }
 
     private void Update()
@@ -50,22 +42,24 @@ public class FightManager : MonoBehaviour
         HighlightSyntax(bottom);
         HighlightSyntax(codeInput_text);
     }
+    
     public bool CheckCode()
     {
-        return RemoveAllSpaces(this.codeInput.text.Trim()) == RemoveAllSpaces(this.correctCode.Trim());
+        Code code = new(top.text  + codeInput.text + bottom.text, new Dictionary<string, string>()
+        {
+            { "4", "1" },
+            { "5", "0" },
+        });
+        
+
+        return code.CheckOutputs();
     }
     public void CloseCodeEditor()
     {
         gameObject.SetActive(false);
         codeInput.text = "";
     }
-    private string RemoveAllSpaces(string s)
-    {
-        string result = "";
-        for (int i = 0; i < s.Length; i++)
-            if (s[i] != ' ' && s[i] != '\n' && s[i] != '\t' && s[i] != '\r') result += s[i];
-        return result;
-    }
+
     private void HighlightSyntax(TextMeshProUGUI text)
     {
         if (text == null || text.text.Length == 0) return;

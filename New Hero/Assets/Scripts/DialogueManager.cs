@@ -43,7 +43,7 @@ public class DialogueManager : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Return))
+        if(Input.anyKey && isTalking)
             DisplayNextSentence();
     }
 

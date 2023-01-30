@@ -31,11 +31,11 @@ public class MarkCube : MonoBehaviour
     [HideInInspector]
     public bool isFighting = false;
 
+    [TextArea(3,10)]
     public string[] code =
     {
         "#include<iostream>\n\nusing namespace std;\n\nint main(){\n\tint health = 4;\n\t/*check if health equals 4 and if it does, return 0*/",
         "if(health==4){return 0;}",
-        "\treturn 0;\n}"
     };
 
     private void Awake()
@@ -150,7 +150,7 @@ public class MarkCube : MonoBehaviour
     void JumpAttack()
     {
         Time.timeScale = 0f;
-        codeEditor.GetComponent<FightManager>().OpenCodeEditor(code[0],code[2],code[1]);
+        codeEditor.GetComponent<FightManager>().OpenCodeEditor(code[0],code[1]);
         canvas.GetComponent<PauseMenu>().SetDisabled(true);
         isAttacking = false;
         stage = -1;
