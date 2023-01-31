@@ -16,6 +16,8 @@ public class SettingsMenu : MonoBehaviour
     public Toggle toggle;
 
     public TMP_Text gameVersion;
+    public TMP_Text gameNote;
+
     public CurrentGameVersion gameVersionSO;
 
     Resolution[] resolutions;
@@ -23,7 +25,7 @@ public class SettingsMenu : MonoBehaviour
     {
         //game version
         gameVersion.text = gameVersionSO.version;
-
+        gameNote.text = gameVersionSO.versionNote;
         //resolutions
 
         resolutions = Screen.resolutions;
