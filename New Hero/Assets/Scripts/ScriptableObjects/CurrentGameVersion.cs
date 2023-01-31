@@ -6,4 +6,6 @@ using UnityEngine;
 public class CurrentGameVersion : ScriptableObject
 {
     public string version;
+    public string versionName;
+    public string versionNote;
 }

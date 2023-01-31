@@ -28,6 +28,7 @@ public class DialogueManager : MonoBehaviour
     {
         if(Instance == null)
         {
+            LoadAllDialogues();
             Instance = this;
             DontDestroyOnLoad(gameObject);
         }
@@ -113,5 +114,12 @@ public class DialogueManager : MonoBehaviour
         playerMovement.SetMovementDisabled(false);
         pauseMenu.SetDisabled(false);
         animator.SetBool("IsOpen", false);
+    }
+
+    private void LoadAllDialogues()
+    {
+        Dialogue[] tempDialogue = Resources.LoadAll<Dialogue>("Dialogues");
+        foreach (Dialogue dialogue in tempDialogue)
+            DialogueList.Add(dialogue);
     }
 }

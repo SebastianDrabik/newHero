@@ -562,7 +562,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9011324893473386927, guid: 7cbf8c71a04f54e39a687c02876cf775, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 296.67
+      value: 244.19
       objectReference: {fileID: 0}
     - target: {fileID: 9011324893617533232, guid: 7cbf8c71a04f54e39a687c02876cf775, type: 3}
       propertyPath: m_Sprite
@@ -1609,7 +1609,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 671.97156, y: -257.305}
+  m_AnchoredPosition: {x: 671.97156, y: -204.82501}
   m_SizeDelta: {x: 1335.9431, y: 78.73}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &342753543
@@ -6853,8 +6853,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 671.97156, y: -99.845}
-  m_SizeDelta: {x: 1335.9431, y: 183.69}
+  m_AnchoredPosition: {x: 671.97156, y: -73.605}
+  m_SizeDelta: {x: 1335.9431, y: 131.21}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1172992692
 MonoBehaviour:
@@ -6879,15 +6879,11 @@ MonoBehaviour:
   m_text: '#include<iostream>
 
 
-    /*if you see this, it means that something didn''t
-    work as it should*/
-
-
     using namespace std;
 
 
-    int main(int argc, char
-    *argv[]) {
+    int main(int argc,
+    char *argv[]) {
 
 '
   m_isRightToLeft: 0
@@ -9654,7 +9650,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 671.97156, y: -204.815}
+  m_AnchoredPosition: {x: 671.97156, y: -152.335}
   m_SizeDelta: {x: 1335.9431, y: 26.25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1772216951
