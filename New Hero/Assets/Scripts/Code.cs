@@ -3,6 +3,7 @@ using System.IO;
 using System.Diagnostics;
 using UnityEngine;
 using System.Collections.Generic;
+using System.Collections;
 
 [Serializable]
 public class Code
@@ -55,6 +56,7 @@ public class Code
 
     private void Compile()
     {
+        ClearDirectory();
         CreateFile();
         UnityEngine.Debug.Log(compilerPath + "-o \"" + outputFilePath + "\" " + "\"" + inputFilePath + "\"");
         var process = new Process
@@ -109,13 +111,14 @@ public class Code
                     RedirectStandardOutput = true,
                     RedirectStandardError = true,
                     UseShellExecute = false,
-                    CreateNoWindow = true
+                    CreateNoWindow = false
                 }
             };
+
             process.Start();
 
             string processOutput = process.StandardOutput.ReadToEnd();
-            UnityEngine.Debug.Log(process.ExitCode);
+            
             if (process.ExitCode.ToString() == output)
                 result = true;
             else
@@ -124,7 +127,7 @@ public class Code
                 break;
             }
         }
-        UnityEngine.Debug.Log("<color=yellow>Code result: " + result + "</color>");
+        UnityEngine.Debug.Log($"<color=yellow>Code result: {result} </color>");
 
         ClearDirectory();
 

@@ -18,6 +18,12 @@ public class Editor : UnityEditor.Editor
         SaveGame.StartGame();
     }
 
+    [MenuItem("Dev/Skip Marco Cube Fight")]
+    static void SkipFight()
+    {
+        MarkCube.Instance.JumpAttack();
+    }
+
     //[MenuItem("Dev/Edit Trophies")]
     //static void Edit()
     //{

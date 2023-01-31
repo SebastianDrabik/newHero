@@ -16,7 +16,7 @@ public class MarkCube : MonoBehaviour
     public GameObject codeEditor;
     public GameObject shadow;
     public Button runCode;
-    public new Transform camera;
+    public Transform camera;
     public PauseMenu canvas;
 
 
@@ -31,12 +31,6 @@ public class MarkCube : MonoBehaviour
     [HideInInspector]
     public bool isFighting = false;
 
-    [TextArea(3,10)]
-    public string[] code =
-    {
-        "#include<iostream>\n\nusing namespace std;\n\nint main(){\n\tint health = 4;\n\t/*check if health equals 4 and if it does, return 0*/",
-        "if(health==4){return 0;}",
-    };
 
     private void Awake()
     {
@@ -147,10 +141,10 @@ public class MarkCube : MonoBehaviour
         StartCoroutine("DestroyBullet", bullet);
     }
 
-    void JumpAttack()
+    public void JumpAttack()
     {
         Time.timeScale = 0f;
-        codeEditor.GetComponent<FightManager>().OpenCodeEditor(code[0],code[1]);
+        codeEditor.GetComponent<FightManager>().OpenCodeEditor("marco");
         canvas.GetComponent<PauseMenu>().SetDisabled(true);
         isAttacking = false;
         stage = -1;
