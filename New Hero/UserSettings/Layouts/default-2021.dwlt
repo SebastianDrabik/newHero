@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1536
     height: 772.8
   m_ShowMode: 4
-  m_Title: Inspector
+  m_Title: Project
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 471}
   m_MaxSize: {x: 10000, y: 10000}
@@ -890,9 +890,9 @@ MonoBehaviour:
       e32: 0
       e33: 1
   m_PreviewAnimator: {fileID: 0}
-  m_AnimatorController: {fileID: 9100000, guid: a227d86f6830c16438e85a85e589fb67, type: 2}
+  m_AnimatorController: {fileID: 9100000, guid: f443cb26da2e5e24f843b56053be3a9f, type: 2}
   m_BreadCrumbs:
-  - m_Target: {fileID: 6251234070934078289, guid: a227d86f6830c16438e85a85e589fb67, type: 2}
+  - m_Target: {fileID: 2567829034872772402, guid: f443cb26da2e5e24f843b56053be3a9f, type: 2}
     m_ScrollPosition: {x: 0, y: 0}
   stateMachineGraph: {fileID: 0}
   stateMachineGraphGUI: {fileID: 0}
@@ -987,22 +987,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/ScriptableObjectData
+    - Assets/Resources/CodeData
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 75
   m_LastFolders:
-  - Assets/ScriptableObjectData
+  - Assets/Resources/CodeData
   m_LastFoldersGridSize: 75
   m_LastProjectPath: C:\Programowanie\New_Hero\New Hero
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 159}
-    m_SelectedIDs: dc640000
-    m_LastClickedID: 25820
-    m_ExpandedIDs: 000000008a6400008c6400008e64000090640000926400009464000096640000986400009a6400009c6400009e640000a0640000a2640000a4640000d864000000ca9a3b
+    scrollPos: {x: 0, y: 94}
+    m_SelectedIDs: 5e6b0000
+    m_LastClickedID: 27486
+    m_ExpandedIDs: 000000006c650000c673000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1144,4 +1144,4 @@ MonoBehaviour:
     m_SaveData: []
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 22178
+  m_LastSelectedObjectID: 22166

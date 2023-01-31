@@ -20,20 +20,31 @@ public class FightManager : MonoBehaviour
     [Header("Workspace gameobject")]
     public Image Workspace;
 
+    private List<CodeData> codeList = new();
+    private string currentKey;
+
     void Awake()
     {
+        LoadAllCodes();
         if (Instance == null)
             Instance = this;
     }
 
-    public void OpenCodeEditor(string top, string bottom, string defaultCode = "")
+    void Start()
     {
+        gameObject.SetActive(false);
+    }
+
+    public void OpenCodeEditor(string key)
+    {
+        CodeData code = GetCode(key);
         gameObject.SetActive(true);
-        this.top.text = top;
-        this.bottom.text = bottom;
-        codeInput_text.text = defaultCode;
+        this.top.text = code.topCode;
+        this.bottom.text = code.bottomCode;
+        codeInput_text.text = code.initialCode;
         Workspace.color = EditorTheme.currentTheme.background;
         codeInput.Select();
+        currentKey = key;
     }
 
     private void Update()
@@ -43,15 +54,16 @@ public class FightManager : MonoBehaviour
         HighlightSyntax(codeInput_text);
     }
     
+    private CodeData GetCode(string key)
+    {
+        return codeList.Find(code => code.key == key);
+    }
+
     public bool CheckCode()
     {
-        Code code = new(top.text  + codeInput.text + bottom.text, new Dictionary<string, string>()
-        {
-            { "4", "1" },
-            { "5", "0" },
-        });
-        
-
+        CodeData cd = GetCode(currentKey);
+        //.Replace("\U0000200b", "")
+        Code code = new(top.text + "\n" + codeInput.text + "\n" + bottom.text, cd.GetData());
         return code.CheckOutputs();
     }
     public void CloseCodeEditor()
@@ -88,5 +100,12 @@ public class FightManager : MonoBehaviour
             }
         }
         text.UpdateVertexData(TMP_VertexDataUpdateFlags.All);
+    }
+
+    private void LoadAllCodes()
+    {
+        CodeData[] datas = Resources.LoadAll<CodeData>("CodeData");
+        foreach (var data in datas)
+            codeList.Add(data);
     }
 }

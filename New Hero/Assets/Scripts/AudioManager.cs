@@ -62,7 +62,7 @@ public class AudioManager : MonoBehaviour
         //}
 
 
-        Debug.Log(IsPlaying("MainTheme"));
+        //Debug.Log(IsPlaying("MainTheme"));
         if (currentScene != "MarkCube_Boss" && !IsPlaying("MainTheme"))
         {
             StopAll();
