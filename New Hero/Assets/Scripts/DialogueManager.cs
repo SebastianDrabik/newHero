@@ -27,13 +27,8 @@ public class DialogueManager : MonoBehaviour
     void Awake()
     {
         if(Instance == null)
-        {
-            LoadAllDialogues();
             Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-            Destroy(gameObject);
+        LoadAllDialogues();
     }
 
     void Start()
