@@ -7,8 +7,7 @@ public static class SaveSystem
 {
     public static SaveData.Level level;
     public static int health;
-    private static readonly string fileName = "saveData.dat";
-    public static string path = Application.persistentDataPath + "/" + fileName;
+    public static string path;
 
     public static void SaveData()
     {
@@ -25,9 +24,9 @@ public static class SaveSystem
         Debug.Log("Successfully saved game");
     }
 
-    public static SaveData LoadData()
+    public static SaveData LoadData(string savePath)
     {
-        string path = Application.persistentDataPath + "/" + fileName;
+        path = savePath;
         if (!File.Exists(path))
         {
             Debug.LogWarning("Save file not found in " + path);

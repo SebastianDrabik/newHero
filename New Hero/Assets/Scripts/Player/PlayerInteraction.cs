@@ -28,7 +28,7 @@ public class PlayerInteraction : MonoBehaviour
     private void KillPlayer()
     {
         //TODO: Death screen
-        SaveGame.StartGame();
+        SaveGame.RestartGame();
         SaveSystem.health = maxHealth;
     }
 

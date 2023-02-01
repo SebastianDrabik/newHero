@@ -1,22 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using UnityEditor;
 using System.IO;
 
 public class Editor : UnityEditor.Editor
 {
-    [MenuItem("Dev/Clear Save")]
-    static void ClearSave()
-    {
-        File.Delete(SaveSystem.path);
-    }
+    //[MenuItem("Dev/Clear Save")]
+    //static void ClearSave()
+    //{
+    //    File.Delete(SaveSystem.path);
+    //}
 
-    [MenuItem("Dev/Load Save")]
-    static void LoadSave()
-    {
-        SaveGame.StartGame();
-    }
+    //[MenuItem("Dev/Load Save")]
+    //static void LoadSave()
+    //{
+    //    SaveGame.StartGame();
+    //}
 
     [MenuItem("Dev/Skip Marco Cube Fight")]
     static void SkipFight()

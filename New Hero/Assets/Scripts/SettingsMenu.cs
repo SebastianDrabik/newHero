@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
@@ -23,9 +22,9 @@ public class SettingsMenu : MonoBehaviour
     Resolution[] resolutions;
     private void Start()
     {
-        //game version
         gameVersion.text = gameVersionSO.version;
         gameNote.text = gameVersionSO.versionNote;
+
         //resolutions
 
         resolutions = Screen.resolutions;
@@ -68,8 +67,7 @@ public class SettingsMenu : MonoBehaviour
 
         //slider
 
-        float volume; 
-        audioMixer.GetFloat("volume",out volume);
+        audioMixer.GetFloat("volume",out float volume);
 
         slider.value = volume;
 

@@ -2,9 +2,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class SaveGame : MonoBehaviour
 {
-    public static void StartGame()
+    public static void StartGame(string name)
     {
-        SaveData save = SaveSystem.LoadData();
+        SaveData save = SaveSystem.LoadData(name);
         GameObject player = GameObject.FindWithTag("Player");
         if (save == null || save.currentScene == null)
         {
@@ -25,5 +25,10 @@ public class SaveGame : MonoBehaviour
         }
 
         Debug.Log("Save data successfully loaded.");
+    }
+
+    public static void RestartGame()
+    {
+        Debug.Log("F, noob");
     }
 }
