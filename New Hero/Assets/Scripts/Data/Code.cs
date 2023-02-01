@@ -3,7 +3,8 @@ using System.IO;
 using System.Diagnostics;
 using UnityEngine;
 using System.Collections.Generic;
-using System.Collections;
+using System.Threading.Tasks;
+using System.Linq;
 
 [Serializable]
 public class Code
@@ -87,7 +88,7 @@ public class Code
         }
     }
 
-    public bool CheckOutputs()
+    public bool CheckOutputs(Animator animator)
     {
         Compile();
         if (!File.Exists(outputFilePath))
@@ -96,39 +97,43 @@ public class Code
             return false;
         }   
         bool result = false;
-
+        animator.SetBool("Spin", true);
+        var tasks = new List<Task<bool>>();
         foreach (var item in outputs)
         {
             string input = item.Key,
                 output = item.Value;
 
-            var process = new Process
+            tasks.Add(Task.Factory.StartNew(() =>
             {
-                StartInfo = new ProcessStartInfo
+                var process = new Process
                 {
-                    FileName = outputFilePath,
-                    Arguments = input,
-                    RedirectStandardOutput = true,
-                    RedirectStandardError = true,
-                    UseShellExecute = false,
-                    CreateNoWindow = true
-                }
-            };
+                    StartInfo = new ProcessStartInfo
+                    {
+                        FileName = outputFilePath,
+                        Arguments = input,
+                        RedirectStandardOutput = true,
+                        RedirectStandardError = true,
+                        UseShellExecute = false,
+                        CreateNoWindow = true
+                    }
+                };
 
-            process.Start();
+                process.Start();
 
-            string processOutput = process.StandardOutput.ReadToEnd();
-            
-            if (process.ExitCode.ToString() == output)
-                result = true;
-            else
-            {
-                result = false;
-                break;
-            }
+                string processOutput = process.StandardOutput.ReadToEnd();
+
+                return process.ExitCode.ToString() == output;
+            }));
         }
-        UnityEngine.Debug.Log($"<color=yellow>Code result: {result} </color>");
 
+        Task.WaitAll(tasks.ToArray());
+
+        result = tasks.All(x => x.Result);
+        //Task.WhenAll(tasks);
+        UnityEngine.Debug.Log(result);
+        UnityEngine.Debug.Log($"<color=yellow>Code result: {result} </color>");
+        animator.SetBool("Spin", false);
         ClearDirectory();
 
         return result;

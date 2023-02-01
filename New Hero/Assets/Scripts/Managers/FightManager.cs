@@ -19,6 +19,7 @@ public class FightManager : MonoBehaviour
     public TextMeshProUGUI codeInput_text;
     [Header("Workspace gameobject")]
     public Image Workspace;
+    public Animator runButtonAnimator;
 
     private List<CodeData> codeList = new();
     private string currentKey;
@@ -62,9 +63,8 @@ public class FightManager : MonoBehaviour
     public bool CheckCode()
     {
         CodeData cd = GetCode(currentKey);
-        //.Replace("\U0000200b", "")
         Code code = new(top.text + "\n" + codeInput.text + "\n" + bottom.text, cd.GetData());
-        return code.CheckOutputs();
+        return code.CheckOutputs(runButtonAnimator);
     }
     public void CloseCodeEditor()
     {
