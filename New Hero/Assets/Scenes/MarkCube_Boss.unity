@@ -696,6 +696,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9011324894311177427, guid: 7cbf8c71a04f54e39a687c02876cf775, type: 3}
+      propertyPath: m_MovementType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9011324894311177427, guid: 7cbf8c71a04f54e39a687c02876cf775, type: 3}
+      propertyPath: m_ScrollSensitivity
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 9011324894311177437, guid: 7cbf8c71a04f54e39a687c02876cf775, type: 3}
       propertyPath: m_Name
       value: FlexGridLayout Scroll View - Vertical
@@ -8426,7 +8434,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5158693506844113455, guid: 6b8ac79c3bfbcca49a60682af3545b6d, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 70
+      value: -70.35547
       objectReference: {fileID: 0}
     - target: {fileID: 5974894908412393241, guid: 6b8ac79c3bfbcca49a60682af3545b6d, type: 3}
       propertyPath: m_RootOrder

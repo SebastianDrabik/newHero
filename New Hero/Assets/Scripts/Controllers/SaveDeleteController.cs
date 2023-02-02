@@ -12,7 +12,7 @@ public class SaveDeleteController : MonoBehaviour
     {
         gameObject.SetActive(true);
         this.data = data;
-        modalContent.text = $"Are you sure you want to delete save: {data.Name}?";
+        modalContent.text = $"Are you sure you want to delete save: {data.Name}.";
         this.UIElement = UIElement;
     }
 
@@ -21,6 +21,6 @@ public class SaveDeleteController : MonoBehaviour
         SaveListController.Instance.RemoveSave(data);
         Destroy(this.UIElement);
         gameObject.SetActive(false);
-        Debug.Log("<color=green>Save was successfully removed</color>");
+        Debug.Log("<color=green>Save has been successfully removed</color>");
     }
 }

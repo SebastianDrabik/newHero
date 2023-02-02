@@ -18,18 +18,28 @@ public class SaveListController : MonoBehaviour
     public GameObject modalCreate;
     public TextMeshProUGUI errorMessage;
 
+    public SaveRenameController modalRename;
+
     private readonly Regex availableCharacters = new("^[0-9A-Za-z_\\-]+$");
     private string saveDataPath;
     private string savesDataPathBase;
 
     private List<SaveItemData> saves = new();
     
-    private enum nameValidState
+    public enum nameValidState
     {
         CORRECT = 0,
         ALREADY_IN_USE = 1,
         INCORRECT = 2,
+        EMPTY = 3,
     }
+
+    public readonly Dictionary<nameValidState, string> errorMessages = new()
+    {
+        { nameValidState.ALREADY_IN_USE, "Name is already in use." },
+        { nameValidState.INCORRECT, "Name contains illegal characters." },
+        { nameValidState.EMPTY, "Name cannot be empty." }
+    };
 
     void Awake()
     {
@@ -39,11 +49,11 @@ public class SaveListController : MonoBehaviour
         savesDataPathBase = $"{Application.persistentDataPath}/saves";
         if (!Directory.Exists(savesDataPathBase))
             Directory.CreateDirectory(savesDataPathBase);
-        LoadSaves();
     }
 
     void Start()
     {
+        LoadSaves();
         FillList();
     }
 
@@ -53,17 +63,7 @@ public class SaveListController : MonoBehaviour
         nameValidState valid = IsSaveNameValid(name);
         if(valid != 0)
         {
-            string error = "";
-            if (valid == nameValidState.ALREADY_IN_USE)
-            {
-                error = "The name is already in use.";
-                Debug.Log("<color=orange>Name has been used before</color>");
-            }
-            if (valid == nameValidState.INCORRECT)
-            {
-                error = "Name contains illegal characters.";
-                Debug.Log("<color=orange>Name contains illegal characters</color>");
-            }
+            string error = errorMessages[valid];
             errorMessage.text = error;
             errorMessage.gameObject.SetActive(true);
             return;
@@ -117,6 +117,21 @@ public class SaveListController : MonoBehaviour
         data.GetComponent<SaveItemController>().SetData(item);
     }
 
+    public void RenameSave(SaveItemData data, string newName)
+    {
+        SaveItemData sid = saves.Find(save => save.Name == data.Name);
+        if (sid == null)
+            return;
+        sid.Name = newName;
+        if (File.Exists(sid.Path))
+        {
+            FileInfo fileInfo = new(sid.Path);
+            fileInfo.MoveTo(fileInfo.Directory.FullName + "\\" + newName + ".tcg");
+        }
+        sid.Path = $"{savesDataPathBase}/{newName}.tcg";
+        SaveSaves();
+    }
+
     public void RemoveSave(SaveItemData data)
     {
         if(File.Exists(data.Path))
@@ -125,8 +140,10 @@ public class SaveListController : MonoBehaviour
         SaveSaves();
     }
 
-    private nameValidState IsSaveNameValid(string name)
+    public nameValidState IsSaveNameValid(string name)
     {
+        if (name.Length == 0)
+            return nameValidState.EMPTY;
         if (!availableCharacters.IsMatch(name))
             return nameValidState.INCORRECT;
         if (saves.Find(save => save.Name == name) != null)
@@ -137,5 +154,10 @@ public class SaveListController : MonoBehaviour
     public void OpenRemoveSaveModal(SaveItemData data, GameObject UIElement)
     {
         modalAccept.OpenModal(data, UIElement);
+    }
+
+    public void OpenRenameSaveModal(SaveItemData data, SaveItemController controller)
+    {
+        modalRename.OpenModal(data, controller);
     }
 }

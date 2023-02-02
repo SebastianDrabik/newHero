@@ -22,7 +22,7 @@ public class SettingsMenu : MonoBehaviour
     Resolution[] resolutions;
     private void Start()
     {
-        gameVersion.text = gameVersionSO.version;
+        gameVersion.text = $"@{gameVersionSO.version}";
         gameNote.text = gameVersionSO.versionNote;
 
         //resolutions

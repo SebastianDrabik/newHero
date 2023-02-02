@@ -4907,6 +4907,10 @@ PrefabInstance:
       value: -17
       objectReference: {fileID: 0}
     - target: {fileID: 9011324893836322596, guid: 7cbf8c71a04f54e39a687c02876cf775, type: 3}
+      propertyPath: m_Size
+      value: 0.9999999
+      objectReference: {fileID: 0}
+    - target: {fileID: 9011324893836322596, guid: 7cbf8c71a04f54e39a687c02876cf775, type: 3}
       propertyPath: m_Value
       value: 0
       objectReference: {fileID: 0}
@@ -5004,7 +5008,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9011324894311177427, guid: 7cbf8c71a04f54e39a687c02876cf775, type: 3}
       propertyPath: m_MovementType
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9011324894311177427, guid: 7cbf8c71a04f54e39a687c02876cf775, type: 3}
       propertyPath: m_ScrollSensitivity

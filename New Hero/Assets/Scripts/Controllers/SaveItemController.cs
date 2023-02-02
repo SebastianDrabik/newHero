@@ -16,6 +16,11 @@ public class SaveItemController : MonoBehaviour
         this.data = data;
     }
 
+    public void UpdateSaveName(string newName)
+    {
+        saveName.text = newName;
+    }
+
     public void StartGame()
     {
         SaveGame.StartGame(savePath);
@@ -26,5 +31,12 @@ public class SaveItemController : MonoBehaviour
         SaveListController controller = GameObject.FindObjectOfType<SaveListController>();
         if (controller != null)
             controller.OpenRemoveSaveModal(data, gameObject);
+    }
+
+    public void RenameSave()
+    {
+        SaveListController controller = GameObject.FindObjectOfType<SaveListController>();
+        if (controller != null)
+            controller.OpenRenameSaveModal(data, this);
     }
 }
