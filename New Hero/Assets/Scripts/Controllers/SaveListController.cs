@@ -160,4 +160,25 @@ public class SaveListController : MonoBehaviour
     {
         modalRename.OpenModal(data, controller);
     }
+
+    public void SearchSave(string name)
+    {
+        if(name != String.Empty)
+        {
+            foreach (Transform item in saveListItemContainer)
+            {
+                SaveItemData data = item.gameObject.GetComponent<SaveItemController>().data;
+                Regex searchRegex = new($".*{name}.*", RegexOptions.IgnoreCase);
+                if(searchRegex.IsMatch(data.Name))
+                    item.gameObject.SetActive(true);
+                else
+                    item.gameObject.SetActive(false);
+            }
+            return;
+        }
+        foreach (Transform item in saveListItemContainer)
+        {
+            item.gameObject.SetActive(true);
+        }
+    }
 }

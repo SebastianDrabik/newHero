@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5cb2de0b3966bea4391ba9822baecb86, type: 3}
-  m_Name: Keanu
+  m_Name: Ernest
   m_EditorClassIdentifier: 
-  key: keanu
+  key: ernest
   sentences:
-  - name: Keanu
+  - name: Ernest
     sentence: The weather is lovely today, don't you think?

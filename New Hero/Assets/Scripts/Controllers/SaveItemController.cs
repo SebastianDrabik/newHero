@@ -5,7 +5,7 @@ public class SaveItemController : MonoBehaviour
 {
     public TextMeshProUGUI saveName;
     public TextMeshProUGUI saveCreationDate;
-    private SaveItemData data;
+    public SaveItemData data { get; private set; }
     private string savePath;
 
     public void SetData(SaveItemData data)
