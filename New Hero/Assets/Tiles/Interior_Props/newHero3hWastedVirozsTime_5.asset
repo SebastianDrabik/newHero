@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: newHero3hWastedVirozsTime_5
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: -289877652, guid: 334c3538f0dc912488b9c0b7b9c623f9, type: 3}
+  m_Sprite: {fileID: -2058042129, guid: 334c3538f0dc912488b9c0b7b9c623f9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
