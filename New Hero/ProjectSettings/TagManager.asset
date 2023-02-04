@@ -17,9 +17,10 @@ TagManager:
   - Audio_Manager
   - NPC
   - Camera
-  - Canvas_Achievements
   - Cave
   - Cave_Exit
+  - Class
+  - Class_Exit
   layers:
   - Default
   - TransparentFX

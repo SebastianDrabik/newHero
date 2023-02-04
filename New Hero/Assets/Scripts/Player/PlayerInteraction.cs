@@ -9,7 +9,7 @@ public class PlayerInteraction : MonoBehaviour
     public GameObject image;
     public TextMeshProUGUI healthUI;
     readonly int maxHealth = 31;
-    readonly string[] tags = { "Elektryk", "Elektryk_Exit", "Cube", "Cube_Exit","Cave","Cave_Exit", "NPC" };
+    readonly string[] tags = { "Elektryk", "Elektryk_Exit", "Cube", "Cube_Exit","Cave","Cave_Exit", "Class", "Class_Exit", "NPC" };
     private string currentTag = "";
 
     public void DamagePlayer(int amount)
@@ -119,6 +119,23 @@ public class PlayerInteraction : MonoBehaviour
             PlayerPrefs.SetFloat("Interaction_y", 25f);
 
             SceneManager.LoadScene("Demo");
+        }
+
+        if (currentTag == "Class" && Input.GetKeyDown(KeyCode.E))
+        {
+            Debug.Log("Entering Class");
+            PlayerPrefs.SetFloat("Interaction_x", -3.5f);  
+            PlayerPrefs.SetFloat("Interaction_y", -5.25f);
+
+            SceneManager.LoadScene("Elektryk_Class");
+        }
+        if (currentTag == "Class_Exit" && Input.GetKeyDown(KeyCode.E))
+        {
+            Debug.Log("Exiting Class");
+            PlayerPrefs.SetFloat("Interaction_x", -20.5f);  //-20.53 16.42
+            PlayerPrefs.SetFloat("Interaction_y", 17.1f);
+
+            SceneManager.LoadScene("Elektryk");
         }
 
         if (currentTag == "NPC" && Input.GetKeyDown(KeyCode.E))
