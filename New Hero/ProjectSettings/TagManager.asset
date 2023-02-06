@@ -6,10 +6,6 @@ TagManager:
   tags:
   - Fence
   - House
-  - Elektryk
-  - Elektryk_Exit
-  - Cube_Exit
-  - Cube
   - Wall
   - Wall_Side
   - Attack_Menu
@@ -17,10 +13,7 @@ TagManager:
   - Audio_Manager
   - NPC
   - Camera
-  - Cave
-  - Cave_Exit
-  - Class
-  - Class_Exit
+  - Door
   layers:
   - Default
   - TransparentFX

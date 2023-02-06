@@ -24,6 +24,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Boss_Cave.unity
     guid: 37aa1ec8af160d54cb011ddccd223bb8
   - enabled: 1
-    path: Assets/Scenes/Elektryk_Class.unity
+    path: Assets/Scenes/Elektryk_Class1.unity
+    guid: b2a057fdee4146f4b943392db8c2947f
+  - enabled: 1
+    path: Assets/Scenes/Elektryk_Class2.unity
     guid: b434392c3646578459531913254ad392
   m_configObjects: {}

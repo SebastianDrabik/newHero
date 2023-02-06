@@ -16,7 +16,7 @@ public class MarkCube : MonoBehaviour
     public GameObject codeEditor;
     public GameObject shadow;
     public Button runCode;
-    public Transform camera;
+    public new Transform camera;
     public PauseMenu canvas;
 
 

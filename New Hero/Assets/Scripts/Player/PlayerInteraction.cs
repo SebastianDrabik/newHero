@@ -9,8 +9,9 @@ public class PlayerInteraction : MonoBehaviour
     public GameObject image;
     public TextMeshProUGUI healthUI;
     readonly int maxHealth = 31;
-    readonly string[] tags = { "Elektryk", "Elektryk_Exit", "Cube", "Cube_Exit","Cave","Cave_Exit", "Class", "Class_Exit", "NPC" };
-    private string currentTag = "";
+    private float[] currentCoords = new float[2];
+    private string currentScene = "";
+    private bool NPC = false;
 
     public void DamagePlayer(int amount)
     {
@@ -54,91 +55,46 @@ public class PlayerInteraction : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        bool exists = Array.Exists(tags, element => element == collision.gameObject.tag);
-        if (exists)
-            if ((collision.gameObject.tag == "Cube_Exit" && !MarkCube.Instance.isFighting) || collision.gameObject.tag != "Cube_Exit")
-                image.SetActive(true);
-        currentTag = collision.gameObject.tag;
-
+        if (collision.gameObject.CompareTag("NPC"))
+        {
+            NPC = true;
+            image.SetActive(true);
+            return;
+        }
+        if (!collision.gameObject.CompareTag("Door"))
+            return;
+        if(MarkCube.Instance != null)
+            if (MarkCube.Instance.isFighting)
+                return;
+        image.SetActive(true);
+        DoorController doors = collision.gameObject.GetComponent<DoorController>();
+        currentScene = doors.sceneName;
+        currentCoords = doors.coordinates;
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        bool exists = Array.Exists(tags, element => element == collision.gameObject.tag);
-        if (exists)
+        if (collision.gameObject.CompareTag("NPC"))
+        {
+            NPC = false;
             image.SetActive(false);
-        currentTag = "";
+            return;
+        }
+        if (!collision.gameObject.CompareTag("Door"))
+            return;
+        image.SetActive(false);
+        currentScene = "";
+        currentCoords = new float[2];
     }
 
     void Update()
     {
-        if (currentTag == "Elektryk" && Input.GetKeyDown(KeyCode.E))
-        {
-            Debug.Log("Entering Elektryk");
-            PlayerPrefs.SetFloat("Interaction_x", 0f);
-            PlayerPrefs.SetFloat("Interaction_y", 0f);
-
-            SceneManager.LoadScene("Elektryk");
-        }
-        if (currentTag == "Elektryk_Exit" && Input.GetKeyDown(KeyCode.E))
-        {
-            Debug.Log("Exiting Elektryk");
-            PlayerPrefs.SetFloat("Interaction_x", 16f);
-            PlayerPrefs.SetFloat("Interaction_y", -18f);
-
-            SceneManager.LoadScene("Demo");
-        }
-        if (currentTag == "Cube" && Input.GetKeyDown(KeyCode.E))
-        {
-            Debug.Log("Entering Cube Office");
-            PlayerPrefs.SetFloat("Interaction_x", -0.5f);
-            PlayerPrefs.SetFloat("Interaction_y", 0f);
-
-            SceneManager.LoadScene("MarkCube_Boss");
-        }
-        if (currentTag == "Cube_Exit" && Input.GetKeyDown(KeyCode.E) && !MarkCube.Instance.isFighting)
-        {
-            Debug.Log("Exiting Cube Office");
-            PlayerPrefs.SetFloat("Interaction_x", -45.5f);
-            PlayerPrefs.SetFloat("Interaction_y", 23.5f);
-
-            SceneManager.LoadScene("Elektryk");
+        if(currentScene != "" && currentScene != "NPC" && Input.GetKeyDown(KeyCode.E)){
+            PlayerPrefs.SetFloat("Interaction_x", currentCoords[0]);
+            PlayerPrefs.SetFloat("Interaction_y", currentCoords[1]);
+            SceneManager.LoadScene(currentScene);
         }
 
-        if (currentTag == "Cave" && Input.GetKeyDown(KeyCode.E))
-        {
-            Debug.Log("Entering Cave");
-            PlayerPrefs.SetFloat("Interaction_x", -0.5f);
-            PlayerPrefs.SetFloat("Interaction_y", 0f);
-
-            SceneManager.LoadScene("Boss_Cave");
-        }
-        if (currentTag == "Cave_Exit" && Input.GetKeyDown(KeyCode.E))
-        {
-            Debug.Log("Exiting Cave");
-            PlayerPrefs.SetFloat("Interaction_x", 139f);
-            PlayerPrefs.SetFloat("Interaction_y", 25f);
-
-            SceneManager.LoadScene("Demo");
-        }
-
-        if (currentTag == "Class" && Input.GetKeyDown(KeyCode.E))
-        {
-            Debug.Log("Entering Class");
-            PlayerPrefs.SetFloat("Interaction_x", -3.5f);  
-            PlayerPrefs.SetFloat("Interaction_y", -5.25f);
-
-            SceneManager.LoadScene("Elektryk_Class");
-        }
-        if (currentTag == "Class_Exit" && Input.GetKeyDown(KeyCode.E))
-        {
-            Debug.Log("Exiting Class");
-            PlayerPrefs.SetFloat("Interaction_x", -20.5f);  //-20.53 16.42
-            PlayerPrefs.SetFloat("Interaction_y", 17.1f);
-
-            SceneManager.LoadScene("Elektryk");
-        }
-
-        if (currentTag == "NPC" && Input.GetKeyDown(KeyCode.E))
+        if (NPC && Input.GetKeyDown(KeyCode.E))
         {
             DialogueManager.Instance.StartDialogue();
         }
