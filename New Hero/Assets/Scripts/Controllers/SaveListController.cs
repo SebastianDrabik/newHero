@@ -14,6 +14,7 @@ public class SaveListController : MonoBehaviour
     public GameObject saveListItemPrefab;
     public Transform saveListItemContainer;
     public SaveDeleteController modalAccept;
+    public GameObject noSavesInfoText;
 
     public GameObject modalCreate;
     public TextMeshProUGUI errorMessage;
@@ -25,7 +26,7 @@ public class SaveListController : MonoBehaviour
     private string savesDataPathBase;
 
     private List<SaveItemData> saves = new();
-    
+
     public enum nameValidState
     {
         CORRECT = 0,
@@ -43,7 +44,7 @@ public class SaveListController : MonoBehaviour
 
     void Awake()
     {
-        if(Instance == null)
+        if (Instance == null)
             Instance = this;
         saveDataPath = $"{Application.persistentDataPath}/saves.xml";
         savesDataPathBase = $"{Application.persistentDataPath}/saves";
@@ -61,7 +62,7 @@ public class SaveListController : MonoBehaviour
     {
         string name = saveName.text;
         nameValidState valid = IsSaveNameValid(name);
-        if(valid != 0)
+        if (valid != 0)
         {
             string error = errorMessages[valid];
             errorMessage.text = error;
@@ -80,6 +81,8 @@ public class SaveListController : MonoBehaviour
         Debug.Log("<color=green>Successfully added new save</color>");
         saveName.text = String.Empty;
         modalCreate.SetActive(false);
+        if (noSavesInfoText.activeSelf)
+            noSavesInfoText.SetActive(false);
     }
 
     private void SaveSaves()
@@ -105,6 +108,11 @@ public class SaveListController : MonoBehaviour
 
     private void FillList()
     {
+        if (saves.Count == 0)
+        {
+            noSavesInfoText.SetActive(true);
+            return;
+        }
         foreach (SaveItemData item in saves)
         {
             AddListItem(item);
@@ -134,10 +142,15 @@ public class SaveListController : MonoBehaviour
 
     public void RemoveSave(SaveItemData data)
     {
-        if(File.Exists(data.Path))
+        if (File.Exists(data.Path))
             File.Delete(data.Path);
         saves.Remove(data);
         SaveSaves();
+        if (saves.Count == 0)
+        {
+            noSavesInfoText.SetActive(true);
+            return;
+        }
     }
 
     public nameValidState IsSaveNameValid(string name)
@@ -163,13 +176,13 @@ public class SaveListController : MonoBehaviour
 
     public void SearchSave(string name)
     {
-        if(name != String.Empty)
+        if (name != String.Empty)
         {
             foreach (Transform item in saveListItemContainer)
             {
                 SaveItemData data = item.gameObject.GetComponent<SaveItemController>().data;
                 Regex searchRegex = new($".*{name}.*", RegexOptions.IgnoreCase);
-                if(searchRegex.IsMatch(data.Name))
+                if (searchRegex.IsMatch(data.Name))
                     item.gameObject.SetActive(true);
                 else
                     item.gameObject.SetActive(false);
