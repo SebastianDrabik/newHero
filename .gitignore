@@ -13,16 +13,13 @@
 sysinfo.txt
 # Unity3D generated meta files
 *.pidb.meta
+New Hero/User Settings
+New Hero/User Settings/Layouts
 
 ###
 # Log files
 ###
 [Ll]ogs/
-
-###
-# Data files
-###
-saveData.dat
 
 ###
 # VS/MD solution and project files
