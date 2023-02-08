@@ -55,36 +55,43 @@ public class Code
         }
     }
 
-    private void Compile()
+    async private void Compile()
     {
         ClearDirectory();
         CreateFile();
         UnityEngine.Debug.Log(compilerPath + "-o \"" + outputFilePath + "\" " + "\"" + inputFilePath + "\"");
-        var process = new Process
+        
+        var task = Task.Factory.StartNew(()=>
         {
-            StartInfo = new ProcessStartInfo
+
+            var process = new Process
             {
-                FileName = "\"" + compilerPath + "\"",
-                Arguments = "-o \"" + outputFilePath + "\"" + " \"" + inputFilePath + "\"",
-                RedirectStandardOutput = true,
-                RedirectStandardError = true,
-                UseShellExecute = false,
-                CreateNoWindow = true
-            }
-        };
-        process.Start();
-        string output = process.StandardOutput.ReadToEnd();
-        string error = process.StandardError.ReadToEnd();
+                StartInfo = new ProcessStartInfo
+                {
+                    FileName = "\"" + compilerPath + "\"",
+                    Arguments = "-o \"" + outputFilePath + "\"" + " \"" + inputFilePath + "\"",
+                    RedirectStandardOutput = true,
+                    RedirectStandardError = true,
+                    UseShellExecute = false,
+                    CreateNoWindow = true
+                }
+            };
+            process.Start();
+            string output = process.StandardOutput.ReadToEnd();
+            string error = process.StandardError.ReadToEnd();
+            process.WaitForExit();
+            return process.ExitCode;
+        });
 
-        process.WaitForExit();
+        task.Wait();
 
-        if (process.ExitCode == 0)
+        if (task.Result == 0)
         {
             UnityEngine.Debug.Log("Compilation succeeded");
         }
         else
         {
-            UnityEngine.Debug.LogError("Compilation failed: " + error);
+            UnityEngine.Debug.LogError("Compilation failed: " + task.Exception);
         }
     }
 
