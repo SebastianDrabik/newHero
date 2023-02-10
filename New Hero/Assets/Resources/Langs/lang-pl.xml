@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lang>
+	<lang-info>
+		<name>Polish</name>
+		<key>pl</key>
+	</lang-info>
+	<lang-data>
+		<esc-menu>
+			<resume>WZNÓW</resume>
+			<pause>ZAPAUZUJ</pause>
+			<trophies>TROFEA</trophies>
+			<menu-save>Zapisz</menu-save>
+			<menu-quit>Wyjdź</menu-quit>
+			<menu-mainmenu>Menu główne</menu-mainmenu>
+			<saving-info>Trwa zapis gry...</saving-info>
+		</esc-menu>
+	</lang-data>
+</lang>

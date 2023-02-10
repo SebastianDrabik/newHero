@@ -21,7 +21,7 @@ public class FightManager : MonoBehaviour
     public Image Workspace;
     public Animator runButtonAnimator;
 
-    private List<CodeData> codeList = new();
+    private readonly List<CodeData> codeList = new();
     private string currentKey;
 
     void Awake()

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lang>
+	<lang-info>
+		<name>English</name>
+		<key>en</key>
+	</lang-info>
+	<lang-data>
+		<esc-menu>
+			<resume>RESUME</resume>
+			<pause>PAUSE</pause>
+			<trophies>TROPHIES</trophies>
+			<menu-save>Save game</menu-save>
+			<menu-quit>Quit</menu-quit>
+			<menu-mainmenu>Main menu</menu-mainmenu>
+			<saving-info>Saving game...</saving-info>
+		</esc-menu>
+	</lang-data>
+</lang>

@@ -33,7 +33,11 @@ public class SettingsManager : MonoBehaviour
         Screen.SetResolution(PlayerPrefs.GetInt("resolution_width"), PlayerPrefs.GetInt("resolution_height"), PlayerPrefs.GetInt("fullscreen") == 1);
 
         mixer.SetFloat("volume", PlayerPrefs.GetFloat("volume"));
-        
+
+        if (PlayerPrefs.HasKey("language"))
+            TranslationsManager.lang = PlayerPrefs.GetString("language");
+        else
+            TranslationsManager.lang = TranslationsManager.defaultLang;
     }
 
 }
