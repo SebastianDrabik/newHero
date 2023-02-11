@@ -66,12 +66,12 @@ public class SettingsMenu : MonoBehaviour
         editorThemeDropdown.value = currentThemeIndex;
         editorThemeDropdown.RefreshShownValue();
 
-        //langage - TODO, does not show set value
+        //langage
         languageDropdown.ClearOptions();
 
         string lang = TranslationsManager.defaultLang;
         if (PlayerPrefs.HasKey("language"))
-            lang = PlayerPrefs.GetString("language");
+            lang = TranslationsManager.GetNameByKey(PlayerPrefs.GetString("language"));
         int currentLanguageIndex = 0;
         for (int i = 0; i < TranslationsManager.langNames.Count; i++)
             if (lang == TranslationsManager.langNames[i])
@@ -108,6 +108,10 @@ public class SettingsMenu : MonoBehaviour
         string newLang = TranslationsManager.GetKeyByName(TranslationsManager.langNames[index]);
         PlayerPrefs.SetString("language", newLang);
         TranslationsManager.lang = newLang;
+
+        TranslationController[] controllers = FindObjectsOfType<TranslationController>();
+        foreach (TranslationController controller in controllers)
+            controller.UpdateContent();
     }
 
     public void SetVolume(float volume)

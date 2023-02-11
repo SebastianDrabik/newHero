@@ -12,7 +12,7 @@ public class SaveDeleteController : MonoBehaviour
     {
         gameObject.SetActive(true);
         this.data = data;
-        modalContent.text = $"Are you sure you want to delete save: {data.Name}.";
+        modalContent.text = data.Name;
         this.UIElement = UIElement;
     }
 

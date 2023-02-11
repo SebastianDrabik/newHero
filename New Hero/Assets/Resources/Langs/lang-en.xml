@@ -14,5 +14,30 @@
 			<menu-mainmenu>Main menu</menu-mainmenu>
 			<saving-info>Saving game...</saving-info>
 		</esc-menu>
+		<options-menu>
+			<title>OPTIONS</title>
+			<fullscreen>FULLSCREEN</fullscreen>
+			<editor-theme>Code editor theme</editor-theme>
+			<language>Language</language>
+			<volume>VOLUME</volume>
+		</options-menu>
+		<saves-menu>
+			<new-game>New Game</new-game>
+			<search>Search...</search>
+
+			<created>Created: </created>
+
+			<rename-title>Rename save</rename-title>
+			<rename-content>You are about to rename save:</rename-content>
+			<rename-label>New name:</rename-label>
+			<rename-placeholder>Insert new name</rename-placeholder>
+
+			<delete-title>Delete save</delete-title>
+			<delete-content>Are you sure, you want to delete save:</delete-content>
+			
+			<create-title>New game</create-title>
+			<create-label>Save name:</create-label>
+			<create-placeholder>Insert save name</create-placeholder>
+		</saves-menu>
 	</lang-data>
 </lang>

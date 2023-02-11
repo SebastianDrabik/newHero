@@ -69,6 +69,7 @@ public class PlayerMovement : MonoBehaviour
     public void SetMovementDisabled(bool newState)
     {
         movementDisabled = newState;
+        gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         animator.SetFloat("Vertical", 0);
         animator.SetFloat("Horizontal", 0);
         animator.SetBool("Moving", false);

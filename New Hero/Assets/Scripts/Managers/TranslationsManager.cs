@@ -8,7 +8,7 @@ public class TranslationsManager
     public readonly static string defaultLang = "pl";
     public static string lang = "pl";
 
-    private static List<Lang> langList = new();
+    private static readonly List<Lang> langList = new();
     public static List<string> langNames = new();
 
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
@@ -51,6 +51,11 @@ public class TranslationsManager
     public static string GetKeyByName(string name)
     {
         return langList.Find(l => l.name.Equals(name)).key;
+    }
+
+    public static string GetNameByKey(string key)
+    {
+        return langList.Find(l => l.key.Equals(key)).name;
     }
 
     public static string GetTranslation(string group, string key)

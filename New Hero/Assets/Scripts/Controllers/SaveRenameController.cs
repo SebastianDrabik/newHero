@@ -14,7 +14,7 @@ public class SaveRenameController : MonoBehaviour
     {
         gameObject.SetActive(true);
         this.data = data;
-        modalContent.text = $"You are about to rename save: {data.Name}?";
+        modalContent.text = data.Name;
         this.saveItemController = saveItemController;
     }
 

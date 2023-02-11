@@ -1,18 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <lang>
 	<lang-info>
-		<name>Polish</name>
+		<name>Polski</name>
 		<key>pl</key>
 	</lang-info>
 	<lang-data>
 		<esc-menu>
-			<resume>WZNÓW</resume>
-			<pause>ZAPAUZUJ</pause>
+			<resume>WZNOW</resume>
+			<pause>WTRZYMAJ</pause>
 			<trophies>TROFEA</trophies>
 			<menu-save>Zapisz</menu-save>
-			<menu-quit>Wyjdź</menu-quit>
-			<menu-mainmenu>Menu główne</menu-mainmenu>
+			<menu-quit>Wyjdz</menu-quit>
+			<menu-mainmenu>Menu</menu-mainmenu>
 			<saving-info>Trwa zapis gry...</saving-info>
 		</esc-menu>
+		<options-menu>
+			<title>OPCJE</title>
+			<fullscreen>PELNY EKRAN</fullscreen>
+			<editor-theme>Motyw edytora kodu</editor-theme>
+			<language>Jezyk</language>
+			<volume>Poziom glosnosci</volume>
+		</options-menu>
+		<saves-menu>
+			<new-game>Nowa gra</new-game>
+			<search>Szukaj...</search>
+
+			<created>Utworzono: </created>
+
+			<rename-title>Zmiana nazwy</rename-title>
+			<rename-content>Czy na pewno chcesz zmienic nazwe zapisu:</rename-content>
+			<rename-label>Nowa nazwa:</rename-label>
+			<rename-placeholder>Wprowadz nowa nazwe</rename-placeholder>
+
+			<delete-title>Usuwanie zapisu</delete-title>
+			<delete-content>Czy na pewno chcesz usunac zapis:</delete-content>
+
+			<create-title>Nowy zapis</create-title>
+			<create-label>Nazwa zapisu:</create-label>
+			<create-placeholder>Wprowadz nazwe</create-placeholder>
+		</saves-menu>
 	</lang-data>
 </lang>

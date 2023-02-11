@@ -28,7 +28,7 @@ public class DialogueManager : MonoBehaviour
     {
         if(Instance == null)
             Instance = this;
-        LoadAllDialogues();
+        LoadAllDialogues(TranslationsManager.lang);
     }
 
     void Start()
@@ -111,9 +111,9 @@ public class DialogueManager : MonoBehaviour
         animator.SetBool("IsOpen", false);
     }
 
-    private void LoadAllDialogues()
+    private void LoadAllDialogues(string lang)
     {
-        Dialogue[] tempDialogue = Resources.LoadAll<Dialogue>("Dialogues");
+        Dialogue[] tempDialogue = Resources.LoadAll<Dialogue>($"Dialogues/{lang}");
         foreach (Dialogue dialogue in tempDialogue)
             DialogueList.Add(dialogue);
     }
