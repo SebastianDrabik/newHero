@@ -10,19 +10,11 @@ public class TranslationsManager
 
     private static readonly List<Lang> langList = new();
     public static List<string> langNames = new();
+    public static List<TrophyList> trophyLists = new();
 
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
     public static void LoadLangs()
     {
-        //if (!PlayerPrefs.HasKey("Language"))
-        //{
-        //    lang = defaultLang;
-        //    PlayerPrefs.SetString("Language", defaultLang);
-        //}
-        //else
-        //    lang = PlayerPrefs.GetString("Language");
-
-
         TextAsset[] langs = Resources.LoadAll<TextAsset>("Langs");
         foreach (TextAsset lang in langs)
         {
@@ -46,6 +38,20 @@ public class TranslationsManager
             langList.Add(l);
             langNames.Add(name);
         }
+        TrophyList[] trophy = Resources.LoadAll<TrophyList>("Trophies");
+        foreach (TrophyList tl in trophy)
+            trophyLists.Add(tl);
+
+    }
+
+    public static void UpdateSaveListErrorMessages()
+    {
+        SaveListController.errorMessages = new()
+        {
+            { SaveListController.nameValidState.ALREADY_IN_USE, TranslationsManager.GetTranslation("saves-menu", "error-name-already-in-use") },
+            { SaveListController.nameValidState.INCORRECT, TranslationsManager.GetTranslation("saves-menu", "error-invalid-characters") },
+            { SaveListController.nameValidState.EMPTY, TranslationsManager.GetTranslation("saves-menu", "error-empty") }
+        };
     }
 
     public static string GetKeyByName(string name)
@@ -61,5 +67,10 @@ public class TranslationsManager
     public static string GetTranslation(string group, string key)
     {
         return langList.Find(l => l.key == lang).translations[group][key];
+    }
+
+    public static TrophyList GetTrophies()
+    {
+        return trophyLists.Find(tl => tl.langKey == lang);
     }
 }

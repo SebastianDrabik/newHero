@@ -30,15 +30,15 @@ public class TrophyObjectController : MonoBehaviour
         Color32 color;
         switch (trophy.state) {
             case Trophy.TrophyState.UNLOCKED:
-                stateText = "unlocked";
+                stateText = TranslationsManager.GetTranslation("esc-menu", "trophies-state-unlocked");
                 color = color_unlocked;
                 break;
             case Trophy.TrophyState.IN_PROGRESS:
-                stateText = "in progress";
+                stateText = TranslationsManager.GetTranslation("esc-menu", "trophies-state-inprogress");
                 color = color_inProgress;
                 break;
             case Trophy.TrophyState.LOCKED:
-                stateText = "locked";
+                stateText = TranslationsManager.GetTranslation("esc-menu", "trophies-state-locked");
                 color = color_locked;
                 break;
             default: 

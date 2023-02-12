@@ -24,13 +24,14 @@ public class SaveRenameController : MonoBehaviour
         SaveListController.nameValidState valid = saveListController.IsSaveNameValid(newName.text);
         if (valid != 0)
         {
-            string error = saveListController.errorMessages[valid];
+            string error = SaveListController.errorMessages[valid];
             errorMessage.text = error;
             errorMessage.gameObject.SetActive(true);
             return;
         }
         saveListController.RenameSave(data, newName.text);
         saveItemController.UpdateSaveName(newName.text);
+        errorMessage.gameObject.SetActive(false);
         gameObject.SetActive(false);
         Debug.Log("<color=green>Save has been successfully renamed</color>");
     }

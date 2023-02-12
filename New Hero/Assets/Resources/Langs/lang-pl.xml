@@ -13,6 +13,11 @@
 			<menu-quit>Wyjdz</menu-quit>
 			<menu-mainmenu>Menu</menu-mainmenu>
 			<saving-info>Trwa zapis gry...</saving-info>
+			
+			<trophies-state-label>Status:</trophies-state-label>
+			<trophies-state-unlocked>odblokowano</trophies-state-unlocked>
+			<trophies-state-locked>zablokowane</trophies-state-locked>
+			<trophies-state-inprogress>w trakcie</trophies-state-inprogress>
 		</esc-menu>
 		<options-menu>
 			<title>OPCJE</title>
@@ -38,6 +43,10 @@
 			<create-title>Nowy zapis</create-title>
 			<create-label>Nazwa zapisu:</create-label>
 			<create-placeholder>Wprowadz nazwe</create-placeholder>
+
+			<error-invalid-characters>Nazwa zawiera niedozwolone znaki.</error-invalid-characters>
+			<error-name-already-in-use>Nazwa zostala juz uzyta.</error-name-already-in-use>
+			<error-empty>Wprawdz nazwe.</error-empty>
 		</saves-menu>
 	</lang-data>
 </lang>

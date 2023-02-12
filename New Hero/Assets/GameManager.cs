@@ -6,7 +6,6 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
     public GameObject achievementNotification;
-    public TrophyList trophyList;
     [HideInInspector]
     public List<Trophy> trophies;
 
@@ -22,8 +21,10 @@ public class GameManager : MonoBehaviour
             Destroy(this);
     }
 
-    private void Start()
+    public void LoadTrophies()
     {
+        TrophyList trophyList = TranslationsManager.GetTrophies();
+        trophies.Clear();
         foreach (var item in trophyList.trophies)
         {
             Trophy nt = new();

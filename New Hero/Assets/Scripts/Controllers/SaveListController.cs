@@ -35,12 +35,7 @@ public class SaveListController : MonoBehaviour
         EMPTY = 3,
     }
 
-    public readonly Dictionary<nameValidState, string> errorMessages = new()
-    {
-        { nameValidState.ALREADY_IN_USE, "Name is already in use." },
-        { nameValidState.INCORRECT, "Name contains illegal characters." },
-        { nameValidState.EMPTY, "Name cannot be empty." }
-    };
+    public static Dictionary<nameValidState, string> errorMessages;
 
     void Awake()
     {
@@ -80,6 +75,7 @@ public class SaveListController : MonoBehaviour
         SaveSaves();
         Debug.Log("<color=green>Successfully added new save</color>");
         saveName.text = String.Empty;
+        errorMessage.gameObject.SetActive(false);
         modalCreate.SetActive(false);
         if (noSavesInfoText.activeSelf)
             noSavesInfoText.SetActive(false);

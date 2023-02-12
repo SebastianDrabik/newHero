@@ -13,6 +13,11 @@
 			<menu-quit>Quit</menu-quit>
 			<menu-mainmenu>Main menu</menu-mainmenu>
 			<saving-info>Saving game...</saving-info>
+			
+			<trophies-state-label>State:</trophies-state-label>
+			<trophies-state-unlocked>unlocked</trophies-state-unlocked>
+			<trophies-state-locked>locked</trophies-state-locked>
+			<trophies-state-inprogress>in progress</trophies-state-inprogress>
 		</esc-menu>
 		<options-menu>
 			<title>OPTIONS</title>
@@ -38,6 +43,10 @@
 			<create-title>New game</create-title>
 			<create-label>Save name:</create-label>
 			<create-placeholder>Insert save name</create-placeholder>
+
+			<error-invalid-characters>Name contains illegal characters.</error-invalid-characters>
+			<error-name-already-in-use>Name is already in use.</error-name-already-in-use>
+			<error-empty>Name cannot be empty.</error-empty>
 		</saves-menu>
 	</lang-data>
 </lang>
