@@ -11,6 +11,11 @@ public static class SaveSystem
 
     public static void SaveData()
     {
+        if(path == null)
+        {
+            Debug.LogWarning("Cannot save - no save is loaded.");
+            return;
+        }
         // position
         Vector3 position = GameObject.FindWithTag("Player").transform.position;
         // trophies

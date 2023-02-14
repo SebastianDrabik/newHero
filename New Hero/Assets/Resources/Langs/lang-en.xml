@@ -48,5 +48,10 @@
 			<error-name-already-in-use>Name is already in use.</error-name-already-in-use>
 			<error-empty>Name cannot be empty.</error-empty>
 		</saves-menu>
+		<objectives>
+			<test>SIQUEL OP STREAMER</test>
+			
+			<lesson-seat>Find and take a seat.</lesson-seat>
+		</objectives>
 	</lang-data>
 </lang>

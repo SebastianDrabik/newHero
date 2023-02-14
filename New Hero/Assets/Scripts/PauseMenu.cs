@@ -8,7 +8,8 @@ public class PauseMenu : MonoBehaviour
     public GameObject OSMenu;
     public GameObject pauseMenuUI;
     public GameObject trophies;
-    
+    public ObjectiveController objectiveController;
+
     public static bool GameIsPaused = false;
     private bool isDisabled = false;
     

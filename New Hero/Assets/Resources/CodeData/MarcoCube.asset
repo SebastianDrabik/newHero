@@ -23,3 +23,5 @@ MonoBehaviour:
     output: 1
   - input: 5
     output: 0
+  - input: 3
+    output: 0

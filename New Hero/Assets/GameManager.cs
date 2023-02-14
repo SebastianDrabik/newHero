@@ -1,6 +1,6 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -9,16 +9,41 @@ public class GameManager : MonoBehaviour
     [HideInInspector]
     public List<Trophy> trophies;
 
+    private ObjectiveController _ObjectiveController;
+    private string currentObjective = "";
+    private bool isObjectiveShown = false;
+    
+
     private void Awake()
     {
         EditorTheme.ReadFiles();
-        if(Instance == null)
+        if (Instance == null)
         {
             DontDestroyOnLoad(this);
             Instance = this;
         }
         else
             Destroy(this);
+    }
+
+    void OnEnable() {
+        SceneManager.sceneLoaded += OnSceneLoaded; 
+    }
+    void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    void Start()
+    {
+        AssignController();
+    }
+
+    void OnSceneLoaded(Scene current, LoadSceneMode mode)
+    {
+        AssignController();
+        if (isObjectiveShown)
+            this.ShowObjective(currentObjective);
     }
 
     public void LoadTrophies()
@@ -37,6 +62,23 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void ShowObjective(string key)
+    {
+        if (!isObjectiveShown)
+        {
+            currentObjective = key;
+            isObjectiveShown = true;
+        }
+        _ObjectiveController.ShowObjective(TranslationsManager.GetTranslation("objectives", key));
+    }
+
+    public void HideObjective()
+    {
+        currentObjective=null;
+        isObjectiveShown=false;
+        _ObjectiveController.HideObjective();
+    }
+
     public void ChangeTrophyState(string key, Trophy.TrophyState trophyState, bool notification = false)
     {
         trophies.Find(t => t.key == key).state = trophyState;
@@ -53,5 +95,10 @@ public class GameManager : MonoBehaviour
     public Trophy.TrophyState GetTrophyState(string key)
     {
         return trophies.Find(t => t.key == key).state;
+    }
+
+    private void AssignController()
+    {
+        _ObjectiveController = GameObject.FindGameObjectWithTag("Canvas").GetComponent<ObjectiveController>();
     }
 }

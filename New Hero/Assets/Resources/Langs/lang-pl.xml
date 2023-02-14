@@ -48,5 +48,10 @@
 			<error-name-already-in-use>Nazwa zostala juz uzyta.</error-name-already-in-use>
 			<error-empty>Wprawdz nazwe.</error-empty>
 		</saves-menu>
+		<objectives>
+			<test>SIQUEL OP STREAMER</test>
+			
+			<lesson-seat>Znajdz i zajmij miejsce.</lesson-seat>
+		</objectives>
 	</lang-data>
 </lang>

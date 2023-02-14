@@ -16,6 +16,7 @@ TagManager:
   - Door
   - Canvas_Achievements
   - Rock
+  - Seat
   layers:
   - Default
   - TransparentFX

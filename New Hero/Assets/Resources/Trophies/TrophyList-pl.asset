@@ -12,14 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e4a2fa1c51e6f4439fa90224fc6a512, type: 3}
   m_Name: TrophyList-pl
   m_EditorClassIdentifier: 
+  langKey: pl
   trophies:
   - key: tuman
     state: 0
     title: Tuman
-    objective: What finger is this? How about this one?
+    objective: Co to za palec? A ten?
     icon: {fileID: 21300000, guid: f28d8ef6b72234e43b425562f95dc2e6, type: 3}
   - key: marco
     state: 0
-    title: The Adventure Begins
-    objective: Defeat Marco Cube
+    title: Poczatek przygody
+    objective: Pokonaj Marco Cube'a
     icon: {fileID: 21300000, guid: 4c794218c983aa74686f5c3cfdde25f9, type: 3}

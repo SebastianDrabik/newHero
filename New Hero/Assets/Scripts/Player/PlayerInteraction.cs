@@ -12,6 +12,7 @@ public class PlayerInteraction : MonoBehaviour
     private float[] currentCoords = new float[2];
     private string currentScene = "";
     private bool NPC = false;
+    private bool lesson = false;
 
     public void DamagePlayer(int amount)
     {
@@ -61,6 +62,12 @@ public class PlayerInteraction : MonoBehaviour
             image.SetActive(true);
             return;
         }
+        if(collision.gameObject.CompareTag("Seat"))
+        {
+            lesson = true;
+            image.SetActive(true);
+            return;
+        }
         if (!collision.gameObject.CompareTag("Door"))
             return;
         if(MarkCube.Instance != null)
@@ -79,8 +86,14 @@ public class PlayerInteraction : MonoBehaviour
             image.SetActive(false);
             return;
         }
-        if (!collision.gameObject.CompareTag("Door"))
+        if (collision.gameObject.CompareTag("Seat"))
+        {
+            lesson = false;
+            image.SetActive(false);
             return;
+        }
+        if (!collision.gameObject.CompareTag("Door"))
+        return;
         image.SetActive(false);
         currentScene = "";
         currentCoords = new float[2];
@@ -88,15 +101,19 @@ public class PlayerInteraction : MonoBehaviour
 
     void Update()
     {
-        if(currentScene != "" && currentScene != "NPC" && Input.GetKeyDown(KeyCode.E)){
+        if (!Input.GetKeyDown(KeyCode.E))
+            return;
+        if(currentScene != "" && currentScene != "NPC"){
             PlayerPrefs.SetFloat("Interaction_x", currentCoords[0]);
             PlayerPrefs.SetFloat("Interaction_y", currentCoords[1]);
             SceneManager.LoadScene(currentScene);
         }
-
-        if (NPC && Input.GetKeyDown(KeyCode.E))
-        {
+        if (NPC)
             DialogueManager.Instance.StartDialogue();
+        if (lesson)
+        {
+            Debug.Log("Seat");
         }
+
     }
 }

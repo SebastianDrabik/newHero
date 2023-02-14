@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e4a2fa1c51e6f4439fa90224fc6a512, type: 3}
   m_Name: TrophyList-en
   m_EditorClassIdentifier: 
+  langKey: en
   trophies:
   - key: tuman
     state: 0

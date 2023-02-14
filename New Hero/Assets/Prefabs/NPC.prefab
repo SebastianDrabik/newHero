@@ -151,4 +151,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54b5d3c85c6f20d4297e890aa5defbfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueKey: nft_trader
+  dialogueKey: ernest
+  assignObjective: 0
+  objectiveDescription: 

@@ -83,6 +83,7 @@ public class MarkCube : MonoBehaviour
         timer -= Time.deltaTime;
         if(timer<=0f)
         {
+            // TODO
             GameManager.Instance.ChangeTrophyState("marco", Trophy.TrophyState.IN_PROGRESS);
             if (isAttacking)
             {
@@ -103,7 +104,7 @@ public class MarkCube : MonoBehaviour
             }
             if (stage == 2)
             {
-                StartCoroutine("Jump");
+                StartCoroutine(nameof(Jump));
                 isAttacking = true;
             }
             if (stage == 0)
@@ -138,7 +139,7 @@ public class MarkCube : MonoBehaviour
     void BulletAttack()
     {
         GameObject bullet = Instantiate(bulletPrefab, gameObject.transform.position, Quaternion.identity);
-        StartCoroutine("DestroyBullet", bullet);
+        StartCoroutine(nameof(DestroyBullet), bullet);
     }
 
     public void JumpAttack()

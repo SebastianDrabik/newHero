@@ -8,7 +8,8 @@ public class SaveData
     public enum Level
     {
         NEW_GAME = 0,
-        MARK_CUBE = 1,
+        CPP_BASICS = 1,
+        MARK_CUBE = 2,
     }
     public Level level;
     public float[] position;

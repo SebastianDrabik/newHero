@@ -18,8 +18,13 @@ public class DialogueManager : MonoBehaviour
     public GameObject infoKey;
     public float dialogueSpeed;
 
+    public static bool assignObjective;
+    public static string objectiveDescription;
+
     private Queue<DialogueSentence> sentences;
     private PlayerMovement playerMovement;
+
+    private GameManager manager;
 
     private bool isTalking = false;
     private bool isTyping = false;
@@ -28,6 +33,7 @@ public class DialogueManager : MonoBehaviour
     {
         if(Instance == null)
             Instance = this;
+        manager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
         LoadAllDialogues(TranslationsManager.lang);
     }
 
@@ -81,6 +87,7 @@ public class DialogueManager : MonoBehaviour
         if(isTyping) return;
         if (sentences.Count == 0)
         {
+            AssignObjective();
             EndDialogue();
             return;
         }
@@ -116,5 +123,12 @@ public class DialogueManager : MonoBehaviour
         Dialogue[] tempDialogue = Resources.LoadAll<Dialogue>($"Dialogues/{lang}");
         foreach (Dialogue dialogue in tempDialogue)
             DialogueList.Add(dialogue);
+    }
+
+    private void AssignObjective()
+    {
+        if (!assignObjective) return;
+        print(objectiveDescription);
+        manager.ShowObjective(objectiveDescription);
     }
 }
