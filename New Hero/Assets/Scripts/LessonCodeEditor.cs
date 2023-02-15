@@ -6,21 +6,17 @@ using System.Text.RegularExpressions;
 
 public class LessonCodeEditor : MonoBehaviour
 {
-    [TextArea(3,30)]
-    public List<string> code;
-
     public TextMeshProUGUI codeText;
 
-    private int i = 0;
-
-    private void OnEnable()
+    public void Change(string code)
     {
-        codeText.text = code[i];
-        HighlightSyntax(codeText);
-        i++;
+        codeText.text = code;
     }
 
-
+    private void Update()
+    {
+        HighlightSyntax(codeText);
+    }
 
     private void HighlightSyntax(TextMeshProUGUI text)
     {

@@ -125,6 +125,17 @@ public class AudioManager : MonoBehaviour
         s.source.Play();
     }
 
+    public float GetAudioLength(string name)
+    {
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+        if (s == null)
+        {
+            Debug.LogWarning("Audio: " + name + " not found");
+            return 0f;
+        }
+        return s.source.clip.length;
+    }
+
     public void PlayEffect(string name, float otherSoundsMaxVolume = 0.2f)
     {
         Dictionary<Sound, float> playingSounds= new();
@@ -142,6 +153,7 @@ public class AudioManager : MonoBehaviour
         if (s == null)
         {
             Debug.LogWarning("Audio: " + name + " not found");
+            StartCoroutine(RestoreSounds(playingSounds, 0f));
             return;
         }
         s.source.Play();
