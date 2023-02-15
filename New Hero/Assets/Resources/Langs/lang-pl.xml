@@ -50,8 +50,25 @@
 		</saves-menu>
 		<objectives>
 			<test>SIQUEL OP STREAMER</test>
-			
+			<teacher>Porozmawiaj z nauczycielem.</teacher>
 			<lesson-seat>Znajdz i zajmij miejsce.</lesson-seat>
 		</objectives>
+		<first-lesson>
+			<dial1-1>Do dodania biblioteki do naszego programu uzywamy #include&lt;biblioteka&gt;.</dial1-1>
+			<dial1-2>Wszystko co znajduje sie wewnatrz funkcji "main" zostanie wykonane przez program po kompilacji.</dial1-2>
+			<dial1-3>Komenda std::cout &lt;&lt; "hello world", powoduje wyswietlenie tekstu wewnatrz cudzyslowia na ekranie.</dial1-3>
+			<dial1-4>Na koncu kazdej linijki, nie liczac niektorych wyjatkow, musi znajdowac sie srednik</dial1-4>
+			<dial2-1>Nie musisz uzywac std::, jezeli dodasz using namespace std na gorze kodu.</dial2-1>
+			<dial3-1>Za pomoca powyzszego kodu mozesz przypisac wartosci do dwoch zmiennych oraz wyswietlic na ekranie ich sume.</dial3-1>
+			<dial3-2>Za pomoca zmiennej jestesmy zapisywac dane, ktorych mozemy pozniej ponownie uzywac wewnatrz kodu</dial3-2>
+			<dial3-3>Wystepuja rozne typy zmiennych przechowujace rozne typy danych:</dial3-3>
+			<dial3-4>int przechowuje liczby calkowite</dial3-4>
+			<dial3-5>float przechowuje liczby rzeczywiste</dial3-5>
+			<dial3-6>string przechowuej dane tekstowe</dial3-6>
+			<dial3-7>char przechowuje pojedynczy znak</dial3-7>
+			<dial3-8>bool przechowuje wartosc logiczna prawda, lub falsz</dial3-8>
+			<dial4-1>Instrukcja warunkowa if pozwala na wykonaniu kodu pod okreslonym warunkiem, ktory podamy wewnatrz nawiasow</dial4-1>
+			<dial4-2>Powyzszy kod wyswietli "x > 0", jesli wartosc zmiennej x bedzie wieksza od zera</dial4-2>
+		</first-lesson>
 	</lang-data>
 </lang>

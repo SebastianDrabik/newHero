@@ -69,7 +69,7 @@ public class GameManager : MonoBehaviour
             currentObjective = key;
             isObjectiveShown = true;
         }
-        _ObjectiveController.ShowObjective(TranslationsManager.GetTranslation("objectives", key));
+        _ObjectiveController.ShowObjective(key);
     }
 
     public void HideObjective()
@@ -99,6 +99,10 @@ public class GameManager : MonoBehaviour
 
     private void AssignController()
     {
-        _ObjectiveController = GameObject.FindGameObjectWithTag("Canvas").GetComponent<ObjectiveController>();
+        if (SceneManager.GetActiveScene().name == "MainMenu")
+            return;
+        ObjectiveController oc = GameObject.FindGameObjectWithTag("Canvas").GetComponent<ObjectiveController>();
+        if(oc != null)
+            _ObjectiveController = oc;
     }
 }

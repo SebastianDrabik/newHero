@@ -10,7 +10,7 @@ public class ObjectiveController : MonoBehaviour
 
     public void ShowObjective(string text)
     {
-        objectiveDescription.text = text;
+        objectiveDescription.text = TranslationsManager.GetTranslation("objectives",text);
         objective.SetActive(true);
     }
 

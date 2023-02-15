@@ -12,8 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d97a29cf319bc345ad012237f331571, type: 3}
   m_Name: Lesson1
   m_EditorClassIdentifier: 
-  key: 
-  topCode: 
-  bottomCode: 
-  initialCode: 
-  inputOutput: []
+  key: test
+  topCode: "#include<iostream>\n\nusing namespace std;\n\nint main(int argc, char
+    *argv[]) {\n\tstring text = argv[1];\n\t// compare if text is equal to \"newHero\"
+    using ==\n\t// and return 1 if it is (use return 1;)"
+  bottomCode: "\treturn 0;\n}"
+  initialCode: "\t//your code goes here"
+  inputOutput:
+  - input: piotrcymerman
+    output: 0
+  - input: newHero
+    output: 1

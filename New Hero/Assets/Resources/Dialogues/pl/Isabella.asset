@@ -16,11 +16,11 @@ MonoBehaviour:
   sentences:
   - name: <insert hero name>
     sentence: Witaj, czy moge poglaskac twoja swinke?
-  - name: Auga
+  - name: Izabela
     sentence: 'Pewnie jest bardzo mila.
 
       Ale uwazaj, moze ugryzc Ci palec.'
   - name: <insert hero name>
     sentence: ...
-  - name: Auga
+  - name: Izabela
     sentence: "Haha, tylko zartuj\u0119. Smia\u0142o."

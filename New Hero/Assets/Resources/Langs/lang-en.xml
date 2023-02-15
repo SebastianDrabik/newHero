@@ -50,8 +50,26 @@
 		</saves-menu>
 		<objectives>
 			<test>SIQUEL OP STREAMER</test>
-			
+			<teacher>Find and talk with teacher.</teacher>
 			<lesson-seat>Find and take a seat.</lesson-seat>
 		</objectives>
+		<first-lesson>
+			<dial1-1>To add a library to the program we use #include&lt;library&gt;</dial1-1>
+			<dial1-2>Everything inside the "main" function will be executed by the program after compilation.</dial1-2>
+			<dial1-3>std::cout &lt;&lt; "hello world" command, makes the text inside double-quotes appear on the screen.</dial1-3>
+			<dial1-4>At the end of every line, with some exeptions, there needs to be a semicolon.</dial1-4>
+			<dial1-5>It's not necessary to use std:: when you add using namespace std at the very top of your code</dial1-5>
+			<dial2-1>You don't have to use std::, if you add using namespace std at the top of your code.</dial2-1>
+			<dial3-1>Using the program above you can assign values to two variables and display their sum.</dial3-1>
+			<dial3-2>With the help of variables, we can store some data, which can be used later in the program</dial3-2>
+			<dial3-3>There are multiple variable types, storing diffrent types of data:</dial3-3>
+			<dial3-4>int stores whole numbers</dial3-4>
+			<dial3-5>float stores numbers with decimal places</dial3-5>
+			<dial3-6>string stores text</dial3-6>
+			<dial3-7>char stores a single character</dial3-7>
+			<dial3-8>bool stores a logical data - true or false</dial3-8>
+			<dial4-1>If statement allows to execute some code under a certain condition, which we put inside the brackets</dial4-1>
+			<dial4-2>The code above shows "x > 0", if value of variable x is greater that zero</dial4-2>
+		</first-lesson>
 	</lang-data>
 </lang>

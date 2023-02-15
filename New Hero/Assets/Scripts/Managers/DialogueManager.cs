@@ -128,7 +128,9 @@ public class DialogueManager : MonoBehaviour
     private void AssignObjective()
     {
         if (!assignObjective) return;
-        print(objectiveDescription);
         manager.ShowObjective(objectiveDescription);
+
+        if(objectiveDescription == "lesson-seat")
+            FindObjectOfType<LessonManager>()?.EnableSeats();
     }
 }

@@ -6627,7 +6627,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1008155666}
         m_TargetAssemblyTypeName: SettingsMenu, Assembly-CSharp
-        m_MethodName: SetLanguage
+        m_MethodName: SetTheme
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

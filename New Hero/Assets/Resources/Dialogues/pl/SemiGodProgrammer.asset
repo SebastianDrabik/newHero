@@ -16,7 +16,7 @@ MonoBehaviour:
   sentences:
   - name: SemiGodProgrammer
     sentence: Witaj
-  - name: <insert hero name>
+  - name: Gracz
     sentence: General semigodprogrammer
   - name: SemiGodProgrammer
     sentence: '*Lightsaber expands*'

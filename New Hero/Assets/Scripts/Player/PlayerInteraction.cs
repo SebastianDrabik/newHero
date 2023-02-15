@@ -112,7 +112,7 @@ public class PlayerInteraction : MonoBehaviour
             DialogueManager.Instance.StartDialogue();
         if (lesson)
         {
-            Debug.Log("Seat");
+            FindObjectOfType<LessonManager>().StartLesson();
         }
 
     }
