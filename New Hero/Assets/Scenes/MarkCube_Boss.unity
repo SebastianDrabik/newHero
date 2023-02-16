@@ -2418,9 +2418,9 @@ MonoBehaviour:
   player: {fileID: 1446180381}
   bulletPrefab: {fileID: 8130018061961323461, guid: 4af38a16ee7bab644945b9b04c8674fb, type: 3}
   Intro: {fileID: 1675833160}
-  codeEditor: {fileID: 1755971738}
+  codeEditor: {fileID: 1755971740}
   shadow: {fileID: 965909297}
-  runCode: {fileID: 482629201}
+  manager: {fileID: 1310188441}
   camera: {fileID: 2062240792}
   canvas: {fileID: 1517470888}
   isFighting: 0
@@ -8561,6 +8561,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1303233292}
   m_CullTransparentMesh: 1
+--- !u!114 &1310188441 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2095978006161587173, guid: 851c2b3a13cc97145b5f7408cc49967c, type: 3}
+  m_PrefabInstance: {fileID: 1336050992}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00a93d8da4698bf4bbac5b1d1320cd52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1318662644
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9938,6 +9949,22 @@ MonoBehaviour:
   codeInput_text: {fileID: 892549770}
   Workspace: {fileID: 1515765454}
   runButtonAnimator: {fileID: 482629205}
+  runButton: {fileID: 482629201}
+  onCodeExecuted:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 787291897}
+        m_TargetAssemblyTypeName: MarkCube, Assembly-CSharp
+        m_MethodName: HandleCodeExecution
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1772216948
 GameObject:
   m_ObjectHideFlags: 0

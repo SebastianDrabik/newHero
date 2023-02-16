@@ -13,6 +13,8 @@ public class PlayerInteraction : MonoBehaviour
     private string currentScene = "";
     private bool NPC = false;
     private bool lesson = false;
+    private GameManager gameManager;
+    private bool disableInteraction = false;
 
     public void DamagePlayer(int amount)
     {
@@ -36,6 +38,7 @@ public class PlayerInteraction : MonoBehaviour
 
     private void Start()
     {
+        gameManager = FindObjectOfType<GameManager>();
         if (SaveSystem.health == 0)
             SaveSystem.health = maxHealth;
 
@@ -101,7 +104,7 @@ public class PlayerInteraction : MonoBehaviour
 
     void Update()
     {
-        if (!Input.GetKeyDown(KeyCode.E))
+        if (!Input.GetKeyDown(KeyCode.E) || disableInteraction)
             return;
         if(currentScene != "" && currentScene != "NPC"){
             PlayerPrefs.SetFloat("Interaction_x", currentCoords[0]);
@@ -113,7 +116,13 @@ public class PlayerInteraction : MonoBehaviour
         if (lesson)
         {
             FindObjectOfType<LessonManager>().StartLesson();
+            gameManager.HideObjective();
         }
 
+    }
+
+    public void SetInteractionDisabled(bool disabled)
+    {
+        disableInteraction = disabled;
     }
 }

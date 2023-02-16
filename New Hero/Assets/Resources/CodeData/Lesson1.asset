@@ -15,11 +15,12 @@ MonoBehaviour:
   key: test
   topCode: "#include<iostream>\n\nusing namespace std;\n\nint main(int argc, char
     *argv[]) {\n\tstring text = argv[1];\n\t// compare if text is equal to \"newHero\"
-    using ==\n\t// and return 1 if it is (use return 1;)"
+    using ==\n\t// and display \"The best game\" if it does (use cout)"
   bottomCode: "\treturn 0;\n}"
   initialCode: "\t//your code goes here"
   inputOutput:
   - input: piotrcymerman
-    output: 0
+    output: 
   - input: newHero
-    output: 1
+    output: The best game
+  checkType: 1

@@ -1,6 +1,5 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,9 +12,10 @@ public class MarkCube : MonoBehaviour
     public GameObject player;
     public GameObject bulletPrefab;
     public GameObject Intro;
-    public GameObject codeEditor;
+    public FightManager codeEditor;
     public GameObject shadow;
-    public Button runCode;
+    public GameManager manager;
+    //public Button runCode;
     public new Transform camera;
     public PauseMenu canvas;
 
@@ -36,7 +36,6 @@ public class MarkCube : MonoBehaviour
     {
         if(Instance == null)
             Instance = this;
-        runCode.onClick.AddListener(Check);
         if (SaveSystem.level>=SaveData.Level.MARK_CUBE)
         {
             Intro.SetActive(false);
@@ -44,23 +43,23 @@ public class MarkCube : MonoBehaviour
         }
     }
 
-    private void Check()
-    {
-        canvas.SetDisabled(false);
-        if (codeEditor.GetComponent<FightManager>().CheckCode())
-        {
-            Debug.Log("Boss Pokonany");
-            gameObject.GetComponent<Animator>().SetTrigger("Death");
-            timer = 1000f;
-            StartCoroutine(nameof(DeathAni));
-        }
-        else
-        {
-            Debug.Log("OJOJ");
-        }
-        codeEditor.GetComponent<FightManager>().CloseCodeEditor();
-        ResetAfterAttack();
-    }
+    //private void Check()
+    //{
+    //    canvas.SetDisabled(false);
+    //    if (codeEditor.CheckCode())
+    //    {
+    //        Debug.Log("Boss Pokonany");
+    //        gameObject.GetComponent<Animator>().SetTrigger("Death");
+    //        timer = 1000f;
+    //        StartCoroutine(nameof(DeathAni));
+    //    }
+    //    else
+    //    {
+    //        Debug.Log("OJOJ");
+    //    }
+    //    codeEditor.CloseCodeEditor();
+    //    ResetAfterAttack();
+    //}
 
 
     private void Start()
@@ -84,7 +83,7 @@ public class MarkCube : MonoBehaviour
         if(timer<=0f)
         {
             // TODO
-            GameManager.Instance.ChangeTrophyState("marco", Trophy.TrophyState.IN_PROGRESS);
+            manager.ChangeTrophyState("marco", Trophy.TrophyState.IN_PROGRESS);
             if (isAttacking)
             {
                 if (abovePlayer <= 2f)
@@ -145,7 +144,7 @@ public class MarkCube : MonoBehaviour
     public void JumpAttack()
     {
         Time.timeScale = 0f;
-        codeEditor.GetComponent<FightManager>().OpenCodeEditor("marco");
+        codeEditor.OpenCodeEditor("marco");
         canvas.GetComponent<PauseMenu>().SetDisabled(true);
         isAttacking = false;
         stage = -1;
@@ -174,10 +173,21 @@ public class MarkCube : MonoBehaviour
         gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, 0f);
     }
 
+    public void HandleCodeExecution(bool result)
+    {
+        if (result)
+        {
+            StartCoroutine(nameof(DeathAni));
+        }
+        ResetAfterAttack();
+        codeEditor.CloseCodeEditor();
+    }
+
+    //WIN
     IEnumerator DeathAni()
     {
         //I hate sand
-
+        gameObject.GetComponent<Animator>().SetTrigger("Death");
         float time = Array.Find(gameObject.GetComponent<Animator>().runtimeAnimatorController.animationClips, clip => clip.name == "Marco_Death").length;
         isDead = true;
         Cinemachine.CinemachineVirtualCamera _camera = camera.GetComponent<Cinemachine.CinemachineVirtualCamera>();

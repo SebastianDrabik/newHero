@@ -24,7 +24,15 @@ public class CodeData : ScriptableObject
     [Header("All correct outputs for inputs")]
     public inputData[] inputOutput;
 
-    //TODO modes - return/output
+    public enum CheckType
+    {
+        [Header("Check what program returns")]
+        EXIT_CODE = 0,
+        [Header("Check the output of the program")]
+        OUTPUT = 1,
+    }
+
+    public CheckType checkType = CheckType.EXIT_CODE;
 
     public Dictionary<string, string> GetData()
     {

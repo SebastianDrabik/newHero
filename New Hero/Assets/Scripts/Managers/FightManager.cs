@@ -3,11 +3,12 @@ using System.Text.RegularExpressions;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Events;
 
 public class FightManager : MonoBehaviour
 {
     public FightManager Instance { get; set; }
-    [Space]
+
     [Header("Top text gameobject")]
     public TextMeshProUGUI top;
     [Header("Bottom text gameobject")]
@@ -20,9 +21,21 @@ public class FightManager : MonoBehaviour
     [Header("Workspace gameobject")]
     public Image Workspace;
     public Animator runButtonAnimator;
+    public Button runButton;
 
-    private readonly List<CodeData> codeList = new();
-    private string currentKey;
+    public ErrorController errorController;
+
+    private PlayerMovement movement;
+    private PlayerInteraction interaction;
+
+    [Space]
+    [Header("Event called after successfull compilation")]
+    public UnityEvent<bool> onCodeExecuted;
+
+    private static readonly List<CodeData> codeList = new();
+    private static string currentKey;
+
+    private CodeData currentData;
 
     void Awake()
     {
@@ -34,21 +47,26 @@ public class FightManager : MonoBehaviour
     void Start()
     {
         gameObject.SetActive(false);
+        movement = FindObjectOfType<PlayerMovement>();
+        interaction = FindObjectOfType<PlayerInteraction>();
     }
 
     public void OpenCodeEditor(string key)
     {
-        CodeData code = GetCode(key);
+        currentData = GetCode(key);
         gameObject.SetActive(true);
-        this.top.text = code.topCode;
-        this.bottom.text = code.bottomCode;
-        codeInput_text.text = code.initialCode;
+        top.text = currentData.topCode;
+        bottom.text = currentData.bottomCode;
+        codeInput_text.text = currentData.initialCode;
         Workspace.color = EditorTheme.currentTheme.background;
         codeInput.Select();
         currentKey = key;
+
+        interaction.SetInteractionDisabled(true);
+        movement.SetMovementDisabled(true);
     }
 
-    private void Update()
+    private void LateUpdate()
     {
         HighlightSyntax(top);
         HighlightSyntax(bottom);
@@ -63,13 +81,17 @@ public class FightManager : MonoBehaviour
     public bool CheckCode()
     {
         CodeData cd = GetCode(currentKey);
-        Code code = new(top.text + "\n" + codeInput.text + "\n" + bottom.text, cd.GetData());
-        return code.CheckOutputs(runButtonAnimator);
+        Code code = new(top.text + "\n" + codeInput.text + "\n" + bottom.text, cd.GetData(), cd.checkType);
+
+        return code.CheckOutputs(runButtonAnimator, errorController);
     }
+
     public void CloseCodeEditor()
     {
         gameObject.SetActive(false);
         codeInput.text = "";
+        movement.SetMovementDisabled(false);
+        interaction.SetInteractionDisabled(false);
     }
 
     private void HighlightSyntax(TextMeshProUGUI text)
@@ -100,6 +122,16 @@ public class FightManager : MonoBehaviour
             }
         }
         text.UpdateVertexData(TMP_VertexDataUpdateFlags.All);
+    }
+
+    public void RunCode()
+    {
+
+        Debug.Log("RUN");
+        bool codeResult = CheckCode();
+        onCodeExecuted.Invoke(codeResult);
+        //compile 
+        //trigger event
     }
 
     private void LoadAllCodes()

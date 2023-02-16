@@ -20,7 +20,12 @@
       "ProjectGuid": "b99bfa55-c294-e37e-7b38-cd5873fbe1b6",
       "DisplayName": "Assembly-CSharp-Editor",
       "ColorIndex": 2
+    },
+    "0e321132-3abe-88db-e8f7-6cb2c67ef669": {
+      "ProjectGuid": "0e321132-3abe-88db-e8f7-6cb2c67ef669",
+      "DisplayName": "Unity.TextMeshPro",
+      "ColorIndex": 3
     }
   },
-  "NextColorIndex": 3
+  "NextColorIndex": 4
 }

@@ -1432,6 +1432,7 @@ GameObject:
   - component: {fileID: 2589658225377104381}
   - component: {fileID: 2627814806024848992}
   - component: {fileID: 1282904896531114569}
+  - component: {fileID: 7883620289079789423}
   m_Layer: 5
   m_Name: Title
   m_TagString: Untagged
@@ -1556,6 +1557,21 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &7883620289079789423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3350664458588613115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd7d464c1849a244b9f2895ac08fe234, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  group: esc-menu
+  key: trophies
+  watchEnable: 0
 --- !u!1 &4008881020779858121
 GameObject:
   m_ObjectHideFlags: 0

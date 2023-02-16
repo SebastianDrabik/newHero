@@ -17,11 +17,13 @@ public class Code
     
     public string code;
     public Dictionary<string, string> outputs;
+    public CodeData.CheckType checkType;
 
-    public Code(string code, Dictionary<string, string> outputs)
+    public Code(string code, Dictionary<string, string> outputs, CodeData.CheckType checkType)
     {
         this.code = code;
         this.outputs = outputs;
+        this.checkType = checkType;
     }
 
     public Code(string code, string input, string output)
@@ -55,12 +57,12 @@ public class Code
         }
     }
 
-    async private void Compile()
+    private bool Compile(ErrorController controller)
     {
         ClearDirectory();
         CreateFile();
         UnityEngine.Debug.Log(compilerPath + "-o \"" + outputFilePath + "\" " + "\"" + inputFilePath + "\"");
-        
+        string error = "";
         var task = Task.Factory.StartNew(()=>
         {
             var process = new Process
@@ -77,7 +79,8 @@ public class Code
             };
             process.Start();
             string output = process.StandardOutput.ReadToEnd();
-            string error = process.StandardError.ReadToEnd();
+            error = process.StandardError.ReadToEnd();
+
             process.WaitForExit();
             return process.ExitCode;
         });
@@ -87,16 +90,22 @@ public class Code
         if (task.Result == 0)
         {
             UnityEngine.Debug.Log("Compilation succeeded");
+            return true;
         }
         else
         {
-            UnityEngine.Debug.LogError("Compilation failed: " + task.Exception);
+            error = error.Replace(inputFilePath + ": ", "").Replace(inputFilePath + ":", "");
+            controller.SetData(error);
+            UnityEngine.Debug.LogError("Compilation failed: " + error);
+            return false;
         }
     }
 
-    public bool CheckOutputs(Animator animator)
+    public bool CheckOutputs(Animator animator, ErrorController controller)
     {
-        Compile();
+        bool compilationResult = Compile(controller);
+        if (!compilationResult)
+            return false;
         if (!File.Exists(outputFilePath))
         {
             UnityEngine.Debug.LogWarning("Executable file doesn't exist");
@@ -128,8 +137,11 @@ public class Code
                 process.Start();
 
                 string processOutput = process.StandardOutput.ReadToEnd();
-
-                return process.ExitCode.ToString() == output;
+                UnityEngine.Debug.Log($"<color=blue>Process output: {processOutput}</color>");
+                if(checkType == CodeData.CheckType.EXIT_CODE)
+                    return process.ExitCode.ToString() == output;
+                else
+                    return processOutput == output;
             }));
         }
 

@@ -42,6 +42,8 @@ public class GameManager : MonoBehaviour
     void OnSceneLoaded(Scene current, LoadSceneMode mode)
     {
         AssignController();
+        if(trophies.Count == 0)
+            LoadTrophies();
         if (isObjectiveShown)
             this.ShowObjective(currentObjective);
     }

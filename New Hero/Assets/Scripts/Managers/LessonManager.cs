@@ -11,8 +11,10 @@ public class LessonManager : MonoBehaviour
 
     public AudioManager AudioManager;
     public GameObject CodeEditor;
+    public FightManager attack;
 
     public GameObject subtitleText;
+    public PlayerMovement movement;
 
     [System.Serializable]
     public struct Part
@@ -54,6 +56,7 @@ public class LessonManager : MonoBehaviour
 
     IEnumerator ShowLesson(List<Part> lessonParts)
     {
+        movement.SetMovementDisabled(true);
         for(int j = 0; j < lessonParts.Count; j++)
         {
             Part part = lessonParts[j];
@@ -68,9 +71,25 @@ public class LessonManager : MonoBehaviour
                     yield return new WaitUntil(() => Input.anyKeyDown);
             }
             yield return new WaitUntil(() => Input.anyKeyDown);
-
         }
+        //lesson end
         CodeEditor.SetActive(false);
         subtitleText.SetActive(false);
+        movement.SetMovementDisabled(false);
+        attack.OpenCodeEditor("test");
+    }
+
+    public void HandleCodeExecution(bool result)
+    {
+        if (result)
+        {
+            // test passed
+            attack.CloseCodeEditor();
+            lessonTriggers.SetActive(false);
+            classExit.SetActive(true);
+            manager.ChangeTrophyState("hello", Trophy.TrophyState.UNLOCKED, true);
+            SaveSystem.level = SaveData.Level.CPP_BASICS;
+            return;
+        }
     }
 }

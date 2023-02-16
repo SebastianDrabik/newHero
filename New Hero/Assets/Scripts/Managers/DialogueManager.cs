@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -20,6 +21,7 @@ public class DialogueManager : MonoBehaviour
 
     public static bool assignObjective;
     public static string objectiveDescription;
+    public static UnityEvent OnDialogueEnd;
 
     private Queue<DialogueSentence> sentences;
     private PlayerMovement playerMovement;
@@ -116,6 +118,7 @@ public class DialogueManager : MonoBehaviour
         playerMovement.SetMovementDisabled(false);
         pauseMenu.SetDisabled(false);
         animator.SetBool("IsOpen", false);
+        OnDialogueEnd.Invoke();
     }
 
     private void LoadAllDialogues(string lang)
@@ -130,7 +133,7 @@ public class DialogueManager : MonoBehaviour
         if (!assignObjective) return;
         manager.ShowObjective(objectiveDescription);
 
-        if(objectiveDescription == "lesson-seat")
-            FindObjectOfType<LessonManager>()?.EnableSeats();
+        //if(objectiveDescription == "lesson-seat")
+        //    FindObjectOfType<LessonManager>()?.EnableSeats();
     }
 }
