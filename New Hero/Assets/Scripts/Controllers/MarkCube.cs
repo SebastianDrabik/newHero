@@ -82,7 +82,7 @@ public class MarkCube : MonoBehaviour
         timer -= Time.deltaTime;
         if(timer<=0f)
         {
-            // TODO
+            // TODO FIX 
             manager.ChangeTrophyState("marco", Trophy.TrophyState.IN_PROGRESS);
             if (isAttacking)
             {
