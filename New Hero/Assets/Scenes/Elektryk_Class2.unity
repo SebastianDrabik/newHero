@@ -7122,7 +7122,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1046974009524135819, guid: fd9e34520af5165439a495862296f800, type: 3}
       propertyPath: OnDialogueEnd.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1046974009524135819, guid: fd9e34520af5165439a495862296f800, type: 3}
       propertyPath: OnDialogueEnd.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -7130,12 +7130,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1046974009524135819, guid: fd9e34520af5165439a495862296f800, type: 3}
       propertyPath: OnDialogueEnd.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1046974009524135819, guid: fd9e34520af5165439a495862296f800, type: 3}
       propertyPath: OnDialogueEnd.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1759047190}
+    - target: {fileID: 1046974009524135819, guid: fd9e34520af5165439a495862296f800, type: 3}
+      propertyPath: OnDialogueEnd.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1780286039}
     - target: {fileID: 1046974009524135819, guid: fd9e34520af5165439a495862296f800, type: 3}
       propertyPath: OnDialogueEnd.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -7149,15 +7153,23 @@ PrefabInstance:
       value: EnableSeats
       objectReference: {fileID: 0}
     - target: {fileID: 1046974009524135819, guid: fd9e34520af5165439a495862296f800, type: 3}
+      propertyPath: OnDialogueEnd.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 1046974009524135819, guid: fd9e34520af5165439a495862296f800, type: 3}
       propertyPath: OnDialogueEnd.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: LessonManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 1046974009524135819, guid: fd9e34520af5165439a495862296f800, type: 3}
       propertyPath: OnDialogueEnd.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: LessonManager, Assembly-CSharp
+      value: UnityEngine.GameObject, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 1046974009524135819, guid: fd9e34520af5165439a495862296f800, type: 3}
       propertyPath: OnDialogueEnd.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1046974009524135819, guid: fd9e34520af5165439a495862296f800, type: 3}
+      propertyPath: OnDialogueEnd.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 1046974009524135820, guid: fd9e34520af5165439a495862296f800, type: 3}
@@ -7414,7 +7426,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1736271813}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -9400,7 +9412,7 @@ RectTransform:
   - {fileID: 571753071}
   - {fileID: 819839502}
   m_Father: {fileID: 1736271813}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -10973,6 +10985,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: -29.199951
       objectReference: {fileID: 0}
+    - target: {fileID: 4937270831239817241, guid: 6b8ac79c3bfbcca49a60682af3545b6d, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 5523479956838922411, guid: 6b8ac79c3bfbcca49a60682af3545b6d, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -11565,6 +11581,10 @@ MonoBehaviour:
   coordinates:
   - -23.5
   - 13.35
+  locked: 0
+  onLocked:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1809671504 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6025296456394379354, guid: 5d2ca95c976440e46a83d3f6bd12f500, type: 3}

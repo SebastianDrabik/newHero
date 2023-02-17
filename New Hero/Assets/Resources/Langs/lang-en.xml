@@ -71,5 +71,8 @@
 			<dial4-1>If statement allows to execute some code under a certain condition, which we put inside the brackets</dial4-1>
 			<dial4-2>The code above shows "x > 0", if value of variable x is greater that zero</dial4-2>
 		</first-lesson>
+		<messages>
+			<doors-locked>Doors are closed.</doors-locked>
+		</messages>
 	</lang-data>
 </lang>

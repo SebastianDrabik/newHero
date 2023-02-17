@@ -88,6 +88,7 @@ public class LessonManager : MonoBehaviour
             lessonTriggers.SetActive(false);
             classExit.SetActive(true);
             manager.ChangeTrophyState("hello", Trophy.TrophyState.UNLOCKED, true);
+            manager.HideObjective();
             SaveSystem.level = SaveData.Level.CPP_BASICS;
             return;
         }

@@ -70,5 +70,8 @@
 			<dial4-1>Instrukcja warunkowa if pozwala na wykonaniu kodu pod okreslonym warunkiem, ktory podamy wewnatrz nawiasow</dial4-1>
 			<dial4-2>Powyzszy kod wyswietli "x > 0", jesli wartosc zmiennej x bedzie wieksza od zera</dial4-2>
 		</first-lesson>
+		<messages>
+			<doors-locked>Drzwi sa zamkniete.</doors-locked>
+		</messages>
 	</lang-data>
 </lang>

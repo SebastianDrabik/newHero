@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System;
 using System.Collections;
+using UnityEngine.Events;
 using TMPro;
 
 public class PlayerInteraction : MonoBehaviour
@@ -11,6 +12,8 @@ public class PlayerInteraction : MonoBehaviour
     readonly int maxHealth = 31;
     private float[] currentCoords = new float[2];
     private string currentScene = "";
+    private bool currentDoorsDisabled = false;
+    private UnityEvent onLocked;
     private bool NPC = false;
     private bool lesson = false;
     private GameManager gameManager;
@@ -80,6 +83,8 @@ public class PlayerInteraction : MonoBehaviour
         DoorController doors = collision.gameObject.GetComponent<DoorController>();
         currentScene = doors.sceneName;
         currentCoords = doors.coordinates;
+        currentDoorsDisabled = doors.locked;
+        onLocked = doors.onLocked;
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
@@ -96,7 +101,7 @@ public class PlayerInteraction : MonoBehaviour
             return;
         }
         if (!collision.gameObject.CompareTag("Door"))
-        return;
+            return;
         image.SetActive(false);
         currentScene = "";
         currentCoords = new float[2];
@@ -107,16 +112,22 @@ public class PlayerInteraction : MonoBehaviour
         if (!Input.GetKeyDown(KeyCode.E) || disableInteraction)
             return;
         if(currentScene != "" && currentScene != "NPC"){
-            PlayerPrefs.SetFloat("Interaction_x", currentCoords[0]);
-            PlayerPrefs.SetFloat("Interaction_y", currentCoords[1]);
-            SceneManager.LoadScene(currentScene);
+            if (!currentDoorsDisabled)
+            {
+                PlayerPrefs.SetFloat("Interaction_x", currentCoords[0]);
+                PlayerPrefs.SetFloat("Interaction_y", currentCoords[1]);
+                SceneManager.LoadScene(currentScene);
+            }else
+            {
+                onLocked.Invoke();
+            }
         }
         if (NPC)
             DialogueManager.Instance.StartDialogue();
         if (lesson)
         {
             FindObjectOfType<LessonManager>().StartLesson();
-            gameManager.HideObjective();
+            //gameManager.HideObjective();
         }
 
     }

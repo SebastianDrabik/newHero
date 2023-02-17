@@ -8,6 +8,7 @@ using UnityEngine.UI;
 
 public class LevelLoader : MonoBehaviour
 {
+    // USELESS FILE
     public GameObject loadingScreen;
     public Slider slider;
     public TextMeshProUGUI progressText;

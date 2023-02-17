@@ -17,6 +17,7 @@ public class PopupWindow : EditorWindow
         if (GUILayout.Button("Submit"))
         {
             Code.compilerPath = inputText;
+            Debug.Log($"New compiler path: {inputText}");
         }
     }
 }

@@ -1,4 +1,8 @@
+using System.Collections.Generic;
 using UnityEditor;
+using UnityEngine;
+using UnityEditor.SceneManagement;
+using UnityEngine.SceneManagement;
 using System.IO;
 
 public class Editor : UnityEditor.Editor
@@ -21,19 +25,10 @@ public class Editor : UnityEditor.Editor
         MarkCube.Instance.JumpAttack();
     }
 
-    //[MenuItem("Dev/Edit Trophies")]
-    //static void Edit()
-    //{
-    //    int selected = 0;
-    //    string[] options = new string[]
-    //    {
-    // "Option1", "Option2", "Option3",
-    //    };
-    //    selected = EditorGUILayout.Popup("Label", selected, options);
-    //}
-    //
-    //public List<string> NameList;
-    //
-    //[MenuItem("Dev/NameList")]
-    //public static string MyName;
+    [MenuItem("Dev/Use default G++ compiler")]
+    static void SetGPPPath()
+    {
+        Code.compilerPath = "g++";
+        Debug.Log("Your compiler path has been set to <color=green>g++</color>");
+    }
 }

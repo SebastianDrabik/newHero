@@ -10,6 +10,7 @@ public class SaveData
         NEW_GAME = 0,
         CPP_BASICS = 1,
         MARK_CUBE = 2,
+        PYTHON = 3,
     }
     public Level level;
     public float[] position;
