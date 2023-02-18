@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: MarcoCube
   m_EditorClassIdentifier: 
   key: marco
-  topCode: "#include<iostream>\n#include<windows.h> //tests\n\nusing namespace std;\n\nint
-    main(int argc, char *argv[]){\n\tconst int health = stoi(argv[1]);\n\t/*check
-    if health equals 4 and if it does, return 1 (use if(condition) {...})*/"
+  topCode: "#include<iostream>\n\nusing namespace std;\n\nint main(int argc, char
+    *argv[]){\n\tconst int health = stoi(argv[1]);\n\t/*check if health equals 4
+    and if it does, return 1 (use if(condition) {...})*/"
   bottomCode: "\treturn 0;\n}"
-  initialCode: 
+  initialCode: "\t//your code goes here"
   inputOutput:
   - input: 4
     output: 1
@@ -25,3 +25,4 @@ MonoBehaviour:
     output: 0
   - input: 3
     output: 0
+  checkType: 0

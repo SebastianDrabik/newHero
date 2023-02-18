@@ -15,6 +15,7 @@ public class LessonManager : MonoBehaviour
 
     public GameObject subtitleText;
     public PlayerMovement movement;
+    public PauseMenu pauseMenu;
 
     [System.Serializable]
     public struct Part
@@ -51,6 +52,8 @@ public class LessonManager : MonoBehaviour
         CodeEditor.SetActive(true);
         subtitleText.SetActive(true);
         StartCoroutine(nameof(ShowLesson), lessonParts);
+
+        pauseMenu.SetDisabled(true);
     }
 
 
@@ -90,6 +93,7 @@ public class LessonManager : MonoBehaviour
             manager.ChangeTrophyState("hello", Trophy.TrophyState.UNLOCKED, true);
             manager.HideObjective();
             SaveSystem.level = SaveData.Level.CPP_BASICS;
+            pauseMenu.SetDisabled(false);
             return;
         }
     }

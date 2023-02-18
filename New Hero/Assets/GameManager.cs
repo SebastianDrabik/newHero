@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     private MessageController _MessageController;
     private string currentObjective = "";
     private bool isObjectiveShown = false;
+    private bool trophiesLoaded = false;
     
 
     private void Awake()
@@ -25,6 +26,8 @@ public class GameManager : MonoBehaviour
         }
         else
             Destroy(this);
+        if(!trophiesLoaded)
+            LoadTrophies();
     }
 
     void OnEnable() {
@@ -46,11 +49,13 @@ public class GameManager : MonoBehaviour
         if(trophies.Count == 0)
             LoadTrophies();
         if (isObjectiveShown)
-            this.ShowObjective(currentObjective);
+            ShowObjective(currentObjective);
     }
 
     public void LoadTrophies()
     {
+        if (trophiesLoaded)
+            return;
         TrophyList trophyList = TranslationsManager.GetTrophies();
         trophies.Clear();
         foreach (var item in trophyList.trophies)
@@ -63,6 +68,7 @@ public class GameManager : MonoBehaviour
             nt.objective = item.objective;
             trophies.Add(nt);
         }
+        trophiesLoaded = true;
     }
 
     public void ShowObjective(string key)

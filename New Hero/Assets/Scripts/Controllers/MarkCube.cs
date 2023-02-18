@@ -19,7 +19,6 @@ public class MarkCube : MonoBehaviour
     public new Transform camera;
     public PauseMenu canvas;
 
-
     private float abovePlayer = 10f;
     private bool isAttacking = false;
     private float timerMult = 1f;
@@ -27,6 +26,7 @@ public class MarkCube : MonoBehaviour
     private int stage = 0;
     int counter = 0;
     private bool isDead = false;
+    private PauseMenu pauseMenu;
 
     [HideInInspector]
     public bool isFighting = false;
@@ -41,6 +41,7 @@ public class MarkCube : MonoBehaviour
             Intro.SetActive(false);
             gameObject.SetActive(false);
         }
+        pauseMenu = GameObject.FindGameObjectWithTag("Canvas").GetComponent<PauseMenu>();
     }
 
     //private void Check()
@@ -68,7 +69,10 @@ public class MarkCube : MonoBehaviour
         canvas.SetDisabled(true);
         Invoke(nameof(HideIntro), 3);
         if (SaveSystem.level < SaveData.Level.MARK_CUBE)
+        {
+            manager.ChangeTrophyState("marco", Trophy.TrophyState.IN_PROGRESS);
             isFighting = true;
+        }
     }
 
     void HideIntro()
@@ -82,8 +86,6 @@ public class MarkCube : MonoBehaviour
         timer -= Time.deltaTime;
         if(timer<=0f)
         {
-            // TODO FIX 
-            manager.ChangeTrophyState("marco", Trophy.TrophyState.IN_PROGRESS);
             if (isAttacking)
             {
                 if (abovePlayer <= 2f)
@@ -145,7 +147,7 @@ public class MarkCube : MonoBehaviour
     {
         Time.timeScale = 0f;
         codeEditor.OpenCodeEditor("marco");
-        canvas.GetComponent<PauseMenu>().SetDisabled(true);
+        pauseMenu.SetDisabled(true);
         isAttacking = false;
         stage = -1;
     }
@@ -200,6 +202,7 @@ public class MarkCube : MonoBehaviour
         _camera.m_Lens.OrthographicSize = initialOrtoSize;
         gameObject.SetActive(false);
         GameManager.Instance.ChangeTrophyState("marco", Trophy.TrophyState.UNLOCKED, true);
+        pauseMenu.SetDisabled(false);
         SaveSystem.level = SaveData.Level.MARK_CUBE;
     }
 
