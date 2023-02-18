@@ -179,7 +179,7 @@ public class MarkCube : MonoBehaviour
     {
         if (result)
         {
-            StartCoroutine(nameof(DeathAni));
+            StartCoroutine("DeathAni");
         }
         ResetAfterAttack();
         codeEditor.CloseCodeEditor();

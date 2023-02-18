@@ -14,15 +14,62 @@ public class Python : MonoBehaviour
 
     int rockCount = 100;
 
+    public Sprite blue;
+    public Sprite yellow;
+    public Sprite normal;
+
+    public GameObject yellowPython;
+    public GameObject bluePython;
+
+    public short health = 4;
+
+    float timer = 4f;
+
+    enum attackMode
+    {
+        rock = 0,
+        contact = 1,
+    }
+    
+    attackMode currentMode;
+
+    enum attacking
+    {
+        yellow = 0,
+        blue=1,
+    }
+
     void Start()
     {
-        
+        currentMode = attackMode.rock;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        timer -= Time.deltaTime;
+
+        if (timer <= 0f)
+        {
+            if(currentMode == attackMode.rock)
+            {
+                RockAttack();
+                currentMode = attackMode.contact;
+            }else if(currentMode == attackMode.contact)
+            {
+                Attack();
+                currentMode = attackMode.rock;
+            }
+            timer = 4f;
+
+        }
+
+        if (health == 0f)
+        {
+            //DIE
+            Debug.Log("He ded");
+            gameObject.SetActive(false);
+        }
     }
 
     public void RockAttack()
@@ -69,5 +116,40 @@ public class Python : MonoBehaviour
         yield return new WaitForSeconds(Random.Range(0f, 5f));
         GameObject rock = Instantiate(rockPrefab,pos,Quaternion.identity);
         rock.GetComponent<RockFly>().speed = speed;
+    }
+
+
+    public void Attack()
+    {
+        int attackingNum = Random.Range(0, 2);
+
+        Vector3 playerPos = GameObject.FindGameObjectWithTag("Player").transform.position;
+
+        if (attackingNum == (int)attacking.yellow)
+        {
+            yellowPython.SetActive(true);
+            yellowPython.transform.SetPositionAndRotation(playerPos, Quaternion.identity);
+            yellowPython.GetComponent<MiniPython>().AttackPlayer(health);
+            gameObject.GetComponent<SpriteRenderer>().sprite = blue;
+        }else if (attackingNum == (int)attacking.blue)
+        {
+            bluePython.SetActive(true);
+            bluePython.transform.SetPositionAndRotation(playerPos, Quaternion.identity);
+            bluePython.GetComponent<MiniPython>().AttackPlayer(health);
+            gameObject.GetComponent<SpriteRenderer>().sprite = yellow;
+        }
+    }
+
+    public void HandleCodeExecution(bool result)
+    {
+        if (result)
+        {
+            health--;
+        }
+
+        yellowPython.SetActive(false);
+        bluePython.SetActive(false);
+
+        gameObject.GetComponent<SpriteRenderer>().sprite = normal;
     }
 }
