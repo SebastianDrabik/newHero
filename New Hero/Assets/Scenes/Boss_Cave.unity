@@ -4480,7 +4480,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &265070098
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4493,8 +4493,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdd2b67bf5279b94c85ebfe4b7d4607b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  editor: {fileID: 0}
-  python: {fileID: 0}
+  editor: {fileID: 727013955}
+  python: {fileID: 1234919927}
 --- !u!61 &265070099
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5017,6 +5017,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d2ca95c976440e46a83d3f6bd12f500, type: 3}
+--- !u!114 &727013955 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6025296456394379354, guid: 5d2ca95c976440e46a83d3f6bd12f500, type: 3}
+  m_PrefabInstance: {fileID: 727013954}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78434b6257d056e43af9e186c1128c81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &770119923
 GameObject:
   m_ObjectHideFlags: 0
@@ -5387,7 +5398,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &817930993
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5400,8 +5411,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdd2b67bf5279b94c85ebfe4b7d4607b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  editor: {fileID: 0}
-  python: {fileID: 0}
+  editor: {fileID: 727013955}
+  python: {fileID: 1234919927}
 --- !u!61 &817930994
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6171,12 +6182,13 @@ MonoBehaviour:
   leftWall: {fileID: 981829195}
   rightWall: {fileID: 686759627}
   rockPrefab: {fileID: 4520515716269435468, guid: af82edc81f2a8784d8d16a668690cb7f, type: 3}
-  blue: {fileID: 0}
-  yellow: {fileID: 0}
-  normal: {fileID: 0}
-  yellowPython: {fileID: 0}
-  bluePython: {fileID: 0}
+  blue: {fileID: 21300000, guid: 73861cf21cbd19e45962c6606b657cc0, type: 3}
+  yellow: {fileID: 21300000, guid: f2ae0c93e21004842a09528d3810c631, type: 3}
+  normal: {fileID: 21300000, guid: 963206e7c4f26e74a86747dbd1fe4428, type: 3}
+  yellowPython: {fileID: 265070097}
+  bluePython: {fileID: 817930992}
   health: 4
+  fightStarted: 0
 --- !u!212 &1234919929
 SpriteRenderer:
   m_ObjectHideFlags: 0

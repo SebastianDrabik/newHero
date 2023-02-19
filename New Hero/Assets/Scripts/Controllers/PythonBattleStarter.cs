@@ -22,6 +22,7 @@ public class PythonBattleStarter : MonoBehaviour
         python.GetComponent<Animator>().SetTrigger("Change");
         yield return new WaitForSeconds(7.0f);
         cam.Follow = GameObject.FindGameObjectWithTag("Player").transform;
+        python.GetComponent<Python>().fightStarted = true;
         gameObject.SetActive(false);
     }
 }

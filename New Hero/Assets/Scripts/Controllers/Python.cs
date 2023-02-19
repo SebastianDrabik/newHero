@@ -25,6 +25,9 @@ public class Python : MonoBehaviour
 
     float timer = 4f;
 
+    public bool fightStarted = false;
+    bool IsAttacking = false;
+
     enum attackMode
     {
         rock = 0,
@@ -47,6 +50,8 @@ public class Python : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!fightStarted || IsAttacking) return;
+
         timer -= Time.deltaTime;
 
         if (timer <= 0f)
@@ -121,6 +126,7 @@ public class Python : MonoBehaviour
 
     public void Attack()
     {
+        IsAttacking = true;
         int attackingNum = Random.Range(0, 2);
 
         Vector3 playerPos = GameObject.FindGameObjectWithTag("Player").transform.position;
@@ -151,5 +157,6 @@ public class Python : MonoBehaviour
         bluePython.SetActive(false);
 
         gameObject.GetComponent<SpriteRenderer>().sprite = normal;
+        IsAttacking = false;
     }
 }
