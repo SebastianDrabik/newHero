@@ -13,8 +13,18 @@ MonoBehaviour:
   m_Name: Python2
   m_EditorClassIdentifier: 
   key: python2
-  topCode: 
-  bottomCode: 
-  initialCode: 
-  inputOutput: []
-  checkType: 0
+  topCode: "#include<iostream>\n\nusing namespace std;\n\nint main(int argc, char
+    *argv[]){\n\tint numbers[] = {stoi(argv[1], stoi(argv[2]))};\n\t// display all
+    numbers from array numbers"
+  bottomCode: "\treturn 0;\n}"
+  initialCode: "\tfor(int i = 0; /*your code*/)\n\t\tcout << /*your code*/ << endl;"
+  inputOutput:
+  - input: 69 1
+    output: '69
+
+      1'
+  - input: 1 8
+    output: '1
+
+      8'
+  checkType: 1

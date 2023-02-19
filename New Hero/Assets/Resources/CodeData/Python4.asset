@@ -13,8 +13,14 @@ MonoBehaviour:
   m_Name: Python4
   m_EditorClassIdentifier: 
   key: python4
-  topCode: 
-  bottomCode: 
-  initialCode: 
-  inputOutput: []
+  topCode: "#include<iostream>\n\nusing namespace std;\n\nint main(int argc, char
+    *argv[]){\n\tint number = stoi(argv[1]);\n\t// check if number is even using
+    modulo operator\n\t// if it does, return it"
+  bottomCode: "\treturn 0;\n}"
+  initialCode: "\t// your code goes here"
+  inputOutput:
+  - input: 3
+    output: 0
+  - input: 4
+    output: 4
   checkType: 0

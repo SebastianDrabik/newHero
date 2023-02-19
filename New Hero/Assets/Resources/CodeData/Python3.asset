@@ -13,8 +13,22 @@ MonoBehaviour:
   m_Name: Python3
   m_EditorClassIdentifier: 
   key: python3
-  topCode: 
-  bottomCode: 
-  initialCode: 
-  inputOutput: []
+  topCode: "#include<iostream>\n\nusing namespace std;\n\nint main(int argc, char
+    *argv[]){\n\tint height = stoi(argv[1]);\n\t// draw rectangle with '#'. \n\t//
+    width of rectangle is 5"
+  bottomCode: "\treturn 0;\n}"
+  initialCode: "\t// your code goes here"
+  inputOutput:
+  - input: 4
+    output: '#####
+
+      #####
+
+      #####
+
+      #####'
+  - input: 2
+    output: '#####
+
+      #####'
   checkType: 0
