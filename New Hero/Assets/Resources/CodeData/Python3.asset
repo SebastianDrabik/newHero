@@ -31,4 +31,4 @@ MonoBehaviour:
     output: '#####
 
       #####'
-  checkType: 0
+  checkType: 1

@@ -100,6 +100,7 @@ public class SaveListController : MonoBehaviour
         FileStream fs = new(saveDataPath, FileMode.Open);
         XmlSerializer x = new(saves.GetType());
         saves = x.Deserialize(fs) as List<SaveItemData>;
+        fs.Close();
     }
 
     private void FillList()

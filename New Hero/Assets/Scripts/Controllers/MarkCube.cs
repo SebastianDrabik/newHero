@@ -16,6 +16,7 @@ public class MarkCube : MonoBehaviour
     public GameObject shadow;
     public GameManager manager;
     //public Button runCode;
+    public MessageManager messageManager;
     public new Transform camera;
     public PauseMenu canvas;
 
@@ -43,25 +44,6 @@ public class MarkCube : MonoBehaviour
         }
         pauseMenu = GameObject.FindGameObjectWithTag("Canvas").GetComponent<PauseMenu>();
     }
-
-    //private void Check()
-    //{
-    //    canvas.SetDisabled(false);
-    //    if (codeEditor.CheckCode())
-    //    {
-    //        Debug.Log("Boss Pokonany");
-    //        gameObject.GetComponent<Animator>().SetTrigger("Death");
-    //        timer = 1000f;
-    //        StartCoroutine(nameof(DeathAni));
-    //    }
-    //    else
-    //    {
-    //        Debug.Log("OJOJ");
-    //    }
-    //    codeEditor.CloseCodeEditor();
-    //    ResetAfterAttack();
-    //}
-
 
     private void Start()
     {
@@ -121,9 +103,14 @@ public class MarkCube : MonoBehaviour
             timer = 2f;
             timer *= timerMult;
             counter++;
+            if(counter == 1)
+            {
+                messageManager.ShowMessage("cube-bullet");
+            }
             if(counter==10 && stage == 0)
             {
                 stage = 1;
+                messageManager.ShowMessage("cube-box");
             }
             if(counter==25 && stage == 1)
             {

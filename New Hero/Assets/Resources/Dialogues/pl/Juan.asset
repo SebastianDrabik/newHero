@@ -14,5 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   key: juan
   sentences:
-  - name: Pablo
-    sentence: Ok
+  - name: Gracz
+    sentence: Dzien dobry, chcialbym przejsc ta ulica.
+  - name: Pawel
+    sentence: Niestety, ale nie jest to jeszcze mozliwe.
+  - name: Gracz
+    sentence: Kiedy skonczy sie remont?
+  - name: Pawel
+    sentence: Nie zostalismy jeszcze oplaceni, moglbys nam pomoc i porozmawiac o
+      tym z Markiem Cubem?
+  - name: Gracz
+    sentence: Kto to?
+  - name: Pawel
+    sentence: Zapytaj w tej szkole

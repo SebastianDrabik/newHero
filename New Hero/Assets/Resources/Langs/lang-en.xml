@@ -49,7 +49,7 @@
 			<error-empty>Name cannot be empty.</error-empty>
 		</saves-menu>
 		<objectives>
-			<test>SIQUEL OP STREAMER</test>
+			<find-school>Go to school.</find-school>
 			<teacher>Find and talk with teacher.</teacher>
 			<lesson-seat>Find and take a seat.</lesson-seat>
 		</objectives>
@@ -73,6 +73,10 @@
 		</first-lesson>
 		<messages>
 			<doors-locked>Doors are closed.</doors-locked>
+			<too-young>You are too young to drive a car!</too-young>
+			<cube-bullet>Avoid all bugs!</cube-bullet>
+			<cube-box>Watch out!</cube-box>
+			<python-try-to-survive>Avoid all rocks!</python-try-to-survive>
 		</messages>
 	</lang-data>
 </lang>

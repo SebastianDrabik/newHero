@@ -96,7 +96,7 @@ public class Code
         {
             error = error.Replace(inputFilePath + ": ", "").Replace(inputFilePath + ":", "");
             controller.SetData(error);
-            UnityEngine.Debug.LogError("Compilation failed: " + error);
+            UnityEngine.Debug.Log($"<color=red>Compilation failed: {error}</color>");
             return false;
         }
     }
@@ -137,11 +137,17 @@ public class Code
                 process.Start();
 
                 string processOutput = process.StandardOutput.ReadToEnd();
-                UnityEngine.Debug.Log($"<color=blue>Process output: {processOutput}</color>");
-                if(checkType == CodeData.CheckType.EXIT_CODE)
+
+                UnityEngine.Debug.Log($"<color=cyan>Process output: \n{processOutput}</color>");
+                //UnityEngine.Debug.Log(input); // fuck debugging
+                //UnityEngine.Debug.Log(processOutput); // fuck debugging
+                //UnityEngine.Debug.Log(output); // fuck debugging
+                //UnityEngine.Debug.Log($"<color=yellow>{processOutput.Trim().CompareTo(output.Trim())}</color>"); // fuck debugging
+
+                if (checkType == CodeData.CheckType.EXIT_CODE)
                     return process.ExitCode.ToString() == output;
                 else
-                    return processOutput == output;
+                    return NormalizeNewLines(processOutput) == NormalizeNewLines(output);
             }));
         }
 
@@ -155,5 +161,10 @@ public class Code
         ClearDirectory();
 
         return result;
+    }
+
+    private string NormalizeNewLines(string s)
+    {
+        return s.Replace("\r\n", "\n").Replace("\r", "\n").TrimEnd('\n');
     }
 }

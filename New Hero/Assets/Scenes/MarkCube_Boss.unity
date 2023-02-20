@@ -2421,6 +2421,7 @@ MonoBehaviour:
   codeEditor: {fileID: 1755971740}
   shadow: {fileID: 965909297}
   manager: {fileID: 1310188441}
+  messageManager: {fileID: 1517470889}
   camera: {fileID: 2062240792}
   canvas: {fileID: 1517470888}
   isFighting: 0
@@ -6719,6 +6720,10 @@ MonoBehaviour:
   coordinates:
   - -40.5
   - 24
+  locked: 0
+  onLocked:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1135503081
 GameObject:
   m_ObjectHideFlags: 0
@@ -8735,7 +8740,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5974894908412393241, guid: 6b8ac79c3bfbcca49a60682af3545b6d, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6866731608743565176, guid: 6b8ac79c3bfbcca49a60682af3545b6d, type: 3}
       propertyPath: m_RootOrder
@@ -8919,7 +8924,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8653584975696950328, guid: 6b8ac79c3bfbcca49a60682af3545b6d, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8797438553522596513, guid: 6b8ac79c3bfbcca49a60682af3545b6d, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -9227,6 +9232,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e20c0ba4e2c530444b5cd07a3a15eafd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1517470889 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7860542728427563326, guid: 6b8ac79c3bfbcca49a60682af3545b6d, type: 3}
+  m_PrefabInstance: {fileID: 1352815270}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1517470887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a1bec97387385b4d851a5c0d8c34677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1599745131
@@ -9950,6 +9966,7 @@ MonoBehaviour:
   Workspace: {fileID: 1515765454}
   runButtonAnimator: {fileID: 482629205}
   runButton: {fileID: 482629201}
+  errorController: {fileID: 0}
   onCodeExecuted:
     m_PersistentCalls:
       m_Calls:

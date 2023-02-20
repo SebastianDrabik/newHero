@@ -14,8 +14,12 @@ public class PlayerInteraction : MonoBehaviour
     private string currentScene = "";
     private bool currentDoorsDisabled = false;
     private UnityEvent onLocked;
+    private UnityEvent currentInteractionEvent;
+
     private bool NPC = false;
     private bool lesson = false;
+    private bool otherInteraction = false;
+
     private GameManager gameManager;
     private bool disableInteraction = false;
 
@@ -74,6 +78,13 @@ public class PlayerInteraction : MonoBehaviour
             image.SetActive(true);
             return;
         }
+        if (collision.gameObject.GetComponent<InteractionController>() != null)
+        {
+            currentInteractionEvent = collision.gameObject.GetComponent<InteractionController>().onInteraction;
+            otherInteraction = true;
+            image.SetActive(true);
+            return;
+        }
         if (!collision.gameObject.CompareTag("Door"))
             return;
         if(MarkCube.Instance != null)
@@ -97,6 +108,12 @@ public class PlayerInteraction : MonoBehaviour
         if (collision.gameObject.CompareTag("Seat"))
         {
             lesson = false;
+            image.SetActive(false);
+            return;
+        }
+        if (collision.gameObject.GetComponent<InteractionController>() != null)
+        {
+            otherInteraction = false;
             image.SetActive(false);
             return;
         }
@@ -125,11 +142,9 @@ public class PlayerInteraction : MonoBehaviour
         if (NPC)
             DialogueManager.Instance.StartDialogue();
         if (lesson)
-        {
             FindObjectOfType<LessonManager>().StartLesson();
-            //gameManager.HideObjective();
-        }
-
+        if(otherInteraction)
+            currentInteractionEvent.Invoke();
     }
 
     public void SetInteractionDisabled(bool disabled)

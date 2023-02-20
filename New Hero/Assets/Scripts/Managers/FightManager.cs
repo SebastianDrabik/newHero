@@ -39,7 +39,7 @@ public class FightManager : MonoBehaviour
 
     void Awake()
     {
-        LoadAllCodes();
+        //LoadAllCodes();
         if (Instance == null)
             Instance = this;
     }
@@ -139,8 +139,11 @@ public class FightManager : MonoBehaviour
         //trigger event
     }
 
-    private void LoadAllCodes()
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
+    private static void LoadAllCodes()
     {
+        if(codeList.Count > 0)
+            codeList.Clear();
         CodeData[] datas = Resources.LoadAll<CodeData>("CodeData");
         foreach (var data in datas)
             codeList.Add(data);

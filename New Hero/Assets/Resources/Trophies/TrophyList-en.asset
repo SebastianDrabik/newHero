@@ -29,3 +29,8 @@ MonoBehaviour:
     title: The Adventure Begins
     objective: Defeat Marco Cube
     icon: {fileID: 21300000, guid: 4c794218c983aa74686f5c3cfdde25f9, type: 3}
+  - key: goofylanguage
+    state: 0
+    title: import PyDefeat
+    objective: Defeat python
+    icon: {fileID: 21300000, guid: 4320c19f92c636244998775a28590b31, type: 3}

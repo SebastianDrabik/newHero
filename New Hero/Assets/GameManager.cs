@@ -10,12 +10,11 @@ public class GameManager : MonoBehaviour
     public List<Trophy> trophies;
 
     private ObjectiveController _ObjectiveController;
-    private MessageController _MessageController;
+    //private MessageController _MessageController;
     private string currentObjective = "";
     private bool isObjectiveShown = false;
     private bool trophiesLoaded = false;
     
-
     private void Awake()
     {
         EditorTheme.ReadFiles();
@@ -106,20 +105,12 @@ public class GameManager : MonoBehaviour
         return trophies.Find(t => t.key == key).state;
     }
 
-    public void ShowMessage(string messageKey)
-    {
-        _MessageController.ShowMessage(TranslationsManager.GetTranslation("messages",messageKey));
-    }
-
     private void AssignController()
     {
         if (SceneManager.GetActiveScene().name == "MainMenu")
             return;
         ObjectiveController oc = GameObject.FindGameObjectWithTag("Canvas").GetComponent<ObjectiveController>();
-        MessageController mc = GameObject.FindGameObjectWithTag("Canvas").GetComponent<PauseMenu>().messageController;
         if (oc != null)
             _ObjectiveController = oc;
-        if(mc != null)
-            _MessageController = mc;
     }
 }

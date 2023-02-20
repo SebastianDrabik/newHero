@@ -17,7 +17,7 @@ public class MiniPython : MonoBehaviour
     IEnumerator Attack(int i)
     {
         yield return new WaitForSeconds(0.25f);
-        Debug.Log($"python{i}");
         editor.OpenCodeEditor($"python{i}");
+        Time.timeScale = 0f;
     }
 }

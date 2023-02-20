@@ -10,7 +10,11 @@ public class Python : MonoBehaviour
     public Transform leftWall;
     public Transform rightWall;
 
+    public FightManager editor;
     public GameObject rockPrefab;
+    public GameManager manager;
+    public GameObject blockadeObject;
+    public MessageManager messageManager;
 
     int rockCount = 100;
 
@@ -23,10 +27,11 @@ public class Python : MonoBehaviour
 
     public short health = 4;
 
-    float timer = 4f;
+    float timer = 10f;
     [HideInInspector]
     public bool fightStarted = false;
     bool IsAttacking = false;
+    private bool blockade = false;
 
     enum attackMode
     {
@@ -47,11 +52,13 @@ public class Python : MonoBehaviour
         currentMode = attackMode.rock;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (!fightStarted || IsAttacking) return;
-
+        if(manager.GetTrophyState("goofylanguage") != Trophy.TrophyState.IN_PROGRESS)
+            manager.ChangeTrophyState("goofylanguage", Trophy.TrophyState.IN_PROGRESS, true);
+        if (!blockade)
+            blockadeObject.SetActive(true);
         timer -= Time.deltaTime;
 
         if (timer <= 0f)
@@ -65,20 +72,30 @@ public class Python : MonoBehaviour
                 Attack();
                 currentMode = attackMode.rock;
             }
-            timer = 4f;
+            timer = 10f;
 
         }
 
         if (health == 0f)
         {
-            //DIE
-            Debug.Log("He ded");
-            gameObject.SetActive(false);
+            BossDeath();
         }
+    }
+
+    private void BossDeath()
+    {
+        //DIE
+        blockadeObject.SetActive(false);
+        manager.ChangeTrophyState("goofylanguage", Trophy.TrophyState.UNLOCKED, true);
+        Debug.Log("He ded");
+        gameObject.SetActive(false);
+        fightStarted = false;
+        SaveSystem.level = SaveData.Level.PYTHON;
     }
 
     public void RockAttack()
     {
+        messageManager.ShowMessage("python-try-to-survive");
         Vector2 speed = new();
         Transform spawnPoint = gameObject.transform;
         switch (Random.Range(0, 4))
@@ -150,9 +167,10 @@ public class Python : MonoBehaviour
     {
         if (result)
         {
+            editor.CloseCodeEditor();
             health--;
+            Time.timeScale = 1f;
         }
-
         yellowPython.SetActive(false);
         bluePython.SetActive(false);
 

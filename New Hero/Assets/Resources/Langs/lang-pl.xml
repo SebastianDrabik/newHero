@@ -49,7 +49,7 @@
 			<error-empty>Wprawdz nazwe.</error-empty>
 		</saves-menu>
 		<objectives>
-			<test>SIQUEL OP STREAMER</test>
+			<find-school>Idz do szkoly.</find-school>
 			<teacher>Porozmawiaj z nauczycielem.</teacher>
 			<lesson-seat>Znajdz i zajmij miejsce.</lesson-seat>
 		</objectives>
@@ -72,6 +72,10 @@
 		</first-lesson>
 		<messages>
 			<doors-locked>Drzwi sa zamkniete.</doors-locked>
+			<too-young>Jestes zbyt mlody, aby prowadzic!</too-young>
+			<cube-bullet>Unikaj bugow!</cube-bullet>
+			<cube-box>UWAGA!</cube-box>
+			<python-try-to-survive>Unikaj kamieni!</python-try-to-survive>
 		</messages>
 	</lang-data>
 </lang>

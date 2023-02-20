@@ -11,7 +11,7 @@ TrueTypeFontImporter:
   fontNames:
   - VT323
   fallbackFontReferences: []
-  customCharacters: 
+  customCharacters: "QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm\u0105\u017C\u017A\u0107\u015B\xF3"
   fontRenderingMode: 0
   ascentCalculationMode: 1
   useLegacyBoundsCalculation: 0

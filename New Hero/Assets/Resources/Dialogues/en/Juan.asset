@@ -14,5 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   key: juan
   sentences:
+  - name: Player
+    sentence: Hi, I want to go through this road.
   - name: Pablo
-    sentence: Ok
+    sentence: 'I''m so sorry, but currently it''s impossible. '
+  - name: Player
+    sentence: When will you finish repairing the road?
+  - name: Pablo
+    sentence: We haven't been paid yet, can you help us and talk with Mark Cube about
+      it?
+  - name: Player
+    sentence: Who is he?
+  - name: Pablo
+    sentence: Ask in the nearby school.

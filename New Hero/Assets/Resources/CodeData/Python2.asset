@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   key: python2
   topCode: "#include<iostream>\n\nusing namespace std;\n\nint main(int argc, char
-    *argv[]){\n\tint numbers[] = {stoi(argv[1], stoi(argv[2]))};\n\t// display all
+    *argv[]){\n\tint numbers[] = { stoi(argv[1]), stoi(argv[2])};\n\t// display all
     numbers from array numbers"
   bottomCode: "\treturn 0;\n}"
   initialCode: "\tfor(int i = 0; /*your code*/)\n\t\tcout << /*your code*/ << endl;"
