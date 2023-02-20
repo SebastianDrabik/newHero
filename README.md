@@ -20,3 +20,4 @@
 - Added basic dialogue system
 - Added 2 classrooms
 - Added teaching system
+- Added full Python functionality
