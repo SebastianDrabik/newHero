@@ -24,7 +24,7 @@ public class Python : MonoBehaviour
     public short health = 4;
 
     float timer = 4f;
-
+    [HideInInspector]
     public bool fightStarted = false;
     bool IsAttacking = false;
 

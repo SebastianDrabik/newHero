@@ -54,6 +54,11 @@ public class FightManager : MonoBehaviour
     public void OpenCodeEditor(string key)
     {
         currentData = GetCode(key);
+        if(currentData == null)
+        {
+            Debug.LogError($"Cannot find CodeData with key: {key}");
+            return;
+        }
         gameObject.SetActive(true);
         top.text = currentData.topCode;
         bottom.text = currentData.bottomCode;
