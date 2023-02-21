@@ -15,12 +15,11 @@ MonoBehaviour:
   key: isabella
   sentences:
   - name: <insert hero name>
-    sentence: Witaj, czy moge poglaskac twoja swinke?
+    sentence: "Witaj, czy mog\u0119 pog\u0142aska\u0107 twoj\u0105 \u015Bwink\u0119?"
   - name: Izabela
-    sentence: 'Pewnie jest bardzo mila.
-
-      Ale uwazaj, moze ugryzc Ci palec.'
+    sentence: "Pewnie, jest bardzo mi\u0142a.\nAle uwa\u017Caj, mo\u017Ce ugry\u017A\u0107
+      Ci palec."
   - name: <insert hero name>
     sentence: ...
   - name: Izabela
-    sentence: "Haha, tylko zartuj\u0119. Smia\u0142o."
+    sentence: "Ha ha, tylko \u017Cartuj\u0119. \u015Amia\u0142o."

@@ -15,4 +15,4 @@ MonoBehaviour:
   key: ernest
   sentences:
   - name: Ernest
-    sentence: Pogoda jest wspaniala.
+    sentence: "Pogoda jest wspania\u0142a."

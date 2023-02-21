@@ -6,11 +6,11 @@
 	</lang-info>
 	<lang-data>
 		<esc-menu>
-			<resume>WZNOW</resume>
-			<pause>WTRZYMAJ</pause>
+			<resume>WZNÓW</resume>
+			<pause>WSTRZYMAJ</pause>
 			<trophies>TROFEA</trophies>
 			<menu-save>Zapisz</menu-save>
-			<menu-quit>Wyjdz</menu-quit>
+			<menu-quit>Wyjdź</menu-quit>
 			<menu-mainmenu>Menu</menu-mainmenu>
 			<saving-info>Trwa zapis gry...</saving-info>
 			
@@ -21,10 +21,10 @@
 		</esc-menu>
 		<options-menu>
 			<title>OPCJE</title>
-			<fullscreen>PELNY EKRAN</fullscreen>
+			<fullscreen>PEŁNY EKRAN</fullscreen>
 			<editor-theme>Motyw edytora kodu</editor-theme>
-			<language>Jezyk</language>
-			<volume>Poziom glosnosci</volume>
+			<language>Język</language>
+			<volume>Poziom głośności</volume>
 		</options-menu>
 		<saves-menu>
 			<new-game>Nowa gra</new-game>
@@ -33,47 +33,47 @@
 			<created>Utworzono: </created>
 
 			<rename-title>Zmiana nazwy</rename-title>
-			<rename-content>Czy na pewno chcesz zmienic nazwe zapisu:</rename-content>
+			<rename-content>Czy na pewno chcesz zmienić nazwę zapisu:</rename-content>
 			<rename-label>Nowa nazwa:</rename-label>
-			<rename-placeholder>Wprowadz nowa nazwe</rename-placeholder>
+			<rename-placeholder>Wprowadź nową nazwę</rename-placeholder>
 
 			<delete-title>Usuwanie zapisu</delete-title>
-			<delete-content>Czy na pewno chcesz usunac zapis:</delete-content>
+			<delete-content>Czy na pewno chcesz usunąć zapis?</delete-content>
 
 			<create-title>Nowy zapis</create-title>
 			<create-label>Nazwa zapisu:</create-label>
-			<create-placeholder>Wprowadz nazwe</create-placeholder>
+			<create-placeholder>Wprowadź nazwę</create-placeholder>
 
 			<error-invalid-characters>Nazwa zawiera niedozwolone znaki.</error-invalid-characters>
-			<error-name-already-in-use>Nazwa zostala juz uzyta.</error-name-already-in-use>
-			<error-empty>Wprawdz nazwe.</error-empty>
+			<error-name-already-in-use>Nazwa zostala juz użyta.</error-name-already-in-use>
+			<error-empty>Wprowadź nazwę.</error-empty>
 		</saves-menu>
 		<objectives>
-			<find-school>Idz do szkoly.</find-school>
+			<find-school>Idź do szkoły.</find-school>
 			<teacher>Porozmawiaj z nauczycielem.</teacher>
-			<lesson-seat>Znajdz i zajmij miejsce.</lesson-seat>
+			<lesson-seat>Znajdź i zajmij miejsce.</lesson-seat>
 		</objectives>
 		<first-lesson>
-			<dial1-1>Do dodania biblioteki do naszego programu uzywamy #include&lt;biblioteka&gt;.</dial1-1>
-			<dial1-2>Wszystko co znajduje sie wewnatrz funkcji "main" zostanie wykonane przez program po kompilacji.</dial1-2>
-			<dial1-3>Komenda std::cout &lt;&lt; "hello world", powoduje wyswietlenie tekstu wewnatrz cudzyslowia na ekranie.</dial1-3>
-			<dial1-4>Na koncu kazdej linijki, nie liczac niektorych wyjatkow, musi znajdowac sie srednik</dial1-4>
-			<dial2-1>Nie musisz uzywac std::, jezeli dodasz using namespace std na gorze kodu.</dial2-1>
-			<dial3-1>Za pomoca powyzszego kodu mozesz przypisac wartosci do dwoch zmiennych oraz wyswietlic na ekranie ich sume.</dial3-1>
-			<dial3-2>Za pomoca zmiennej jestesmy zapisywac dane, ktorych mozemy pozniej ponownie uzywac wewnatrz kodu</dial3-2>
-			<dial3-3>Wystepuja rozne typy zmiennych przechowujace rozne typy danych:</dial3-3>
-			<dial3-4>int przechowuje liczby calkowite</dial3-4>
+			<dial1-1>Do dodania biblioteki do naszego programu używamy #include&lt;biblioteka&gt;.</dial1-1>
+			<dial1-2>Wszystko co znajduje się wewnątrz funkcji "main" zostanie wykonane przez program po kompilacji.</dial1-2>
+			<dial1-3>Komenda std::cout &lt;&lt; "hello world", powoduje wyświetlenie tekstu wewnątrz cudzysłowie na ekranie.</dial1-3>
+			<dial1-4>Na końcu każdej linijki, nie licząc niektórych wyjątków, musi znajdować się średnik.</dial1-4>
+			<dial2-1>Nie musisz używać std::, jeżeli dodasz using namespace std na górze kodu.</dial2-1>
+			<dial3-1>Za pomocą powyższego kodu możesz przypisać wartości do dwóch zmiennych oraz wyświetlić na ekranie ich sumę.</dial3-1>
+			<dial3-2>Za pomocą zmiennej jesteśmy zapisywać dane, których możemy później ponownie używać wewnątrz kodu.</dial3-2>
+			<dial3-3>Występują różne typy zmiennych przechowujące różne typy danych:</dial3-3>
+			<dial3-4>int przechowuje liczby całkowite</dial3-4>
 			<dial3-5>float przechowuje liczby rzeczywiste</dial3-5>
-			<dial3-6>string przechowuej dane tekstowe</dial3-6>
+			<dial3-6>string przechowuje dane tekstowe</dial3-6>
 			<dial3-7>char przechowuje pojedynczy znak</dial3-7>
-			<dial3-8>bool przechowuje wartosc logiczna prawda, lub falsz</dial3-8>
-			<dial4-1>Instrukcja warunkowa if pozwala na wykonaniu kodu pod okreslonym warunkiem, ktory podamy wewnatrz nawiasow</dial4-1>
-			<dial4-2>Powyzszy kod wyswietli "x > 0", jesli wartosc zmiennej x bedzie wieksza od zera</dial4-2>
+			<dial3-8>bool przechowuje wartość logiczna prawda, lub fałsz</dial3-8>
+			<dial4-1>Instrukcja warunkowa if pozwala na wykonaniu kodu pod określonym warunkiem, który podamy wewnątrz nawiasów.</dial4-1>
+			<dial4-2>Powyższy kod wyświetli "x > 0", jeśli wartość zmiennej x będzie większa od zera.</dial4-2>
 		</first-lesson>
 		<messages>
-			<doors-locked>Drzwi sa zamkniete.</doors-locked>
-			<too-young>Jestes zbyt mlody, aby prowadzic!</too-young>
-			<cube-bullet>Unikaj bugow!</cube-bullet>
+			<doors-locked>Drzwi sa zamknięte.</doors-locked>
+			<too-young>Jesteś zbyt młody, aby prowadzić!</too-young>
+			<cube-bullet>Unikaj bugów!</cube-bullet>
 			<cube-box>UWAGA!</cube-box>
 			<python-try-to-survive>Unikaj kamieni!</python-try-to-survive>
 		</messages>

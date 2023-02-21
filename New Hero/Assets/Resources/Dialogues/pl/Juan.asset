@@ -15,15 +15,15 @@ MonoBehaviour:
   key: juan
   sentences:
   - name: Gracz
-    sentence: Dzien dobry, chcialbym przejsc ta ulica.
-  - name: Pawel
-    sentence: Niestety, ale nie jest to jeszcze mozliwe.
+    sentence: "Dzie\u0144 dobry, chcia\u0142bym przej\u015B\u0107 ta ulica."
+  - name: "Pawe\u0142"
+    sentence: "Niestety, ale nie jest to jeszcze mo\u017Cliwe."
   - name: Gracz
-    sentence: Kiedy skonczy sie remont?
-  - name: Pawel
-    sentence: Nie zostalismy jeszcze oplaceni, moglbys nam pomoc i porozmawiac o
-      tym z Markiem Cubem?
+    sentence: "Kiedy sko\u0144czy si\u0119 remont?"
+  - name: "Pawe\u0142"
+    sentence: "Nie zostali\u015Bmy jeszcze op\u0142aceni, m\xF3g\u0142by\u015B nam
+      pomoc i porozmawia\u0107 o tym z Marco Cubem?"
   - name: Gracz
     sentence: Kto to?
-  - name: Pawel
-    sentence: Zapytaj w tej szkole
+  - name: "Pawe\u0142"
+    sentence: Zapytaj w tej szkole.
