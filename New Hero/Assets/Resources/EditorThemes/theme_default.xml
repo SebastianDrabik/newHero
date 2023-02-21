@@ -4,7 +4,7 @@
 	<background-color>#202020ff</background-color>
 	<highlights>
 		<rule>
-			<regex>([0-9]+|cout)</regex>
+			<regex>([0-9]+|cout|endl)</regex>
 			<color>#e2f000ff</color>
 		</rule>
 		<rule>

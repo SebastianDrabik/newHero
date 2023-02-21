@@ -9,7 +9,7 @@ public class CodeData : ScriptableObject
     public struct inputData
     {
         public string input;
-        [TextArea(1,10)]
+        [TextArea(1,16)]
         public string output;
     }
 

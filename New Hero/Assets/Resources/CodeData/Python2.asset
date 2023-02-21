@@ -13,18 +13,24 @@ MonoBehaviour:
   m_Name: Python2
   m_EditorClassIdentifier: 
   key: python2
-  topCode: "#include<iostream>\n\nusing namespace std;\n\nint main(int argc, char
-    *argv[]){\n\tint numbers[] = { stoi(argv[1]), stoi(argv[2])};\n\t// display all
-    numbers from array numbers"
+  topCode: "#include<iostream>\n#include<tcgaddon.h>\n\nusing namespace std;\n\nint
+    main(int argc, char *argv[]){\n\tint numbers[argc-1];\r\n\treadArray(argc, argv,
+    numbers);\n\t// display all numbers from array numbers"
   bottomCode: "\treturn 0;\n}"
   initialCode: "\tfor(int i = 0; /*your code*/)\n\t\tcout << /*your code*/ << endl;"
   inputOutput:
-  - input: 69 1
+  - input: 69 1 420
     output: '69
 
-      1'
-  - input: 1 8
+      1
+
+      420'
+  - input: 1 8 12 19
     output: '1
 
-      8'
+      8
+
+      12
+
+      19'
   checkType: 1

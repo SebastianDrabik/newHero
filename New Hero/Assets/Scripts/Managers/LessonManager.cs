@@ -5,7 +5,7 @@ using System.Collections;
 
 public class LessonManager : MonoBehaviour
 {
-    public GameObject classExit;
+    public DoorController classExit;
     private GameManager manager;
     public GameObject lessonTriggers;
 
@@ -16,6 +16,11 @@ public class LessonManager : MonoBehaviour
     public GameObject subtitleText;
     public PlayerMovement movement;
     public PauseMenu pauseMenu;
+
+    public string examPassTrophyKey;
+    public string examKey;
+
+    public SaveData.Level examPassLevel;
 
     [System.Serializable]
     public struct Part
@@ -39,7 +44,7 @@ public class LessonManager : MonoBehaviour
         }
         manager.ShowObjective("teacher");
         lessonTriggers.SetActive(false);
-        classExit.SetActive(false);
+        classExit.locked = true;
     }
 
     public void EnableSeats()
@@ -79,7 +84,7 @@ public class LessonManager : MonoBehaviour
         CodeEditor.SetActive(false);
         subtitleText.SetActive(false);
         movement.SetMovementDisabled(false);
-        attack.OpenCodeEditor("test");
+        attack.OpenCodeEditor(examKey);
     }
 
     public void HandleCodeExecution(bool result)
@@ -89,10 +94,10 @@ public class LessonManager : MonoBehaviour
             // test passed
             attack.CloseCodeEditor();
             lessonTriggers.SetActive(false);
-            classExit.SetActive(true);
-            manager.ChangeTrophyState("hello", Trophy.TrophyState.UNLOCKED, true);
+            classExit.locked = false;
+            manager.ChangeTrophyState(examPassTrophyKey, Trophy.TrophyState.UNLOCKED, true);
             manager.HideObjective();
-            SaveSystem.level = SaveData.Level.CPP_BASICS;
+            SaveSystem.level = examPassLevel;
             pauseMenu.SetDisabled(false);
             return;
         }

@@ -15,6 +15,6 @@ MonoBehaviour:
   key: cynamon
   sentences:
   - name: Player
-    sentence: "Good morning, sorry for being late.\t\t "
+    sentence: "Good morning, I am sorry for being late.\t\t "
   - name: Mr. Peter
     sentence: It's okey, now take a seat and prepare for the test.

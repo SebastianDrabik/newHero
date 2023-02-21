@@ -73,6 +73,7 @@
 		<messages>
 			<doors-locked>Drzwi sa zamknięte.</doors-locked>
 			<too-young>Jesteś zbyt młody, aby prowadzić!</too-young>
+			<leave-during-lesson>Nie możesz wyjść w trakcie lekcji.</leave-during-lesson>
 			<cube-bullet>Unikaj bugów!</cube-bullet>
 			<cube-box>UWAGA!</cube-box>
 			<python-try-to-survive>Unikaj kamieni!</python-try-to-survive>

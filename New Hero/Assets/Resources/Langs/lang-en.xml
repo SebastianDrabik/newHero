@@ -75,6 +75,7 @@
 			<doors-locked>Doors are closed.</doors-locked>
 			<too-young>You are too young to drive a car!</too-young>
 			<cube-bullet>Avoid all bugs!</cube-bullet>
+			<leave-during-lesson>You can't leave class durign lesson.</leave-during-lesson>
 			<cube-box>Watch out!</cube-box>
 			<python-try-to-survive>Avoid all rocks!</python-try-to-survive>
 		</messages>

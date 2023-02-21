@@ -6759,7 +6759,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1046974009524135819, guid: fd9e34520af5165439a495862296f800, type: 3}
       propertyPath: OnDialogueEnd.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1046974009524135819, guid: fd9e34520af5165439a495862296f800, type: 3}
       propertyPath: OnDialogueEnd.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -10390,6 +10390,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8525522431320082264, guid: 6b8ac79c3bfbcca49a60682af3545b6d, type: 3}
   m_PrefabInstance: {fileID: 1736271808}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1736271815 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7860542728427563326, guid: 6b8ac79c3bfbcca49a60682af3545b6d, type: 3}
+  m_PrefabInstance: {fileID: 1736271808}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a1bec97387385b4d851a5c0d8c34677, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1759047188
 GameObject:
   m_ObjectHideFlags: 0
@@ -10434,7 +10445,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa6cae140cadf5744865d9c5c0775da2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  classExit: {fileID: 1780286039}
+  classExit: {fileID: 1780286043}
   lessonTriggers: {fileID: 1248960567}
   AudioManager: {fileID: 733155596}
   CodeEditor: {fileID: 1241187963}
@@ -10442,6 +10453,9 @@ MonoBehaviour:
   subtitleText: {fileID: 664984995}
   movement: {fileID: 1057267440}
   pauseMenu: {fileID: 1736271810}
+  examPassTrophyKey: hello
+  examKey: test
+  examPassLevel: 1
   lessonParts:
   - code: "#include<iostream>\n\nint main() {\n    std::cout << \"Hello world\";\n}"
     subtitles:
@@ -10624,7 +10638,19 @@ MonoBehaviour:
   locked: 0
   onLocked:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1736271815}
+        m_TargetAssemblyTypeName: MessageManager, Assembly-CSharp
+        m_MethodName: ShowMessage
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: leave-during-lesson
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1809671504 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6025296456394379354, guid: 5d2ca95c976440e46a83d3f6bd12f500, type: 3}
