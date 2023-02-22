@@ -7959,7 +7959,7 @@ MonoBehaviour:
   onLocked:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7860542728427563326, guid: 6b8ac79c3bfbcca49a60682af3545b6d, type: 3}
+      - m_Target: {fileID: 1974428454}
         m_TargetAssemblyTypeName: MessageManager, Assembly-CSharp
         m_MethodName: ShowMessage
         m_Mode: 5
@@ -9839,6 +9839,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1962818596}
   m_CullTransparentMesh: 1
+--- !u!114 &1974428454 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7860542728427563326, guid: 6b8ac79c3bfbcca49a60682af3545b6d, type: 3}
+  m_PrefabInstance: {fileID: 1736271808}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a1bec97387385b4d851a5c0d8c34677, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2099791000
 GameObject:
   m_ObjectHideFlags: 0

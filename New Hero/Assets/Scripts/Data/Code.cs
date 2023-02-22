@@ -5,6 +5,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Linq;
+using System.Threading;
 
 [Serializable]
 public class Code
@@ -110,7 +111,7 @@ public class Code
         {
             UnityEngine.Debug.LogWarning("Executable file doesn't exist");
             return false;
-        }   
+        }
         bool result = false;
         animator.SetBool("Spin", true);
         var tasks = new List<Task<bool>>();
@@ -151,7 +152,7 @@ public class Code
             }));
         }
 
-        Task.WaitAll(tasks.ToArray());
+        Task.WhenAll(tasks.ToArray());
 
         result = tasks.All(x => x.Result);
         //Task.WhenAll(tasks);
