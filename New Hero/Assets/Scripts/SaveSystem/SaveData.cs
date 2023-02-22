@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,6 +11,7 @@ public class SaveData
         MARK_CUBE = 2,
         CPP_ADVANCED = 3,
         PYTHON = 4,
+        CPP_MASTER = 5,
     }
     public Level level;
     public float[] position;
