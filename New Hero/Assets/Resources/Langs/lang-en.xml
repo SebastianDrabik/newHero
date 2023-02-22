@@ -70,6 +70,28 @@
 			<dial3-8>bool stores a logical data - true or false</dial3-8>
 			<dial4-1>If statement allows to execute some code under a certain condition, which we put inside the brackets</dial4-1>
 			<dial4-2>The code above shows "x > 0", if value of variable x is greater that zero</dial4-2>
+			
+
+			<dial5-1>In c++ as well as in many other programming languages, you can use mathematical operators with variables</dial5-1>
+			<dial5-2>As you can see in examples above, there are many ways to use them:</dial5-2>
+			<dial5-3>A - Adding 2 to x</dial5-3>
+			<dial5-4>B - Adding x to y</dial5-4>
+			<dial5-5>C - Subtracting y from x</dial5-5>
+			<dial5-6>D - Multiplying x and y</dial5-6>
+			<dial5-7>E - Dividing x by y</dial5-7>
+			<dial5-8>F - Remainder of division of x and y</dial5-8>
+			<dial5-9>G - Set x to 0</dial5-9>
+			<dial5-10>H - Increase x by 1 (first method)</dial5-10>
+			<dial5-11>I - Increase x by 1 (second method)</dial5-11>
+			<dial5-12>J - Increase x by 1 (third method)</dial5-12>
+
+			<dial6-1>When using intigers for operations such as division, the result is often a real number which needs float</dial6-1>
+			<dial6-2>Unfortunately this means that when using ints you often have to change its type to floating point number</dial6-2>
+			<dial6-3>Otherwise calculations will produce incorrect results</dial6-3>
+			<dial6-4>As you can see in example A, the result is 1 because c++ automaticaly thinks that operations with two ints should produce an int</dial6-4>
+			<dial6-5>Using method B is the best for int divisions because it forces c++ to treat these numbers as floats</dial6-5>
+			<dial6-6>But method C also works, thanks to multiplying numbers by 1.0 which is a float</dial6-6>
+			<dial6-7>As you can see in examples D and E it also works with changing floats to ints</dial6-7>
 		</first-lesson>
 		<messages>
 			<doors-locked>Doors are closed.</doors-locked>

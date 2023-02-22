@@ -16,8 +16,8 @@ MonoBehaviour:
   sentences:
   - name: Gracz
     sentence: "Dzie\u0144 dobry, co b\u0119dzie na dzisiejszej lekcji?"
-  - name: Nauczyciel
+  - name: Pan Bajgiel
     sentence: "Kolejna lekcja C++, mamy dzi\u015B zast\u0119pstwo za Pana Piotra
       w tej sali. Przerobimy operacje logiczne i matematyczne."
-  - name: Nauczyciel
+  - name: Pan Bajgiel
     sentence: "Zajmij ju\u017C miejsce."

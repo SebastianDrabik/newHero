@@ -16,8 +16,8 @@ MonoBehaviour:
   sentences:
   - name: Gracz
     sentence: Good morning, what is today's lesson about?
-  - name: Nauczyciel
+  - name: Mr Bagel
     sentence: We will continue what you've started on Mr. Peter's lesson. We will
       concern on logical and mathematical operations.
-  - name: Nauczyciel
+  - name: Mr Bagel
     sentence: Take the seat.

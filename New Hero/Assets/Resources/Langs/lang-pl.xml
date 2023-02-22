@@ -69,6 +69,27 @@
 			<dial3-8>bool przechowuje wartość logiczna prawda, lub fałsz</dial3-8>
 			<dial4-1>Instrukcja warunkowa if pozwala na wykonaniu kodu pod określonym warunkiem, który podamy wewnątrz nawiasów.</dial4-1>
 			<dial4-2>Powyższy kod wyświetli "x > 0", jeśli wartość zmiennej x będzie większa od zera.</dial4-2>
+
+			<dial5-1>W c++ i w wielu innych językach programowania, możliwe jest używanie matematycznych operatorów na zmiennych</dial5-1>
+			<dial5-2>Jak mozna zobaczyć w przykładach powyżej, jest wiele typów działań na zmiennych:</dial5-2>
+			<dial5-3>A - Dodawanie 2 do x</dial5-3>
+			<dial5-4>B - Dodawanie x do y</dial5-4>
+			<dial5-5>C - Odejmowanie y od x</dial5-5>
+			<dial5-6>D - Mnożenie x i y</dial5-6>
+			<dial5-7>E - Dzielenie x przez y</dial5-7>
+			<dial5-8>F - Reszta z dzielenia x i y</dial5-8>
+			<dial5-9>G - Ustawienie x na 0</dial5-9>
+			<dial5-10>H - Zwiększenie x o 1 (pierwsza metoda)</dial5-10>
+			<dial5-11>I - Zwiększenie x o 1 (druga metoda)</dial5-11>
+			<dial5-12>J - Zwiększenie x o 1 (trzecia metoda)</dial5-12>
+
+			<dial6-1>Podczas używania intów do operacji takich jak dzielenie, wynikiem jest często liczba rzeczywista, potrzebująca floata</dial6-1>
+			<dial6-2>Niestety oznacza to że często trzeba zmieniać inta na floata.</dial6-2>
+			<dial6-3>W przeciwnym wypadku kalkulacja zwróci niepoprawny wynik</dial6-3>
+			<dial6-4>Jak można zobaczyć w przykładzie A, wynikiem jest 1 ponieważ c++ myśli że działanie z dwoma liczbami całkowitymi zwróci liczbę całkowitą</dial6-4>
+			<dial6-5>Użycie metody B jest najlepsze do dzielenia intów, ponieważ zmusza c++ do traktowania tych liczb jako floatów</dial6-5>
+			<dial6-6>Jednak metoda C również działa, dzięki mnożeniu liczb przez 1.0 co zmienia wartość liczb do floata</dial6-6>
+			<dial6-7>Zmiana z floata na inta również działa, co można zobaczyc w przykładach D i E</dial6-7>
 		</first-lesson>
 		<messages>
 			<doors-locked>Drzwi sa zamknięte.</doors-locked>
