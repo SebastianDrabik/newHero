@@ -4,12 +4,16 @@
 	<background-color>#202020ff</background-color>
 	<highlights>
 		<rule>
-			<regex>([0-9]+|cout|endl)</regex>
-			<color>#e2f000ff</color>
+			<regex>(\/\/.*)|(\/\*[\s\S]*?\*\/)</regex>
+			<color>#235530ff</color>
 		</rule>
 		<rule>
 			<regex>\".*\"</regex>
 			<color>#e7f700ff</color>
+		</rule>
+		<rule>
+			<regex>([0-9]+|cout|endl)</regex>
+			<color>#e2f000ff</color>
 		</rule>
 		<rule>
 			<regex>(int|void|char|using|bool)</regex>
@@ -30,10 +34,6 @@
 		<rule>
 			<regex>(\bstd\b|\bstring\b)</regex>
 			<color>#50a579ff</color>
-		</rule>
-		<rule>
-			<regex>(\/\/.*)|(\/\*[\s\S]*?\*\/)</regex>
-			<color>#235530ff</color>
 		</rule>
 		<rule>
 			<regex>#include\s*&lt;.*&gt;</regex>

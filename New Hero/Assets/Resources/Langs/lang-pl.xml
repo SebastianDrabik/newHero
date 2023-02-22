@@ -54,34 +54,34 @@
 			<lesson-seat>Znajdź i zajmij miejsce.</lesson-seat>
 		</objectives>
 		<first-lesson>
-			<dial1-1>Do dodania biblioteki do naszego programu używamy #include&lt;biblioteka&gt;.</dial1-1>
-			<dial1-2>Wszystko co znajduje się wewnątrz funkcji "main" zostanie wykonane przez program po kompilacji.</dial1-2>
-			<dial1-3>Komenda std::cout &lt;&lt; "hello world", powoduje wyświetlenie tekstu wewnątrz cudzysłowie na ekranie.</dial1-3>
+			<dial1-1>Do dodania biblioteki do naszego programu używamy &lt;color=yellow&gt;#include&lt;biblioteka&gt;&lt;/color&gt;.</dial1-1>
+			<dial1-2>Wszystko co znajduje się wewnątrz funkcji &lt;color=yellow&gt;main&lt;/color&gt; zostanie wykonane przez program po kompilacji.</dial1-2>
+			<dial1-3>Komenda &lt;color=yellow&gt;std::cout &lt;&lt; "hello world"&lt;/color&gt;, powoduje wyświetlenie tekstu wewnątrz cudzysłowie na ekranie.</dial1-3>
 			<dial1-4>Na końcu każdej linijki, nie licząc niektórych wyjątków, musi znajdować się średnik.</dial1-4>
-			<dial2-1>Nie musisz używać std::, jeżeli dodasz using namespace std na górze kodu.</dial2-1>
+			<dial2-1>Nie musisz używać &lt;color=yellow&gt;std::&lt;/color&gt;, jeżeli dodasz &lt;color=yellow&gt;using namespace std&lt;/color&gt; na górze kodu.</dial2-1>
 			<dial3-1>Za pomocą powyższego kodu możesz przypisać wartości do dwóch zmiennych oraz wyświetlić na ekranie ich sumę.</dial3-1>
 			<dial3-2>Za pomocą zmiennej jesteśmy zapisywać dane, których możemy później ponownie używać wewnątrz kodu.</dial3-2>
 			<dial3-3>Występują różne typy zmiennych przechowujące różne typy danych:</dial3-3>
-			<dial3-4>int przechowuje liczby całkowite</dial3-4>
-			<dial3-5>float przechowuje liczby rzeczywiste</dial3-5>
-			<dial3-6>string przechowuje dane tekstowe</dial3-6>
-			<dial3-7>char przechowuje pojedynczy znak</dial3-7>
-			<dial3-8>bool przechowuje wartość logiczna prawda, lub fałsz</dial3-8>
-			<dial4-1>Instrukcja warunkowa if pozwala na wykonaniu kodu pod określonym warunkiem, który podamy wewnątrz nawiasów.</dial4-1>
-			<dial4-2>Powyższy kod wyświetli "x > 0", jeśli wartość zmiennej x będzie większa od zera.</dial4-2>
+			<dial3-4>&lt;color=yellow&gt;int&lt;/color&gt; przechowuje liczby całkowite</dial3-4>
+			<dial3-5>&lt;color=yellow&gt;float&lt;/color&gt; przechowuje liczby rzeczywiste</dial3-5>
+			<dial3-6>&lt;color=yellow&gt;string&lt;/color&gt; przechowuje dane tekstowe</dial3-6>
+			<dial3-7>&lt;color=yellow&gt;char&lt;/color&gt; przechowuje pojedynczy znak</dial3-7>
+			<dial3-8>&lt;color=yellow&gt;bool&lt;/color&gt; przechowuje wartość logiczna prawda, lub fałsz</dial3-8>
+			<dial4-1>Instrukcja warunkowa &lt;color=yellow&gt;if&lt;/color&gt; pozwala na wykonaniu kodu pod określonym warunkiem, który podamy wewnątrz nawiasów.</dial4-1>
+			<dial4-2>Powyższy kod wyświetli &lt;color=yellow&gt;x > 0&lt;/color&gt;, jeśli wartość zmiennej x będzie większa od zera.</dial4-2>
 
 			<dial5-1>W c++ i w wielu innych językach programowania, możliwe jest używanie matematycznych operatorów na zmiennych</dial5-1>
 			<dial5-2>Jak mozna zobaczyć w przykładach powyżej, jest wiele typów działań na zmiennych:</dial5-2>
-			<dial5-3>A - Dodawanie 2 do x</dial5-3>
-			<dial5-4>B - Dodawanie x do y</dial5-4>
-			<dial5-5>C - Odejmowanie y od x</dial5-5>
-			<dial5-6>D - Mnożenie x i y</dial5-6>
-			<dial5-7>E - Dzielenie x przez y</dial5-7>
-			<dial5-8>F - Reszta z dzielenia x i y</dial5-8>
-			<dial5-9>G - Ustawienie x na 0</dial5-9>
-			<dial5-10>H - Zwiększenie x o 1 (pierwsza metoda)</dial5-10>
-			<dial5-11>I - Zwiększenie x o 1 (druga metoda)</dial5-11>
-			<dial5-12>J - Zwiększenie x o 1 (trzecia metoda)</dial5-12>
+			<dial5-3>&lt;color=yellow&gt;A&lt;/color&gt; - Dodawanie 2 do x</dial5-3>
+			<dial5-4>&lt;color=yellow&gt;B&lt;/color&gt; - Dodawanie x do y</dial5-4>
+			<dial5-5>&lt;color=yellow&gt;C&lt;/color&gt; - Odejmowanie y od x</dial5-5>
+			<dial5-6>&lt;color=yellow&gt;D&lt;/color&gt; - Mnożenie x i y</dial5-6>
+			<dial5-7>&lt;color=yellow&gt;E&lt;/color&gt; - Dzielenie x przez y</dial5-7>
+			<dial5-8>&lt;color=yellow&gt;F&lt;/color&gt; - Reszta z dzielenia x i y</dial5-8>
+			<dial5-9>&lt;color=yellow&gt;G&lt;/color&gt; - Ustawienie x na 0</dial5-9>
+			<dial5-10>&lt;color=yellow&gt;H&lt;/color&gt; - Zwiększenie x o 1 (pierwsza metoda)</dial5-10>
+			<dial5-11>&lt;color=yellow&gt;I&lt;/color&gt; - Zwiększenie x o 1 (druga metoda)</dial5-11>
+			<dial5-12>&lt;color=yellow&gt;J&lt;/color&gt; - Zwiększenie x o 1 (trzecia metoda)</dial5-12>
 
 			<dial6-1>Podczas używania intów do operacji takich jak dzielenie, wynikiem jest często liczba rzeczywista, potrzebująca floata</dial6-1>
 			<dial6-2>Niestety oznacza to że często trzeba zmieniać inta na floata.</dial6-2>

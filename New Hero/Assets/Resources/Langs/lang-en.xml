@@ -54,36 +54,36 @@
 			<lesson-seat>Find and take a seat.</lesson-seat>
 		</objectives>
 		<first-lesson>
-			<dial1-1>To add a library to the program we use #include&lt;library&gt;</dial1-1>
-			<dial1-2>Everything inside the "main" function will be executed by the program after compilation.</dial1-2>
-			<dial1-3>std::cout &lt;&lt; "hello world" command, makes the text inside double-quotes appear on the screen.</dial1-3>
+			<dial1-1>To add a library to the program we use &lt;color=yellow&gt;#include&lt;library&gt;&lt;/color&gt;</dial1-1>
+			<dial1-2>Everything inside the &lt;color=yellow&gt;main&lt;/color&gt; function will be executed by the program after compilation.</dial1-2>
+			<dial1-3>&lt;color=yellow&gt;std::cout &lt;&lt; "hello world"&lt;/color&gt; command, makes the text inside double-quotes appear on the screen.</dial1-3>
 			<dial1-4>At the end of every line, with some exeptions, there needs to be a semicolon.</dial1-4>
-			<dial1-5>It's not necessary to use std:: when you add using namespace std at the very top of your code</dial1-5>
-			<dial2-1>You don't have to use std::, if you add using namespace std at the top of your code.</dial2-1>
+			<dial1-5>It's not necessary to use &lt;color=yellow&gt;std::&lt;/color&gt; when you add &lt;color=yellow&gt;using namespace std&lt;/color&gt; at the very top of your code</dial1-5>
+			<dial2-1>You don't have to use &lt;color=yellow&gt;std::&lt;/color&gt;, if you add &lt;color=yellow&gt;using namespace std&lt;/color&gt; at the top of your code.</dial2-1>
 			<dial3-1>Using the program above you can assign values to two variables and display their sum.</dial3-1>
 			<dial3-2>With the help of variables, we can store some data, which can be used later in the program</dial3-2>
 			<dial3-3>There are multiple variable types, storing diffrent types of data:</dial3-3>
-			<dial3-4>int stores whole numbers</dial3-4>
-			<dial3-5>float stores numbers with decimal places</dial3-5>
-			<dial3-6>string stores text</dial3-6>
-			<dial3-7>char stores a single character</dial3-7>
-			<dial3-8>bool stores a logical data - true or false</dial3-8>
-			<dial4-1>If statement allows to execute some code under a certain condition, which we put inside the brackets</dial4-1>
-			<dial4-2>The code above shows "x > 0", if value of variable x is greater that zero</dial4-2>
+			<dial3-4>&lt;color=yellow&gt;int&lt;/color&gt; stores whole numbers</dial3-4>
+			<dial3-5>&lt;color=yellow&gt;float&lt;/color&gt; stores numbers with decimal places</dial3-5>
+			<dial3-6>&lt;color=yellow&gt;string&lt;/color&gt; stores text</dial3-6>
+			<dial3-7>&lt;color=yellow&gt;char&lt;/color&gt; stores a single character</dial3-7>
+			<dial3-8>&lt;color=yellow&gt;bool&lt;/color&gt; stores a logical data - true or false</dial3-8>
+			<dial4-1>&lt;color=yellow&gt;If&lt;/color&gt; statement allows to execute some code under a certain condition, which we put inside the brackets</dial4-1>
+			<dial4-2>The code above shows &lt;color=yellow&gt;x > 0&lt;/color&gt;, if value of variable x is greater that zero</dial4-2>
 			
 
 			<dial5-1>In c++ as well as in many other programming languages, you can use mathematical operators with variables</dial5-1>
 			<dial5-2>As you can see in examples above, there are many ways to use them:</dial5-2>
-			<dial5-3>A - Adding 2 to x</dial5-3>
-			<dial5-4>B - Adding x to y</dial5-4>
-			<dial5-5>C - Subtracting y from x</dial5-5>
-			<dial5-6>D - Multiplying x and y</dial5-6>
-			<dial5-7>E - Dividing x by y</dial5-7>
-			<dial5-8>F - Remainder of division of x and y</dial5-8>
-			<dial5-9>G - Set x to 0</dial5-9>
-			<dial5-10>H - Increase x by 1 (first method)</dial5-10>
-			<dial5-11>I - Increase x by 1 (second method)</dial5-11>
-			<dial5-12>J - Increase x by 1 (third method)</dial5-12>
+			<dial5-3>&lt;color=yellow&gt;A&lt;/color&gt; - Adding 2 to x</dial5-3>
+			<dial5-4>&lt;color=yellow&gt;B&lt;/color&gt; - Adding x to y</dial5-4>
+			<dial5-5>&lt;color=yellow&gt;C&lt;/color&gt; - Subtracting y from x</dial5-5>
+			<dial5-6>&lt;color=yellow&gt;D&lt;/color&gt; - Multiplying x and y</dial5-6>
+			<dial5-7>&lt;color=yellow&gt;E&lt;/color&gt; - Dividing x by y</dial5-7>
+			<dial5-8>&lt;color=yellow&gt;F&lt;/color&gt; - Remainder of division of x and y</dial5-8>
+			<dial5-9>&lt;color=yellow&gt;G&lt;/color&gt; - Set x to 0</dial5-9>
+			<dial5-10>&lt;color=yellow&gt;H&lt;/color&gt; - Increase x by 1 (first method)</dial5-10>
+			<dial5-11>&lt;color=yellow&gt;I&lt;/color&gt; - Increase x by 1 (second method)</dial5-11>
+			<dial5-12>&lt;color=yellow&gt;J&lt;/color&gt; - Increase x by 1 (third method)</dial5-12>
 
 			<dial6-1>When using intigers for operations such as division, the result is often a real number which needs float</dial6-1>
 			<dial6-2>Unfortunately this means that when using ints you often have to change its type to floating point number</dial6-2>

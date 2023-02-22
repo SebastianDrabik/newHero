@@ -151,4 +151,10 @@ public class PlayerInteraction : MonoBehaviour
     {
         disableInteraction = disabled;
     }
+
+    public void Heal()
+    {
+        SaveSystem.health = maxHealth;
+        healthUI.text = Convert.ToString(maxHealth, 2).PadLeft(8, '0');
+    }
 }

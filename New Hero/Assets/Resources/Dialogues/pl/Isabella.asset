@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   key: isabella
   sentences:
-  - name: <insert hero name>
+  - name: Gracz
     sentence: "Witaj, czy mog\u0119 pog\u0142aska\u0107 twoj\u0105 \u015Bwink\u0119?"
   - name: Izabela
     sentence: "Pewnie, jest bardzo mi\u0142a.\nAle uwa\u017Caj, mo\u017Ce ugry\u017A\u0107
       Ci palec."
-  - name: <insert hero name>
+  - name: Gracz
     sentence: ...
   - name: Izabela
     sentence: "Ha ha, tylko \u017Cartuj\u0119. \u015Amia\u0142o."

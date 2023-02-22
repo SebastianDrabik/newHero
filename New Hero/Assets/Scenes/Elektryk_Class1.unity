@@ -3530,10 +3530,10 @@ MonoBehaviour:
   examPassLevel: 3
   lessonParts:
   - code: "#include <iostream>\r\n\r\nusing namespace std;\r\n\r\nint main()\r\n{\r\n 
-      int x = 3;\r\n  int y = 2;\r\n\r\n  cout << x + 2 << endl; /* A\r */\n  cout
-      << x + y << endl; // B\r\n  cout << x - y << endl; // C\r\n  cout << x * y
-      << endl; // D\r\n  cout << x / y << endl; // E\r\n  cout << x % y << endl;
-      // F\r\n\r\n  x = 0; // G\r\n  cout << x << endl;\r\n\r\n  x = x + 1; // H\r\n 
+      int x = 3;\r\n  int y = 2;\r\n\r\n  cout << x + 2 << endl; // A\n  cout <<
+      x + y << endl; // B\r\n  cout << x - y << endl; // C\r\n  cout << x * y <<
+      endl; // D\r\n  cout << x / y << endl; // E\r\n  cout << x % y << endl; //
+      F\r\n\r\n  x = 0; // G\r\n  cout << x << endl;\r\n\r\n  x = x + 1; // H\r\n 
       cout << x << endl;\r\n\r\n  x += 1; // I\r\n  cout << x << endl;\r\n\r\n  x++;
       // J\r\n  cout << x << endl;\r\n\r\n  return 0;\r\n}"
     subtitles:
@@ -3594,6 +3594,20 @@ MonoBehaviour:
     subtitles:
     - dial3-5
     dubs:
+    - 
+  - code: "for(;;){\r\n\r\t// loop body\n}"
+    subtitles:
+    - dial3-5
+    - dial3-5
+    dubs:
+    - 
+    - 
+  - code: "for(int i = 0;;) {\n\t// loop body\n}"
+    subtitles:
+    - dial3-5
+    - dial3-5
+    dubs:
+    - 
     - 
 --- !u!1 &233055163
 GameObject:
@@ -5222,6 +5236,18 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5009987371833605820, guid: 5d2ca95c976440e46a83d3f6bd12f500, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5009987371833605820, guid: 5d2ca95c976440e46a83d3f6bd12f500, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5009987371833605820, guid: 5d2ca95c976440e46a83d3f6bd12f500, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6025296456232673400, guid: 5d2ca95c976440e46a83d3f6bd12f500, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -5411,6 +5437,22 @@ PrefabInstance:
       value: 671.97156
       objectReference: {fileID: 0}
     - target: {fileID: 6025296457629541656, guid: 5d2ca95c976440e46a83d3f6bd12f500, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6097164149600630445, guid: 5d2ca95c976440e46a83d3f6bd12f500, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6097164149600630445, guid: 5d2ca95c976440e46a83d3f6bd12f500, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6097164149600630445, guid: 5d2ca95c976440e46a83d3f6bd12f500, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6097164149600630445, guid: 5d2ca95c976440e46a83d3f6bd12f500, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
