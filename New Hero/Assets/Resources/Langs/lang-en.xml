@@ -94,14 +94,14 @@
 			<dial5-11>&lt;color=yellow&gt;I&lt;/color&gt; - Increase x by 1 (second method)</dial5-11>
 			<dial5-12>&lt;color=yellow&gt;J&lt;/color&gt; - Increase x by 1 (third method)</dial5-12>
 
-			<dial6-1>When using intigers for operations such as division, the result is often a real number which needs float</dial6-1>
-			<dial6-2>Unfortunately this means that when using ints you often have to change its type to floating point number</dial6-2>
+			<dial6-1>When using &lt;color=yellow&gt;integers&lt;/color&gt; for operations such as division, the result is often a real number which needs &lt;color=yellow&gt;float&lt;/color&gt;</dial6-1>
+			<dial6-2>Unfortunately this means that when using &lt;color=yellow&gt;ints&lt;/color&gt; you often have to change its type to &lt;color=yellow&gt;floating point number&lt;/color&gt;</dial6-2>
 			<dial6-3>Otherwise calculations will produce incorrect results</dial6-3>
-			<dial6-4>As you can see in example A, the result is 1 because c++ automaticaly thinks that operations with two ints should produce an int</dial6-4>
-			<dial6-5>Using method B is the best for int divisions because it forces c++ to treat these numbers as floats</dial6-5>
-			<dial6-6>But method C also works, thanks to multiplying numbers by 1.0 which is a float</dial6-6>
-			<dial6-7>As you can see in examples D and E it also works with changing floats to ints</dial6-7>
-			<dial6-8>Going back to example C you can see that it is possible to use brackets in calculations, just like in real arithmetics</dial6-8>
+			<dial6-4>As you can see in example &lt;color=yellow&gt;A&lt;/color&gt;, the result is &lt;color=yellow&gt;1&lt;/color&gt; because c++ automaticaly thinks that operations with two ints should produce an &lt;color=yellow&gt;int&lt;/color&gt;</dial6-4>
+			<dial6-5>Using method &lt;color=yellow&gt;B&lt;/color&gt; is the best for int divisions because it forces c++ to treat these numbers as &lt;color=yellow&gt;floats&lt;/color&gt;</dial6-5>
+			<dial6-6>But method &lt;color=yellow&gt;C&lt;/color&gt; also works, thanks to multiplying numbers by &lt;color=yellow&gt;1.0&lt;/color&gt; which is a &lt;color=yellow&gt;float&lt;/color&gt;</dial6-6>
+			<dial6-7>As you can see in examples &lt;color=yellow&gt;D&lt;/color&gt; and &lt;color=yellow&gt;E&lt;/color&gt; it also works with changing &lt;color=yellow&gt;floats&lt;/color&gt; to &lt;color=yellow&gt;ints&lt;/color&gt;</dial6-7>
+			<dial6-8>Going back to example &lt;color=yellow&gt;C&lt;/color&gt; you can see that it is possible to use &lt;color=yellow&gt;brackets&lt;/color&gt; in calculations, just like in real arithmetics</dial6-8>
 
 			<dial7-1>&lt;color=yellow&gt;Loop&lt;/color&gt; is expression, which allows us to repeat some action.</dial7-1>
 			<dial7-2>&lt;color=yellow&gt;for&lt;/color&gt; loop is the simplest type of loop</dial7-2>
@@ -109,17 +109,17 @@
 			<dial7-4>&lt;color=yellow&gt;for(iterator; logical condition; iterator value change)&lt;/color&gt;</dial7-4>
 			<dial7-5>Everthing in braces will be executed while condition is true</dial7-5>
 
-			<dial8-0>Type which allows us to store logical data is bool</dial8-0>
-			<dial8-1>In logical operations 1 stands for true, and 0 - false</dial8-1>
-			<dial8-2>Example A will display 1(true), because value of x is equal to 3</dial8-2>
-			<dial8-3>On the other hand, example B will display 0, because 3 isn't equal to 2</dial8-3>
-			<dial8-4>Example C will display 1, because value of x(3) is greater than 2</dial8-4>
-			<dial8-5>Example D will display 1 as well, because 3 is less or equal to 3</dial8-5>
-			<dial8-6>In example E the END operator is being used(double &amp; mark). It returns 1 if BOTH operations returns true</dial8-6>
-			<dial8-7>Example E will display 1, because BOTH operations return true</dial8-7>
-			<dial8-8>In example F the OR operator is being used(double | mark). It returs true if one of operations is true</dial8-8>
-			<dial8-9>In examples F and G used conversion from int to bool.</dial8-9>
-			<dial8-10>Example F will return 0, and E will return 1 according to the rules of logic</dial8-10>
+			<dial8-0>Type which allows us to store logical data is &lt;color=yellow&gt;bool&lt;/color&gt;</dial8-0>
+			<dial8-1>In logical operations &lt;color=yellow&gt;1&lt;/color&gt; stands for &lt;color=yellow&gt;true&lt;/color&gt;, and &lt;color=yellow&gt;0&lt;/color&gt; - &lt;color=yellow&gt;false&lt;/color&gt;</dial8-1>
+			<dial8-2>Example &lt;color=yellow&gt;A&lt;/color&gt; will display &lt;color=yellow&gt;1&lt;/color&gt;(true), because value of x is equal to 3</dial8-2>
+			<dial8-3>On the other hand, example &lt;color=yellow&gt;B&lt;/color&gt; will display &lt;color=yellow&gt;0&lt;/color&gt;, because 3 isn't equal to 2</dial8-3>
+			<dial8-4>Example &lt;color=yellow&gt;C&lt;/color&gt; will display &lt;color=yellow&gt;1&lt;/color&gt;, because value of x(3) is greater than 2</dial8-4>
+			<dial8-5>Example &lt;color=yellow&gt;D&lt;/color&gt; will display &lt;color=yellow&gt;1&lt;/color&gt; as well, because 3 is less or equal to 3</dial8-5>
+			<dial8-6>In example &lt;color=yellow&gt;E&lt;/color&gt; the &lt;color=yellow&gt;END&lt;/color&gt; operator is being used(double &amp; mark). It returns 1 if &lt;color=yellow&gt;BOTH&lt;/color&gt; operations returns true</dial8-6>
+			<dial8-7>Example &lt;color=yellow&gt;E&lt;/color&gt; will display &lt;color=yellow&gt;1&lt;/color&gt;, because &lt;color=yellow&gt;BOTH&lt;/color&gt; operations return true</dial8-7>
+			<dial8-8>In example &lt;color=yellow&gt;F&lt;/color&gt; the &lt;color=yellow&gt;OR&lt;/color&gt; operator is being used(double | mark). It returs true &lt;color=yellow&gt;if one of operations&lt;/color&gt; is true</dial8-8>
+			<dial8-9>In examples &lt;color=yellow&gt;F&lt;/color&gt; and &lt;color=yellow&gt;G&lt;/color&gt; used conversion from &lt;color=yellow&gt;int&lt;/color&gt; to &lt;color=yellow&gt;bool&lt;/color&gt;.</dial8-9>
+			<dial8-10>Example &lt;color=yellow&gt;F&lt;/color&gt; will return &lt;color=yellow&gt;0&lt;/color&gt;, and &lt;color=yellow&gt;E&lt;/color&gt; will return &lt;color=yellow&gt;1&lt;/color&gt; according to the rules of logic</dial8-10>
 		</lessons>
 		<messages>
 			<doors-locked>Doors are closed.</doors-locked>

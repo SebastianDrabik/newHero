@@ -98,14 +98,14 @@
 			<dial5-11>&lt;color=yellow&gt;I&lt;/color&gt; - Zwiększenie x o 1 (druga metoda)</dial5-11>
 			<dial5-12>&lt;color=yellow&gt;J&lt;/color&gt; - Zwiększenie x o 1 (trzecia metoda)</dial5-12>
 
-			<dial6-1>Podczas używania intów do operacji takich jak dzielenie, wynikiem jest często liczba rzeczywista, potrzebująca floata</dial6-1>
-			<dial6-2>Niestety oznacza to że często trzeba zmieniać inta na floata.</dial6-2>
+			<dial6-1>Podczas używania &lt;color=yellow&gt;intów&lt;/color&gt; do operacji takich jak dzielenie, wynikiem jest często liczba rzeczywista, potrzebująca &lt;color=yellow&gt;floata&lt;/color&gt;</dial6-1>
+			<dial6-2>Niestety oznacza to że często trzeba zmieniać &lt;/color&gt;inta&lt;/color&gt; na &lt;color=yellow&gt;floata&lt;/color&gt;.</dial6-2>
 			<dial6-3>W przeciwnym wypadku kalkulacja zwróci niepoprawny wynik</dial6-3>
-			<dial6-4>Jak można zobaczyć w przykładzie A, wynikiem jest 1 ponieważ c++ myśli że działanie z dwoma liczbami całkowitymi zwróci liczbę całkowitą</dial6-4>
-			<dial6-5>Użycie metody B jest najlepsze do dzielenia intów, ponieważ zmusza c++ do traktowania tych liczb jako floatów</dial6-5>
-			<dial6-6>Jednak metoda C również działa, dzięki mnożeniu liczb przez 1.0 co zmienia wartość liczb do floata</dial6-6>
-			<dial6-7>Zmiana z floata na inta również działa, co można zobaczyc w przykładach D i E</dial6-7>
-			<dial6-8>Wracając do przykładu C można zobaczyć, że tak jak w prawdziwej arytmetyce, można używac nawiasów do kalkulacji</dial6-8>
+			<dial6-4>Jak można zobaczyć w przykładzie &lt;color=yellow&gt;A&lt;/color&gt;, wynikiem jest &lt;color=yellow&gt;1&lt;/color&gt; ponieważ c++ myśli że działanie z dwoma liczbami całkowitymi &lt;color=yellow&gt;zwróci liczbę całkowitą&lt;/color&gt;(usunie część dziesiętną)</dial6-4>
+			<dial6-5>Użycie metody &lt;color=yellow&gt;B&lt;/color&gt; jest najlepsze do dzielenia &lt;color=yellow&gt;intów&lt;/color&gt;, ponieważ zmusza c++ do traktowania tych liczb jako &lt;color=yellow&gt;floaty&lt;/color&gt;</dial6-5>
+			<dial6-6>Jednak metoda &lt;color=yellow&gt;C&lt;/color&gt; również działa, dzięki mnożeniu liczb przez &lt;color=yellow&gt;1.0&lt;/color&gt; co zmienia wartość liczb do &lt;color=yellow&gt;floata&lt;/color&gt;</dial6-6>
+			<dial6-7>Zmiana z &lt;color=yellow&gt;floata&lt;/color&gt; na &lt;color=yellow&gt;inta&lt;/color&gt; również działa, co można zobaczyc w przykładach &lt;color=yellow&gt;D&lt;/color&gt; i &lt;color=yellow&gt;E&lt;/color&gt;</dial6-7>
+			<dial6-8>Wracając do przykładu &lt;color=yellow&gt;C&lt;/color&gt; można zobaczyć, że tak jak w prawdziwej arytmetyce, można używac &lt;color=yellow&gt;nawiasów&lt;/color&gt; do kalkulacji</dial6-8>
 
 			<dial7-1>&lt;color=yellow&gt;Pętla&lt;/color&gt; to wyrażenie służące do powtarzania napisanego w niej kodu.</dial7-1>
 			<dial7-2>Pętla &lt;color=yellow&gt;for&lt;/color&gt; jest najprostszą pętlą</dial7-2>
