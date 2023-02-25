@@ -14,8 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   key: python3
   topCode: "#include<iostream>\n\nusing namespace std;\n\nint main(int argc, char
-    *argv[]) {\n\tint height = stoi(argv[1]);\n\t// draw rectangle with '#'. \n\t//
-    width of rectangle is 5"
+    *argv[]) {\n\tint height = stoi(argv[1]);\n\t// \n\t// \n\t// \n\t// \n\t// \n\t//
+    \n\t// \n\t// "
+  topCodeHanusChcial: "#include<iostream>\n\nusing namespace std;\n\nint main() {\n\tconst
+    int height = getRandomHeight();\n\t// draw rectangle with '#'.\n\t// width of
+    rectangle is 5\n\t// height of rectangle should be the value of height variable\n\t//
+    example for height 4:\n\t// #####\n\t// #####\n\t// #####\n\t// #####"
   bottomCode: "\treturn 0;\n}"
   initialCode: "\t// your code goes here"
   inputOutput:

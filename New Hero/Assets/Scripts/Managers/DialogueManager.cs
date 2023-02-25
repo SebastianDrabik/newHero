@@ -119,7 +119,7 @@ public class DialogueManager : MonoBehaviour
         playerMovement.SetMovementDisabled(false);
         pauseMenu.SetDisabled(false);
         animator.SetBool("IsOpen", false);
-        print("event: " + eventEnabled);
+        //print("event: " + eventEnabled);
         if(eventEnabled)
             OnDialogueEnd.Invoke();
     }

@@ -13,26 +13,17 @@ MonoBehaviour:
   m_Name: Python1
   m_EditorClassIdentifier: 
   key: python1
-  topCode: "#include<iostream>\r\n\r\nusing namespace std;\r\n\r\nint main(int argc,
-    char* argv[]) {\r\n\tint height = stoi(argv[1]);\r\n\t/*\n\tdisplay a triangle
-    made out of \"*\" symbols\n\tuse height variable for number of rows\n\tfinal
-    output with height=3 should look like this:\n\t*\n\t**\n\t***\n\ttip - use nested
-    for loops    \t\n\t*/"
+  topCode: "#include<iostream>\n\nusing namespace std;\n\nint main(int argc, char
+    *argv[]) {\n\tint x  = stoi(argv[1]);\n\t//\n\t//\n\t//"
+  topCodeHanusChcial: "#include<iostream>\n\nusing namespace std;\n\nint main(int
+    argc, char *argv[]) {\n\tint x  = stoi(argv[1]);\n\t// increment x by 5, then
+    display its value,\n\t// multiply x by 3 and finally display value of x\n\t//
+    separate results with space"
   bottomCode: "\treturn 0;\n}"
   initialCode: "\t//your code goes here"
   inputOutput:
-  - input: 2
-    output: '*
-
-      **'
-  - input: 5
-    output: '*
-
-      **
-
-      ***
-
-      ****
-
-      *****'
+  - input: 4
+    output: 9 27
+  - input: 7
+    output: 14 42
   checkType: 1

@@ -16,6 +16,9 @@ MonoBehaviour:
   topCode: "#include<iostream>\n\nusing namespace std;\n\nint main(int argc, char
     *argv[]) {\n\tint a =stoi(argv[1]);\n\tint b =stoi(argv[2]);\n\t// display sum
     of a and b\n\t// and their multiplication result\n\t// separate them with space"
+  topCodeHanusChcial: "#include<iostream>\n\nusing namespace std;\n\nint main() {\n\tint
+    a = getRandomNumber();\n\tint b = getRandomNumber();\n\t// display sum of a and
+    b\n\t// and their multiplication result\n\t// separate them with space"
   bottomCode: "\treturn 0;\n}"
   initialCode: "\t// your code goes here"
   inputOutput:

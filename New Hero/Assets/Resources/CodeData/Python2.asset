@@ -16,6 +16,9 @@ MonoBehaviour:
   topCode: "#include<iostream>\n\nusing namespace std;\n\nint main(int argc, char
     *argv[]) {\n\tint number = stoi(argv[1]);\n\t// check if number is even using
     modulo operator\n\t// if it does, return it"
+  topCodeHanusChcial: "#include<iostream>\n\nusing namespace std;\n\nint main() {\n\tint
+    number = getRandomNumber();\n\t// check if number is even using modulo operator\n\t//
+    if it does, return it"
   bottomCode: "\treturn 0;\n}"
   initialCode: "\t// your code goes here"
   inputOutput:

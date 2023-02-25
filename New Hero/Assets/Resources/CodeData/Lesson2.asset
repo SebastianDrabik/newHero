@@ -14,20 +14,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   key: test2
   topCode: "#include<iostream>\n\nusing namespace std;\n\nint main(int argc, char
-    *argv[]) {\n\tint a = stoi(argv[1]);\n\tint b = stoi(argv[2]);\n"
+    *argv[]) {\n\tint a = stoi(argv[1]);\n\tint b = stoi(argv[2]);\n\t//\n\t//\n\t//"
+  topCodeHanusChcial: "#include<iostream>\n\nusing namespace std;\n\nint main() {\n\tint
+    a = getRandomNumber();\n\tint b = getRandomNumber();\n\t// display value of b
+    as many times as \n\t// the value of a. Display every number in new line\n\t//
+    use for loop, cout and endl"
   bottomCode: '}'
   initialCode: "\t//your code goes here"
   inputOutput:
-  - input: 1 2
-    output: '16
+  - input: 3 4
+    output: '4
 
-      50'
-  - input: 0 9
-    output: '2
+      4
 
-      68
+      4
 
-      60
+      4'
+  - input: 6 9
+    output: '9
 
-      18'
+      9
+
+      9
+
+      9
+
+      9
+
+      9'
   checkType: 1

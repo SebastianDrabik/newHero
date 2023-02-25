@@ -65,7 +65,8 @@ public class FightManager : MonoBehaviour
             return;
         }
         gameObject.SetActive(true);
-        top.text = currentData.topCode;
+        //top.text = currentData.topCode;
+        top.text = currentData.topCodeHanusChcial;
         bottom.text = currentData.bottomCode;
         codeInput_text.text = currentData.initialCode;
         Workspace.color = EditorTheme.currentTheme.background;

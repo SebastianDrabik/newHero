@@ -25,7 +25,12 @@
       "ProjectGuid": "0e321132-3abe-88db-e8f7-6cb2c67ef669",
       "DisplayName": "Unity.TextMeshPro",
       "ColorIndex": 3
+    },
+    "13bf987c-db34-513b-17ee-3a78f79f0259": {
+      "ProjectGuid": "13bf987c-db34-513b-17ee-3a78f79f0259",
+      "DisplayName": "PsdPlugin",
+      "ColorIndex": 4
     }
   },
-  "NextColorIndex": 4
+  "NextColorIndex": 5
 }

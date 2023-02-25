@@ -18,9 +18,12 @@ public class CodeData : ScriptableObject
     [TextArea(3,10)]
     public string topCode;
     [TextArea(3, 10)]
+    public string topCodeHanusChcial;
+    [TextArea(3, 10)]
     public string bottomCode;
     [TextArea(3, 10)]
     public string initialCode = "";
+    
     
     [Header("All correct outputs for inputs")]
     public inputData[] inputOutput;
