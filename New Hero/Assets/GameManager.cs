@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
         else
             Destroy(this);
         if(!trophiesLoaded)
-            LoadTrophies();
+            LoadTrophies(true);
     }
 
     void OnEnable() {
@@ -46,15 +46,15 @@ public class GameManager : MonoBehaviour
     {
         AssignController();
         if(trophies.Count == 0)
-            LoadTrophies();
+            LoadTrophies(true);
 
         if (isObjectiveShown)
             ShowObjective(currentObjective);
     }
 
-    public void LoadTrophies()
+    public void LoadTrophies(bool ignoreLoaded = false)
     {
-        if (trophiesLoaded)
+        if (trophiesLoaded && !ignoreLoaded)
             return;
         TrophyList trophyList = TranslationsManager.GetTrophies();
         trophies.Clear();
@@ -115,7 +115,6 @@ public class GameManager : MonoBehaviour
             string prevobj = SaveSystem.objective;
             if (prevobj != null && prevobj != "" && prevobj != string.Empty)
                 oc.ShowObjective(prevobj);
-            Debug.Log("Objective Controller assigned");
         }
     }
 }

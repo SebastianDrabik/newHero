@@ -39,7 +39,7 @@ public class SettingsManager : MonoBehaviour
         else
             TranslationsManager.lang = TranslationsManager.defaultLang;
         TranslationsManager.UpdateSaveListErrorMessages();
-        GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>().LoadTrophies();
+        GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>().LoadTrophies(true);
     }
 
 }

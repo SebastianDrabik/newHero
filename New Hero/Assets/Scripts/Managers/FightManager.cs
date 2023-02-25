@@ -31,6 +31,8 @@ public class FightManager : MonoBehaviour
     private PlayerMovement movement;
     private PlayerInteraction interaction;
 
+    private PauseMenu pauseMenu;
+
     [Space]
     [Header("Event called after successfull compilation")]
     public UnityEvent<bool> onCodeExecuted;
@@ -42,7 +44,7 @@ public class FightManager : MonoBehaviour
 
     void Awake()
     {
-        //LoadAllCodes();
+        pauseMenu = GameObject.FindGameObjectWithTag("Canvas").GetComponent<PauseMenu>();
         if (Instance == null)
             Instance = this;
     }
@@ -69,7 +71,8 @@ public class FightManager : MonoBehaviour
         Workspace.color = EditorTheme.currentTheme.background;
         codeInput.Select();
         currentKey = key;
-
+        
+        pauseMenu.SetDisabled(true);
         interaction.SetInteractionDisabled(true);
         movement.SetMovementDisabled(true);
     }
@@ -90,16 +93,17 @@ public class FightManager : MonoBehaviour
     {
         CodeData cd = GetCode(currentKey);
         Code code = new(top.text + "\n" + codeInput.text + "\n" + bottom.text, cd.GetData(), cd.checkType);
-
+        
         return code.CheckOutputs(runButtonAnimator, errorController);
     }
 
     public void CloseCodeEditor()
     {
-        gameObject.SetActive(false);
+        pauseMenu.SetDisabled(false);
         codeInput.text = "";
         movement.SetMovementDisabled(false);
         interaction.SetInteractionDisabled(false);
+        gameObject.SetActive(false);
     }
 
     private void HighlightSyntax(TextMeshProUGUI text)
@@ -134,7 +138,6 @@ public class FightManager : MonoBehaviour
 
     public void RunCode()
     {
-
         Debug.Log("RUN");
         bool codeResult = CheckCode();
         onCodeExecuted.Invoke(codeResult);

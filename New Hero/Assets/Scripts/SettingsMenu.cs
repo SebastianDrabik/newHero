@@ -112,8 +112,10 @@ public class SettingsMenu : MonoBehaviour
         TranslationController[] controllers = FindObjectsOfType<TranslationController>();
         foreach (TranslationController controller in controllers)
             controller.UpdateContent();
+
         TranslationsManager.UpdateSaveListErrorMessages();
-        GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>().LoadTrophies();
+        Debug.Log(TranslationsManager.lang);
+        GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>().LoadTrophies(true);
     }
 
     public void SetVolume(float volume)

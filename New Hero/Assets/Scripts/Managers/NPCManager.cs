@@ -7,6 +7,7 @@ public class NPCManager : MonoBehaviour
     [Space]
     public bool assignObjective;
     public string objectiveDescription;
+    public bool eventEnabled = true;
     [Space]
     public UnityEvent OnDialogueEnd;
 
@@ -16,5 +17,6 @@ public class NPCManager : MonoBehaviour
         DialogueManager.objectiveDescription = objectiveDescription;
         DialogueManager.assignObjective = assignObjective;
         DialogueManager.OnDialogueEnd = OnDialogueEnd;
+        DialogueManager.eventEnabled = eventEnabled;
     }
 }

@@ -15,7 +15,6 @@ public class Code
     private readonly string inputFilePath = $"{Application.persistentDataPath}/tmp/usercode.cpp";
     public static string compilerPath = $"{Application.dataPath}/MinGW/bin/g++.exe";
 
-    
     public string code;
     public Dictionary<string, string> outputs;
     public CodeData.CheckType checkType;

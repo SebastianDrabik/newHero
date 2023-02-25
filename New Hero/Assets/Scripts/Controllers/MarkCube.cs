@@ -137,7 +137,7 @@ public class MarkCube : MonoBehaviour
     {
         Time.timeScale = 0f;
         codeEditor.OpenCodeEditor("marco");
-        pauseMenu.SetDisabled(true);
+        //pauseMenu.SetDisabled(true);
         isAttacking = false;
         stage = -1;
     }
@@ -169,10 +169,10 @@ public class MarkCube : MonoBehaviour
     {
         if (result)
         {
-            StartCoroutine("DeathAni");
+            codeEditor.CloseCodeEditor();
+            StartCoroutine(nameof(DeathAni));
         }
         ResetAfterAttack();
-        codeEditor.CloseCodeEditor();
     }
 
     //WIN
@@ -180,6 +180,7 @@ public class MarkCube : MonoBehaviour
     {
         //I hate sand
         movement.SetMovementDisabled(true);
+        pauseMenu.SetDisabled(true);
         gameObject.GetComponent<Animator>().SetTrigger("Death");
         float time = Array.Find(gameObject.GetComponent<Animator>().runtimeAnimatorController.animationClips, clip => clip.name == "Marco_Death").length;
         isDead = true;

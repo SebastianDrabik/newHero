@@ -60,6 +60,8 @@ public class LessonManager : MonoBehaviour
     public void UseAlterDialogue()
     {
         teacher.dialogueKey = alterDialogueKey;
+        teacher.eventEnabled = false;
+        teacher.assignObjective = false;
     }
 
     public void StartLesson()

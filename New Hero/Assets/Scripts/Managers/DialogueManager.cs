@@ -22,6 +22,7 @@ public class DialogueManager : MonoBehaviour
     public static bool assignObjective;
     public static string objectiveDescription;
     public static UnityEvent OnDialogueEnd;
+    public static bool eventEnabled;
 
     private Queue<DialogueSentence> sentences;
     private PlayerMovement playerMovement;
@@ -118,7 +119,9 @@ public class DialogueManager : MonoBehaviour
         playerMovement.SetMovementDisabled(false);
         pauseMenu.SetDisabled(false);
         animator.SetBool("IsOpen", false);
-        OnDialogueEnd.Invoke();
+        print("event: " + eventEnabled);
+        if(eventEnabled)
+            OnDialogueEnd.Invoke();
     }
 
     private void LoadAllDialogues(string lang)

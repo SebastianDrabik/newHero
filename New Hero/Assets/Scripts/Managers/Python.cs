@@ -55,7 +55,6 @@ public class Python : MonoBehaviour
     void Start()
     {
         currentMode = attackMode.rock;
-        exit.locked = true;
     }
 
     void Update()

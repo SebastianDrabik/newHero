@@ -126,8 +126,9 @@
 			<too-young>You are too young to drive a car!</too-young>
 			<cube-bullet>Avoid all bugs!</cube-bullet>
 			<leave-during-lesson>You can't leave class durign lesson.</leave-during-lesson>
+			<leave-during-python>I think I am supposed to do something here.</leave-during-python>
 			<cube-box>Watch out!</cube-box>
-			<cave-not-ready>I am not ready for this.</cave-not-ready>
+			<cave-not-ready>I am not ready yet.</cave-not-ready>
 			<python-try-to-survive>Avoid all rocks!</python-try-to-survive>
 		</messages>
 	</lang-data>

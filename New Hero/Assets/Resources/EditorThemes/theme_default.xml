@@ -4,14 +4,6 @@
 	<background-color>#202020ff</background-color>
 	<highlights>
 		<rule>
-			<regex>(\/\/.*)|(\/\*[\s\S]*?\*\/)</regex>
-			<color>#235530ff</color>
-		</rule>
-		<rule>
-			<regex>\".*\"</regex>
-			<color>#e7f700ff</color>
-		</rule>
-		<rule>
 			<regex>([0-9]+|cout|endl)</regex>
 			<color>#e2f000ff</color>
 		</rule>
@@ -38,6 +30,14 @@
 		<rule>
 			<regex>#include\s*&lt;.*&gt;</regex>
 			<color>#d17300ff</color>
+		</rule>
+		<rule>
+			<regex>(\/\/.*)|(\/\*[\s\S]*?\*\/)</regex>
+			<color>#235530ff</color>
+		</rule>
+		<rule>
+			<regex>\".*\"</regex>
+			<color>#e7f700ff</color>
 		</rule>
 	</highlights>
 </theme-data>

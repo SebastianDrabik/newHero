@@ -5,8 +5,8 @@ using System.Xml;
 
 public class TranslationsManager
 {
-    public readonly static string defaultLang = "pl";
-    public static string lang = "pl";
+    public readonly static string defaultLang = "en";
+    public static string lang = "en";
 
     private static readonly List<Lang> langList = new();
     public static List<string> langNames = new();
@@ -71,6 +71,7 @@ public class TranslationsManager
 
     public static TrophyList GetTrophies()
     {
-        return trophyLists.Find(tl => tl.langKey == lang);
+        TrophyList tl = trophyLists.Find(tl => tl.langKey == lang);
+        return tl;
     }
 }

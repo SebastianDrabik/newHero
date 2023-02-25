@@ -64,6 +64,7 @@ public class PauseMenu : MonoBehaviour
     {
         manager.HideObjective();
         Resume();
+        manager.trophies.Clear();
         DiscordManager.Instance.SetPlaying(DiscordManager.State.MENU);
         SceneManager.LoadScene("MainMenu");
     }

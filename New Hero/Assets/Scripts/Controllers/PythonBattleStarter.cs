@@ -12,8 +12,12 @@ public class PythonBattleStarter : MonoBehaviour
 
     public GameObject healthbar;
 
+    public SaveData.Level minLevel;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (SaveSystem.level < minLevel)
+            return;
         if (collision.gameObject.CompareTag("Player"))
         {
             movement.SetMovementDisabled(true);
