@@ -549,8 +549,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 0.4.1
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 84bb39aec772f6844928233612eb8fdf, type: 2}
-  m_sharedMaterial: {fileID: -3995389636421137809, guid: 84bb39aec772f6844928233612eb8fdf, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 5403490857d04364db534ccb511a2f6a, type: 2}
+  m_sharedMaterial: {fileID: -3995389636421137809, guid: 5403490857d04364db534ccb511a2f6a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -12865,6 +12865,7 @@ GameObject:
   - component: {fileID: 2011100951}
   - component: {fileID: 2011100953}
   - component: {fileID: 2011100952}
+  - component: {fileID: 2011100954}
   m_Layer: 5
   m_Name: Title
   m_TagString: Untagged
@@ -12989,6 +12990,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2011100950}
   m_CullTransparentMesh: 1
+--- !u!114 &2011100954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2011100950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd7d464c1849a244b9f2895ac08fe234, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  group: saves-menu
+  key: title
+  watchEnable: 1
 --- !u!1 &2017739230
 GameObject:
   m_ObjectHideFlags: 0

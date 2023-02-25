@@ -1,9 +1,11 @@
 using System.Collections.Generic;
+using System.Collections;
 using UnityEditor;
 using UnityEngine;
 using UnityEditor.SceneManagement;
 using UnityEngine.SceneManagement;
 using System.IO;
+using System;
 
 public class Editor : UnityEditor.Editor
 {
@@ -31,4 +33,5 @@ public class Editor : UnityEditor.Editor
         Code.compilerPath = "g++";
         Debug.Log("Your compiler path has been set to <color=green>g++</color>");
     }
+    
 }

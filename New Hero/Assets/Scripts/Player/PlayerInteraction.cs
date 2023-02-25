@@ -80,10 +80,14 @@ public class PlayerInteraction : MonoBehaviour
         }
         if (collision.gameObject.GetComponent<InteractionController>() != null)
         {
-            currentInteractionEvent = collision.gameObject.GetComponent<InteractionController>().onInteraction;
-            otherInteraction = true;
-            image.SetActive(true);
-            return;
+            var ic = collision.gameObject.GetComponent<InteractionController>();
+            if (!ic.disabled)
+            {
+                currentInteractionEvent = ic.onInteraction;
+                otherInteraction = true;
+                image.SetActive(true);
+                return;
+            }
         }
         if (!collision.gameObject.CompareTag("Door"))
             return;
@@ -140,11 +144,20 @@ public class PlayerInteraction : MonoBehaviour
             }
         }
         if (NPC)
+        {
             DialogueManager.Instance.StartDialogue();
+            NPC = false;
+        }
         if (lesson)
+        {
             FindObjectOfType<LessonManager>().StartLesson();
-        if(otherInteraction)
+            lesson = false;
+        }
+        if (otherInteraction)
+        {
             currentInteractionEvent.Invoke();
+            otherInteraction = false;
+        }
     }
 
     public void SetInteractionDisabled(bool disabled)

@@ -27,6 +27,7 @@
 			<volume>Poziom głośności</volume>
 		</options-menu>
 		<saves-menu>
+			<title>Zapisy gry</title>
 			<new-game>Nowa gra</new-game>
 			<search>Szukaj...</search>
 
@@ -52,22 +53,24 @@
 			<find-school>Idź do szkoły.</find-school>
 			<teacher>Porozmawiaj z nauczycielem.</teacher>
 			<lesson-seat>Znajdź i zajmij miejsce.</lesson-seat>
+			<find-sgp>Odnajdź tajemniczą postać</find-sgp>
+			<find-cave>Udaj się do jaskini.</find-cave>
 		</objectives>
-		<first-lesson>
+		<lessons>
 			<dial1-1>Do dodania biblioteki do naszego programu używamy &lt;color=yellow&gt;#include&lt;biblioteka&gt;&lt;/color&gt;.</dial1-1>
 			<dial1-2>Wszystko co znajduje się wewnątrz funkcji &lt;color=yellow&gt;main&lt;/color&gt; zostanie wykonane przez program po kompilacji.</dial1-2>
-			<dial1-3>Komenda &lt;color=yellow&gt;std::cout &lt;&lt; "hello world"&lt;/color&gt;, powoduje wyświetlenie tekstu wewnątrz cudzysłowie na ekranie.</dial1-3>
+			<dial1-3>Komenda &lt;color=yellow&gt;std::cout &lt;&lt; "hello world"&lt;/color&gt;, powoduje wyświetlenie tekstu wewnątrz cudzysłowia na ekranie.</dial1-3>
 			<dial1-4>Na końcu każdej linijki, nie licząc niektórych wyjątków, musi znajdować się średnik.</dial1-4>
 			<dial2-1>Nie musisz używać &lt;color=yellow&gt;std::&lt;/color&gt;, jeżeli dodasz &lt;color=yellow&gt;using namespace std&lt;/color&gt; na górze kodu.</dial2-1>
 			<dial3-1>Za pomocą powyższego kodu możesz przypisać wartości do dwóch zmiennych oraz wyświetlić na ekranie ich sumę.</dial3-1>
-			<dial3-2>Za pomocą zmiennej jesteśmy zapisywać dane, których możemy później ponownie używać wewnątrz kodu.</dial3-2>
+			<dial3-2>Za pomocą zmiennej można zapisywać dane, których możemy później ponownie używać wewnątrz kodu.</dial3-2>
 			<dial3-3>Występują różne typy zmiennych przechowujące różne typy danych:</dial3-3>
 			<dial3-4>&lt;color=yellow&gt;int&lt;/color&gt; przechowuje liczby całkowite</dial3-4>
 			<dial3-5>&lt;color=yellow&gt;float&lt;/color&gt; przechowuje liczby rzeczywiste</dial3-5>
 			<dial3-6>&lt;color=yellow&gt;string&lt;/color&gt; przechowuje dane tekstowe</dial3-6>
 			<dial3-7>&lt;color=yellow&gt;char&lt;/color&gt; przechowuje pojedynczy znak</dial3-7>
-			<dial3-8>&lt;color=yellow&gt;bool&lt;/color&gt; przechowuje wartość logiczna prawda, lub fałsz</dial3-8>
-			<dial4-1>Instrukcja warunkowa &lt;color=yellow&gt;if&lt;/color&gt; pozwala na wykonaniu kodu pod określonym warunkiem, który podamy wewnątrz nawiasów.</dial4-1>
+			<dial3-8>&lt;color=yellow&gt;bool&lt;/color&gt; przechowuje wartość logiczną - &lt;color=yellow&gt;prawda&lt;/color&gt;, lub &lt;color=yellow&gt;fałsz&lt;/color&gt;</dial3-8>
+			<dial4-1>Instrukcja warunkowa &lt;color=yellow&gt;if&lt;/color&gt; pozwala na wykonanie kodu pod określonym warunkiem, który podamy wewnątrz nawiasów.</dial4-1>
 			<dial4-2>Powyższy kod wyświetli &lt;color=yellow&gt;x > 0&lt;/color&gt;, jeśli wartość zmiennej x będzie większa od zera.</dial4-2>
 
 			<dial5-1>W c++ i w wielu innych językach programowania, możliwe jest używanie matematycznych operatorów na zmiennych</dial5-1>
@@ -90,13 +93,25 @@
 			<dial6-5>Użycie metody B jest najlepsze do dzielenia intów, ponieważ zmusza c++ do traktowania tych liczb jako floatów</dial6-5>
 			<dial6-6>Jednak metoda C również działa, dzięki mnożeniu liczb przez 1.0 co zmienia wartość liczb do floata</dial6-6>
 			<dial6-7>Zmiana z floata na inta również działa, co można zobaczyc w przykładach D i E</dial6-7>
-		</first-lesson>
+
+			<dial7-1>&lt;color=yellow&gt;Pętla&lt;/color&gt; to wyrażenie służące do powtarzania napisanego w niej kodu.</dial7-1>
+			<dial7-2>Pętla &lt;color=yellow&gt;for&lt;/color&gt; jest najprostszą pętlą</dial7-2>
+			<dial7-3>Pętlę &lt;color=yellow&gt;for&lt;/color&gt; definiujemy w następujący sposób: </dial7-3>
+			<dial7-4>&lt;color=yellow&gt;for(iterator; warunek logiczny; zmiana wartości iteratora)&lt;/color&gt;</dial7-4>
+			<dial7-5>Wszystko, co znajduje się w klamerkach, będzie wykonywane, dopóki warunek jest spełniony</dial7-5>
+
+			<dial8-1>Pętla &lt;color=yellow&gt;while&lt;/color&gt; jest drugim rodzajem pętli.</dial8-1>
+			<dial8-2>&lt;color=yellow&gt;while&lt;/color&gt; deklarujemy używając tylko warunku logicznego:</dial8-2>
+			<dial8-3>&lt;color=yellow&gt;while(warunek)&lt;/color&gt;</dial8-3>
+			<dial8-4>Powyższa pętla działa dokładnie tak samo, jak pętla w poprzednim przykładzie</dial8-4>
+		</lessons>
 		<messages>
-			<doors-locked>Drzwi sa zamknięte.</doors-locked>
+			<doors-locked>Drzwi są zamknięte.</doors-locked>
 			<too-young>Jesteś zbyt młody, aby prowadzić!</too-young>
 			<leave-during-lesson>Nie możesz wyjść w trakcie lekcji.</leave-during-lesson>
 			<cube-bullet>Unikaj bugów!</cube-bullet>
 			<cube-box>UWAGA!</cube-box>
+			<cave-not-ready>Chyba nie jestem na to jeszcze gotowy.</cave-not-ready>
 			<python-try-to-survive>Unikaj kamieni!</python-try-to-survive>
 		</messages>
 	</lang-data>

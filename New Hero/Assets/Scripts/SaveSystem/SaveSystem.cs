@@ -8,6 +8,7 @@ public static class SaveSystem
     public static SaveData.Level level;
     public static int health;
     public static string path;
+    public static string objective;
 
     public static void SaveData()
     {
@@ -23,7 +24,9 @@ public static class SaveSystem
 
         BinaryFormatter formatter = new();
         FileStream fs = new(path, FileMode.Create);
-        SaveData save = new(level, position, SceneManager.GetActiveScene().name, ConvertTrophies(gameManager.trophies), health);
+        SaveData save = new(level, position, SceneManager.GetActiveScene().name, ConvertTrophies(gameManager.trophies), health, gameManager.currentObjective);
+        //dev
+        Debug.Log(gameManager.currentObjective);
         formatter.Serialize(fs, save);
         fs.Close();
         Debug.Log("Successfully saved game");
@@ -49,6 +52,7 @@ public static class SaveSystem
         }
         level = save.level;
         health = save.health;
+        objective = save.currentObjective;
         fs.Close();
 
         return save;

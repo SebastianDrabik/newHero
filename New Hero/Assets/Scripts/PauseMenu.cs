@@ -11,9 +11,15 @@ public class PauseMenu : MonoBehaviour
     public MessageController messageController;
     //public ObjectiveController objectiveController;
 
+    private GameManager manager;
+
     public static bool GameIsPaused = false;
     private bool isDisabled = false;
     
+    void Start()
+    {
+        manager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
+    }
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -44,6 +50,8 @@ public class PauseMenu : MonoBehaviour
             GameIsPaused = false;
         }
     }
+
+
     void Pause()
     {
         pauseMenuUI.SetActive(true);
@@ -54,6 +62,7 @@ public class PauseMenu : MonoBehaviour
 
     public void LoadMenu()
     {
+        manager.HideObjective();
         Resume();
         DiscordManager.Instance.SetPlaying(DiscordManager.State.MENU);
         SceneManager.LoadScene("MainMenu");

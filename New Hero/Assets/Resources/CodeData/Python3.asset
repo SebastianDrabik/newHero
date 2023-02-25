@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   key: python3
   topCode: "#include<iostream>\n\nusing namespace std;\n\nint main(int argc, char
-    *argv[]){\n\tint height = stoi(argv[1]);\n\t// draw rectangle with '#'. \n\t//
+    *argv[]) {\n\tint height = stoi(argv[1]);\n\t// draw rectangle with '#'. \n\t//
     width of rectangle is 5"
   bottomCode: "\treturn 0;\n}"
   initialCode: "\t// your code goes here"

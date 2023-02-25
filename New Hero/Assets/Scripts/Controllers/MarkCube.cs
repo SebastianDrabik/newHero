@@ -19,6 +19,7 @@ public class MarkCube : MonoBehaviour
     public MessageManager messageManager;
     public new Transform camera;
     public PauseMenu canvas;
+    public PlayerMovement movement;
 
     private float abovePlayer = 10f;
     private bool isAttacking = false;
@@ -54,11 +55,13 @@ public class MarkCube : MonoBehaviour
         {
             manager.ChangeTrophyState("marco", Trophy.TrophyState.IN_PROGRESS);
             isFighting = true;
+            movement.SetMovementDisabled(true);
         }
     }
 
     void HideIntro()
     {
+        movement.SetMovementDisabled(false);
         Intro.SetActive(false);
         canvas.SetDisabled(false);
     }
@@ -176,6 +179,7 @@ public class MarkCube : MonoBehaviour
     IEnumerator DeathAni()
     {
         //I hate sand
+        movement.SetMovementDisabled(true);
         gameObject.GetComponent<Animator>().SetTrigger("Death");
         float time = Array.Find(gameObject.GetComponent<Animator>().runtimeAnimatorController.animationClips, clip => clip.name == "Marco_Death").length;
         isDead = true;
@@ -183,7 +187,9 @@ public class MarkCube : MonoBehaviour
         float initialOrtoSize = _camera.m_Lens.OrthographicSize;
         _camera.m_Follow = gameObject.transform;
         _camera.m_Lens.OrthographicSize = 3f;
-        yield return new WaitForSeconds(time + 0.9f);
+        yield return new WaitForSeconds(time);
+        movement.SetMovementDisabled(false);
+        yield return new WaitForSeconds(0.9f);
         isFighting = false;
         _camera.m_Follow = player.transform;
         _camera.m_Lens.OrthographicSize = initialOrtoSize;

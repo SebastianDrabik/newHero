@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.Events;
-using System.Threading.Tasks;
 
 public class FightManager : MonoBehaviour
 {
@@ -24,7 +23,10 @@ public class FightManager : MonoBehaviour
     public Animator runButtonAnimator;
     public Button runButton;
 
+    public GameObject hintButton;
+
     public ErrorController errorController;
+    public UnityEvent onHintClicked;
 
     private PlayerMovement movement;
     private PlayerInteraction interaction;
@@ -148,5 +150,21 @@ public class FightManager : MonoBehaviour
         CodeData[] datas = Resources.LoadAll<CodeData>("CodeData");
         foreach (var data in datas)
             codeList.Add(data);
+    }
+
+    public void ShowHint()
+    {
+        onHintClicked.Invoke();
+        DisableHint();
+    }
+
+    public void EnableHint()
+    {
+        hintButton.SetActive(true);
+    }
+
+    public void DisableHint()
+    {
+        hintButton.SetActive(false);
     }
 }

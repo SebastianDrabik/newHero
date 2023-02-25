@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
 
     private ObjectiveController _ObjectiveController;
     //private MessageController _MessageController;
-    private string currentObjective = "";
+    public string currentObjective { get; set; } = "";
     private bool isObjectiveShown = false;
     private bool trophiesLoaded = false;
     
@@ -47,6 +47,7 @@ public class GameManager : MonoBehaviour
         AssignController();
         if(trophies.Count == 0)
             LoadTrophies();
+
         if (isObjectiveShown)
             ShowObjective(currentObjective);
     }
@@ -72,11 +73,9 @@ public class GameManager : MonoBehaviour
 
     public void ShowObjective(string key)
     {
-        if (!isObjectiveShown)
-        {
-            currentObjective = key;
-            isObjectiveShown = true;
-        }
+        
+        currentObjective = key;
+        isObjectiveShown = true;
         _ObjectiveController.ShowObjective(key);
     }
 
@@ -107,10 +106,16 @@ public class GameManager : MonoBehaviour
 
     private void AssignController()
     {
-        if (SceneManager.GetActiveScene().name == "MainMenu")
+        if (SceneManager.GetActiveScene().name == "MainMenu" || _ObjectiveController!=null)
             return;
         ObjectiveController oc = GameObject.FindGameObjectWithTag("Canvas").GetComponent<ObjectiveController>();
         if (oc != null)
+        {
             _ObjectiveController = oc;
+            string prevobj = SaveSystem.objective;
+            if (prevobj != null && prevobj != "" && prevobj != string.Empty)
+                oc.ShowObjective(prevobj);
+            Debug.Log("Objective Controller assigned");
+        }
     }
 }

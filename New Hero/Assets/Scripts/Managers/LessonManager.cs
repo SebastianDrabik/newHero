@@ -17,8 +17,12 @@ public class LessonManager : MonoBehaviour
     public PlayerMovement movement;
     public PauseMenu pauseMenu;
 
+    public NPCManager teacher;
+
     public string examPassTrophyKey;
     public string examKey;
+
+    public string alterDialogueKey;
 
     public SaveData.Level examPassLevel;
 
@@ -39,7 +43,8 @@ public class LessonManager : MonoBehaviour
 
         if (SaveSystem.level >= SaveData.Level.CPP_BASICS)
         {
-            //gameObject.SetActive(false);
+            UseAlterDialogue();
+            teacher.OnDialogueEnd.RemoveAllListeners();
             return;
         }
         manager.ShowObjective("teacher");
@@ -50,6 +55,11 @@ public class LessonManager : MonoBehaviour
     public void EnableSeats()
     {
         lessonTriggers.SetActive(true);
+    }
+
+    public void UseAlterDialogue()
+    {
+        teacher.dialogueKey = alterDialogueKey;
     }
 
     public void StartLesson()
@@ -71,7 +81,7 @@ public class LessonManager : MonoBehaviour
             CodeEditor.GetComponent<LessonCodeEditor>().Change(part.code);
             for (int i = 0; i < part.subtitles.Length; i++)
             {
-                subtitleText.GetComponent<TextMeshProUGUI>().text = TranslationsManager.GetTranslation("first-lesson", part.subtitles[i]);
+                subtitleText.GetComponent<TextMeshProUGUI>().text = TranslationsManager.GetTranslation("lessons", part.subtitles[i]);
                 if(part.dubs[i] != string.Empty)
                     AudioManager.PlayEffect(part.dubs[i], 0.1f);
                 yield return new WaitForSeconds(AudioManager.GetAudioLength(part.dubs[i]));
@@ -92,6 +102,7 @@ public class LessonManager : MonoBehaviour
         if (result)
         {
             // test passed
+            UseAlterDialogue();
             attack.CloseCodeEditor();
             lessonTriggers.SetActive(false);
             classExit.locked = false;
@@ -101,5 +112,6 @@ public class LessonManager : MonoBehaviour
             pauseMenu.SetDisabled(false);
             return;
         }
+        attack.EnableHint();
     }
 }

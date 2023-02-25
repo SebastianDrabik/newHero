@@ -16,6 +16,8 @@ public class Python : MonoBehaviour
     public GameObject blockadeObject;
     public MessageManager messageManager;
 
+    public DoorController exit;
+
     int rockCount = 100;
 
     public Sprite blue;
@@ -50,13 +52,14 @@ public class Python : MonoBehaviour
     void Start()
     {
         currentMode = attackMode.rock;
+        exit.locked = true;
     }
 
     void Update()
     {
         if (!fightStarted || IsAttacking) return;
-        if(manager.GetTrophyState("goofylanguage") != Trophy.TrophyState.IN_PROGRESS)
-            manager.ChangeTrophyState("goofylanguage", Trophy.TrophyState.IN_PROGRESS, true);
+        if (manager.GetTrophyState("goofylanguage") != Trophy.TrophyState.IN_PROGRESS)
+            manager.ChangeTrophyState("goofylanguage", Trophy.TrophyState.IN_PROGRESS);
         if (!blockade)
             blockadeObject.SetActive(true);
         timer -= Time.deltaTime;
@@ -88,9 +91,10 @@ public class Python : MonoBehaviour
         blockadeObject.SetActive(false);
         manager.ChangeTrophyState("goofylanguage", Trophy.TrophyState.UNLOCKED, true);
         Debug.Log("He ded");
-        gameObject.SetActive(false);
         fightStarted = false;
         SaveSystem.level = SaveData.Level.PYTHON;
+        exit.locked = false;
+        gameObject.SetActive(false);
     }
 
     public void RockAttack()
@@ -167,6 +171,7 @@ public class Python : MonoBehaviour
     {
         if (result)
         {
+            // win
             editor.CloseCodeEditor();
             health--;
             Time.timeScale = 1f;

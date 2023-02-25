@@ -15,8 +15,8 @@ MonoBehaviour:
   key: semigodprogrammer
   sentences:
   - name: SemiGodProgrammer
-    sentence: Hello there
+    sentence: Hi, can you do me a favor? You won't regret.
   - name: Player
-    sentence: General semigodprogrammer
+    sentence: Yes, sure, but what you want me to do?
   - name: SemiGodProgrammer
-    sentence: '*Lightsaber expands*'
+    sentence: There is a cave nearby...

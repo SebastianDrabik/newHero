@@ -2424,6 +2424,7 @@ MonoBehaviour:
   messageManager: {fileID: 1517470889}
   camera: {fileID: 2062240792}
   canvas: {fileID: 1517470888}
+  movement: {fileID: 1446180391}
   isFighting: 0
 --- !u!212 &787291898
 SpriteRenderer:
@@ -8732,7 +8733,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4937270831239817241, guid: 6b8ac79c3bfbcca49a60682af3545b6d, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5158693506844113455, guid: 6b8ac79c3bfbcca49a60682af3545b6d, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -8744,7 +8745,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5974894908412393241, guid: 6b8ac79c3bfbcca49a60682af3545b6d, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6866731608743565176, guid: 6b8ac79c3bfbcca49a60682af3545b6d, type: 3}
       propertyPath: m_RootOrder
@@ -8928,7 +8929,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8653584975696950328, guid: 6b8ac79c3bfbcca49a60682af3545b6d, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8797438553522596513, guid: 6b8ac79c3bfbcca49a60682af3545b6d, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -8956,6 +8957,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5386f81abc51537499b7551f23bcdea0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1446180391 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3570113478644092304, guid: fd5466377e4414c488bd1136836c35d6, type: 3}
+  m_PrefabInstance: {fileID: 875542239}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1446180381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e02ae617165349740b040dde984119c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1488158498

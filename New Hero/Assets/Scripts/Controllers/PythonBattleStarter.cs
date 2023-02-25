@@ -8,11 +8,14 @@ public class PythonBattleStarter : MonoBehaviour
     public GameObject python;
     public CinemachineVirtualCamera cam;
 
+    public PlayerMovement movement;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.CompareTag("Player"))
         {
-            StartCoroutine("AnimatePython");
+            movement.SetMovementDisabled(true);
+            StartCoroutine(nameof(AnimatePython));
         }
     }
 
@@ -24,5 +27,6 @@ public class PythonBattleStarter : MonoBehaviour
         cam.Follow = GameObject.FindGameObjectWithTag("Player").transform;
         python.GetComponent<Python>().fightStarted = true;
         gameObject.SetActive(false);
+        movement.SetMovementDisabled(false);
     }
 }

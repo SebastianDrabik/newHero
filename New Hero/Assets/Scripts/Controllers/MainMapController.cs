@@ -6,11 +6,36 @@ public class MainMapController : MonoBehaviour
 {
     public GameObject firewall;
     public SaveData.Level minFirewallLevel;
+    [Space]
+    private GameManager manager;
 
+    public NPCManager SGP;
+    [Header("Dialogue key before fight with python")]
+    public string SGPKey1;
+    [Header("Dialogue key after fight with python")]
+    public string SGPKey2;
 
     void Start()
     {
+        manager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
+
         if (SaveSystem.level <= minFirewallLevel)
+        {
             firewall.SetActive(false);
+        }
+        if(SaveSystem.level == SaveData.Level.CPP_ADVANCED)
+        {
+            manager.ShowObjective("find-sgp");
+        }
+
+        if(SaveSystem.level <= SaveData.Level.PYTHON)
+        {
+            SGP.dialogueKey = SGPKey1;
+        }
+        else
+        {
+            SGP.dialogueKey = SGPKey2;
+            SGP.assignObjective = false;
+        }
     }
 }

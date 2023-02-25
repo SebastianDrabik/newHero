@@ -18,6 +18,6 @@ MonoBehaviour:
     sentence: Good morning, what is today's lesson about?
   - name: Mr Bagel
     sentence: We will continue what you've started on Mr. Cinnamon's lesson. We will
-      concern on logical and mathematical operations.
+      concern on loops and logical and mathematical operations.
   - name: Mr Bagel
     sentence: Take the seat.

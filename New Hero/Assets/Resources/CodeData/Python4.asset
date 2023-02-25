@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   key: python4
   topCode: "#include<iostream>\n\nusing namespace std;\n\nint main(int argc, char
-    *argv[]){\n\tint number = stoi(argv[1]);\n\t// check if number is even using
-    modulo operator\n\t// if it does, return it"
+    *argv[]) {\n\tint a =stoi(argv[1]);\n\tint b =stoi(argv[2]);\n\t// display sum
+    of a and b\n\t// and their multiplication result\n\t// separate them with space"
   bottomCode: "\treturn 0;\n}"
   initialCode: "\t// your code goes here"
   inputOutput:
-  - input: 3
-    output: 0
-  - input: 4
-    output: 4
-  checkType: 0
+  - input: 5 6
+    output: 11 30
+  - input: 11 9
+    output: 20 99
+  checkType: 1

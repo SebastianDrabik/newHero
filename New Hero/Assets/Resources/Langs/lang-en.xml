@@ -27,6 +27,7 @@
 			<volume>VOLUME</volume>
 		</options-menu>
 		<saves-menu>
+			<title>Your saves</title>
 			<new-game>New Game</new-game>
 			<search>Search...</search>
 
@@ -52,8 +53,10 @@
 			<find-school>Go to school.</find-school>
 			<teacher>Find and talk with teacher.</teacher>
 			<lesson-seat>Find and take a seat.</lesson-seat>
+			<find-sgp>Find mysterious character</find-sgp>
+			<find-cave>Go to the cave.</find-cave>
 		</objectives>
-		<first-lesson>
+		<lessons>
 			<dial1-1>To add a library to the program we use &lt;color=yellow&gt;#include&lt;library&gt;&lt;/color&gt;</dial1-1>
 			<dial1-2>Everything inside the &lt;color=yellow&gt;main&lt;/color&gt; function will be executed by the program after compilation.</dial1-2>
 			<dial1-3>&lt;color=yellow&gt;std::cout &lt;&lt; "hello world"&lt;/color&gt; command, makes the text inside double-quotes appear on the screen.</dial1-3>
@@ -71,7 +74,6 @@
 			<dial4-1>&lt;color=yellow&gt;If&lt;/color&gt; statement allows to execute some code under a certain condition, which we put inside the brackets</dial4-1>
 			<dial4-2>The code above shows &lt;color=yellow&gt;x > 0&lt;/color&gt;, if value of variable x is greater that zero</dial4-2>
 			
-
 			<dial5-1>In c++ as well as in many other programming languages, you can use mathematical operators with variables</dial5-1>
 			<dial5-2>As you can see in examples above, there are many ways to use them:</dial5-2>
 			<dial5-3>&lt;color=yellow&gt;A&lt;/color&gt; - Adding 2 to x</dial5-3>
@@ -92,13 +94,25 @@
 			<dial6-5>Using method B is the best for int divisions because it forces c++ to treat these numbers as floats</dial6-5>
 			<dial6-6>But method C also works, thanks to multiplying numbers by 1.0 which is a float</dial6-6>
 			<dial6-7>As you can see in examples D and E it also works with changing floats to ints</dial6-7>
-		</first-lesson>
+
+			<dial7-1>&lt;color=yellow&gt;Loop&lt;/color&gt; is expression, which allows us to repeat some action.</dial7-1>
+			<dial7-2>&lt;color=yellow&gt;for&lt;/color&gt; loop is the simplest type of loop</dial7-2>
+			<dial7-3>We define it in following way:</dial7-3>
+			<dial7-4>&lt;color=yellow&gt;for(iterator; logical condition; iterator value change)&lt;/color&gt;</dial7-4>
+			<dial7-5>Everthing in braces will be executed while condition is true</dial7-5>
+
+			<dial8-1>&lt;color=yellow&gt;while&lt;/color&gt; loop is the second type of loop in C++.</dial8-1>
+			<dial8-2>&lt;color=yellow&gt;while&lt;/color&gt; is declared by:</dial8-2>
+			<dial8-3>&lt;color=yellow&gt;while(condition)&lt;/color&gt;</dial8-3>
+			<dial8-4>The loop above works the same as in previous example</dial8-4>
+		</lessons>
 		<messages>
 			<doors-locked>Doors are closed.</doors-locked>
 			<too-young>You are too young to drive a car!</too-young>
 			<cube-bullet>Avoid all bugs!</cube-bullet>
 			<leave-during-lesson>You can't leave class durign lesson.</leave-during-lesson>
 			<cube-box>Watch out!</cube-box>
+			<cave-not-ready>I am not ready for this.</cave-not-ready>
 			<python-try-to-survive>Avoid all rocks!</python-try-to-survive>
 		</messages>
 	</lang-data>
