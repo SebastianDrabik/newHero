@@ -15,14 +15,14 @@ MonoBehaviour:
   key: marco
   topCode: "#include<iostream>\n\nusing namespace std;\n\nint main(int argc, char
     *argv[]){\n\tconst int health = stoi(argv[1]);\n\t/*check if health equals 4
-    and if it does, return 1 (use if(condition) {...})*/"
+    and if it does, display \"Marco\" \n\t(use if(condition) {...})*/"
   bottomCode: "\treturn 0;\n}"
   initialCode: "\t//your code goes here"
   inputOutput:
   - input: 4
-    output: 1
+    output: Marco
   - input: 5
-    output: 0
+    output: 
   - input: 3
-    output: 0
-  checkType: 0
+    output: 
+  checkType: 1

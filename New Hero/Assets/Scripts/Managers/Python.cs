@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Python : MonoBehaviour
 {
@@ -34,6 +35,8 @@ public class Python : MonoBehaviour
     public bool fightStarted = false;
     bool IsAttacking = false;
     private bool blockade = false;
+
+    public Slider healthbar;
 
     enum attackMode
     {
@@ -94,6 +97,7 @@ public class Python : MonoBehaviour
         fightStarted = false;
         SaveSystem.level = SaveData.Level.PYTHON;
         exit.locked = false;
+        healthbar.gameObject.SetActive(false);
         gameObject.SetActive(false);
     }
 
@@ -178,6 +182,8 @@ public class Python : MonoBehaviour
         }
         yellowPython.SetActive(false);
         bluePython.SetActive(false);
+
+        healthbar.value = health;
 
         gameObject.GetComponent<SpriteRenderer>().sprite = normal;
         IsAttacking = false;

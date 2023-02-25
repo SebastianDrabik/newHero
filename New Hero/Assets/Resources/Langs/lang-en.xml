@@ -48,6 +48,8 @@
 			<error-invalid-characters>Name contains illegal characters.</error-invalid-characters>
 			<error-name-already-in-use>Name is already in use.</error-name-already-in-use>
 			<error-empty>Name cannot be empty.</error-empty>
+
+			<no-save>So empty :(</no-save>
 		</saves-menu>
 		<objectives>
 			<find-school>Go to school.</find-school>
@@ -73,7 +75,12 @@
 			<dial3-8>&lt;color=yellow&gt;bool&lt;/color&gt; stores a logical data - true or false</dial3-8>
 			<dial4-1>&lt;color=yellow&gt;If&lt;/color&gt; statement allows to execute some code under a certain condition, which we put inside the brackets</dial4-1>
 			<dial4-2>The code above shows &lt;color=yellow&gt;x > 0&lt;/color&gt;, if value of variable x is greater that zero</dial4-2>
-			
+
+			<dialCom-1>By writing double slash sign "//" we make program ignore all text in that line after these signs</dialCom-1>
+			<dialCom-2>By writing two slash signs, and two star signs between them "/* */", we make program ignore all text between the star signs</dialCom-2>
+			<dialCom-3>The advantage of the second method is that a comment can go on for multiple lines, unlike the first method</dialCom-3>
+			<dialCom-4>Comments are used to describe what a certain piece of code does, or for writing some information for other programmers reading our code</dialCom-4>
+
 			<dial5-1>In c++ as well as in many other programming languages, you can use mathematical operators with variables</dial5-1>
 			<dial5-2>As you can see in examples above, there are many ways to use them:</dial5-2>
 			<dial5-3>&lt;color=yellow&gt;A&lt;/color&gt; - Adding 2 to x</dial5-3>
@@ -94,6 +101,7 @@
 			<dial6-5>Using method B is the best for int divisions because it forces c++ to treat these numbers as floats</dial6-5>
 			<dial6-6>But method C also works, thanks to multiplying numbers by 1.0 which is a float</dial6-6>
 			<dial6-7>As you can see in examples D and E it also works with changing floats to ints</dial6-7>
+			<dial6-8>Going back to example C you can see that it is possible to use brackets in calculations, just like in real arithmetics</dial6-8>
 
 			<dial7-1>&lt;color=yellow&gt;Loop&lt;/color&gt; is expression, which allows us to repeat some action.</dial7-1>
 			<dial7-2>&lt;color=yellow&gt;for&lt;/color&gt; loop is the simplest type of loop</dial7-2>
@@ -101,10 +109,17 @@
 			<dial7-4>&lt;color=yellow&gt;for(iterator; logical condition; iterator value change)&lt;/color&gt;</dial7-4>
 			<dial7-5>Everthing in braces will be executed while condition is true</dial7-5>
 
-			<dial8-1>&lt;color=yellow&gt;while&lt;/color&gt; loop is the second type of loop in C++.</dial8-1>
-			<dial8-2>&lt;color=yellow&gt;while&lt;/color&gt; is declared by:</dial8-2>
-			<dial8-3>&lt;color=yellow&gt;while(condition)&lt;/color&gt;</dial8-3>
-			<dial8-4>The loop above works the same as in previous example</dial8-4>
+			<dial8-0>Type which allows us to store logical data is bool</dial8-0>
+			<dial8-1>In logical operations 1 stands for true, and 0 - false</dial8-1>
+			<dial8-2>Example A will display 1(true), because value of x is equal to 3</dial8-2>
+			<dial8-3>On the other hand, example B will display 0, because 3 isn't equal to 2</dial8-3>
+			<dial8-4>Example C will display 1, because value of x(3) is greater than 2</dial8-4>
+			<dial8-5>Example D will display 1 as well, because 3 is less or equal to 3</dial8-5>
+			<dial8-6>In example E the END operator is being used(double &amp; mark). It returns 1 if BOTH operations returns true</dial8-6>
+			<dial8-7>Example E will display 1, because BOTH operations return true</dial8-7>
+			<dial8-8>In example F the OR operator is being used(double | mark). It returs true if one of operations is true</dial8-8>
+			<dial8-9>In examples F and G used conversion from int to bool.</dial8-9>
+			<dial8-10>Example F will return 0, and E will return 1 according to the rules of logic</dial8-10>
 		</lessons>
 		<messages>
 			<doors-locked>Doors are closed.</doors-locked>

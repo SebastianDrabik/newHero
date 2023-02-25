@@ -10,11 +10,14 @@ public class PythonBattleStarter : MonoBehaviour
 
     public PlayerMovement movement;
 
+    public GameObject healthbar;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
             movement.SetMovementDisabled(true);
+            healthbar.SetActive(true);
             StartCoroutine(nameof(AnimatePython));
         }
     }
