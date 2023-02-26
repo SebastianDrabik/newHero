@@ -20,7 +20,7 @@ public class MainMapController : MonoBehaviour
     {
         manager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
 
-        if (SaveSystem.level <= minFirewallLevel)
+        if (SaveSystem.level < minFirewallLevel)
         {
             firewall.SetActive(false);
             PathMiddle.SetActive(true);

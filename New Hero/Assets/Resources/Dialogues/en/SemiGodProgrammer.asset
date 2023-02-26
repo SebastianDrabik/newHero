@@ -15,7 +15,7 @@ MonoBehaviour:
   key: semigodprogrammer
   sentences:
   - name: SemiGodProgrammer
-    sentence: Hi, can you do me a favor? You won't regret.
+    sentence: Hi, can you do me a favor? You won't regret it.
   - name: Player
     sentence: Yes, sure, but what you want me to do?
   - name: SemiGodProgrammer
