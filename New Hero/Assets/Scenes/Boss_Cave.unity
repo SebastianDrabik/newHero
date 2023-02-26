@@ -157,6 +157,7 @@ MonoBehaviour:
   cam: {fileID: 1588422184}
   movement: {fileID: 1852782710}
   healthbar: {fileID: 731140543}
+  minLevel: 0
 --- !u!61 &126966598
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5060,7 +5061,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6025296456394379355, guid: 5d2ca95c976440e46a83d3f6bd12f500, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6025296456394379355, guid: 5d2ca95c976440e46a83d3f6bd12f500, type: 3}
       propertyPath: m_AnchorMax.x
@@ -5272,7 +5273,7 @@ RectTransform:
   - {fileID: 150459349}
   - {fileID: 1527218989}
   m_Father: {fileID: 956058801}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -5318,7 +5319,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1926965123}
   m_FillRect: {fileID: 795724819}
   m_HandleRect: {fileID: 1926965122}

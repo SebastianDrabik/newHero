@@ -25,5 +25,5 @@ MonoBehaviour:
   - input: 4
     output: 9 27
   - input: 7
-    output: 14 42
+    output: 12 36
   checkType: 1

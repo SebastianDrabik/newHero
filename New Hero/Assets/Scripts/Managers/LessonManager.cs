@@ -17,6 +17,8 @@ public class LessonManager : MonoBehaviour
     public PlayerMovement movement;
     public PauseMenu pauseMenu;
 
+    public SaveData.Level alterDialogueLevel;
+
     public NPCManager teacher;
 
     public string examPassTrophyKey;
@@ -41,7 +43,7 @@ public class LessonManager : MonoBehaviour
     {
         manager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
 
-        if (SaveSystem.level >= SaveData.Level.CPP_BASICS)
+        if (SaveSystem.level >= alterDialogueLevel)
         {
             UseAlterDialogue();
             teacher.OnDialogueEnd.RemoveAllListeners();

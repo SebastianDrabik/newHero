@@ -32,14 +32,14 @@ public class FirewallController : MonoBehaviour
             editor.CloseCodeEditor();
             fire.Stop();
             face.SetActive(false);
-            StartCoroutine(nameof(turnOff));
+            StartCoroutine(nameof(TurnOff));
             return;
         }
         editor.CloseCodeEditor();
 
     }
 
-    IEnumerator turnOff()
+    IEnumerator TurnOff()
     {
         yield return new WaitForSeconds(fire.startLifetime);
         gameObject.SetActive(false);

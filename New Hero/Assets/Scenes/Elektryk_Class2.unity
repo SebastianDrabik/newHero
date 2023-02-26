@@ -10436,6 +10436,7 @@ MonoBehaviour:
   subtitleText: {fileID: 664984995}
   movement: {fileID: 1057267440}
   pauseMenu: {fileID: 1736271810}
+  alterDialogueLevel: 1
   teacher: {fileID: 599214630}
   examPassTrophyKey: hello
   examKey: test

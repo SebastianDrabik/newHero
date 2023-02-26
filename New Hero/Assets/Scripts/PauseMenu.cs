@@ -84,11 +84,11 @@ public class PauseMenu : MonoBehaviour
         isDisabled = disabled;
     }
 
-    public void ResetBoss()
-    {
-        SaveSystem.level = SaveData.Level.NEW_GAME;
-        GameManager.Instance.ChangeTrophyState("marco", Trophy.TrophyState.LOCKED);
-    }
+    //public void ResetBoss()
+    //{
+    //    SaveSystem.level = SaveData.Level.NEW_GAME;
+    //    GameManager.Instance.ChangeTrophyState("marco", Trophy.TrophyState.LOCKED);
+    //}
     IEnumerator ShowSavingInfo()
     {
         savingInfo.SetActive(true);
