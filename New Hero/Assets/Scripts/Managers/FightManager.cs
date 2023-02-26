@@ -33,6 +33,8 @@ public class FightManager : MonoBehaviour
 
     private PauseMenu pauseMenu;
 
+    public bool showHint = false;
+
     [Space]
     [Header("Event called after successfull compilation")]
     public UnityEvent<bool> onCodeExecuted;
@@ -64,6 +66,8 @@ public class FightManager : MonoBehaviour
             Debug.LogError($"Cannot find CodeData with key: {key}");
             return;
         }
+        if(showHint)
+            hintButton.SetActive(true);
         gameObject.SetActive(true);
         //top.text = currentData.topCode;
         top.text = currentData.topCodeHanusChcial;
@@ -100,10 +104,12 @@ public class FightManager : MonoBehaviour
 
     public void CloseCodeEditor()
     {
+        hintButton.SetActive(false);
         pauseMenu.SetDisabled(false);
         codeInput.text = "";
         movement.SetMovementDisabled(false);
         interaction.SetInteractionDisabled(false);
+
         gameObject.SetActive(false);
     }
 

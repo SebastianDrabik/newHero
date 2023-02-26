@@ -11,10 +11,10 @@ public class MainMapController : MonoBehaviour
     private GameManager manager;
 
     public NPCManager SGP;
-    [Header("Dialogue key before fight with python")]
-    public string SGPKey1;
-    [Header("Dialogue key after fight with python")]
-    public string SGPKey2;
+    //[Header("Dialogue key before fight with python")]
+    //public string SGPKey1;
+    //[Header("Dialogue key after fight with python")]
+    //public string SGPKey2;
 
     void Start()
     {
@@ -30,14 +30,10 @@ public class MainMapController : MonoBehaviour
             manager.ShowObjective("find-sgp");
         }
 
-        if(SaveSystem.level <= SaveData.Level.PYTHON)
+        if(SaveSystem.level >= SaveData.Level.PYTHON)
         {
-            SGP.dialogueKey = SGPKey1;
-        }
-        else
-        {
-            SGP.dialogueKey = SGPKey2;
-            SGP.assignObjective = false;
+            SGP.gameObject.SetActive(false);
+            manager.ShowObjective("firewall");
         }
     }
 }

@@ -57,6 +57,7 @@
 			<lesson-seat>Find and take a seat.</lesson-seat>
 			<find-sgp>Find mysterious character</find-sgp>
 			<find-cave>Go to the cave.</find-cave>
+			<firewall>Find a hidden path.</firewall>
 		</objectives>
 		<lessons>
 			<dial1-1>To add a library to the program we use &lt;color=yellow&gt;#include&lt;library&gt;&lt;/color&gt;</dial1-1>
@@ -113,7 +114,7 @@
 			<dial8-1>In logical operations &lt;color=yellow&gt;1&lt;/color&gt; stands for &lt;color=yellow&gt;true&lt;/color&gt;, and &lt;color=yellow&gt;0&lt;/color&gt; - &lt;color=yellow&gt;false&lt;/color&gt;</dial8-1>
 			<dial8-2>Example &lt;color=yellow&gt;A&lt;/color&gt; will display &lt;color=yellow&gt;1&lt;/color&gt;(true), because value of x is equal to 3</dial8-2>
 			<dial8-3>On the other hand, example &lt;color=yellow&gt;B&lt;/color&gt; will display &lt;color=yellow&gt;0&lt;/color&gt;, because 3 isn't equal to 2</dial8-3>
-			<dial8-4>Example &lt;color=yellow&gt;C&lt;/color&gt; will display &lt;color=yellow&gt;1&lt;/color&gt;, because value of x(3) is greater than 2</dial8-4>
+			<dial8-4>Example &lt;color=yellow&gt;C&lt;/color&gt; will display &lt;color=yellow&gt;1&lt;/color&gt;, because value of x (3) is greater than 2</dial8-4>
 			<dial8-5>Example &lt;color=yellow&gt;D&lt;/color&gt; will display &lt;color=yellow&gt;1&lt;/color&gt; as well, because 3 is less or equal to 3</dial8-5>
 			<dial8-6>In example &lt;color=yellow&gt;E&lt;/color&gt; the &lt;color=yellow&gt;END&lt;/color&gt; operator is being used(double &amp; mark). It returns 1 if &lt;color=yellow&gt;BOTH&lt;/color&gt; operations returns true</dial8-6>
 			<dial8-7>Example &lt;color=yellow&gt;E&lt;/color&gt; will display &lt;color=yellow&gt;1&lt;/color&gt;, because &lt;color=yellow&gt;BOTH&lt;/color&gt; operations return true</dial8-7>
@@ -126,6 +127,7 @@
 			<too-young>You are too young to drive a car!</too-young>
 			<cube-bullet>Avoid all bugs!</cube-bullet>
 			<leave-during-lesson>You can't leave class during lesson.</leave-during-lesson>
+			<leave-during-lesson-ele>You can't leave during lessons.</leave-during-lesson-ele>
 			<leave-during-python>I think I am supposed to do something here.</leave-during-python>
 			<cube-box>Watch out!</cube-box>
 			<cave-not-ready>I am not ready yet.</cave-not-ready>

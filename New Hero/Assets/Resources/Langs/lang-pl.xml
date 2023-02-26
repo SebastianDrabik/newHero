@@ -57,6 +57,7 @@
 			<lesson-seat>Znajdź i zajmij miejsce.</lesson-seat>
 			<find-sgp>Odnajdź tajemniczą postać</find-sgp>
 			<find-cave>Udaj się do jaskini.</find-cave>
+			<firewall>Znajdź ukrytą ścieżkę.</firewall>
 		</objectives>
 		<lessons>
 			<dial1-1>Do dodania biblioteki do naszego programu używamy &lt;color=yellow&gt;#include&lt;biblioteka&gt;&lt;/color&gt;.</dial1-1>
@@ -117,7 +118,7 @@
 			<dial8-1>W operacjach logicznych &lt;color=yellow&gt;1&lt;/color&gt; reprezentuje &lt;color=yellow&gt;prawdę(true)&lt;/color&gt;, a &lt;color=yellow&gt;0 fałsz(false)&lt;/color&gt;</dial8-1>
 			<dial8-2>W przykładzie &lt;color=yellow&gt;A&lt;/color&gt; zostanie wyświetlona &lt;color=yellow&gt;prawda&lt;/color&gt;, czyli 1</dial8-2>
 			<dial8-3>Z kolei w przykładzie &lt;color=yellow&gt;B&lt;/color&gt; zostanie wyświetlone &lt;color=yellow&gt;0&lt;/color&gt;, ponieważ 3 nie jest równe 2</dial8-3>
-			<dial8-4>Przykład &lt;color=yellow&gt;C&lt;/color&gt; wyświetli &lt;color=yellow&gt;1&lt;/color&gt;, ponieważ wartość x(3) jest większa od liczby 2</dial8-4>
+			<dial8-4>Przykład &lt;color=yellow&gt;C&lt;/color&gt; wyświetli &lt;color=yellow&gt;1&lt;/color&gt;, ponieważ wartość x (3) jest większa od liczby 2</dial8-4>
 			<dial8-5>Przykład &lt;color=yellow&gt;D&lt;/color&gt; również wyświetli &lt;color=yellow&gt;1&lt;/color&gt;, ponieważ x jest mniejsze lub równe 3</dial8-5>
 			<dial8-6>W przykładzie &lt;color=yellow&gt;E&lt;/color&gt; użyto operacji &lt;color=yellow&gt;AND&lt;/color&gt;(podwójny znak &amp;). Zwraca on 1, jeśli &lt;color=yellow&gt;OBYDWIE&lt;/color&gt; operacje zwrócą prawdę</dial8-6>
 			<dial8-7>Dlatego też przykład &lt;color=yellow&gt;E&lt;/color&gt; wyświetli &lt;color=yellow&gt;1&lt;/color&gt;, ponieważ &lt;color=yellow&gt;OBYDWIE&lt;/color&gt; warości zwracają prawdę</dial8-7>
@@ -129,6 +130,7 @@
 			<doors-locked>Drzwi są zamknięte.</doors-locked>
 			<too-young>Jesteś zbyt młody, aby prowadzić!</too-young>
 			<leave-during-lesson>Nie możesz wyjść w trakcie lekcji.</leave-during-lesson>
+			<leave-during-lesson-ele>Nie możesz opuścić szkoły w trakcie lekcji.</leave-during-lesson-ele>
 			<leave-during-python>Chyba miałem tu coś zrobić.</leave-during-python>
 			<cube-bullet>Unikaj bugów!</cube-bullet>
 			<cube-box>UWAGA!</cube-box>

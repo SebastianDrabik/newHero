@@ -79,6 +79,15 @@ public class GameManager : MonoBehaviour
         _ObjectiveController.ShowObjective(key);
     }
 
+    public void HideOneObjective(string obj)
+    {
+        if (currentObjective != obj)
+            return;
+        currentObjective = null;
+        isObjectiveShown = false;
+        _ObjectiveController.HideObjective();
+    }
+
     public void HideObjective()
     {
         currentObjective=null;

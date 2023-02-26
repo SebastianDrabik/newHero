@@ -15,10 +15,9 @@ MonoBehaviour:
   key: python1
   topCode: "#include<iostream>\n\nusing namespace std;\n\nint main(int argc, char
     *argv[]) {\n\tint x  = stoi(argv[1]);\n\t//\n\t//\n\t//"
-  topCodeHanusChcial: "#include<iostream>\n\nusing namespace std;\n\nint main(int
-    argc, char *argv[]) {\n\tint x  = stoi(argv[1]);\n\t// increment x by 5, then
-    display its value,\n\t// multiply x by 3 and finally display value of x\n\t//
-    separate results with space"
+  topCodeHanusChcial: "#include<iostream>\n\nusing namespace std;\n\nint main() {\n\tint
+    x  = getRandomNumber();\n\t// increase x by 5, then display its value,\n\t//
+    multiply x by 3 and finally display value of x\n\t// separate results with space"
   bottomCode: "\treturn 0;\n}"
   initialCode: "\t//your code goes here"
   inputOutput:

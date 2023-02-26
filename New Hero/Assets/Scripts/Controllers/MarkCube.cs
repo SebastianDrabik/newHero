@@ -142,7 +142,7 @@ public class MarkCube : MonoBehaviour
         stage = -1;
     }
 
-    private void ResetAfterAttack()
+    public void ResetAfterAttack()
     {
         Debug.Log("reset");
         Time.timeScale = 1f;
@@ -172,13 +172,13 @@ public class MarkCube : MonoBehaviour
             codeEditor.CloseCodeEditor();
             StartCoroutine(nameof(DeathAni));
         }
-        ResetAfterAttack();
     }
 
     //WIN
     IEnumerator DeathAni()
     {
         //I hate sand
+        ResetAfterAttack();
         movement.SetMovementDisabled(true);
         pauseMenu.SetDisabled(true);
         gameObject.GetComponent<Animator>().SetTrigger("Death");

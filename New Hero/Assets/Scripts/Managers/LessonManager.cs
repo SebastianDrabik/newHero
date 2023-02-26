@@ -42,7 +42,7 @@ public class LessonManager : MonoBehaviour
     void Start()
     {
         manager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
-
+        lessonTriggers.SetActive(false);
         if (SaveSystem.level >= alterDialogueLevel)
         {
             UseAlterDialogue();

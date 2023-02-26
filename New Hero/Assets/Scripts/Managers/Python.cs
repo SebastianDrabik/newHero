@@ -29,7 +29,7 @@ public class Python : MonoBehaviour
 
     public short health = 4;
 
-    float timer = 10f;
+    float timer = 8f;
     [HideInInspector]
     public bool fightStarted = false;
     bool IsAttacking = false;
@@ -76,7 +76,7 @@ public class Python : MonoBehaviour
                 Attack();
                 currentMode = attackMode.rock;
             }
-            timer = 10f;
+            timer = 14.5f;
 
         }
 

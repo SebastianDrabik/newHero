@@ -48,7 +48,7 @@ public class DialogueManager : MonoBehaviour
 
     void Update()
     {
-        if(Input.anyKey && isTalking)
+        if((Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Return)) && isTalking)
             DisplayNextSentence();
     }
 
@@ -135,8 +135,5 @@ public class DialogueManager : MonoBehaviour
     {
         if (!assignObjective) return;
         manager.ShowObjective(objectiveDescription);
-
-        //if(objectiveDescription == "lesson-seat")
-        //    FindObjectOfType<LessonManager>()?.EnableSeats();
     }
 }

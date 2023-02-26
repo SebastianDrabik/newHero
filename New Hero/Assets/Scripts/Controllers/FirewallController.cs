@@ -7,6 +7,7 @@ public class FirewallController : MonoBehaviour
     public FightManager editor;
     public ParticleSystem fire;
     public GameObject face;
+    public BoxCollider2D trigger;
 
     void Start()
     {
@@ -41,6 +42,7 @@ public class FirewallController : MonoBehaviour
 
     IEnumerator TurnOff()
     {
+        trigger.enabled = false;
         yield return new WaitForSeconds(fire.startLifetime);
         gameObject.SetActive(false);
     }
