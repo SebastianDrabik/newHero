@@ -5,6 +5,7 @@ using UnityEngine;
 public class MainMapController : MonoBehaviour
 {
     public GameObject firewall;
+    public GameObject PathMiddle;
     public SaveData.Level minFirewallLevel;
     [Space]
     private GameManager manager;
@@ -22,6 +23,7 @@ public class MainMapController : MonoBehaviour
         if (SaveSystem.level <= minFirewallLevel)
         {
             firewall.SetActive(false);
+            PathMiddle.SetActive(true);
         }
         if(SaveSystem.level == SaveData.Level.CPP_ADVANCED)
         {

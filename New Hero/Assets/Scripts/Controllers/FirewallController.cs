@@ -1,0 +1,47 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class FirewallController : MonoBehaviour
+{
+    public FightManager editor;
+    public ParticleSystem fire;
+    public GameObject face;
+
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+
+    public void StartCode()
+    {
+        editor.OpenCodeEditor("firewall");
+    }
+
+    public void HandleCodeExecution(bool result)
+    {
+        if (result)
+        {
+            // win
+            editor.CloseCodeEditor();
+            fire.Stop();
+            face.SetActive(false);
+            StartCoroutine(nameof(turnOff));
+            return;
+        }
+        editor.CloseCodeEditor();
+
+    }
+
+    IEnumerator turnOff()
+    {
+        yield return new WaitForSeconds(fire.startLifetime);
+        gameObject.SetActive(false);
+    }
+}

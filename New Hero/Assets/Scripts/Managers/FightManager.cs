@@ -93,7 +93,7 @@ public class FightManager : MonoBehaviour
     public bool CheckCode()
     {
         CodeData cd = GetCode(currentKey);
-        Code code = new(top.text + "\n" + codeInput.text + "\n" + bottom.text, cd.GetData(), cd.checkType);
+        Code code = new(cd.topCode + "\n" + codeInput.text + "\n" + bottom.text, cd.GetData(), cd.checkType);
         
         return code.CheckOutputs(runButtonAnimator, errorController);
     }

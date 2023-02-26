@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d97a29cf319bc345ad012237f331571, type: 3}
+  m_Name: Firewall
+  m_EditorClassIdentifier: 
+  key: firewall
+  topCode: "#include<iostream>\r\n\r#include<tcgaddon.h>\nusing namespace std;\r\n\r\nint
+    main(int argc,char * argv[]){\r\n  const int code = 32;\r\n  int counter=0;\r\n 
+    int secretNumbers[argc-1];\n\n  readArray(argc,argv,secretNumbers);\n\n\t\n/*\r\n 
+    For every secret number check if it is greater or equal to code variable,\r\n 
+    and if it is, increase counter variable by 1, and display that secret number
+    (display all numbers in new lines)\r\n\r\n  After for loop display counter value.\r\n\r\n 
+    Example:\r\n  secretNumbers = {0,32,12,34,76,10};\r\n\r\n  output:\r\n  32\r\n 
+    34\r\n  76\r\n  3\r\n  \r\n*/"
+  topCodeHanusChcial: "#include<iostream>\r\n\r#include<tcgaddon.h>\nusing namespace
+    std;\r\n\r\nint main(){\r\n  const int code = 32;\r\n  int counter=0;\r\n  int
+    secretNumbers[]=Firewall.SecretNums;\n\n  //\n\n\t\n/*\r\n  For every secret
+    number check if it is greater or equal to code variable,\r\n  and if it is, increase
+    counter variable by 1, and display that secret number (display all numbers in
+    new lines)\r\n\r\n  After for loop display counter value.\r\n\r\n  Example:\r\n 
+    secretNumbers = {0,32,12,34,76,10};\r\n\r\n  output:\r\n  32\r\n  34\r\n  76\r\n 
+    3\r\n  \r\n*/"
+  bottomCode: "\r\n  return 0;\r\n}"
+  initialCode: // Your code
+  inputOutput:
+  - input: 0 10 20 30 40 50
+    output: '40
+
+      50
+
+      2'
+  - input: 45 75 10 0 32
+    output: '45
+
+      75
+
+      32
+
+      3'
+  checkType: 1
