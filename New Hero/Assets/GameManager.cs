@@ -8,12 +8,14 @@ public class GameManager : MonoBehaviour
     public GameObject achievementNotification;
     [HideInInspector]
     public List<Trophy> trophies;
+    private List<Objective> objectives = new();
 
     private ObjectiveController _ObjectiveController;
     //private MessageController _MessageController;
     public string currentObjective { get; set; } = "";
     private bool isObjectiveShown = false;
     private bool trophiesLoaded = false;
+    private bool objectivesLoaded = false;
     
     private void Awake()
     {
@@ -27,6 +29,8 @@ public class GameManager : MonoBehaviour
             Destroy(this);
         if(!trophiesLoaded)
             LoadTrophies(true);
+
+        LoadObjectives(true);
     }
 
     void OnEnable() {
@@ -47,9 +51,31 @@ public class GameManager : MonoBehaviour
         AssignController();
         if(trophies.Count == 0)
             LoadTrophies(true);
+        if(objectives.Count == 0)
+            LoadObjectives(true);
 
         if (isObjectiveShown)
             ShowObjective(currentObjective);
+    }
+
+    public void LoadObjectives(bool ignoreLoaded = false)
+    {
+        if (!objectivesLoaded && !ignoreLoaded)
+            return;
+        Debug.Log("Loading objectives");
+        objectives.Clear();
+        Objective[] objectivesTemp = Resources.LoadAll<Objective>("Objectives");
+        for (int i = 0; i < objectivesTemp.Length; i++)
+        {
+            Objective obj = objectivesTemp[i];
+            objectives.Add(obj);
+        }
+        objectivesLoaded = true;
+    }
+
+    public Objective GetObjectiveByKey(string key)
+    {
+        return objectives.Find(obj => obj.objectiveKey == key);
     }
 
     public void LoadTrophies(bool ignoreLoaded = false)
@@ -76,7 +102,7 @@ public class GameManager : MonoBehaviour
         
         currentObjective = key;
         isObjectiveShown = true;
-        _ObjectiveController.ShowObjective(key);
+        _ObjectiveController.ShowObjective(GetObjectiveByKey(key));
     }
 
     public void HideOneObjective(string obj)
@@ -123,7 +149,7 @@ public class GameManager : MonoBehaviour
             _ObjectiveController = oc;
             string prevobj = SaveSystem.objective;
             if (prevobj != null && prevobj != "" && prevobj != string.Empty)
-                oc.ShowObjective(prevobj);
+                oc.ShowObjective(GetObjectiveByKey(prevobj));
         }
     }
 }
