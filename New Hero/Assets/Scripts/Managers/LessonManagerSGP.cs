@@ -7,6 +7,7 @@ public class LessonManagerSGP : MonoBehaviour
 {
     private GameManager manager;
 
+    public GameObject SGP;
     public AudioManager AudioManager;
     public GameObject CodeEditor;
     public FightManager attack;
@@ -26,6 +27,11 @@ public class LessonManagerSGP : MonoBehaviour
         public string code;
         public string[] subtitles;
         public string[] dubs;
+    }
+
+    void Start()
+    {
+        manager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
     }
 
     public List<Part> lessonParts;
@@ -73,6 +79,9 @@ public class LessonManagerSGP : MonoBehaviour
             manager.HideObjective();
             SaveSystem.level = examPassLevel;
             pauseMenu.SetDisabled(false);
+            manager.HideObjective();
+            manager.ChangeTrophyState(examPassTrophyKey, Trophy.TrophyState.UNLOCKED, true);
+            SGP.SetActive(false);
             return;
         }
         attack.EnableHint();
