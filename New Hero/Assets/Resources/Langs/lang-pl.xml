@@ -136,6 +136,7 @@
 			<cube-box>UWAGA!</cube-box>
 			<cave-not-ready>Chyba nie jestem na to jeszcze gotowy.</cave-not-ready>
 			<python-try-to-survive>Unikaj kamieni!</python-try-to-survive>
+			<screwdriver>Otrzymano śrubokręt</screwdriver>
 		</messages>
 		<editor>
 			<title-success>Sukces</title-success>

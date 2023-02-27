@@ -5,7 +5,7 @@
 #include<iostream>
 
 void readArray(int argc, char *argv[], int output[]){
-    vector<int> numbers;
+    std::vector<int> numbers;
 
     for(int i = 1; i < argc; i++){
         int num = std::stoi(argv[i]);

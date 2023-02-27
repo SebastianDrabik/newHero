@@ -132,6 +132,7 @@
 			<cube-box>Watch out!</cube-box>
 			<cave-not-ready>I am not ready yet.</cave-not-ready>
 			<python-try-to-survive>Avoid all rocks!</python-try-to-survive>
+			<screwdriver>Obtained screwdriver</screwdriver>
 		</messages>
 		<editor>
 			<title-success>Success</title-success>

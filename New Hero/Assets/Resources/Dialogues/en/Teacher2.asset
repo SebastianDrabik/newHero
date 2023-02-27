@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   key: real-teacher
   sentences:
-  - name: Gracz
+  - name: Player
     sentence: Good morning, what is today's lesson about?
   - name: Mr Bagel
     sentence: We will continue what you've started on Mr. Cinnamon's lesson. We will
