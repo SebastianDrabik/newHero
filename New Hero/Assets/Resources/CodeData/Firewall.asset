@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Firewall
   m_EditorClassIdentifier: 
   key: firewall
-  topCode: "#include<iostream>\r\n\r#include<tcgaddon.h>\nusing namespace std;\r\n\r\nint
+  topCode: "#include<iostream>\r\n\r#include<tcgaddon.h>\n\nusing namespace std;\r\n\r\nint
     main(int argc,char * argv[]){\r\n  const int code = 32;\r\n  int counter=0;\r\n 
     int secretNumbers[argc-1];\n\n  readArray(argc,argv,secretNumbers);\n\n\t\n/*\r\n 
     For every secret number check if it is greater or equal to code variable,\r\n 
@@ -21,16 +21,15 @@ MonoBehaviour:
     (display all numbers in new lines)\r\n\r\n  After for loop display counter value.\r\n\r\n 
     Example:\r\n  secretNumbers = {0,32,12,34,76,10};\r\n\r\n  output:\r\n  32\r\n 
     34\r\n  76\r\n  3\r\n  \r\n*/"
-  topCodeHanusChcial: "#include<iostream>\r\n\r#include<tcgaddon.h>\nusing namespace
-    std;\r\n\r\nint main(){\r\n  const int code = 32;\r\n  int counter=0;\r\n  int
-    secretNumbers[]=Firewall.SecretNums;\n\n  //\n\n\t\n/*\r\n  For every secret
-    number check if it is greater or equal to code variable,\r\n  and if it is, increase
+  topCodeHanusChcial: "#include<iostream>\r\n\r#include<tcgaddon.h>\n\nusing namespace
+    std;\r\n\r\nint main(){\r\n\tconst int code = 32;\r\n\tint counter=0;\r\n\tint
+    secretNumbers[]=Firewall.SecretNums;\n\n  //\n\n\t\n/*\r\n\tFor every secret
+    number check if it is greater or equal to code variable,\r\n\tand if it is, increase
     counter variable by 1, and display that secret number (display all numbers in
-    new lines)\r\n\r\n  After for loop display counter value.\r\n\r\n  Example:\r\n 
-    secretNumbers = {0,32,12,34,76,10};\r\n\r\n  output:\r\n  32\r\n  34\r\n  76\r\n 
-    3\r\n  \r\n*/"
-  bottomCode: "\r\n  return 0;\r\n}"
-  initialCode: // Your code
+    new lines)\r\n\r\n\tAfter for loop display counter value.\r\n\r\n\tExample:\r\n\tsecretNumbers
+    = {0,32,12,34,76,10};\r\n\r\n\toutput:\r\n\t32\r\n\t34\r\n\t76\r\n\t3\r\n  \r\n*/"
+  bottomCode: "\r\treturn 0;\r\n}"
+  initialCode: "\t// Your code"
   inputOutput:
   - input: 0 10 20 30 40 50
     output: '40

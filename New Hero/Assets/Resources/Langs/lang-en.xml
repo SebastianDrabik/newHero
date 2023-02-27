@@ -133,5 +133,10 @@
 			<cave-not-ready>I am not ready yet.</cave-not-ready>
 			<python-try-to-survive>Avoid all rocks!</python-try-to-survive>
 		</messages>
+		<editor>
+			<title-success>Success</title-success>
+			<title-failure>Failure</title-failure>
+			<output-content>Your output:%nl%%OUTPUT%%nl%Expected output:%nl%%EXPECTED_OUTPUT%</output-content>
+		</editor>
 	</lang-data>
 </lang>

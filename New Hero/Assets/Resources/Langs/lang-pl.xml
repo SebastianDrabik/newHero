@@ -137,5 +137,10 @@
 			<cave-not-ready>Chyba nie jestem na to jeszcze gotowy.</cave-not-ready>
 			<python-try-to-survive>Unikaj kamieni!</python-try-to-survive>
 		</messages>
+		<editor>
+			<title-success>Sukces</title-success>
+			<title-failure>Niepowodzenie</title-failure>
+			<output-content>Twój wynik:%nl%%OUTPUT%%nl%Poprawny wynik:%nl%%EXPECTED_OUTPUT%</output-content>
+		</editor>
 	</lang-data>
 </lang>

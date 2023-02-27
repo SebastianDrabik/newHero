@@ -22,8 +22,8 @@ MonoBehaviour:
   bottomCode: "\treturn 0;\n}"
   initialCode: "\t//your code goes here"
   inputOutput:
-  - input: piotrcymerman
-    output: 
   - input: newHero
     output: The best game
+  - input: 420eodarsqlkieydlive
+    output: 
   checkType: 1

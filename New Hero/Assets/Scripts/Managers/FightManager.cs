@@ -22,6 +22,7 @@ public class FightManager : MonoBehaviour
     public Image Workspace;
     public Animator runButtonAnimator;
     public Button runButton;
+    public OutputController outputController;
 
     public GameObject hintButton;
 
@@ -94,7 +95,7 @@ public class FightManager : MonoBehaviour
         return codeList.Find(code => code.key == key);
     }
 
-    public bool CheckCode()
+    public CodeResult CheckCode()
     {
         CodeData cd = GetCode(currentKey);
         Code code = new(cd.topCode + "\n" + codeInput.text + "\n" + bottom.text, cd.GetData(), cd.checkType);
@@ -143,13 +144,20 @@ public class FightManager : MonoBehaviour
         text.UpdateVertexData(TMP_VertexDataUpdateFlags.All);
     }
 
+    private CodeResult codeResult;
+
     public void RunCode()
     {
-        Debug.Log("RUN");
-        bool codeResult = CheckCode();
-        onCodeExecuted.Invoke(codeResult);
-        //compile 
-        //trigger event
+        Debug.Log("Test-1");
+        codeResult = CheckCode();
+        Debug.Log($"Code Result: {codeResult.Correct}");
+        outputController.ShowOutput(codeResult);
+        Debug.Log("ShowOutput called");
+    }
+
+    public void HandleOutputOk()
+    {
+        onCodeExecuted.Invoke(codeResult.Correct);
     }
 
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]

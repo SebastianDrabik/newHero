@@ -18,14 +18,14 @@ MonoBehaviour:
     modulo operator\n\t// if it does, return it"
   topCodeHanusChcial: "#include<iostream>\n\nusing namespace std;\n\nint main() {\n\tint
     number = getRandomNumber();\n\t// check if number is even using modulo operator\n\t//
-    if it does, return it"
+    if it does, display \"Number is even\""
   bottomCode: "\treturn 0;\n}"
   initialCode: "\t// your code goes here"
   inputOutput:
   - input: 62
-    output: 62
+    output: Number is even
   - input: 85
-    output: 0
-  - input: 982
-    output: 982
-  checkType: 0
+    output: 
+  - input: 37
+    output: 
+  checkType: 1

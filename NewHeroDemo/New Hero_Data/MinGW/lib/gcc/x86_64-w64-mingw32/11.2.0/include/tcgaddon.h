@@ -4,8 +4,6 @@
 #include<vector>
 #include<iostream>
 
-using namespace std;
-
 void readArray(int argc, char *argv[], int output[]){
     vector<int> numbers;
 

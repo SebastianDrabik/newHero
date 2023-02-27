@@ -101,17 +101,20 @@ public class Code
         }
     }
 
-    public bool CheckOutputs(Animator animator, ErrorController controller)
+    public CodeResult CheckOutputs(Animator animator, ErrorController controller)
     {
         bool compilationResult = Compile(controller);
         if (!compilationResult)
-            return false;
+            return new CodeResult(null, null, false, false);
         if (!File.Exists(outputFilePath))
         {
             UnityEngine.Debug.LogWarning("Executable file doesn't exist");
-            return false;
+            return new CodeResult(null, null, false, false);
         }
         bool result = false;
+        //       expected, user
+        string[] expu = { null, null };
+
         animator.SetBool("Spin", true);
         var tasks = new List<Task<bool>>();
         foreach (var item in outputs)
@@ -119,39 +122,34 @@ public class Code
             string input = item.Key,
                 output = item.Value;
 
-            tasks.Add(Task.Factory.StartNew(() =>
+            var process = new Process
             {
-                var process = new Process
+                StartInfo = new ProcessStartInfo
                 {
-                    StartInfo = new ProcessStartInfo
-                    {
-                        FileName = outputFilePath,
-                        Arguments = input,
-                        RedirectStandardOutput = true,
-                        RedirectStandardError = true,
-                        UseShellExecute = false,
-                        CreateNoWindow = true
-                    }
-                };
+                    FileName = outputFilePath,
+                    Arguments = input,
+                    RedirectStandardOutput = true,
+                    RedirectStandardError = true,
+                    UseShellExecute = false,
+                    CreateNoWindow = true
+                }
+            };
+            process.Start();
+            process.WaitForExit();
+            string processOutput = process.StandardOutput.ReadToEnd();
+            if (expu[0] == null)
+                expu[0] = processOutput;
+            if (expu[1] == null)
+                expu[1] = output;
+            UnityEngine.Debug.Log($"<color=cyan>Process output: \n{processOutput}</color>");
 
-                process.Start();
-
-                string processOutput = process.StandardOutput.ReadToEnd();
-
-                UnityEngine.Debug.Log($"<color=cyan>Process output: \n{processOutput}</color>");
-                //UnityEngine.Debug.Log(input); // fuck debugging
-                //UnityEngine.Debug.Log(processOutput); // fuck debugging
-                //UnityEngine.Debug.Log(output); // fuck debugging
-                //UnityEngine.Debug.Log($"<color=yellow>{processOutput.Trim().CompareTo(output.Trim())}</color>"); // fuck debugging
-
-                if (checkType == CodeData.CheckType.EXIT_CODE)
-                    return process.ExitCode.ToString() == output;
-                else
-                    return NormalizeNewLines(processOutput) == NormalizeNewLines(output);
-            }));
+            if (checkType == CodeData.CheckType.EXIT_CODE)
+                tasks.Add(Task.FromResult(process.ExitCode.ToString() == output));
+            else
+                tasks.Add(Task.FromResult(NormalizeNewLines(processOutput) == NormalizeNewLines(output)));
         }
 
-        Task.WhenAll(tasks.ToArray());
+        Task.WaitAll(tasks.ToArray());
 
         result = tasks.All(x => x.Result);
         //Task.WhenAll(tasks);
@@ -159,12 +157,41 @@ public class Code
         UnityEngine.Debug.Log($"<color=yellow>Code result: {result} </color>");
         animator.SetBool("Spin", false);
         ClearDirectory();
-
-        return result;
+                              //user output, expected
+        return new CodeResult(expu[0], expu[1], result, true);
     }
+
+    //private string[] GetFirstOutput(List<string[]> expu)
+    //{
+    //    string[] res= new string[2];
+    //    expu.ForEach(x =>
+    //    {
+    //        if(x[0] == outputs.First().Value)
+    //        {
+    //            res = x;
+    //        }
+    //    });
+    //    return res;
+    //}
 
     private string NormalizeNewLines(string s)
     {
         return s.Replace("\r\n", "\n").Replace("\r", "\n").TrimEnd('\n');
+    }
+}
+
+public struct CodeResult
+{
+    public string Result { get; set; }
+    public string ExpectedResult;
+    public bool Correct;
+    public bool ExecutedProperly;
+
+    public CodeResult(string result, string expectedResult, bool correct, bool executedProperly)
+    {
+        this.Result = result;
+        this.ExpectedResult = expectedResult;
+        this.Correct = correct;
+        this.ExecutedProperly = executedProperly;
     }
 }

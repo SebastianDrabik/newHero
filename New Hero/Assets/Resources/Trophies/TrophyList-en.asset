@@ -39,3 +39,8 @@ MonoBehaviour:
     title: import PyDefeat
     objective: Defeat python
     icon: {fileID: 21300000, guid: 4320c19f92c636244998775a28590b31, type: 3}
+  - key: cpp-master
+    state: 0
+    title: Senior Developer
+    objective: Complete all lessons
+    icon: {fileID: 21300000, guid: 2bc0287cc2ea2694699886e4e03b968b, type: 3}

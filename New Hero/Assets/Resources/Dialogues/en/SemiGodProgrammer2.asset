@@ -19,7 +19,7 @@ MonoBehaviour:
       C++.
   - name: SemiGodProgrammer
     sentence: If you want, of course.
-  - name: Gracz
+  - name: Player
     sentence: Sure!
   - name: SemiGodProgrammer
     sentence: Okey, so let's get to work.
