@@ -19,7 +19,6 @@ public class CreditsController : MonoBehaviour
         {
             //panel.position.Set(panel.position.x, panel.position.y-(Time.deltaTime*speed), panel.position.z);
             panel.offsetMax = new Vector2(panel.offsetMax.x, panel.offsetMax.y - (Time.deltaTime * speed));
-            Debug.Log(panel.offsetMax.y);
             if(panel.offsetMax.y >= 5500)
             {
                 SceneManager.LoadScene("MainMenu");

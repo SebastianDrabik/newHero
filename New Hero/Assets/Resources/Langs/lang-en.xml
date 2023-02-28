@@ -53,7 +53,7 @@
 		</saves-menu>
 		<objectives>
 			<find-school>Go to school.</find-school>
-			<teacher>Find and talk with teacher.</teacher>
+			<teacher>Find and talk with the teacher.</teacher>
 			<lesson-seat>Find and take a seat.</lesson-seat>
 			<find-sgp>Find mysterious character</find-sgp>
 			<find-cave>Go to the cave.</find-cave>
@@ -121,6 +121,25 @@
 			<dial8-8>In example &lt;color=yellow&gt;F&lt;/color&gt; the &lt;color=yellow&gt;OR&lt;/color&gt; operator is being used(double | mark). It returs true &lt;color=yellow&gt;if one of operations&lt;/color&gt; is true</dial8-8>
 			<dial8-9>In examples &lt;color=yellow&gt;F&lt;/color&gt; and &lt;color=yellow&gt;G&lt;/color&gt; used conversion from &lt;color=yellow&gt;int&lt;/color&gt; to &lt;color=yellow&gt;bool&lt;/color&gt;.</dial8-9>
 			<dial8-10>Example &lt;color=yellow&gt;F&lt;/color&gt; will return &lt;color=yellow&gt;0&lt;/color&gt;, and &lt;color=yellow&gt;E&lt;/color&gt; will return &lt;color=yellow&gt;1&lt;/color&gt; according to the rules of logic</dial8-10>
+
+
+			<dial9-1>&lt;color=yellow&gt;Array&lt;/color&gt;, is a list of variables of a certain type , which allows to store &lt;color=yellow&gt;multiple values&lt;/color&gt; in one variable</dial9-1>
+			<dial9-2>Array definition:  &lt;color=yellow&gt;type name[&lt;b&gt;element count&lt;/b&gt;];&lt;/color&gt;</dial9-2>
+			<dial9-3>When we define array without specifying number of elements, we have to assign values to it</dial9-3>
+			<dial9-4>We do it the following way: &lt;color=yellow&gt;type name[] = { element1, element2 }&lt;/color&gt;</dial9-4>
+			<dial9-5>When we don't want to define content of the array right away, we have to set &lt;color=yellow&gt;element count&lt;/color&gt;</dial9-5>
+			<dial9-6>To reference a specific element in array we have to pass it's index to the array(counting starts from zero!)</dial9-6>
+			<dial9-7>Example: &lt;color=yellow&gt;numbers[0]&lt;/color&gt; (first element in array)</dial9-7>
+			<dial9-8>To get a size of the array, we need to calculate it by ourself.</dial9-8>
+			<dial9-9>&lt;color=yellow&gt;sizeof(&lt;b&gt;array&lt;/b&gt;)/sizeof(&lt;b&gt;array_type&lt;/b&gt;)&lt;/color&gt;</dial9-9>
+			<dial9-10>We can make it more universal, by passing the first element of the array instead of array type in sizeof() function</dial9-10>
+			<dial9-11>&lt;color=yellow&gt;sizeof(&lt;b&gt;array&lt;/b&gt;)/sizeof(&lt;b&gt;array[0]&lt;/b&gt;)&lt;/color&gt;</dial9-11>
+			<dial9-12>To iterate through the array we use previously learned &lt;color=yellow&gt;loops&lt;/color&gt;</dial9-12>
+			<dial9-13>Example of iteration can be seen in the code above</dial9-13>
+			<dial9-14>By referencing element of the array we are able to manipulate and display them</dial9-14>
+			<dial9-15>Above is an example of manipulating element values and displaying them</dial9-15>
+			<dial9-16>&lt;color=yellow&gt;Arrays&lt;/color&gt; can have diffrent types, for example the array above is a text type - (&lt;color=yellow&gt;string&lt;/color&gt;)</dial9-16>
+			<dial9-17>Loop above displays all values from array seperated with space</dial9-17>
 		</lessons>
 		<messages>
 			<doors-locked>Doors are closed.</doors-locked>

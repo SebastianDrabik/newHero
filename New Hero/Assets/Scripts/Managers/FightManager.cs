@@ -148,11 +148,8 @@ public class FightManager : MonoBehaviour
 
     public void RunCode()
     {
-        Debug.Log("Test-1");
         codeResult = CheckCode();
-        Debug.Log($"Code Result: {codeResult.Correct}");
         outputController.ShowOutput(codeResult);
-        Debug.Log("ShowOutput called");
     }
 
     public void HandleOutputOk()

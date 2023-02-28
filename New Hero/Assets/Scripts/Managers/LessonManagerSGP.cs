@@ -40,33 +40,110 @@ public class LessonManagerSGP : MonoBehaviour
     {
         CodeEditor.SetActive(true);
         subtitleText.SetActive(true);
-        StartCoroutine(nameof(ShowLesson), lessonParts);
+        BeginLesson();
         pauseMenu.SetDisabled(true);
     }
 
-    IEnumerator ShowLesson(List<Part> lessonParts)
+    private Part p;
+    private int currentPart = 0;
+    private int currentPart_subs = 0;
+    private int currentSub = 0; //index
+    private bool lessonBegan = false;
+
+    private bool dub = false;
+
+    private void BeginLesson()
     {
+        lessonBegan = true;
         movement.SetMovementDisabled(true);
-        for (int j = 0; j < lessonParts.Count; j++)
+        lessonBegan = true;
+
+        p = lessonParts[currentPart];
+        currentPart_subs = p.subtitles.Length;
+        CodeEditor.GetComponent<LessonCodeEditor>().Change(p.code);
+
+        subtitleText.GetComponent<TextMeshProUGUI>().text = TranslationsManager.GetTranslation("lessons", p.subtitles[0]);
+        if (p.dubs[currentSub] != string.Empty && p.dubs[currentSub] != null)
         {
-            Part part = lessonParts[j];
-            CodeEditor.GetComponent<LessonCodeEditor>().Change(part.code);
-            for (int i = 0; i < part.subtitles.Length; i++)
-            {
-                subtitleText.GetComponent<TextMeshProUGUI>().text = TranslationsManager.GetTranslation("lessons", part.subtitles[i]);
-                if (part.dubs[i] != string.Empty)
-                    AudioManager.PlayEffect(part.dubs[i], 0.1f);
-                yield return new WaitForSeconds(AudioManager.GetAudioLength(part.dubs[i]));
-                if (i < part.subtitles.Length - 1)
-                    yield return new WaitUntil(() => Input.anyKeyDown);
-            }
-            yield return new WaitUntil(() => Input.anyKeyDown);
+            IEnumerator sound = Sound(p.dubs[currentSub]);
+            StartCoroutine(sound);
         }
-        //lesson end
-        CodeEditor.SetActive(false);
-        subtitleText.SetActive(false);
-        movement.SetMovementDisabled(false);
-        attack.OpenCodeEditor("sgp-exam");
+    }
+
+    public void Previous()
+    {
+        if (dub)
+            return;
+        if (lessonBegan && currentPart >= 0 && currentSub > 0)
+        {
+            currentSub--;
+            subtitleText.GetComponent<TextMeshProUGUI>().text = TranslationsManager.GetTranslation("lessons", p.subtitles[currentSub]);
+            if (p.dubs[currentSub] != string.Empty)
+            {
+                IEnumerator sound = Sound(p.dubs[currentSub]);
+                StartCoroutine(sound);
+            }
+        }
+        else if (lessonBegan && currentPart > 0 && currentSub == 0)
+        {
+            currentPart--;
+            p = lessonParts[currentPart];
+            currentPart_subs = p.subtitles.Length;
+            currentSub = currentPart_subs - 1;
+            subtitleText.GetComponent<TextMeshProUGUI>().text = TranslationsManager.GetTranslation("lessons", p.subtitles[currentSub]);
+            if (p.dubs[currentSub] != string.Empty)
+            {
+                IEnumerator sound = Sound(p.dubs[currentSub]);
+                StartCoroutine(sound);
+            }
+            CodeEditor.GetComponent<LessonCodeEditor>().Change(p.code);
+        }
+    }
+
+    public void Next()
+    {
+        if (dub)
+            return;
+        if (lessonBegan && currentPart < lessonParts.Count && currentSub < currentPart_subs - 1)
+        {
+            currentSub++;
+            subtitleText.GetComponent<TextMeshProUGUI>().text = TranslationsManager.GetTranslation("lessons", p.subtitles[currentSub]);
+            if (p.dubs[currentSub] != string.Empty)
+            {
+                IEnumerator sound = Sound(p.dubs[currentSub]);
+                StartCoroutine(sound);
+            }
+        }
+        else if (lessonBegan && currentPart < lessonParts.Count - 1)
+        {
+            currentPart++;
+            p = lessonParts[currentPart];
+            currentPart_subs = p.subtitles.Length;
+            currentSub = 0;
+            subtitleText.GetComponent<TextMeshProUGUI>().text = TranslationsManager.GetTranslation("lessons", p.subtitles[currentSub]);
+            if (p.dubs[currentSub] != string.Empty)
+            {
+                IEnumerator sound = Sound(p.dubs[currentSub]);
+                StartCoroutine(sound);
+            }
+            CodeEditor.GetComponent<LessonCodeEditor>().Change(p.code);
+        }
+        if(currentPart == lessonParts.Count - 1 && p.subtitles.Length - 1 == currentSub)
+        {
+            CodeEditor.SetActive(false);
+            subtitleText.SetActive(false);
+            movement.SetMovementDisabled(false);
+            attack.OpenCodeEditor("sgp-exam");
+        }
+    }
+
+    IEnumerator Sound(string soundKey)
+    {
+        AudioManager.PlayEffect(soundKey, 0.1f);
+        float length = AudioManager.GetAudioLength(soundKey);
+        dub = true;
+        yield return new WaitForSecondsRealtime(length);
+        dub = false;
     }
 
     public void HandleCodeExecution(bool result)

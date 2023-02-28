@@ -32,7 +32,7 @@ public class PCController : MonoBehaviour
         {
             unscrew = false;
             trigger.enabled = false;
-            StartCoroutine(nameof(waitCutscene));
+            StartCoroutine(nameof(WaitCutscene));
         }
     }
 
@@ -41,9 +41,11 @@ public class PCController : MonoBehaviour
         unscrew = true;
     }
 
-    IEnumerator waitCutscene()
+    IEnumerator WaitCutscene()
     {
         yield return new WaitForSeconds(1f);
         SceneManager.LoadScene("CutsceneEnd");
+        SaveSystem.level = SaveData.Level.END_GAME;
+        SaveSystem.SaveData();
     }
 }

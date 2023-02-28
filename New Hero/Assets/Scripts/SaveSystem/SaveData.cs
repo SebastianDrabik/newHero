@@ -12,6 +12,7 @@ public class SaveData
         CPP_ADVANCED = 3,
         PYTHON = 4,
         CPP_MASTER = 5,
+        END_GAME = 6,
     }
     public Level level;
     public float[] position;

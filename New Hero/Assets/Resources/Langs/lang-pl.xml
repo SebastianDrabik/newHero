@@ -125,6 +125,24 @@
 			<dial8-8>W przykładzie &lt;color=yellow&gt;F&lt;/color&gt; użyto operacji &lt;color=yellow&gt;LUB&lt;/color&gt;(podwójny znak |). Zwróci ona prawdę, jeśli &lt;color=yellow&gt;jedna z dwóch&lt;/color&gt; wartości będzie prawdziwa</dial8-8>
 			<dial8-9>W przykładach &lt;color=yellow&gt;G&lt;/color&gt; oraz &lt;color=yellow&gt;H&lt;/color&gt; użyto konwersji z typu &lt;color=yellow&gt;int&lt;/color&gt; na typ logiczny &lt;color=yellow&gt;bool&lt;/color&gt;.</dial8-9>
 			<dial8-10>Przykład &lt;color=yellow&gt;G&lt;/color&gt; zwróci &lt;color=yellow&gt;fałsz&lt;/color&gt;, a &lt;color=yellow&gt;F prawdę&lt;/color&gt; zgodnie z zasadami logiki</dial8-10>
+
+			<dial9-1>&lt;color=yellow&gt;Tablice&lt;/color&gt;, to lista zmiennych określonego typu pozwalająca przechowywać &lt;color=yellow&gt;wiele wartości&lt;/color&gt; wewnątrz jednej zmiennej</dial9-1>
+			<dial9-2>Definicja tablicy: &lt;color=yellow&gt;typ nazwa[&lt;b&gt;ilość elementów&lt;/b&gt;];&lt;/color&gt;</dial9-2>
+			<dial9-3>Kiedy definiujemy tablicę bez podawania ilości elementów, musimy zadeklarować jej wartości</dial9-3>
+			<dial9-4>Robimy to za pomocą &lt;color=yellow&gt;typ nazwa[] = { element1, element2 }&lt;/color&gt;</dial9-4>
+			<dial9-5>Kiedy nie chcemy definiować zawartości tablicy, musimy podać &lt;color=yellow&gt;ilość elementów&lt;/color&gt;</dial9-5>
+			<dial9-6>Aby odwołać się do pojedynczego elementu tablicy musimy podać jego indeks(liczymy od zera!)</dial9-6>
+			<dial9-7>Przykład: &lt;color=yellow&gt;numbers[0]&lt;/color&gt; (pierwszy element tablicy)</dial9-7>
+			<dial9-8>Aby pozyskać rozmiar tablicy, musimy sami go obliczyć.</dial9-8>
+			<dial9-9>&lt;color=yellow&gt;sizeof(&lt;b&gt;tablica&lt;/b&gt;)/sizeof(&lt;b&gt;typ_tablicy&lt;/b&gt;)&lt;/color&gt;</dial9-9>
+			<dial9-10>Możemy sprawić, że kod będzie bardziej uniwersalny poprzez podanie pierwszego elementu zamiast typu tablicy</dial9-10>
+			<dial9-11>&lt;color=yellow&gt;sizeof(&lt;b&gt;tablica&lt;/b&gt;)/sizeof(&lt;b&gt;tablica[0]&lt;/b&gt;)&lt;/color&gt;</dial9-11>
+			<dial9-12>Aby iterować się przez tablicę używamy poznanych wcześniej &lt;color=yellow&gt;pętli&lt;/color&gt;</dial9-12>
+			<dial9-13>Przykład iteracji możemy zobaczyć w powyższym kodzie</dial9-13>
+			<dial9-14>Odwołując się do elementów tablicy możemy manipulować ich zawartością lub ją wyświetlać</dial9-14>
+			<dial9-15>Powyżej znajdują się przykłady zmiany wartości tablicy oraz wyświetlania jej elementów</dial9-15>
+			<dial9-16>&lt;color=yellow&gt;Tablice&lt;/color&gt; mogą mieć rózne typy, dla przykładu powyżej zdefiniowano tablicę zmiennych tekstowych(&lt;color=yellow&gt;string&lt;/color&gt;)</dial9-16>
+			<dial9-17>Pętla w powyższym kodzie wyświetla wszystkie wartości tablicy oddzielone spacją</dial9-17>
 		</lessons>
 		<messages>
 			<doors-locked>Drzwi są zamknięte.</doors-locked>
