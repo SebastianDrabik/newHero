@@ -7,6 +7,7 @@ public class MainMapController : MonoBehaviour
     public GameObject firewall;
     public GameObject PathMiddle;
     public SaveData.Level minFirewallLevel;
+    public DoorController caveEntrance;
     [Space]
     private GameManager manager;
 
@@ -50,6 +51,7 @@ public class MainMapController : MonoBehaviour
             PC_Trigger.enabled = false;
             firewallBoss.SetActive(false);
             screwdriver.SetActive(false);
+            caveEntrance.locked = false;
         }
     }
 }

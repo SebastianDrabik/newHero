@@ -14,6 +14,14 @@ public class PythonBattleStarter : MonoBehaviour
 
     public SaveData.Level minLevel;
 
+    void Start()
+    {
+        if (SaveSystem.level >= SaveData.Level.END_GAME)
+        {
+            gameObject.SetActive(false);
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (SaveSystem.level < minLevel)

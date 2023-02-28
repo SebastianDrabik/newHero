@@ -53,6 +53,11 @@ public class Python : MonoBehaviour
 
     void Start()
     {
+        if(SaveSystem.level >= SaveData.Level.END_GAME)
+        {
+            gameObject.SetActive(false);
+            exit.locked = false;
+        }
         currentMode = attackMode.rock;
     }
 

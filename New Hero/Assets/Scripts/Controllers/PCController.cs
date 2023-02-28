@@ -9,6 +9,7 @@ public class PCController : MonoBehaviour
     public float timer = 1f;
     public GameObject[] screws;
     public BoxCollider2D trigger;
+    public PlayerMovement movement;
 
     public Image panel;
 
@@ -21,6 +22,10 @@ public class PCController : MonoBehaviour
     {
         if (!unscrew) return;
 
+        if (!movement.movementDisabled)
+        {
+            movement.SetMovementDisabled(true);
+        }
         if (screwIndex < screws.Length)
         {
             screws[screwIndex].transform.Rotate(new Vector3(0f,0f,-screwSpeedMult*Time.deltaTime));

@@ -50,7 +50,11 @@ public class PlayerInteraction : MonoBehaviour
             SaveSystem.health = maxHealth;
 
         healthUI.text = Convert.ToString(SaveSystem.health, 2).PadLeft(8, '0');
-
+        if(!SaveSystem.startDialogue && SceneManager.GetActiveScene().name == "Demo")
+        {
+            IEnumerator dialogue = StartDial();
+            StartCoroutine(dialogue);
+        }
         if (PlayerPrefs.HasKey("Interaction_x") && PlayerPrefs.HasKey("Interaction_y"))
         {
             Vector2 position = new(PlayerPrefs.GetFloat("Interaction_x"), PlayerPrefs.GetFloat("Interaction_y"));
@@ -64,6 +68,17 @@ public class PlayerInteraction : MonoBehaviour
         PlayerPrefs.DeleteKey("Position_x");
         PlayerPrefs.DeleteKey("Position_y");
     }
+
+    IEnumerator StartDial()
+    {
+        yield return new WaitForSecondsRealtime(0.5f);
+        DialogueManager.currentNPC = "start";
+        DialogueManager.assignObjective = false;
+        DialogueManager.eventEnabled = false;
+        DialogueManager.Instance.StartDialogue("start");
+        SaveSystem.startDialogue = true;
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("NPC"))

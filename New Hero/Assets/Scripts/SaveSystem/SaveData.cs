@@ -19,9 +19,10 @@ public class SaveData
     public string currentScene;
     public int health;
     public string currentObjective;
+    public bool startDialogue;
     readonly Dictionary<string, Trophy.TrophyState> trophies;
 
-    public SaveData(Level level, Vector3 position, string currentScene, Dictionary<string, Trophy.TrophyState> trophies, int health, string currentObjective)
+    public SaveData(Level level, Vector3 position, string currentScene, Dictionary<string, Trophy.TrophyState> trophies, int health, string currentObjective, bool startDialogue)
     {
         this.level = level;
 
@@ -37,6 +38,8 @@ public class SaveData
         this.health = health;
 
         this.currentObjective = currentObjective;
+
+        this.startDialogue = startDialogue;
     }
 
     public Dictionary<string, Trophy.TrophyState> GetTrophies()

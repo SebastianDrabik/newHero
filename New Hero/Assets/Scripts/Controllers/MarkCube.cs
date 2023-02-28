@@ -144,7 +144,6 @@ public class MarkCube : MonoBehaviour
 
     public void ResetAfterAttack()
     {
-        Debug.Log("reset");
         Time.timeScale = 1f;
         isAttacking = false;
         shadow.SetActive(false);
@@ -153,7 +152,7 @@ public class MarkCube : MonoBehaviour
         stage = 0;
         timerMult = 1f;
         abovePlayer = 10f;
-        gameObject.transform.SetPositionAndRotation(new Vector3(0f, 11f), Quaternion.identity);
+        gameObject.transform.SetPositionAndRotation(new Vector3(0f, 11.5f), Quaternion.identity);
         shadow.transform.localScale = new Vector3(0.4046f, 0.1798318f, shadow.transform.localScale.z);
     }
     IEnumerator Jump()

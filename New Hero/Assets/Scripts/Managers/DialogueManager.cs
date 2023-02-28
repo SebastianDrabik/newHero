@@ -37,12 +37,12 @@ public class DialogueManager : MonoBehaviour
         if(Instance == null)
             Instance = this;
         manager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
+        playerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
         LoadAllDialogues(TranslationsManager.lang);
     }
 
     void Start()
     {
-        playerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
         sentences = new Queue<DialogueSentence>();
     }
 

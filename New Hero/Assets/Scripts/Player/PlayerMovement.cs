@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     public Animator animator;
     public SpriteRenderer spriteRenderer;
 
-    private bool movementDisabled = false;
+    public bool movementDisabled { get; private set; } = false;
 
     void Update()
     {

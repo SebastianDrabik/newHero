@@ -59,6 +59,4 @@ public class CutsceneController : MonoBehaviour
         PlayerPrefs.SetFloat("Position_x", 9.45f);
         PlayerPrefs.SetFloat("Position_y", 0f);
     }
-
-
 }
