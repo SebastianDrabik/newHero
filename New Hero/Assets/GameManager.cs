@@ -141,7 +141,7 @@ public class GameManager : MonoBehaviour
 
     private void AssignController()
     {
-        if (SceneManager.GetActiveScene().name == "MainMenu" || _ObjectiveController!=null)
+        if (SceneManager.GetActiveScene().name == "MainMenu"|| SceneManager.GetActiveScene().name == "Credits"|| SceneManager.GetActiveScene().name == "CutsceneStart"|| SceneManager.GetActiveScene().name == "CutsceneEnd" || _ObjectiveController!=null)
             return;
         ObjectiveController oc = GameObject.FindGameObjectWithTag("Canvas").GetComponent<ObjectiveController>();
         if (oc != null)

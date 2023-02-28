@@ -13,6 +13,9 @@ public class MainMapController : MonoBehaviour
     public NPCManager SGP;
     public NPCManager SGP2;
 
+    public BoxCollider2D PC_Trigger;
+    public GameObject firewallBoss;
+    public GameObject screwdriver;
     //[Header("Dialogue key before fight with python")]
     //public string SGPKey1;
     //[Header("Dialogue key after fight with python")]
@@ -41,6 +44,12 @@ public class MainMapController : MonoBehaviour
         {
             SGP2.gameObject.SetActive(false);
             manager.HideObjective();
+        }
+        if (SaveSystem.level >= SaveData.Level.END_GAME)
+        {
+            PC_Trigger.enabled = false;
+            firewallBoss.SetActive(false);
+            screwdriver.SetActive(false);
         }
     }
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 public class PCController : MonoBehaviour
 {
@@ -8,6 +9,9 @@ public class PCController : MonoBehaviour
     public float timer = 1f;
     public GameObject[] screws;
     public BoxCollider2D trigger;
+
+    public Image panel;
+
 
     private bool unscrew=false;
     private int screwIndex = 0;
@@ -43,7 +47,14 @@ public class PCController : MonoBehaviour
 
     IEnumerator WaitCutscene()
     {
-        yield return new WaitForSeconds(1f);
+        panel.gameObject.SetActive(true);
+        for(int i = 0; i < 100; i++)
+        {
+            Color color = panel.color;
+            color.a += (float)i / 100;
+            panel.color = color;
+            yield return new WaitForSeconds(0.03f);
+        }
         SceneManager.LoadScene("CutsceneEnd");
         SaveSystem.level = SaveData.Level.END_GAME;
         SaveSystem.SaveData();
