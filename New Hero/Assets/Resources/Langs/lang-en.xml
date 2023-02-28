@@ -116,7 +116,7 @@
 			<dial8-3>On the other hand, example &lt;color=yellow&gt;B&lt;/color&gt; will display &lt;color=yellow&gt;0&lt;/color&gt;, because 3 isn't equal to 2</dial8-3>
 			<dial8-4>Example &lt;color=yellow&gt;C&lt;/color&gt; will display &lt;color=yellow&gt;1&lt;/color&gt;, because value of x (3) is greater than 2</dial8-4>
 			<dial8-5>Example &lt;color=yellow&gt;D&lt;/color&gt; will display &lt;color=yellow&gt;1&lt;/color&gt; as well, because 3 is less or equal to 3</dial8-5>
-			<dial8-6>In example &lt;color=yellow&gt;E&lt;/color&gt; the &lt;color=yellow&gt;END&lt;/color&gt; operator is being used(double &amp; mark). It returns 1 if &lt;color=yellow&gt;BOTH&lt;/color&gt; operations returns true</dial8-6>
+			<dial8-6>In example &lt;color=yellow&gt;E&lt;/color&gt; the &lt;color=yellow&gt;AND&lt;/color&gt; operator is being used(double &amp; mark). It returns 1 if &lt;color=yellow&gt;BOTH&lt;/color&gt; operations returns true</dial8-6>
 			<dial8-7>Example &lt;color=yellow&gt;E&lt;/color&gt; will display &lt;color=yellow&gt;1&lt;/color&gt;, because &lt;color=yellow&gt;BOTH&lt;/color&gt; operations return true</dial8-7>
 			<dial8-8>In example &lt;color=yellow&gt;F&lt;/color&gt; the &lt;color=yellow&gt;OR&lt;/color&gt; operator is being used(double | mark). It returs true &lt;color=yellow&gt;if one of operations&lt;/color&gt; is true</dial8-8>
 			<dial8-9>In examples &lt;color=yellow&gt;F&lt;/color&gt; and &lt;color=yellow&gt;G&lt;/color&gt; used conversion from &lt;color=yellow&gt;int&lt;/color&gt; to &lt;color=yellow&gt;bool&lt;/color&gt;.</dial8-9>

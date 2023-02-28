@@ -13,8 +13,8 @@ public class SaveGame : MonoBehaviour
         //GameObject player = GameObject.FindWithTag("Player");
         if (save == null || save.currentScene == null)
         {
-            SceneManager.LoadScene("Demo");
-            PlayerPrefs.SetFloat("Position_x", 0f);
+            SceneManager.LoadScene("CutsceneStart");
+            PlayerPrefs.SetFloat("Position_x", 9.45f);
             PlayerPrefs.SetFloat("Position_y", 0f);
 
             return;

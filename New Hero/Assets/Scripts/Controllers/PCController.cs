@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class PCController : MonoBehaviour
 {
     public float screwSpeedMult;
@@ -32,11 +32,18 @@ public class PCController : MonoBehaviour
         {
             unscrew = false;
             trigger.enabled = false;
+            StartCoroutine(nameof(waitCutscene));
         }
     }
 
     public void HandleEndgame()
     {
         unscrew = true;
+    }
+
+    IEnumerator waitCutscene()
+    {
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene("CutsceneEnd");
     }
 }

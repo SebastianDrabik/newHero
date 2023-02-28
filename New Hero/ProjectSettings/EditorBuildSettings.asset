@@ -29,4 +29,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Elektryk_Class2.unity
     guid: b434392c3646578459531913254ad392
+  - enabled: 1
+    path: Assets/Scenes/CutsceneEnd.unity
+    guid: 298ea1bb779b3314daec4019f7f13d11
+  - enabled: 1
+    path: Assets/Scenes/CutsceneStart.unity
+    guid: 1e4c2656b80e88c4ea96d1ea9e0d1ab2
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: 251dc4cb9cc73224188558873edfd8a1
   m_configObjects: {}
