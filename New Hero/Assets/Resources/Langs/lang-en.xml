@@ -19,6 +19,9 @@
 			<trophies-state-locked>locked</trophies-state-locked>
 			<trophies-state-inprogress>in progress</trophies-state-inprogress>
 		</esc-menu>
+		<cutscene>
+			<dream>Huh, what a weird dream...</dream>
+		</cutscene>
 		<controls-menu>
 			<basic>Basic movement</basic>
 			<interaction>Interaction</interaction>
@@ -72,6 +75,8 @@
 			<dial1-4>At the end of every line, with some exeptions, there needs to be a semicolon</dial1-4>
 			<dial1-5>It's not necessary to use &lt;color=yellow&gt;std::&lt;/color&gt; when you add &lt;color=yellow&gt;using namespace std&lt;/color&gt; at the very top of your code</dial1-5>
 			<dial2-1>You don't have to use &lt;color=yellow&gt;std::&lt;/color&gt;, if you add &lt;color=yellow&gt;using namespace std&lt;/color&gt; at the top of your code</dial2-1>
+			<dial2-2>&lt;color=yellow&gt;endl&lt;/color&gt; (end line) operator marks the end of the line. Everything that we will show after it, will be displayed in the line below.</dial2-2>
+
 			<dial3-1>Using the program above you can assign values to two variables and display their sum</dial3-1>
 			<dial3-2>With the help of variables, we can store some data, which can be used later in the program</dial3-2>
 			<dial3-3>There are multiple variable types, storing diffrent types of data:</dial3-3>
@@ -81,7 +86,7 @@
 			<dial3-7>&lt;color=yellow&gt;char&lt;/color&gt; stores a single character</dial3-7>
 			<dial3-8>&lt;color=yellow&gt;bool&lt;/color&gt; stores a logical data - true or false</dial3-8>
 			<dial4-1>&lt;color=yellow&gt;If&lt;/color&gt; statement allows to execute some code under a certain condition, which we put inside the brackets</dial4-1>
-			<dial4-2>The code above shows &lt;color=yellow&gt;x > 0&lt;/color&gt;, if value of variable x is greater that zero</dial4-2>
+			<dial4-2>The code above shows &lt;color=yellow&gt;0&lt;/color&gt;, if value of variable x is greater that zero</dial4-2>
 
 			<dialCom-1>By writing double slash sign "//" we make program ignore all text in that line after these signs</dialCom-1>
 			<dialCom-2>By writing two slash signs, and two star signs between them "/* */", we make program ignore all text between the star signs</dialCom-2>

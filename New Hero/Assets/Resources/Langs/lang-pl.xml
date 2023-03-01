@@ -19,6 +19,9 @@
 			<trophies-state-locked>zablokowane</trophies-state-locked>
 			<trophies-state-inprogress>w trakcie</trophies-state-inprogress>
 		</esc-menu>
+		<cutscene>
+			<dream>Huh, ale dziwny sen...</dream>
+		</cutscene>
 		<controls-menu>
 			<basic>Poruszanie się</basic>
 			<interaction>Interakcja</interaction>
@@ -72,7 +75,8 @@
 			<dial1-4>Na końcu każdej linijki, nie licząc niektórych wyjątków, musi znajdować się średnik</dial1-4>
 			
 			<dial2-1>Nie musisz używać &lt;color=yellow&gt;std::&lt;/color&gt;, jeżeli dodasz &lt;color=yellow&gt;using namespace std&lt;/color&gt; na górze kodu</dial2-1>
-			
+			<dial2-2>Operator  &lt;color=yellow&gt;endl&lt;/color&gt; (end line) kończy linię. Wszystko, co będziemy wyświetlać po jego użyciu znajdzie się w linii poniżej.</dial2-2>
+
 			<dial3-1>Za pomocą powyższego kodu możesz przypisać wartości do dwóch zmiennych oraz wyświetlić na ekranie ich sumę</dial3-1>
 			<dial3-2>Za pomocą zmiennej można zapisywać dane, których możemy później ponownie używać wewnątrz kodu</dial3-2>
 			<dial3-3>Występują różne typy zmiennych przechowujące różne typy danych:</dial3-3>
@@ -83,9 +87,9 @@
 			<dial3-8>&lt;color=yellow&gt;bool&lt;/color&gt; przechowuje wartość logiczną - &lt;color=yellow&gt;prawda&lt;/color&gt;, lub &lt;color=yellow&gt;fałsz&lt;/color&gt;</dial3-8>
 			
 			<dial4-1>Instrukcja warunkowa &lt;color=yellow&gt;if&lt;/color&gt; pozwala na wykonanie kodu pod określonym warunkiem, który podamy wewnątrz nawiasów</dial4-1>
-			<dial4-2>Powyższy kod wyświetli &lt;color=yellow&gt;x > 0&lt;/color&gt;, jeśli wartość zmiennej x będzie większa od zera</dial4-2>
+			<dial4-2>Powyższy kod wyświetli &lt;color=yellow&gt;0&lt;/color&gt;, jeśli wartość zmiennej x będzie większa od zera</dial4-2>
 
-			<dialCom-1>Pisząc podwójny znak ukośnika "//" sprawiamy, że program zignoruje na tekst w tej linijce, znajdujący się po tych znakach</dialCom-1>
+			<dialCom-1>Pisząc podwójny znak ukośnika "//" sprawiamy, że program zignoruje tekst w tej linijce, znajdujący się po tych znakach</dialCom-1>
 			<dialCom-2>Pisząc dwa znaki ukośnika, a międy nimi dwie gwiazdki "/* */" sprawiamy, że program zignoruje cały tekst między gwiazdkami</dialCom-2>
 			<dialCom-3>Zaletą drugiego sposobu jest to, że komentarz moze się rozciągać na kilka linijek, w przeciwieństwie do sposobu pierwszego</dialCom-3>
 			<dialCom-4>Komentarze są używane do opisywania co robi dana częsć kodu, lub do zapisywania informacji dla innych programistów czytających nasz kod</dialCom-4>

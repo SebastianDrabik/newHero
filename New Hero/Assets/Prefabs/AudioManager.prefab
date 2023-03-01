@@ -283,13 +283,6 @@ MonoBehaviour:
     loop: 0
     source: {fileID: 0}
     group: {fileID: 24300002, guid: 316b89ba037133043947831ba5eed12b, type: 2}
-  - name: B3
-    clip: {fileID: 8300000, guid: 5d27308eec7799642b477f617556e929, type: 3}
-    volume: 0.5
-    pitch: 1
-    loop: 1
-    source: {fileID: 0}
-    group: {fileID: 24300002, guid: 316b89ba037133043947831ba5eed12b, type: 2}
   - name: B26
     clip: {fileID: 8300000, guid: 0be838eb650420d498bf459f4ceaf6c6, type: 3}
     volume: 0.5
@@ -362,6 +355,146 @@ MonoBehaviour:
     group: {fileID: 24300002, guid: 316b89ba037133043947831ba5eed12b, type: 2}
   - name: B36
     clip: {fileID: 8300000, guid: 660929dde9633d54680b67b6b68ef58c, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    group: {fileID: 24300002, guid: 316b89ba037133043947831ba5eed12b, type: 2}
+  - name: C1
+    clip: {fileID: 8300000, guid: 70d1809d65da1164b93155078ebbe103, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    group: {fileID: 24300002, guid: 316b89ba037133043947831ba5eed12b, type: 2}
+  - name: C2
+    clip: {fileID: 8300000, guid: c81d1dc8e32a28c4580cdd1ad8dbbc5f, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    group: {fileID: 24300002, guid: 316b89ba037133043947831ba5eed12b, type: 2}
+  - name: C3
+    clip: {fileID: 8300000, guid: 33cc51b28ae19ef4eb9145db7cdd4edd, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    group: {fileID: 24300002, guid: 316b89ba037133043947831ba5eed12b, type: 2}
+  - name: C4
+    clip: {fileID: 8300000, guid: aad8e2ba8ca63114a9c18b724d015f6e, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    group: {fileID: 24300002, guid: 316b89ba037133043947831ba5eed12b, type: 2}
+  - name: C5
+    clip: {fileID: 8300000, guid: fce44244c35ddb44fa60724172456bed, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    group: {fileID: 24300002, guid: 316b89ba037133043947831ba5eed12b, type: 2}
+  - name: C6
+    clip: {fileID: 8300000, guid: 2c9ffbc4e2c875247bec057847eb0008, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    group: {fileID: 24300002, guid: 316b89ba037133043947831ba5eed12b, type: 2}
+  - name: C7
+    clip: {fileID: 8300000, guid: 541c782280da060409b99f4e50779c63, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    group: {fileID: 24300002, guid: 316b89ba037133043947831ba5eed12b, type: 2}
+  - name: C8
+    clip: {fileID: 8300000, guid: b34df44c004c9234ea2513faaff5fc17, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    group: {fileID: 24300002, guid: 316b89ba037133043947831ba5eed12b, type: 2}
+  - name: C9
+    clip: {fileID: 8300000, guid: ac44af4871e60944cb0432a1de4919b0, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    group: {fileID: 24300002, guid: 316b89ba037133043947831ba5eed12b, type: 2}
+  - name: C10
+    clip: {fileID: 8300000, guid: 94947a5ba1c3be74198f9277a71d33cc, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    group: {fileID: 24300002, guid: 316b89ba037133043947831ba5eed12b, type: 2}
+  - name: C11
+    clip: {fileID: 8300000, guid: c7648a4c4be34314ebe9996748d81278, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    group: {fileID: 24300002, guid: 316b89ba037133043947831ba5eed12b, type: 2}
+  - name: C12
+    clip: {fileID: 8300000, guid: 15f9ccbc5808a674789009806eb48fc6, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    group: {fileID: 24300002, guid: 316b89ba037133043947831ba5eed12b, type: 2}
+  - name: C13
+    clip: {fileID: 8300000, guid: 81c165422ec81b34d97b04f0fdd8ac1f, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    group: {fileID: 24300002, guid: 316b89ba037133043947831ba5eed12b, type: 2}
+  - name: C14
+    clip: {fileID: 8300000, guid: cf24950cadb32004a8723fc9140cecd6, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    group: {fileID: 24300002, guid: 316b89ba037133043947831ba5eed12b, type: 2}
+  - name: C15
+    clip: {fileID: 8300000, guid: 16f3dcd092a8cc4409b4910dcfbc78b0, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    group: {fileID: 24300002, guid: 316b89ba037133043947831ba5eed12b, type: 2}
+  - name: C16
+    clip: {fileID: 8300000, guid: 2c998fedbb43fc643aa1d19c15430c08, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    group: {fileID: 24300002, guid: 316b89ba037133043947831ba5eed12b, type: 2}
+  - name: C17
+    clip: {fileID: 8300000, guid: 76ec303fd8e951641a8f75099edc8910, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    group: {fileID: 24300002, guid: 316b89ba037133043947831ba5eed12b, type: 2}
+  - name: C18
+    clip: {fileID: 8300000, guid: cd27e783a0844aa47873d48ae94d6ff5, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    group: {fileID: 24300002, guid: 316b89ba037133043947831ba5eed12b, type: 2}
+  - name: C19
+    clip: {fileID: 8300000, guid: 9428fc17e0fe9f240a8c546756c65432, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    group: {fileID: 24300002, guid: 316b89ba037133043947831ba5eed12b, type: 2}
+  - name: C20
+    clip: {fileID: 8300000, guid: 82be62d3a5b51d848a62a4cfc3bbb2d0, type: 3}
     volume: 0.5
     pitch: 1
     loop: 0

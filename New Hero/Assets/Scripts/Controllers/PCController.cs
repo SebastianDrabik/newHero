@@ -60,7 +60,7 @@ public class PCController : MonoBehaviour
             panel.color = color;
             yield return new WaitForSeconds(0.03f);
         }
-        SceneManager.LoadScene("CutsceneEnd");
+        SceneManager.LoadScene("PlotSceneEnd");
         SaveSystem.level = SaveData.Level.END_GAME;
         SaveSystem.SaveData();
     }
