@@ -21,6 +21,8 @@ public class MarkCube : MonoBehaviour
     public PauseMenu canvas;
     public PlayerMovement movement;
 
+    public GameObject audioSpace;
+
     private float abovePlayer = 10f;
     private bool isAttacking = false;
     private float timerMult = 1f;
@@ -40,6 +42,7 @@ public class MarkCube : MonoBehaviour
             Instance = this;
         if (SaveSystem.level>=SaveData.Level.MARK_CUBE)
         {
+            audioSpace.SetActive(false);
             Intro.SetActive(false);
             gameObject.SetActive(false);
         }
@@ -193,6 +196,7 @@ public class MarkCube : MonoBehaviour
         isFighting = false;
         _camera.m_Follow = player.transform;
         _camera.m_Lens.OrthographicSize = initialOrtoSize;
+        audioSpace.SetActive(false);
         gameObject.SetActive(false);
         GameManager.Instance.ChangeTrophyState("marco", Trophy.TrophyState.UNLOCKED, true);
         pauseMenu.SetDisabled(false);

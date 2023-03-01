@@ -19,7 +19,7 @@ public class RockFly : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag != "Rock")
+        if (collision.gameObject.tag != "Rock" && collision.gameObject.tag != "MusicArea")
         {
             if (collision.gameObject.tag == "Player")
             {

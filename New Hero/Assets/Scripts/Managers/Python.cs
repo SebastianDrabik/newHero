@@ -15,6 +15,7 @@ public class Python : MonoBehaviour
     public GameManager manager;
     public GameObject blockadeObject;
     public MessageManager messageManager;
+    public GameObject audioSpace;
 
     public DoorController exit;
 
@@ -101,6 +102,7 @@ public class Python : MonoBehaviour
         SaveSystem.level = SaveData.Level.PYTHON;
         exit.locked = false;
         healthbar.gameObject.SetActive(false);
+        audioSpace.SetActive(false);
         gameObject.SetActive(false);
     }
 

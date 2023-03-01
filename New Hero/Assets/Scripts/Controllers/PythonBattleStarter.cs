@@ -11,6 +11,7 @@ public class PythonBattleStarter : MonoBehaviour
     public PlayerMovement movement;
 
     public GameObject healthbar;
+    public GameObject audioSpace;
 
     public SaveData.Level minLevel;
 
@@ -18,6 +19,7 @@ public class PythonBattleStarter : MonoBehaviour
     {
         if (SaveSystem.level >= SaveData.Level.END_GAME)
         {
+            audioSpace.SetActive(false);
             gameObject.SetActive(false);
         }
     }

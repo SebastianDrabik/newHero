@@ -40,77 +40,19 @@ public class AudioManager : MonoBehaviour
     void Start()
     {
         currentScene = SceneManager.GetActiveScene().name;
-        //if (PlayerPrefs.HasKey("Marco_Defeated") && SceneManager.GetActiveScene().name == "MarkCube_Boss")
-        //{
-        //    if (PlayerPrefs.GetInt("Marco_Defeated") == 1)
-        //    {
-        //        StopAll();
-        //        Play("MainTheme");
-        //    }else if(PlayerPrefs.GetInt("Marco_Defeated") == 0)
-        //    {
-        //        StopAll();
-        //        Play("Marco_Music_Loop");
-        //    }
-        //}
-        //else if (currentScene != "MarkCube_Boss")
-        //{
-        //    Play("MainTheme");
-        //}
-        //else
-        //{
-        //    Play("Marco_Music_Loop");
-        //}
-
-
-        //Debug.Log(IsPlaying("MainTheme"));
-        if (currentScene != "MarkCube_Boss" && !IsPlaying("MainTheme"))
+        if (!IsPlaying("MainTheme"))
         {
             StopAll();
             Play("MainTheme");
-        }else if(SaveSystem.level < SaveData.Level.MARK_CUBE)
-        {
-            StopAll();
-            Play("Marco_Music_Loop");
+            return;
         }
-        else
+        if(currentScene == "MainMenu")
         {
             StopAll();
             Play("MainTheme");
+            return;
         }
 
-    }
-
-    private void Update()
-    {
-
-        currentScene = SceneManager.GetActiveScene().name;
-        if (currentScene != "MarkCube_Boss" && !IsPlaying("MainTheme"))
-        {
-            StopAll();
-            Play("MainTheme");
-        }else if(!IsPlaying("Marco_Music_Loop") && SceneManager.GetActiveScene().name == "MarkCube_Boss" && SaveSystem.level < SaveData.Level.MARK_CUBE)
-        {
-            StopAll();
-            Play("Marco_Music_Loop");
-        }
-        if(currentScene == "MarkCube_Boss" && SaveSystem.level >= SaveData.Level.MARK_CUBE && !IsPlaying("MainTheme")){
-            StopAll();
-            Play("MainTheme");
-        }
-        /*if (SceneManager.GetActiveScene().name != currentScene)
-        {
-            if(SceneManager.GetActiveScene().name == "MarkCube_Boss")
-            {
-                StopAll();
-                Play("Marco_Music_Loop");
-            }
-            else if(currentScene == "MarkCube_Boss")
-            {
-                StopAll();
-                Play("MainTheme");
-            }
-            currentScene = SceneManager.GetActiveScene().name;
-        }*/
     }
 
 

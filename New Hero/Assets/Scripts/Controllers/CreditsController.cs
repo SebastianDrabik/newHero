@@ -8,6 +8,15 @@ public class CreditsController : MonoBehaviour
     public RectTransform panel;
     public int speed;
     public float delay = 2f;
+    public bool playEndMusic=false;
+
+    private void Start()
+    {
+        if (playEndMusic)
+        {
+            StartCoroutine(nameof(delayMusic));
+        }
+    }
 
     void Update()
     {
@@ -26,5 +35,11 @@ public class CreditsController : MonoBehaviour
         }
 
     }
-    
+    IEnumerator delayMusic()
+    {
+        yield return new WaitForEndOfFrame();
+        AudioManager audioM = GameObject.FindObjectOfType<AudioManager>();
+        audioM.StopAll();
+        audioM.Play("Credits");
+    }
 }
