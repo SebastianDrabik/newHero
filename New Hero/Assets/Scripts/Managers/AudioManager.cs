@@ -37,8 +37,11 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    [RuntimeInitializeOnLoadMethod]
     void Start()
     {
+        SceneManager.activeSceneChanged += ChangedActiveScene;
+
         currentScene = SceneManager.GetActiveScene().name;
         if (!IsPlaying("MainTheme"))
         {
@@ -55,6 +58,20 @@ public class AudioManager : MonoBehaviour
 
     }
 
+    private void ChangedActiveScene(Scene current, Scene next)
+    {
+        currentScene = next.name;
+        if (currentScene == "CutsceneStart")
+        {
+            Sound s = Array.Find(sounds, sound => sound.name == "MainTheme");
+            s.source.volume = 0f;
+        }
+        else
+        {
+            Sound s = Array.Find(sounds, sound => sound.name == "MainTheme");
+            s.source.volume = s.volume;
+        }
+    }
 
     public void Play(string name)
     {
