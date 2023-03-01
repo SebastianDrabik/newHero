@@ -19,6 +19,10 @@
 			<trophies-state-locked>locked</trophies-state-locked>
 			<trophies-state-inprogress>in progress</trophies-state-inprogress>
 		</esc-menu>
+		<controls-menu>
+			<basic>Basic movement</basic>
+			<interaction>Interaction</interaction>
+		</controls-menu>
 		<options-menu>
 			<title>OPTIONS</title>
 			<fullscreen>FULLSCREEN</fullscreen>

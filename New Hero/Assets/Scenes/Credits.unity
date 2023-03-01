@@ -1312,8 +1312,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 150.26086, y: -131.69446}
-  m_SizeDelta: {x: 534.9117, y: 163.0514}
+  m_AnchoredPosition: {x: 150.26086, y: -146.4386}
+  m_SizeDelta: {x: 534.9117, y: 192.5397}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &910839757
 MonoBehaviour:
@@ -1344,7 +1344,7 @@ MonoBehaviour:
 
     Orange Kid font - Ray Larabie
 
-'
+    Pixel Buttons Set - egordorichev'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8657ea73fcd8713449399329e6af27d0, type: 2}
   m_sharedMaterial: {fileID: 9206472153451416348, guid: 8657ea73fcd8713449399329e6af27d0, type: 2}

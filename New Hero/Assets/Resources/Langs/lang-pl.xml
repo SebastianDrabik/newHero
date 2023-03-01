@@ -19,6 +19,10 @@
 			<trophies-state-locked>zablokowane</trophies-state-locked>
 			<trophies-state-inprogress>w trakcie</trophies-state-inprogress>
 		</esc-menu>
+		<controls-menu>
+			<basic>Poruszanie się</basic>
+			<interaction>Interakcja</interaction>
+		</controls-menu>
 		<options-menu>
 			<title>OPCJE</title>
 			<fullscreen>PEŁNY EKRAN</fullscreen>
