@@ -54,6 +54,16 @@ public class LessonManager : MonoBehaviour
         classExit.locked = true;
     }
 
+    void Update()
+    {
+        if (!lessonBegan)
+            return;
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+            Previous();
+        else if (Input.GetKeyDown(KeyCode.RightArrow))
+            Next();
+    }
+
     public void EnableSeats()
     {
         lessonTriggers.SetActive(true);
@@ -145,6 +155,11 @@ public class LessonManager : MonoBehaviour
             subtitleText.SetActive(false);
             movement.SetMovementDisabled(false);
             attack.OpenCodeEditor(examKey);
+            lessonEnded=false;
+            currentPart = 0;
+            currentSub = 0;
+            p = lessonParts[currentPart];
+            currentPart_subs = p.subtitles.Length;
             return;
         }
         if (lessonBegan && currentPart <= lessonParts.Count - 1 && currentSub < currentPart_subs - 1)

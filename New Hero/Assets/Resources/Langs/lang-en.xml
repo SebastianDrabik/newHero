@@ -22,6 +22,8 @@
 		<controls-menu>
 			<basic>Basic movement</basic>
 			<interaction>Interaction</interaction>
+			<prevnext>Lessons - previous/next</prevnext>
+			<saves>Remember about saving your game!</saves>
 		</controls-menu>
 		<options-menu>
 			<title>OPTIONS</title>
@@ -65,12 +67,12 @@
 		</objectives>
 		<lessons>
 			<dial1-1>To add a library to the program we use &lt;color=yellow&gt;#include&lt;library&gt;&lt;/color&gt;</dial1-1>
-			<dial1-2>Everything inside the &lt;color=yellow&gt;main&lt;/color&gt; function will be executed by the program after compilation.</dial1-2>
-			<dial1-3>&lt;color=yellow&gt;std::cout &lt;&lt; "hello world"&lt;/color&gt; command, makes the text inside double-quotes appear on the screen.</dial1-3>
-			<dial1-4>At the end of every line, with some exeptions, there needs to be a semicolon.</dial1-4>
+			<dial1-2>Everything inside the &lt;color=yellow&gt;main&lt;/color&gt; function will be executed by the program after compilation</dial1-2>
+			<dial1-3>&lt;color=yellow&gt;std::cout &lt;&lt; "hello world"&lt;/color&gt; command, makes the text inside double-quotes appear on the screen</dial1-3>
+			<dial1-4>At the end of every line, with some exeptions, there needs to be a semicolon</dial1-4>
 			<dial1-5>It's not necessary to use &lt;color=yellow&gt;std::&lt;/color&gt; when you add &lt;color=yellow&gt;using namespace std&lt;/color&gt; at the very top of your code</dial1-5>
-			<dial2-1>You don't have to use &lt;color=yellow&gt;std::&lt;/color&gt;, if you add &lt;color=yellow&gt;using namespace std&lt;/color&gt; at the top of your code.</dial2-1>
-			<dial3-1>Using the program above you can assign values to two variables and display their sum.</dial3-1>
+			<dial2-1>You don't have to use &lt;color=yellow&gt;std::&lt;/color&gt;, if you add &lt;color=yellow&gt;using namespace std&lt;/color&gt; at the top of your code</dial2-1>
+			<dial3-1>Using the program above you can assign values to two variables and display their sum</dial3-1>
 			<dial3-2>With the help of variables, we can store some data, which can be used later in the program</dial3-2>
 			<dial3-3>There are multiple variable types, storing diffrent types of data:</dial3-3>
 			<dial3-4>&lt;color=yellow&gt;int&lt;/color&gt; stores whole numbers</dial3-4>
@@ -108,7 +110,7 @@
 			<dial6-7>As you can see in examples &lt;color=yellow&gt;D&lt;/color&gt; and &lt;color=yellow&gt;E&lt;/color&gt; it also works with changing &lt;color=yellow&gt;floats&lt;/color&gt; to &lt;color=yellow&gt;ints&lt;/color&gt;</dial6-7>
 			<dial6-8>Going back to example &lt;color=yellow&gt;C&lt;/color&gt; you can see that it is possible to use &lt;color=yellow&gt;brackets&lt;/color&gt; in calculations, just like in real arithmetics</dial6-8>
 
-			<dial7-1>&lt;color=yellow&gt;Loop&lt;/color&gt; is expression, which allows us to repeat some action.</dial7-1>
+			<dial7-1>&lt;color=yellow&gt;Loop&lt;/color&gt; is expression, which allows us to repeat some action</dial7-1>
 			<dial7-2>&lt;color=yellow&gt;for&lt;/color&gt; loop is the simplest type of loop</dial7-2>
 			<dial7-3>We define it in following way:</dial7-3>
 			<dial7-4>&lt;color=yellow&gt;for(iterator; logical condition; iterator value change)&lt;/color&gt;</dial7-4>
@@ -123,7 +125,7 @@
 			<dial8-6>In example &lt;color=yellow&gt;E&lt;/color&gt; the &lt;color=yellow&gt;AND&lt;/color&gt; operator is being used(double &amp; mark). It returns 1 if &lt;color=yellow&gt;BOTH&lt;/color&gt; operations returns true</dial8-6>
 			<dial8-7>Example &lt;color=yellow&gt;E&lt;/color&gt; will display &lt;color=yellow&gt;1&lt;/color&gt;, because &lt;color=yellow&gt;BOTH&lt;/color&gt; operations return true</dial8-7>
 			<dial8-8>In example &lt;color=yellow&gt;F&lt;/color&gt; the &lt;color=yellow&gt;OR&lt;/color&gt; operator is being used(double | mark). It returs true &lt;color=yellow&gt;if one of operations&lt;/color&gt; is true</dial8-8>
-			<dial8-9>In examples &lt;color=yellow&gt;F&lt;/color&gt; and &lt;color=yellow&gt;G&lt;/color&gt; used conversion from &lt;color=yellow&gt;int&lt;/color&gt; to &lt;color=yellow&gt;bool&lt;/color&gt;.</dial8-9>
+			<dial8-9>In examples &lt;color=yellow&gt;F&lt;/color&gt; and &lt;color=yellow&gt;G&lt;/color&gt; used conversion from &lt;color=yellow&gt;int&lt;/color&gt; to &lt;color=yellow&gt;bool&lt;/color&gt;</dial8-9>
 			<dial8-10>Example &lt;color=yellow&gt;F&lt;/color&gt; will return &lt;color=yellow&gt;0&lt;/color&gt;, and &lt;color=yellow&gt;E&lt;/color&gt; will return &lt;color=yellow&gt;1&lt;/color&gt; according to the rules of logic</dial8-10>
 
 
@@ -134,7 +136,7 @@
 			<dial9-5>When we don't want to define content of the array right away, we have to set &lt;color=yellow&gt;element count&lt;/color&gt;</dial9-5>
 			<dial9-6>To reference a specific element in array we have to pass it's index to the array(counting starts from zero!)</dial9-6>
 			<dial9-7>Example: &lt;color=yellow&gt;numbers[0]&lt;/color&gt; (first element in array)</dial9-7>
-			<dial9-8>To get a size of the array, we need to calculate it by ourself.</dial9-8>
+			<dial9-8>To get a size of the array, we need to calculate it by ourself</dial9-8>
 			<dial9-9>&lt;color=yellow&gt;sizeof(&lt;b&gt;array&lt;/b&gt;)/sizeof(&lt;b&gt;array_type&lt;/b&gt;)&lt;/color&gt;</dial9-9>
 			<dial9-10>We can make it more universal, by passing the first element of the array instead of array type in sizeof() function</dial9-10>
 			<dial9-11>&lt;color=yellow&gt;sizeof(&lt;b&gt;array&lt;/b&gt;)/sizeof(&lt;b&gt;array[0]&lt;/b&gt;)&lt;/color&gt;</dial9-11>

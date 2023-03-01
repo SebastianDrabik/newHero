@@ -16,7 +16,8 @@ MonoBehaviour:
   sentences:
   - name: SemiGodProgrammer
     sentence: "Dzi\u0119kuj\u0119, \u017Ce pokona\u0142e\u015B pythona. Naucz\u0119
-      Ci\u0119 wi\u0119c czego\u015B wi\u0119cej na temat C++."
+      Ci\u0119 wi\u0119c czego\u015B wi\u0119cej na temat C++ i mo\u017Ce uda Ci
+      si\u0119 st\u0105d wydosta\u0107."
   - name: SemiGodProgrammer
     sentence: "Oczywi\u015Bcie, je\u015Bli chcesz."
   - name: Gracz

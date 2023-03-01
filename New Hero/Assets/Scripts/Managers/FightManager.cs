@@ -77,6 +77,7 @@ public class FightManager : MonoBehaviour
         Workspace.color = EditorTheme.currentTheme.background;
         codeInput.Select();
         currentKey = key;
+        hintButton.SetActive(showHint);
         
         pauseMenu.SetDisabled(true);
         interaction.SetInteractionDisabled(true);

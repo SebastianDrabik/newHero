@@ -48,7 +48,7 @@ public class DialogueManager : MonoBehaviour
 
     void Update()
     {
-        if((Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Return)) && isTalking)
+        if((Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Space)) && isTalking)
             DisplayNextSentence();
     }
 

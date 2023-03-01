@@ -4,11 +4,11 @@
 	<background-color>#202020ff</background-color>
 	<highlights>
 		<rule>
-			<regex>([0-9]+|cout|endl)</regex>
+			<regex>([0-9]+|\bcout\b|\bendl\b)</regex>
 			<color>#e2f000ff</color>
 		</rule>
 		<rule>
-			<regex>(int|void|char|using|bool)</regex>
+			<regex>(\bint\b|\bvoid\b|\bchar\b|\busing\b|\bbool\b)</regex>
 			<color>#005bd1ff</color>
 		</rule>
 		<rule>
@@ -20,8 +20,12 @@
 			<color>#ac7700ff</color>
 		</rule>
 		<rule>
-			<regex>[\[\](){}&lt;&gt;]</regex>
+			<regex>[\[\](){}&lt;&gt;=]</regex>
 			<color>#8a8a8a</color>
+		</rule>
+		<rule>
+			<regex>[\+\*-/%]</regex>
+			<color>#206ce6</color>
 		</rule>
 		<rule>
 			<regex>(\bstd\b|\bstring\b)</regex>

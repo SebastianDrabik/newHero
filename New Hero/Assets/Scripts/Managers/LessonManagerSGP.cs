@@ -34,6 +34,16 @@ public class LessonManagerSGP : MonoBehaviour
         manager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
     }
 
+    void Update()
+    {
+        if (!lessonBegan)
+            return;
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+            Previous();
+        else if(Input.GetKeyDown(KeyCode.RightArrow))
+            Next();
+    }
+
     public List<Part> lessonParts;
 
     public void StartLesson()
@@ -115,6 +125,11 @@ public class LessonManagerSGP : MonoBehaviour
             subtitleText.SetActive(false);
             movement.SetMovementDisabled(false);
             attack.OpenCodeEditor("sgp-exam");
+            lessonEnded = false;
+            currentPart = 0;
+            currentSub = 0;
+            p = lessonParts[currentPart];
+            currentPart_subs = p.subtitles.Length;
             return;
         }
         if (lessonBegan && currentPart <= lessonParts.Count - 1 && currentSub < currentPart_subs - 1)

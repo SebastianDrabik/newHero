@@ -114,7 +114,7 @@ public class SettingsMenu : MonoBehaviour
             controller.UpdateContent();
 
         TranslationsManager.UpdateSaveListErrorMessages();
-        Debug.Log(TranslationsManager.lang);
+        //Debug.Log(TranslationsManager.lang);
         GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>().LoadTrophies(true);
     }
 

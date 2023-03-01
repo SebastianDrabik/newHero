@@ -3288,11 +3288,11 @@ MonoBehaviour:
   lessonParts:
   - code: "#include <iostream>\r\n\r\nusing namespace std;\r\n\r\nint main()\r\n{\r\n 
       int x = 3;\r\n  int y = 2;\r\n\r\n  cout << x + 2 << endl; // A\n  cout <<
-      x + y << endl; // B\r\n  cout << x - y << endl; // C\r\n  cout << x * y <<
-      endl; // D\r\n  cout << x / y << endl; // E\r\n  cout << x % y << endl; //
-      F\r\n\r\n  x = 0; // G\r\n  cout << x << endl;\r\n\r\n  x = x + 1; // H\r\n 
-      cout << x << endl;\r\n\r\n  x += 1; // I\r\n  cout << x << endl;\r\n\r\n  x++;
-      // J\r\n  cout << x << endl;\r\n\r\n  return 0;\r\n}"
+      x + y << endl; // B\n  cout << x - y << endl; // C\n  cout << x * y << endl;
+      // D\r\n  cout << x / y << endl; // E\r \n  cout << x % y << endl; // F\r \n\r\n 
+      x = 0; // G\r\n  cout << x << endl;\r\n\r\n  x = x + 1; // H\r\n  cout << x
+      << endl;\r\n\r\n  x += 1; // I\r\n  cout << x << endl;\r\n\r\n  x++; // J\r\n 
+      cout << x << endl;\r\n\r\n  return 0;\r\n}"
     subtitles:
     - dial5-1
     - dial5-2
@@ -3345,10 +3345,10 @@ MonoBehaviour:
     - B20
   - code: "#include <iostream>\r\n\r\nusing namespace std;\r\n\r\nint main()\r\n{\r\n 
       int x = 3;\r\n  int y = 2;\r\n\r\n  cout << (x == 3) << endl;           //
-      A\r\n  cout << (x == 2) << endl;           // B\r\n  cout << (x > 2) << endl;           
-      // C\r\n  cout << (x <= 3) << endl;           // D\r\n  cout << (x == 3 &&
-      y == 2) << endl; // E\r\n  cout << (x == 1 || y == 2) << endl; // F\r\n  cout
-      << (bool)0 << endl;            // G\r\n  cout << (bool)1 << endl;           
+      A\n  cout << (x == 2) << endl;           // B\r \n  cout << (x > 2) << endl;           
+      // C\r \n  cout << (x <= 3) << endl;           // D\r\n  cout << (x == 3 &&
+      y == 2) << endl; // E\r \n  cout << (x == 1 || y == 2) << endl; // F\n  cout
+      << (bool)0 << endl;            // G\n  cout << (bool)1 << endl;           
       // H\r\n\r\n  return 0;\r\n}"
     subtitles:
     - dial8-0
@@ -4709,6 +4709,10 @@ PrefabInstance:
     - target: {fileID: 6025296456394379352, guid: 5d2ca95c976440e46a83d3f6bd12f500, type: 3}
       propertyPath: m_Name
       value: Attack
+      objectReference: {fileID: 0}
+    - target: {fileID: 6025296456394379354, guid: 5d2ca95c976440e46a83d3f6bd12f500, type: 3}
+      propertyPath: showHint
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6025296456394379354, guid: 5d2ca95c976440e46a83d3f6bd12f500, type: 3}
       propertyPath: errorController

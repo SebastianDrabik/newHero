@@ -19,4 +19,5 @@ MonoBehaviour:
   - name: Player
     sentence: Yes, sure, but what you want me to do?
   - name: SemiGodProgrammer
-    sentence: There is a cave nearby...
+    sentence: There is a cave nearby... If you consider helping me, I will help you
+      to get out of here.

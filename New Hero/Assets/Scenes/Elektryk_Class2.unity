@@ -12424,6 +12424,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6025296456394379354, guid: 5d2ca95c976440e46a83d3f6bd12f500, type: 3}
+      propertyPath: showHint
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6025296456394379354, guid: 5d2ca95c976440e46a83d3f6bd12f500, type: 3}
       propertyPath: errorController
       value: 
       objectReference: {fileID: 392263034}

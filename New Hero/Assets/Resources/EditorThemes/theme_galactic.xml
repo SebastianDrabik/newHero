@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<theme-data>
+	<name>Galactic</name>
+	<background-color>#202020ff</background-color>
+	<highlights>
+		<rule>
+			<regex>(\bif\b|\breturn\b)</regex>
+			<color>#d7a0df</color>
+		</rule>
+		<rule>
+			<regex>(\bbool\b|\btrue\b|\bfalse\b|\bint\b|\bfloat\b|\bchar\b|\bstring\b|\bnew\b)</regex>
+			<color>#2b6ec5</color>
+		</rule>
+		<rule>
+			<regex>(\/\/.*)|(\/\*[\s\S]*?\*\/)</regex>
+			<color>#235530ff</color>
+		</rule>
+		<rule>
+			<regex>\".*\"</regex>
+			<color>#e7f700ff</color>
+		</rule>
+	</highlights>
+</theme-data>

@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
         if(!trophiesLoaded)
             LoadTrophies(true);
 
-        LoadObjectives(true);
+        LoadObjectives();
     }
 
     void OnEnable() {
@@ -62,7 +62,6 @@ public class GameManager : MonoBehaviour
     {
         if (!objectivesLoaded && !ignoreLoaded)
             return;
-        Debug.Log("Loading objectives");
         objectives.Clear();
         Objective[] objectivesTemp = Resources.LoadAll<Objective>("Objectives");
         for (int i = 0; i < objectivesTemp.Length; i++)

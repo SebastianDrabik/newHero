@@ -15,8 +15,8 @@ MonoBehaviour:
   key: semigodprogrammer_lesson
   sentences:
   - name: SemiGodProgrammer
-    sentence: Thank you for beating Python. I can teach you something more about
-      C++.
+    sentence: Thank you for beating Python. Now I can teach you how to get out of
+      here.
   - name: SemiGodProgrammer
     sentence: If you want, of course.
   - name: Player
