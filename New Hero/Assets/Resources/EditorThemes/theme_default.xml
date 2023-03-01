@@ -8,7 +8,7 @@
 			<color>#e2f000ff</color>
 		</rule>
 		<rule>
-			<regex>(\bint\b|\bvoid\b|\bchar\b|\busing\b|\bbool\b)</regex>
+			<regex>(\bint\b|\bvoid\b|\bchar\b|\busing\b|\bbool\b)|\bfloat\b</regex>
 			<color>#005bd1ff</color>
 		</rule>
 		<rule>

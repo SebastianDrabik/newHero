@@ -63,6 +63,7 @@ public class LessonManagerSGP : MonoBehaviour
 
     private bool dub = false;
 
+
     private void BeginLesson()
     {
         lessonBegan = true;
@@ -84,7 +85,7 @@ public class LessonManagerSGP : MonoBehaviour
 
     public void Previous()
     {
-        if (dub)
+        if (dub || attack.gameObject.activeSelf)
             return;
         if (lessonBegan && currentPart >= 0 && currentSub > 0)
         {
@@ -117,7 +118,7 @@ public class LessonManagerSGP : MonoBehaviour
 
     public void Next()
     {
-        if (dub)
+        if (dub || attack.gameObject.activeSelf)
             return;
         if (lessonEnded)
         {

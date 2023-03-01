@@ -71,6 +71,13 @@ public class AudioManager : MonoBehaviour
             Sound s = Array.Find(sounds, sound => sound.name == "MainTheme");
             s.source.volume = s.volume;
         }
+
+        if (next.name == "MainMenu")
+        {
+            StopAll();
+            Play("MainTheme");
+            return;
+        }
     }
 
     public void Play(string name)

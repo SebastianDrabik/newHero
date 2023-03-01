@@ -115,7 +115,7 @@
 			<dial6-7>As you can see in examples &lt;color=yellow&gt;D&lt;/color&gt; and &lt;color=yellow&gt;E&lt;/color&gt; it also works with changing &lt;color=yellow&gt;floats&lt;/color&gt; to &lt;color=yellow&gt;ints&lt;/color&gt;</dial6-7>
 			<dial6-8>Going back to example &lt;color=yellow&gt;C&lt;/color&gt; you can see that it is possible to use &lt;color=yellow&gt;brackets&lt;/color&gt; in calculations, just like in real arithmetics</dial6-8>
 
-			<dial7-1>&lt;color=yellow&gt;Loop&lt;/color&gt; is expression, which allows us to repeat some action</dial7-1>
+			<dial7-1>&lt;color=yellow&gt;Loop&lt;/color&gt; is an expression, which allows us to repeat some action</dial7-1>
 			<dial7-2>&lt;color=yellow&gt;for&lt;/color&gt; loop is the simplest type of loop</dial7-2>
 			<dial7-3>We define it in following way:</dial7-3>
 			<dial7-4>&lt;color=yellow&gt;for(iterator; logical condition; iterator value change)&lt;/color&gt;</dial7-4>
@@ -130,7 +130,7 @@
 			<dial8-6>In example &lt;color=yellow&gt;E&lt;/color&gt; the &lt;color=yellow&gt;AND&lt;/color&gt; operator is being used(double &amp; mark). It returns 1 if &lt;color=yellow&gt;BOTH&lt;/color&gt; operations returns true</dial8-6>
 			<dial8-7>Example &lt;color=yellow&gt;E&lt;/color&gt; will display &lt;color=yellow&gt;1&lt;/color&gt;, because &lt;color=yellow&gt;BOTH&lt;/color&gt; operations return true</dial8-7>
 			<dial8-8>In example &lt;color=yellow&gt;F&lt;/color&gt; the &lt;color=yellow&gt;OR&lt;/color&gt; operator is being used(double | mark). It returs true &lt;color=yellow&gt;if one of operations&lt;/color&gt; is true</dial8-8>
-			<dial8-9>In examples &lt;color=yellow&gt;F&lt;/color&gt; and &lt;color=yellow&gt;G&lt;/color&gt; used conversion from &lt;color=yellow&gt;int&lt;/color&gt; to &lt;color=yellow&gt;bool&lt;/color&gt;</dial8-9>
+			<dial8-9>In examples &lt;color=yellow&gt;G&lt;/color&gt; and &lt;color=yellow&gt;H&lt;/color&gt; used conversion from &lt;color=yellow&gt;int&lt;/color&gt; to &lt;color=yellow&gt;bool&lt;/color&gt;</dial8-9>
 			<dial8-10>Example &lt;color=yellow&gt;F&lt;/color&gt; will return &lt;color=yellow&gt;0&lt;/color&gt;, and &lt;color=yellow&gt;E&lt;/color&gt; will return &lt;color=yellow&gt;1&lt;/color&gt; according to the rules of logic</dial8-10>
 
 

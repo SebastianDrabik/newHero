@@ -93,6 +93,7 @@ public class LessonManager : MonoBehaviour
 
     private bool dub = false;
 
+
     private void BeginLesson()
     {
         lessonBegan = true;
@@ -114,7 +115,7 @@ public class LessonManager : MonoBehaviour
 
     public void Previous()
     {
-        if (dub)
+        if (dub || attack.gameObject.activeSelf)
             return;
         if (lessonBegan && currentPart >= 0 && currentSub > 0)
         {
@@ -141,13 +142,13 @@ public class LessonManager : MonoBehaviour
             CodeEditor.GetComponent<LessonCodeEditor>().Change(p.code);
         }
 
-        if(lessonEnded)
+        if (lessonEnded)
             lessonEnded = false;
     }
 
     public void Next()
     {
-        if (dub)
+        if (dub || attack.gameObject.activeSelf)
             return;
         if (lessonEnded)
         {
@@ -155,7 +156,7 @@ public class LessonManager : MonoBehaviour
             subtitleText.SetActive(false);
             movement.SetMovementDisabled(false);
             attack.OpenCodeEditor(examKey);
-            lessonEnded=false;
+            lessonEnded = false;
             currentPart = 0;
             currentSub = 0;
             p = lessonParts[currentPart];
@@ -203,7 +204,6 @@ public class LessonManager : MonoBehaviour
         yield return new WaitForSecondsRealtime(length);
         dub = false;
     }
-
     public void HandleCodeExecution(bool result)
     {
         if (result)

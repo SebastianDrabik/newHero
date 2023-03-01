@@ -2214,7 +2214,19 @@ MonoBehaviour:
   errorController: {fileID: 9008115510951054437}
   onHintClicked:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6025296456394379352}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   showHint: 0
   onCodeExecuted:
     m_PersistentCalls:
@@ -3820,7 +3832,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9011324893836322596, guid: 7cbf8c71a04f54e39a687c02876cf775, type: 3}
       propertyPath: m_Size
-      value: 0.9999999
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9011324893836322599, guid: 7cbf8c71a04f54e39a687c02876cf775, type: 3}
       propertyPath: m_AnchorMax.x
