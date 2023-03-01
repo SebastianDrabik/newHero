@@ -170,6 +170,7 @@ public class LessonManager : MonoBehaviour
 
     IEnumerator Sound(string soundKey)
     {
+        AudioManager AudioManager = GameObject.FindObjectOfType<AudioManager>();
         AudioManager.PlayEffect(soundKey, 0.1f);
         float length = AudioManager.GetAudioLength(soundKey);
         dub = true;

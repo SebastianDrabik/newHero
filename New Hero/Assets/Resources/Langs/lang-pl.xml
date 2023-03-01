@@ -114,7 +114,7 @@
 			<dial7-4>&lt;color=yellow&gt;for(iterator; warunek logiczny; zmiana wartości iteratora)&lt;/color&gt;</dial7-4>
 			<dial7-5>Wszystko, co znajduje się w klamerkach, będzie wykonywane, dopóki warunek jest spełniony</dial7-5>
 
-			<dial8-0>Typem umożliwiającym przechowywanie danych ligicznych jest &lt;color=yellow&gt;bool&lt;/color&gt;</dial8-0>
+			<dial8-0>Typem umożliwiającym przechowywanie danych logicznych jest &lt;color=yellow&gt;bool&lt;/color&gt;</dial8-0>
 			<dial8-1>W operacjach logicznych &lt;color=yellow&gt;1&lt;/color&gt; reprezentuje &lt;color=yellow&gt;prawdę(true)&lt;/color&gt;, a &lt;color=yellow&gt;0 fałsz(false)&lt;/color&gt;</dial8-1>
 			<dial8-2>W przykładzie &lt;color=yellow&gt;A&lt;/color&gt; zostanie wyświetlona &lt;color=yellow&gt;prawda&lt;/color&gt;, czyli 1</dial8-2>
 			<dial8-3>Z kolei w przykładzie &lt;color=yellow&gt;B&lt;/color&gt; zostanie wyświetlone &lt;color=yellow&gt;0&lt;/color&gt;, ponieważ 3 nie jest równe 2</dial8-3>

@@ -3307,18 +3307,18 @@ MonoBehaviour:
     - dial5-11
     - dial5-12
     dubs:
-    - 
-    - 
-    - 
-    - 
-    - 
-    - 
-    - 
-    - 
-    - 
-    - 
-    - 
-    - 
+    - B1
+    - B2
+    - B3
+    - B4
+    - B5
+    - B6
+    - B7
+    - B8
+    - B9
+    - B10
+    - B11
+    - B12
   - code: "#include <iostream>\r\n\r\nusing namespace std;\r\n\r\nint main()\r\n{\r\n 
       int x = 3;\r\n  int y = 2;\r\n\r\n  cout << x / y << endl;                
       // A\r\n  cout << (float)x / (float)y << endl;   // B\r\n  cout << (1.0 * x)
@@ -3335,14 +3335,14 @@ MonoBehaviour:
     - dial6-7
     - dial6-8
     dubs:
-    - 
-    - 
-    - 
-    - 
-    - 
-    - 
-    - 
-    - 
+    - B13
+    - B14
+    - B15
+    - B16
+    - B17
+    - B18
+    - B19
+    - B20
   - code: "#include <iostream>\r\n\r\nusing namespace std;\r\n\r\nint main()\r\n{\r\n 
       int x = 3;\r\n  int y = 2;\r\n\r\n  cout << (x == 3) << endl;           //
       A\r\n  cout << (x == 2) << endl;           // B\r\n  cout << (x > 2) << endl;           
@@ -3363,17 +3363,17 @@ MonoBehaviour:
     - dial8-9
     - dial8-10
     dubs:
-    - 
-    - 
-    - 
-    - 
-    - 
-    - 
-    - 
-    - 
-    - 
-    - 
-    - 
+    - B26
+    - B27
+    - B28
+    - B29
+    - B30
+    - B31
+    - B32
+    - B33
+    - B34
+    - B35
+    - B36
   - code: "#include<iostream>\n\nusing namespace std;\n\nint main() {\n\tint a =
       5;\n\tfor(int i = 0; i < a; i += 1) {\n\t\tcout << i << \" \";\n\t}\n}"
     subtitles:
@@ -3383,11 +3383,11 @@ MonoBehaviour:
     - dial7-4
     - dial7-5
     dubs:
-    - 
-    - 
-    - 
-    - 
-    - 
+    - B21
+    - B22
+    - B23
+    - B24
+    - B25
 --- !u!1 &180964388
 GameObject:
   m_ObjectHideFlags: 0
