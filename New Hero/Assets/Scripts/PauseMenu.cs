@@ -66,6 +66,9 @@ public class PauseMenu : MonoBehaviour
         Resume();
         manager.trophies.Clear();
         DiscordManager.Instance.SetPlaying(DiscordManager.State.MENU);
+        SaveSystem.level = 0;
+        SaveSystem.startDialogue = false;
+        SaveSystem.health = 0;
         SceneManager.LoadScene("MainMenu");
     }
     public void QuitGame()

@@ -105,7 +105,7 @@
 			<dial6-4>Jak można zobaczyć w przykładzie &lt;color=yellow&gt;A&lt;/color&gt;, wynikiem jest &lt;color=yellow&gt;1&lt;/color&gt; ponieważ c++ myśli że działanie z dwoma liczbami całkowitymi &lt;color=yellow&gt;zwróci liczbę całkowitą&lt;/color&gt;(usunie część dziesiętną)</dial6-4>
 			<dial6-5>Użycie metody &lt;color=yellow&gt;B&lt;/color&gt; jest najlepsze do dzielenia &lt;color=yellow&gt;intów&lt;/color&gt;, ponieważ zmusza c++ do traktowania tych liczb jako &lt;color=yellow&gt;floaty&lt;/color&gt;</dial6-5>
 			<dial6-6>Jednak metoda &lt;color=yellow&gt;C&lt;/color&gt; również działa, dzięki mnożeniu liczb przez &lt;color=yellow&gt;1.0&lt;/color&gt; co zmienia wartość liczb do &lt;color=yellow&gt;floata&lt;/color&gt;</dial6-6>
-			<dial6-7>Zmiana z &lt;color=yellow&gt;floata&lt;/color&gt; na &lt;color=yellow&gt;inta&lt;/color&gt; również działa, co można zobaczyc w przykładach &lt;color=yellow&gt;D&lt;/color&gt; i &lt;color=yellow&gt;E&lt;/color&gt;</dial6-7>
+			<dial6-7>Zmiana z &lt;color=yellow&gt;floata&lt;/color&gt; na &lt;color=yellow&gt;inta&lt;/color&gt; również działa, co można zobaczyć w przykładach &lt;color=yellow&gt;D&lt;/color&gt; i &lt;color=yellow&gt;E&lt;/color&gt;</dial6-7>
 			<dial6-8>Wracając do przykładu &lt;color=yellow&gt;C&lt;/color&gt; można zobaczyć, że tak jak w prawdziwej arytmetyce, można używac &lt;color=yellow&gt;nawiasów&lt;/color&gt; do kalkulacji</dial6-8>
 
 			<dial7-1>&lt;color=yellow&gt;Pętla&lt;/color&gt; to wyrażenie służące do powtarzania napisanego w niej kodu.</dial7-1>

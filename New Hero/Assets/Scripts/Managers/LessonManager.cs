@@ -79,6 +79,7 @@ public class LessonManager : MonoBehaviour
     private int currentPart_subs = 0;
     private int currentSub = 0; //index
     private bool lessonBegan = false;
+    private bool lessonEnded = false;
 
     private bool dub = false;
 
@@ -129,13 +130,24 @@ public class LessonManager : MonoBehaviour
             }
             CodeEditor.GetComponent<LessonCodeEditor>().Change(p.code);
         }
+
+        if(lessonEnded)
+            lessonEnded = false;
     }
 
     public void Next()
     {
         if (dub)
             return;
-        if (lessonBegan && currentPart < lessonParts.Count && currentSub < currentPart_subs - 1)
+        if (lessonEnded)
+        {
+            CodeEditor.SetActive(false);
+            subtitleText.SetActive(false);
+            movement.SetMovementDisabled(false);
+            attack.OpenCodeEditor(examKey);
+            return;
+        }
+        if (lessonBegan && currentPart <= lessonParts.Count - 1 && currentSub < currentPart_subs - 1)
         {
             currentSub++;
             subtitleText.GetComponent<TextMeshProUGUI>().text = TranslationsManager.GetTranslation("lessons", p.subtitles[currentSub]);
@@ -161,19 +173,18 @@ public class LessonManager : MonoBehaviour
         }
         if (currentPart == lessonParts.Count - 1 && p.subtitles.Length - 1 == currentSub)
         {
-            CodeEditor.SetActive(false);
-            subtitleText.SetActive(false);
-            movement.SetMovementDisabled(false);
-            attack.OpenCodeEditor(examKey);
+            lessonEnded = true;
         }
     }
 
     IEnumerator Sound(string soundKey)
     {
         AudioManager AudioManager = GameObject.FindObjectOfType<AudioManager>();
-        AudioManager.PlayEffect(soundKey, 0.1f);
+        AudioManager.PlayEffect(soundKey, 0.05f);
         float length = AudioManager.GetAudioLength(soundKey);
         dub = true;
+        if (Application.isEditor)
+            length = 0f;
         yield return new WaitForSecondsRealtime(length);
         dub = false;
     }

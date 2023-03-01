@@ -20,6 +20,6 @@ MonoBehaviour:
     std;\r\n\r\nint main() {\r\n\tint numbers[] = getRandomNumbers();\r\n\t// display
     all numbers from numbers array\r\n\t// separate them with space\r"
   bottomCode: "\treturn 0;\n}"
-  initialCode: 
+  initialCode: "\t// your code goes here"
   inputOutput: []
   checkType: 0
