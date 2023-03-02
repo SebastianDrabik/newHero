@@ -26,6 +26,8 @@ public class LessonManager : MonoBehaviour
 
     public string alterDialogueKey;
 
+    public float soundEndOffset;
+
     public SaveData.Level examPassLevel;
 
     [System.Serializable]
@@ -47,6 +49,7 @@ public class LessonManager : MonoBehaviour
         {
             UseAlterDialogue();
             teacher.OnDialogueEnd.RemoveAllListeners();
+            gameObject.SetActive(false);
             return;
         }
         manager.ShowObjective("teacher");
@@ -197,7 +200,7 @@ public class LessonManager : MonoBehaviour
     {
         AudioManager AudioManager = GameObject.FindObjectOfType<AudioManager>();
         AudioManager.PlayEffect(soundKey, 0.05f);
-        float length = AudioManager.GetAudioLength(soundKey);
+        float length = AudioManager.GetAudioLength(soundKey) + soundEndOffset;
         dub = true;
         if (Application.isEditor)
             length = 0f;
@@ -217,6 +220,7 @@ public class LessonManager : MonoBehaviour
             manager.HideObjective();
             SaveSystem.level = examPassLevel;
             pauseMenu.SetDisabled(false);
+            gameObject.SetActive(false);
             return;
         }
         attack.EnableHint();

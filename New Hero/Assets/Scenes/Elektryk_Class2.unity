@@ -10631,6 +10631,7 @@ MonoBehaviour:
   examPassTrophyKey: hello
   examKey: test
   alterDialogueKey: teacheralter
+  soundEndOffset: 0.2
   examPassLevel: 1
   lessonParts:
   - code: "#include<iostream>\n\nint main() {\n    std::cout << \"Hello world\";\n}"

@@ -16,9 +16,8 @@ MonoBehaviour:
   sentences:
   - name: SemiGodProgrammer
     sentence: "Witaj, m\xF3g\u0142by\u015B wy\u015Bwiadczy\u0107 mi przys\u0142ug\u0119?
-      Jestem pewien, \u017Ce nie po\u017Ca\u0142ujesz."
+      Je\u015Bli to dla mnie zrobisz, pomog\u0119 Ci si\u0119 st\u0105d wydosta\u0107."
   - name: Gracz
     sentence: "Jasne, ale co mia\u0142bym dla Ciebie zrobi\u0107?"
   - name: SemiGodProgrammer
-    sentence: "Niedaleko jest jaskinia... Je\u015Bli to dla mnie zrobisz, pomog\u0119
-      Ci si\u0119 st\u0105d wydosta\u0107."
+    sentence: 'Niedaleko jest jaskinia... '

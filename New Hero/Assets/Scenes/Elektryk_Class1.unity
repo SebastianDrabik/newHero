@@ -3284,15 +3284,16 @@ MonoBehaviour:
   examPassTrophyKey: advancedc++
   examKey: test2
   alterDialogueKey: real-teacheralter
+  soundEndOffset: 0.2
   examPassLevel: 3
   lessonParts:
-  - code: "#include <iostream>\r\n\r\nusing namespace std;\r\n\r\nint main()\r\n{\r\n 
-      int x = 3;\r\n  int y = 2;\r\n\r\n  cout << x + 2 << endl; // A\n  cout <<
-      x + y << endl; // B\n  cout << x - y << endl; // C\n  cout << x * y << endl;
-      // D\r\n  cout << x / y << endl; // E\r \n  cout << x % y << endl; // F\r \n\r\n 
-      x = 0; // G\r\n  cout << x << endl;\r\n\r\n  x = x + 1; // H\r\n  cout << x
-      << endl;\r\n\r\n  x += 1; // I\r\n  cout << x << endl;\r\n\r\n  x++; // J\r\n 
-      cout << x << endl;\r\n\r\n  return 0;\r\n}"
+  - code: "#include <iostream>\r\n\r\nusing namespace std;\r\n\r\nint main()\r\n{\r\n\tint
+      x = 3;\r\n\tint y = 2;\r\n\r\n\tcout << x + 2 << endl; // A\n\tcout << x +
+      y << endl; // B\n\tcout << x - y << endl; // C\n\tcout << x * y << endl; //
+      D\r\n\tcout << x / y << endl; // E\r\n\tcout << x % y << endl; // F\r\n\r\n\tx
+      = 0; // G\r\n\tcout << x << endl;\r\n\r\n\tx = x + 1; // H\r\n\tcout << x <<
+      endl;\r\n\r\n\tx += 1; // I\r\n\tcout << x << endl;\r\n\r\n\tx++; // J\r\n\tcout
+      << x << endl;\r\n\r\n\treturn 0;\r\n}"
     subtitles:
     - dial5-1
     - dial5-2
@@ -3319,12 +3320,11 @@ MonoBehaviour:
     - B10
     - B11
     - B12
-  - code: "#include <iostream>\r\n\r\nusing namespace std;\r\n\r\nint main()\r\n{\r\n 
-      int x = 3;\r\n  int y = 2;\r\n\r\n  cout << x / y << endl;                
-      // A\r\n  cout << (float)x / (float)y << endl;   // B\r\n  cout << (1.0 * x)
-      / (1.0 * y) << endl; // C\r\n\r\n  float z = 2.0;\r\n  float w = 4.4;\r\n\r\n 
-      cout << z / w << endl;   // D\r\n  cout << (int)z / (int)w; // E\r\n\r\n  return
-      0;\r\n}"
+  - code: "#include <iostream>\r\n\r\nusing namespace std;\r\n\r\nint main()\r\n{\r\n\tint
+      x = 3;\r\n\tint y = 2;\r\n\r\n\tcout << x / y << endl;                 // A\r\n\tcout
+      << (float)x / (float)y << endl;   // B\r\n\tcout << (1.0 * x) / (1.0 * y) <<
+      endl; // C\r\n\r\n\tfloat z = 2.0;\r\n\tfloat w = 4.4;\r\n\r\n\tcout << z /
+      w << endl;   // D\r\n\tcout << (int)z / (int)w; // E\r\n\r\n\treturn 0;\r\n}"
     subtitles:
     - dial6-1
     - dial6-2
@@ -3343,13 +3343,13 @@ MonoBehaviour:
     - B18
     - B19
     - B20
-  - code: "#include <iostream>\r\n\r\nusing namespace std;\r\n\r\nint main()\r\n{\r\n 
-      int x = 3;\r\n  int y = 2;\r\n\r\n  cout << (x == 3) << endl;           //
-      A\n  cout << (x == 2) << endl;           // B\r \n  cout << (x > 2) << endl;           
-      // C\r \n  cout << (x <= 3) << endl;           // D\r\n  cout << (x == 3 &&
-      y == 2) << endl; // E\r \n  cout << (x == 1 || y == 2) << endl; // F\n  cout
-      << (bool)0 << endl;            // G\n  cout << (bool)1 << endl;           
-      // H\r\n\r\n  return 0;\r\n}"
+  - code: "#include <iostream>\r\n\r\nusing namespace std;\r\n\r\nint main()\r\n{\r\n\tint
+      x = 3;\r\n\tint y = 2;\r\n\r\n\tcout << (x == 3) << endl;           // A\n\tcout
+      << (x == 2) << endl;           // B\r \n\tcout << (x > 2) << endl;           
+      // C\r \n\tcout << (x <= 3) << endl;           // D\r\n\tcout << (x == 3 &&
+      y == 2) << endl; // E\r \n\tcout << (x == 1 || y == 2) << endl; // F\n\tcout
+      << (bool)0 << endl;            // G\n\tcout << (bool)1 << endl;           
+      // H\r\n\r\n\treturn 0;\r\n}"
     subtitles:
     - dial8-0
     - dial8-1
@@ -4908,11 +4908,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6025296457629541656, guid: 5d2ca95c976440e46a83d3f6bd12f500, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6025296457629541656, guid: 5d2ca95c976440e46a83d3f6bd12f500, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6025296457629541656, guid: 5d2ca95c976440e46a83d3f6bd12f500, type: 3}
       propertyPath: m_SizeDelta.x
@@ -4920,7 +4920,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6025296457629541656, guid: 5d2ca95c976440e46a83d3f6bd12f500, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 26.24
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6025296457629541656, guid: 5d2ca95c976440e46a83d3f6bd12f500, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -4928,7 +4928,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6025296457629541656, guid: 5d2ca95c976440e46a83d3f6bd12f500, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -152.31999
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6097164149600630445, guid: 5d2ca95c976440e46a83d3f6bd12f500, type: 3}
       propertyPath: m_AnchorMax.y

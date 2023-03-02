@@ -19,13 +19,11 @@ public class OutputController : MonoBehaviour
 
     public void ShowOutput(CodeResult codeResult)
     {
-        Debug.Log("Test");
         gameObject.SetActive(true);
         outputHeader.text = TranslationsManager.GetTranslation(translationGroup, translationKey[codeResult.Correct ? 0 : 1]);
         outputHeader.color = codeResult.Correct ? successColor : failureColor;
 
         string content = TranslationsManager.GetTranslation(translationGroup, translationKey[2]);
         outputContent.text = content.Replace("%nl%", "\n").Replace("%OUTPUT%", codeResult.Result).Replace("%EXPECTED_OUTPUT%", codeResult.ExpectedResult);
-
     }
 }

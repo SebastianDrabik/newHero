@@ -158,7 +158,7 @@
 			<doors-locked>Drzwi są zamknięte.</doors-locked>
 			<too-young>Jesteś zbyt młody, aby prowadzić!</too-young>
 			<leave-during-lesson>Nie możesz wyjść w trakcie lekcji.</leave-during-lesson>
-			<leave-during-lesson-ele>Nie możesz opuścić szkoły w trakcie lekcji.</leave-during-lesson-ele>
+			<leave-during-lesson-ele>Nie możesz opuścić szkoły w trakcie zajęć.</leave-during-lesson-ele>
 			<leave-during-python>Chyba miałem tu coś zrobić.</leave-during-python>
 			<cube-bullet>Unikaj bugów!</cube-bullet>
 			<cube-box>UWAGA!</cube-box>
@@ -171,5 +171,10 @@
 			<title-failure>Niepowodzenie</title-failure>
 			<output-content>Twój wynik:%nl%%OUTPUT%%nl%Poprawny wynik:%nl%%EXPECTED_OUTPUT%</output-content>
 		</editor>
+		<death-screen>
+			<button>Przywróć</button>
+			<title>Dysk został sformatowany.</title>
+			<subtitle>Przywracanie poprzedniego stanu gry...</subtitle>
+		</death-screen>
 	</lang-data>
 </lang>

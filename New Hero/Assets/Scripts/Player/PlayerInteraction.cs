@@ -9,7 +9,7 @@ public class PlayerInteraction : MonoBehaviour
 {
     public GameObject image;
     public TextMeshProUGUI healthUI;
-    readonly int maxHealth = 31;
+    public static readonly int maxHealth = 31;
     private float[] currentCoords = new float[2];
     private string currentScene = "";
     private bool currentDoorsDisabled = false;
@@ -22,6 +22,7 @@ public class PlayerInteraction : MonoBehaviour
 
     private GameManager gameManager;
     private bool disableInteraction = false;
+    private DeathScreenController deathScreenController;
 
     public void DamagePlayer(int amount)
     {
@@ -39,12 +40,12 @@ public class PlayerInteraction : MonoBehaviour
     private void KillPlayer()
     {
         //TODO: Death screen
-        SaveGame.RestartGame();
-        SaveSystem.health = maxHealth;
+        deathScreenController.ShowDeathScreen();
     }
 
     private void Start()
     {
+        deathScreenController = GameObject.FindGameObjectWithTag("Canvas").GetComponent<DeathScreenController>();
         gameManager = FindObjectOfType<GameManager>();
         if (SaveSystem.health == 0)
             SaveSystem.health = maxHealth;

@@ -1,7 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
-using UnityEngine.UI;
+using System.Collections.Generic;
 
 public class MarkCube : MonoBehaviour
 {
@@ -34,6 +34,8 @@ public class MarkCube : MonoBehaviour
 
     [HideInInspector]
     public bool isFighting = false;
+
+    private List<GameObject> bullets = new();
 
 
     private void Awake()
@@ -134,6 +136,17 @@ public class MarkCube : MonoBehaviour
     {
         GameObject bullet = Instantiate(bulletPrefab, gameObject.transform.position, Quaternion.identity);
         StartCoroutine(nameof(DestroyBullet), bullet);
+
+        bullets.Add(bullet);
+    }
+
+    private void DestroyAllBullets()
+    {
+        if (bullets.Count == 0)
+            return;
+        foreach (GameObject bullet in bullets)
+            if(bullet!=null && bullet.gameObject!=null)
+                Destroy(bullet);
     }
 
     public void JumpAttack()
@@ -147,6 +160,7 @@ public class MarkCube : MonoBehaviour
 
     public void ResetAfterAttack()
     {
+        DestroyAllBullets();
         Time.timeScale = 1f;
         isAttacking = false;
         shadow.SetActive(false);

@@ -4,20 +4,40 @@
 	<background-color>#202020ff</background-color>
 	<highlights>
 		<rule>
-			<regex>(\bif\b|\breturn\b)</regex>
+			<regex>(\bif\b|\belse\b|\breturn\b|\bfor\b|\bwhile\b|\bdo\b)</regex>
 			<color>#d7a0df</color>
 		</rule>
 		<rule>
-			<regex>(\bbool\b|\btrue\b|\bfalse\b|\bint\b|\bfloat\b|\bchar\b|\bstring\b|\bnew\b)</regex>
+			<regex>(\bcout\b|\bendl\b)</regex>
+			<color>#a9e0fb</color>
+		</rule>
+		<rule>
+			<regex>(\bbool\b|\btrue\b|\bfalse\b|\bint\b|\bfloat\b|\bchar\b|\bstring\b|\bnew\b|\busing\b|\bnamespace\b|\bconst\b|\bauto\b)</regex>
 			<color>#2b6ec5</color>
+		</rule>
+		<rule>
+			<regex>(\bstd\b|\bstring\b)</regex>
+			<color>#408979</color>
+		</rule>
+		<rule>
+			<regex>#include\s*&lt;.*&gt;</regex>
+			<color>#b87ec1</color>
+		</rule>
+		<rule>
+			<regex>[\[\](){}&lt;&gt;=\+\*-/%;&amp;|]</regex>
+			<color>#8a8a8a</color>
+		</rule>
+		<rule>
+			<regex>(\bmain\b|sizeof)</regex>
+			<color>#e2ca9d</color>
 		</rule>
 		<rule>
 			<regex>(\/\/.*)|(\/\*[\s\S]*?\*\/)</regex>
 			<color>#235530ff</color>
 		</rule>
 		<rule>
-			<regex>\".*\"</regex>
-			<color>#e7f700ff</color>
+			<regex>(\".*\"|\'.*\')</regex>
+			<color>#cf825c</color>
 		</rule>
 	</highlights>
 </theme-data>

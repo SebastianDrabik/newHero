@@ -17,7 +17,7 @@ public class PythonBattleStarter : MonoBehaviour
 
     void Start()
     {
-        if (SaveSystem.level >= SaveData.Level.END_GAME)
+        if (SaveSystem.level >= SaveData.Level.PYTHON)
         {
             audioSpace.SetActive(false);
             gameObject.SetActive(false);

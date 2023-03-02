@@ -72,7 +72,7 @@ public class AudioManager : MonoBehaviour
             s.source.volume = s.volume;
         }
 
-        if (next.name == "MainMenu")
+        if (next.name == "MainMenu" && !IsPlaying("MainTheme"))
         {
             StopAll();
             Play("MainTheme");

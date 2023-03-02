@@ -32,6 +32,12 @@ public class LessonManagerSGP : MonoBehaviour
     void Start()
     {
         manager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
+
+        if(SaveSystem.level >= SaveData.Level.CPP_MASTER)
+        {
+            SGP.SetActive(false);
+            gameObject.SetActive(false);
+        }
     }
 
     void Update()
@@ -188,6 +194,7 @@ public class LessonManagerSGP : MonoBehaviour
             manager.HideObjective();
             manager.ChangeTrophyState(examPassTrophyKey, Trophy.TrophyState.UNLOCKED, true);
             SGP.SetActive(false);
+            gameObject.SetActive(false);
             return;
         }
         attack.EnableHint();

@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,7 +13,7 @@ public class Python : MonoBehaviour
 
     public FightManager editor;
     public GameObject rockPrefab;
-    public GameManager manager;
+    private GameManager manager;
     public GameObject blockadeObject;
     public MessageManager messageManager;
     public GameObject audioSpace;
@@ -54,7 +55,9 @@ public class Python : MonoBehaviour
 
     void Start()
     {
-        if(SaveSystem.level >= SaveData.Level.END_GAME)
+        manager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
+
+        if(SaveSystem.level >= SaveData.Level.PYTHON)
         {
             gameObject.SetActive(false);
             exit.locked = false;
@@ -82,7 +85,7 @@ public class Python : MonoBehaviour
                 Attack();
                 currentMode = attackMode.rock;
             }
-            timer = 14.5f;
+            timer = 9.5f;
 
         }
 
@@ -132,10 +135,13 @@ public class Python : MonoBehaviour
         }
         for (int i = 0;i<rockCount;i++)
         {
+            DestroyAllRocks();
             IEnumerator spawn = CreateRock(speed, spawnPoint);
             StartCoroutine(spawn);
         }
     }
+
+    private List<GameObject> rocks = new();
 
     IEnumerator CreateRock(Vector2 speed,Transform spawnPoint)
     {
@@ -151,6 +157,19 @@ public class Python : MonoBehaviour
         yield return new WaitForSeconds(Random.Range(0f, 5f));
         GameObject rock = Instantiate(rockPrefab,pos,Quaternion.identity);
         rock.GetComponent<RockFly>().speed = speed;
+
+        rocks.Add(rock);
+    }
+
+    private void DestroyAllRocks()
+    {
+        if (rocks.Count == 0)
+            return;
+        foreach (var rock in rocks)
+        {
+            if(rock.gameObject != null && rock != null)
+                Destroy(rock);
+        }
     }
 
 
@@ -158,7 +177,7 @@ public class Python : MonoBehaviour
     {
         IsAttacking = true;
         int attackingNum = Random.Range(0, 2);
-
+        DestroyAllRocks();
         Vector3 playerPos = GameObject.FindGameObjectWithTag("Player").transform.position;
 
         if (attackingNum == (int)attacking.yellow)

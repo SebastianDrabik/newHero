@@ -176,7 +176,7 @@ public class Code
 
     private string NormalizeNewLines(string s)
     {
-        return s.Replace("\r\n", "\n").Replace("\r", "\n").TrimEnd('\n');
+        return s.Replace("\r\n", "\n").Replace("\r", "\n").TrimEnd('\n').Trim();
     }
 }
 

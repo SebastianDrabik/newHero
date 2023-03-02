@@ -8,27 +8,23 @@
 			<color>#e2f000ff</color>
 		</rule>
 		<rule>
-			<regex>(\bint\b|\bvoid\b|\bchar\b|\busing\b|\bbool\b)|\bfloat\b</regex>
+			<regex>(\bint\b|\bvoid\b|\bchar\b|\busing\b|\bbool\b|\bfloat\b|\bshort\b|\blong\b|\bstatic\b)</regex>
 			<color>#005bd1ff</color>
 		</rule>
 		<rule>
-			<regex>(namespace|main)</regex>
+			<regex>(\bnamespace\b|\bmain\b|\bstruct\b)</regex>
 			<color>#d17300</color>
 		</rule>
 		<rule>
-			<regex>(\breturn\b|\bif\b|\bwhile\b|\bfor\b|\bdo\b|\bconst\b)</regex>
+			<regex>(\breturn\b|\bif\b|\belse\b|\bwhile\b|\bfor\b|\bdo\b|\bconst\b|\bauto\b|\bgoto\b|\bswitch\b|\bbreak\b|\bcase\b)</regex>
 			<color>#ac7700ff</color>
 		</rule>
 		<rule>
-			<regex>[\[\](){}&lt;&gt;=]</regex>
+			<regex>[\[\](){}&lt;&gt;=\+\*-/%;&amp;|]</regex>
 			<color>#8a8a8a</color>
 		</rule>
 		<rule>
-			<regex>[\+\*-/%]</regex>
-			<color>#206ce6</color>
-		</rule>
-		<rule>
-			<regex>(\bstd\b|\bstring\b)</regex>
+			<regex>(\bstd\b|\bstring\b|sizeof)</regex>
 			<color>#50a579ff</color>
 		</rule>
 		<rule>
@@ -40,7 +36,7 @@
 			<color>#235530ff</color>
 		</rule>
 		<rule>
-			<regex>\".*\"</regex>
+			<regex>(\".*\"|\'.*\')</regex>
 			<color>#e7f700ff</color>
 		</rule>
 	</highlights>

@@ -131,7 +131,7 @@
 			<dial8-7>Example &lt;color=yellow&gt;E&lt;/color&gt; will display &lt;color=yellow&gt;1&lt;/color&gt;, because &lt;color=yellow&gt;BOTH&lt;/color&gt; operations return true</dial8-7>
 			<dial8-8>In example &lt;color=yellow&gt;F&lt;/color&gt; the &lt;color=yellow&gt;OR&lt;/color&gt; operator is being used(double | mark). It returs true &lt;color=yellow&gt;if one of operations&lt;/color&gt; is true</dial8-8>
 			<dial8-9>In examples &lt;color=yellow&gt;G&lt;/color&gt; and &lt;color=yellow&gt;H&lt;/color&gt; used conversion from &lt;color=yellow&gt;int&lt;/color&gt; to &lt;color=yellow&gt;bool&lt;/color&gt;</dial8-9>
-			<dial8-10>Example &lt;color=yellow&gt;F&lt;/color&gt; will return &lt;color=yellow&gt;0&lt;/color&gt;, and &lt;color=yellow&gt;E&lt;/color&gt; will return &lt;color=yellow&gt;1&lt;/color&gt; according to the rules of logic</dial8-10>
+			<dial8-10>Example &lt;color=yellow&gt;G&lt;/color&gt; will return &lt;color=yellow&gt;false&lt;/color&gt;, and &lt;color=yellow&gt;H&lt;/color&gt; will return &lt;color=yellow&gt;true&lt;/color&gt; according to the rules of logic</dial8-10>
 
 
 			<dial9-1>&lt;color=yellow&gt;Array&lt;/color&gt;, is a list of variables of a certain type , which allows to store &lt;color=yellow&gt;multiple values&lt;/color&gt; in one variable</dial9-1>
@@ -169,5 +169,10 @@
 			<title-failure>Failure</title-failure>
 			<output-content>Your output:%nl%%OUTPUT%%nl%Expected output:%nl%%EXPECTED_OUTPUT%</output-content>
 		</editor>
+		<death-screen>
+			<button>Restore</button>
+			<title>Hard drive has been formatted</title>
+			<subtitle>Restoring last saved game state...</subtitle>
+		</death-screen>
 	</lang-data>
 </lang>
