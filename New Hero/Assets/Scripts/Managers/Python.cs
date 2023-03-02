@@ -10,6 +10,7 @@ public class Python : MonoBehaviour
     public Transform downWall;
     public Transform leftWall;
     public Transform rightWall;
+    public PlayerMovement movement;
 
     public Cinemachine.CinemachineVirtualCamera _camera;
 
@@ -113,15 +114,17 @@ public class Python : MonoBehaviour
         float initialOrtoSize = _camera.m_Lens.OrthographicSize;
         _camera.m_Follow = gameObject.transform;
         _camera.m_Lens.OrthographicSize = 3f;
+        movement.SetMovementDisabled(true);
 
         yield return new WaitForSeconds(time+ 0.9f);
 
+        movement.SetMovementDisabled(false);
         _camera.m_Follow = GameObject.FindGameObjectWithTag("Player").transform;
         _camera.m_Lens.OrthographicSize = initialOrtoSize;
 
         blockadeObject.SetActive(false);
         manager.ChangeTrophyState("goofylanguage", Trophy.TrophyState.UNLOCKED, true);
-        Debug.Log("He ded");
+        //Debug.Log("He ded");
         fightStarted = false;
         SaveSystem.level = SaveData.Level.PYTHON;
         exit.locked = false;

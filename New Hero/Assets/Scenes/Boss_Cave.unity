@@ -7255,6 +7255,7 @@ MonoBehaviour:
   downWall: {fileID: 201107604}
   leftWall: {fileID: 981829195}
   rightWall: {fileID: 686759627}
+  movement: {fileID: 1852782710}
   _camera: {fileID: 1588422184}
   editor: {fileID: 727013955}
   rockPrefab: {fileID: 4520515716269435468, guid: af82edc81f2a8784d8d16a668690cb7f, type: 3}

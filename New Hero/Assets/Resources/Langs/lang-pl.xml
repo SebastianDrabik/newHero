@@ -75,7 +75,7 @@
 			<dial1-4>Na końcu każdej linijki, nie licząc niektórych wyjątków, musi znajdować się średnik</dial1-4>
 			
 			<dial2-1>Nie musisz używać &lt;color=yellow&gt;std::&lt;/color&gt;, jeżeli dodasz &lt;color=yellow&gt;using namespace std&lt;/color&gt; na górze kodu</dial2-1>
-			<dial2-2>Operator  &lt;color=yellow&gt;endl&lt;/color&gt; (end line) kończy linię. Wszystko, co będziemy wyświetlać po jego użyciu znajdzie się w linii poniżej.</dial2-2>
+			<dial2-2>Operator &lt;color=yellow&gt;endl&lt;/color&gt; (end line) kończy linię. Wszystko, co będziemy wyświetlać po jego użyciu znajdzie się w linii poniżej.</dial2-2>
 
 			<dial3-1>Za pomocą powyższego kodu możesz przypisać wartości do dwóch zmiennych oraz wyświetlić na ekranie ich sumę</dial3-1>
 			<dial3-2>Za pomocą zmiennej można zapisywać dane, których możemy później ponownie używać wewnątrz kodu</dial3-2>
@@ -89,8 +89,8 @@
 			<dial4-1>Instrukcja warunkowa &lt;color=yellow&gt;if&lt;/color&gt; pozwala na wykonanie kodu pod określonym warunkiem, który podamy wewnątrz nawiasów</dial4-1>
 			<dial4-2>Powyższy kod wyświetli &lt;color=yellow&gt;0&lt;/color&gt;, jeśli wartość zmiennej x będzie większa od zera</dial4-2>
 
-			<dialCom-1>Pisząc podwójny znak ukośnika "//" sprawiamy, że program zignoruje tekst w tej linijce, znajdujący się po tych znakach</dialCom-1>
-			<dialCom-2>Pisząc dwa znaki ukośnika, a międy nimi dwie gwiazdki "/* */" sprawiamy, że program zignoruje cały tekst między gwiazdkami</dialCom-2>
+			<dialCom-1>Pisząc podwójny znak ukośnika &lt;color=yellow&gt;//&lt;/color&gt; sprawiamy, że program &lt;color=yellow&gt;zignoruje tekst w tej linijce&lt;/color&gt;, znajdujący się po tych znakach</dialCom-1>
+			<dialCom-2>Pisząc dwa znaki ukośnika, a międy nimi dwie gwiazdki &lt;color=yellow&gt;/* */&lt;/color&gt; sprawiamy, że program &lt;color=yellow&gt;zignoruje cały tekst między gwiazdkami&lt;/color&gt;</dialCom-2>
 			<dialCom-3>Zaletą drugiego sposobu jest to, że komentarz moze się rozciągać na kilka linijek, w przeciwieństwie do sposobu pierwszego</dialCom-3>
 			<dialCom-4>Komentarze są używane do opisywania co robi dana częsć kodu, lub do zapisywania informacji dla innych programistów czytających nasz kod</dialCom-4>
 
@@ -134,7 +134,7 @@
 			<dial8-7>Dlatego też przykład &lt;color=yellow&gt;E&lt;/color&gt; wyświetli &lt;color=yellow&gt;1&lt;/color&gt;, ponieważ &lt;color=yellow&gt;OBYDWIE&lt;/color&gt; warości zwracają prawdę</dial8-7>
 			<dial8-8>W przykładzie &lt;color=yellow&gt;F&lt;/color&gt; użyto operacji &lt;color=yellow&gt;LUB&lt;/color&gt;(podwójny znak |). Zwróci ona prawdę, jeśli &lt;color=yellow&gt;jedna z dwóch&lt;/color&gt; wartości będzie prawdziwa</dial8-8>
 			<dial8-9>W przykładach &lt;color=yellow&gt;G&lt;/color&gt; oraz &lt;color=yellow&gt;H&lt;/color&gt; użyto konwersji z typu &lt;color=yellow&gt;int&lt;/color&gt; na typ logiczny &lt;color=yellow&gt;bool&lt;/color&gt;</dial8-9>
-			<dial8-10>Przykład &lt;color=yellow&gt;G&lt;/color&gt; zwróci &lt;color=yellow&gt;fałsz&lt;/color&gt;, a &lt;color=yellow&gt;F prawdę&lt;/color&gt; zgodnie z zasadami logiki</dial8-10>
+			<dial8-10>Przykład &lt;color=yellow&gt;G&lt;/color&gt; zwróci &lt;color=yellow&gt;fałsz&lt;/color&gt;, a &lt;color=yellow&gt;H prawdę&lt;/color&gt; zgodnie z zasadami logiki</dial8-10>
 
 			<dial9-1>&lt;color=yellow&gt;Tablice&lt;/color&gt;, to lista zmiennych określonego typu pozwalająca przechowywać &lt;color=yellow&gt;wiele wartości&lt;/color&gt; wewnątrz jednej zmiennej</dial9-1>
 			<dial9-2>Definicja tablicy: &lt;color=yellow&gt;typ nazwa[&lt;b&gt;ilość elementów&lt;/b&gt;];&lt;/color&gt;</dial9-2>

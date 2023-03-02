@@ -40,6 +40,7 @@ public class MainMapController : MonoBehaviour
         {
             SGP.gameObject.SetActive(false);
             manager.ShowObjective("firewall");
+            caveEntrance.locked = false;
         }
         if(SaveSystem.level >= SaveData.Level.CPP_MASTER)
         {
