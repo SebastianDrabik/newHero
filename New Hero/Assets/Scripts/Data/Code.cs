@@ -19,6 +19,12 @@ public class Code
     public Dictionary<string, string> outputs;
     public CodeData.CheckType checkType;
 
+    private struct CompilationResult
+    {
+        public string message;
+        public bool result;
+    }
+
     public Code(string code, Dictionary<string, string> outputs, CodeData.CheckType checkType)
     {
         this.code = code;
@@ -57,13 +63,15 @@ public class Code
         }
     }
 
-    private bool Compile(ErrorController controller)
+    private async Task<CompilationResult> Compile()
     {
+        CompilationResult res = new();
+
         ClearDirectory();
         CreateFile();
         UnityEngine.Debug.Log(compilerPath + "-o \"" + outputFilePath + "\" " + "\"" + inputFilePath + "\"");
-        string error = "";
-        var task = Task.Factory.StartNew(()=>
+        res.message = "";
+        var task = Task.Run(() =>
         {
             var process = new Process
             {
@@ -79,33 +87,38 @@ public class Code
             };
             process.Start();
             string output = process.StandardOutput.ReadToEnd();
-            error = process.StandardError.ReadToEnd();
+            res.message = process.StandardError.ReadToEnd();
 
             process.WaitForExit();
             return process.ExitCode;
         });
 
-        task.Wait();
+        await task;
+
+        res.result = task.Result == 0;
 
         if (task.Result == 0)
         {
             UnityEngine.Debug.Log("Compilation succeeded");
-            return true;
+            return res;
         }
         else
         {
-            error = error.Replace(inputFilePath + ": ", "").Replace(inputFilePath + ":", "");
-            controller.SetData(error);
-            UnityEngine.Debug.Log($"<color=red>Compilation failed: {error}</color>");
-            return false;
+            //error = error.Replace(inputFilePath + ": ", "").Replace(inputFilePath + ":", "");
+            //controller.SetData(error);
+            UnityEngine.Debug.Log($"<color=red>Compilation failed: {res.message}</color>");
+            return res;
         }
     }
 
-    public CodeResult CheckOutputs(Animator animator, ErrorController controller)
+    public async Task<CodeResult> CheckOutputs(ErrorController controller)
     {
-        bool compilationResult = Compile(controller);
-        if (!compilationResult)
+        CompilationResult compilationResult = await Compile();
+        if (!compilationResult.result)
+        {
+            controller.SetData(compilationResult.message);
             return new CodeResult(null, null, false, false);
+        }
         if (!File.Exists(outputFilePath))
         {
             UnityEngine.Debug.LogWarning("Executable file doesn't exist");
@@ -115,7 +128,6 @@ public class Code
         //       expected, user
         string[] expu = { null, null };
 
-        animator.SetBool("Spin", true);
         var tasks = new List<Task<bool>>();
         foreach (var item in outputs)
         {
@@ -155,7 +167,6 @@ public class Code
         //Task.WhenAll(tasks);
         UnityEngine.Debug.Log(result);
         UnityEngine.Debug.Log($"<color=yellow>Code result: {result} </color>");
-        animator.SetBool("Spin", false);
         ClearDirectory();
                               //user output, expected
         return new CodeResult(expu[0], expu[1], result, true);

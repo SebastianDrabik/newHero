@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.Events;
+using System.Threading.Tasks;
 
 public class FightManager : MonoBehaviour
 {
@@ -20,8 +21,8 @@ public class FightManager : MonoBehaviour
     public TextMeshProUGUI codeInput_text;
     [Header("Workspace gameobject")]
     public Image Workspace;
-    public Animator runButtonAnimator;
     public Button runButton;
+    public GameObject compilingSpinner;
     public OutputController outputController;
 
     public GameObject hintButton;
@@ -96,12 +97,12 @@ public class FightManager : MonoBehaviour
         return codeList.Find(code => code.key == key);
     }
 
-    public CodeResult CheckCode()
+    public async Task<CodeResult> CheckCode()
     {
         CodeData cd = GetCode(currentKey);
         Code code = new(cd.topCode + "\n" + codeInput.text + "\n" + bottom.text, cd.GetData(), cd.checkType);
         
-        return code.CheckOutputs(runButtonAnimator, errorController);
+        return await code.CheckOutputs(errorController);
     }
 
     public void CloseCodeEditor()
@@ -111,6 +112,8 @@ public class FightManager : MonoBehaviour
         codeInput.text = "";
         movement.SetMovementDisabled(false);
         interaction.SetInteractionDisabled(false);
+        outputController.gameObject.SetActive(false);
+        codeInput.interactable = true;
 
         gameObject.SetActive(false);
     }
@@ -154,10 +157,18 @@ public class FightManager : MonoBehaviour
 
     private CodeResult codeResult;
 
-    public void RunCode()
+    public async void RunCode()
     {
-        codeResult = CheckCode();
+        runButton.gameObject.SetActive(false);
+        compilingSpinner.SetActive(true);
+        codeInput.interactable = false;
+
+        codeResult = await CheckCode();
         outputController.ShowOutput(codeResult);
+
+        codeInput.interactable = true;
+        runButton.gameObject.SetActive(true);
+        compilingSpinner.SetActive(false);
     }
 
     public void HandleOutputOk()
