@@ -44,3 +44,8 @@ MonoBehaviour:
     title: Senior Developer
     objective: Complete all lessons
     icon: {fileID: 21300000, guid: 2bc0287cc2ea2694699886e4e03b968b, type: 3}
+  - key: god-run
+    state: 0
+    title: God Run
+    objective: Complete the game without taking any damage
+    icon: {fileID: 21300000, guid: 2bc0287cc2ea2694699886e4e03b968b, type: 3}

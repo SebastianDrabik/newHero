@@ -44,3 +44,8 @@ MonoBehaviour:
     title: Senior Developer
     objective: "Uko\u0144cz wszystkie lekcje"
     icon: {fileID: 21300000, guid: 2bc0287cc2ea2694699886e4e03b968b, type: 3}
+  - key: god-run
+    state: 0
+    title: God Run
+    objective: "Uko\u0144cz gr\u0119 nie otrzymuj\u0105c obra\u017Ce\u0144"
+    icon: {fileID: 21300000, guid: 2bc0287cc2ea2694699886e4e03b968b, type: 3}
