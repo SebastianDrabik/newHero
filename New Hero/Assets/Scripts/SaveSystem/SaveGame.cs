@@ -1,9 +1,12 @@
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 public class SaveGame : MonoBehaviour
 {
     private static string currentName = "";
+
+    public static UnityAction<Scene, LoadSceneMode> OnSceneLoaded { get; private set; }
 
     public static void StartGame(string name)
     {
@@ -28,7 +31,10 @@ public class SaveGame : MonoBehaviour
         {
             gameManager.ChangeTrophyState(t.Key, t.Value);
         }
-
+        if (!SaveSystem.tookDamage && gameManager.GetTrophyState("god-run") == Trophy.TrophyState.LOCKED)
+        {
+            gameManager.ChangeTrophyState("god-run", Trophy.TrophyState.UNLOCKED, true);
+        }
         Debug.Log("Save data successfully loaded.");
     }
 

@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c87f3464cb440b84ca538e80b109eed6, type: 3}
   m_Name: CurrentGameVersion
   m_EditorClassIdentifier: 
-  version: 1.0.1
+  version: 1.0.2
   versionName: First release
   versionNote: Let the game begin!

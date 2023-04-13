@@ -10,6 +10,7 @@ public static class SaveSystem
     public static string path;
     public static string objective;
     public static bool startDialogue = false;
+    public static bool tookDamage = false;
 
     public static void SaveData()
     {
@@ -25,7 +26,7 @@ public static class SaveSystem
 
         BinaryFormatter formatter = new();
         FileStream fs = new(path, FileMode.Create);
-        SaveData save = new(level, position, SceneManager.GetActiveScene().name, ConvertTrophies(gameManager.trophies), health, gameManager.currentObjective, startDialogue);
+        SaveData save = new(level, position, SceneManager.GetActiveScene().name, ConvertTrophies(gameManager.trophies), health, gameManager.currentObjective, startDialogue, tookDamage);
         formatter.Serialize(fs, save);
         fs.Close();
         Debug.Log("Successfully saved game");
@@ -53,6 +54,7 @@ public static class SaveSystem
         health = save.health;
         objective = save.currentObjective;
         startDialogue = save.startDialogue;
+        tookDamage = save.tookDamage;
         fs.Close();
 
         return save;

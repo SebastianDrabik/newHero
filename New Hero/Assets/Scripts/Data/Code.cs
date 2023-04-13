@@ -69,8 +69,16 @@ public class Code
 
         ClearDirectory();
         CreateFile();
-        UnityEngine.Debug.Log(compilerPath + "-o \"" + outputFilePath + "\" " + "\"" + inputFilePath + "\"");
+        // UnityEngine.Debug.Log(compilerPath + "-o \"" + outputFilePath + "\" " + "\"" + inputFilePath + "\"");
         res.message = "";
+        if (!File.Exists(compilerPath) && compilerPath != "g++")
+        {
+            UnityEngine.Debug.LogError("Compiler executable not found(" + compilerPath + ")");
+            res.message = "Compiler executable not found(" + compilerPath + ")";
+            res.result = false;
+
+            return res;
+        }
         var task = Task.Run(() =>
         {
             var process = new Process

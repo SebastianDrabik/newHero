@@ -29,6 +29,9 @@ public class PlayerInteraction : MonoBehaviour
         int health = SaveSystem.health;
         health -= amount;
         SaveSystem.health = health;
+
+        SaveSystem.tookDamage = true;
+
         if (health <= 0)
         {
             KillPlayer();

@@ -48,4 +48,4 @@ MonoBehaviour:
     state: 0
     title: God Run
     objective: Complete the game without taking any damage
-    icon: {fileID: 21300000, guid: 2bc0287cc2ea2694699886e4e03b968b, type: 3}
+    icon: {fileID: 21300000, guid: 74b2f192660dcfb408d11317b35deda1, type: 3}
