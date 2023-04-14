@@ -6,8 +6,6 @@ public class SaveGame : MonoBehaviour
 {
     private static string currentName = "";
 
-    public static UnityAction<Scene, LoadSceneMode> OnSceneLoaded { get; private set; }
-
     public static void StartGame(string name)
     {
         currentName = name;
@@ -31,11 +29,23 @@ public class SaveGame : MonoBehaviour
         {
             gameManager.ChangeTrophyState(t.Key, t.Value);
         }
-        if (!SaveSystem.tookDamage && gameManager.GetTrophyState("god-run") == Trophy.TrophyState.LOCKED)
+        SceneManager.sceneLoaded += SceneManager_sceneLoaded;
+        
+        Debug.Log("Save data successfully loaded.");
+    }
+
+    private static void SceneManager_sceneLoaded(Scene curren, LoadSceneMode mode)
+    {
+        GameManager gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
+        if (
+            !SaveSystem.tookDamage 
+            && gameManager.GetTrophyState("god-run") == Trophy.TrophyState.LOCKED 
+            && SaveSystem.level >= SaveData.Level.END_GAME
+           )
         {
             gameManager.ChangeTrophyState("god-run", Trophy.TrophyState.UNLOCKED, true);
         }
-        Debug.Log("Save data successfully loaded.");
+        SceneManager.sceneLoaded -= SceneManager_sceneLoaded;
     }
 
     public static void RestartGame()
