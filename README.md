@@ -21,3 +21,4 @@
 - Added 2 classrooms
 - Added teaching system
 - Added full Python functionality
+- Added godrun trophy
